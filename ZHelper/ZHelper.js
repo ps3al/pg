@@ -114,23 +114,14 @@ $(function () {
 			if (opts[3] == "custom") {
 				if (opts[11] != '') {
 					comp[pgStr + "_" + opts[0]]["get_value"] = function (pgel) {
-						//						if (opts[16] != "") {
 						return generalGet2(pgel, dataStr, opts[0], opts[11], opts[12], opts[17]);
-						// }
-						// else {
-						// 	return generalGet2(pgel, dataStr, opts[0], opts[11], opts[12],false);
-						// }
 					};
 					comp[pgStr + "_" + opts[0]]["set_value"] = function (pgel, value, values, oldValue, eventType) {
 						return generalSet2(pgel, value, values, oldValue, eventType, dataStr, opts[0], opts[11], opts[12], opts[17], opts[1]);
 					}
 				} else {
 					comp[pgStr + "_" + opts[0]]["get_value"] = function (pgel) {
-						//						if (opts[16] != "") {
 						return generalGet(pgel, dataStr, opts[0], opts[12], opts[17]);
-						// }else{
-						// 	return generalGet(pgel, dataStr, opts[0], opts[12],false);
-						// }
 					};
 					comp[pgStr + "_" + opts[0]]["set_value"] = function (pgel, value, values, oldValue, eventType) {
 						return generalSet(pgel, value, values, oldValue, eventType, dataStr, opts[0], opts[12], opts[17], opts[1]);
