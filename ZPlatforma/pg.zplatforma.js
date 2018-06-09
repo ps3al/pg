@@ -3,10 +3,14 @@ function createZPlatformaPlugin(wp, pinegrow) {
     var type_prefix = 'pg.zplatforma';
 
     var f = new PgFramework(type_prefix, 'Z Platforma');
-//alert(2);
+
+    //alert(2);
+
     //This will prevent activating multiple versions of the plugin, provided that other versions set the same type
     f.allow_single_type = true;
     f.type = type_prefix;
+
+//alert(3);
 
     var terms = '<br><small class="text-muted">TERMS OF USE: <b>You can use Z Platforma</b> to build and deploy websites for yourself and your clients, free or paid, as many as you want. <b>You can NOT use Z Platforma</b> to create templates and themes that you then sell in template marketplaces or give away for free.</small>';
 
