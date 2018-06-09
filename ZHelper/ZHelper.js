@@ -913,7 +913,7 @@ $(function () {
 			["dotsSpeed", "slider", "dotsSpeed", "custom", "", "", false, "", false, false, "", "", false, null, false, false, "", false, "", false],
 			["dragEndSpeed", "checkbox", "dragEndSpeed", "custom", true, "", false, "", false, false, "", "", false, null, false, false, "", false, "", false],
 			["callbacks", "checkbox", "callbacks", "custom", true, "", false, "", false, false, "advanced", "", false, null, false, false, "", false, "", false],
-			["responsive", "text", "responsive", "custom", "", "", false, "", false, false, "", "", false, null, false, false, "", false, "", false],
+			["responsive", "text", "responsive", "custom", "", "", false, "", false, false, "", "", true, null, false, false, "", false, "", false],
 			["responsiveRefreshRate", "slider", "responsiveRefreshRate", "custom", "", "200", false, "", false, false, "advanced", "", false, null, false, false, "", false, "", false],
 			["responsiveBaseElement", "text", "responsiveBaseElement", "custom", "", "window", false, "", false, false, "advanced", "", false, null, false, false, "", false, "", false],
 			["video", "checkbox", "video", "custom", true, "", false, "", false, false, "", "", false, null, false, false, "", false, "", false],
