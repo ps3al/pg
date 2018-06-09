@@ -20,12 +20,16 @@ function createZPlatformaPlugin(wp, pinegrow) {
 
     f.setScriptFileByScriptTagId('plugin-pg-zplatforma');
 
+//alert(4);
+
+
     //Don't show these files in CSS tab
     f.ignore_css_files = [/font\-awesome/i];
 
     f.detect = function(pgPage) {
         return false;
     }
+//alert(5);
 
     var fs = require('fs');
     var path = require('path');
