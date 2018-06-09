@@ -125,15 +125,8 @@
 			<div class="row">
 				<div class="col-md-10 offset-md-1">
 					<h3>Easy Tabs</h3>
-					<div class="easytabs" data-easytabs-options="{&quot;animate&quot;:true,&quot;transitionIn&quot;:&quot;slideDown&quot;,&quot;transitionOut&quot;:&quot;slideUp&quot;}" id="tbs1" style="background-color: #f9f3f3;
-    padding: 10px;">
-						<ul style="margin-left: -10px;
-    margin-top: -10px;
-    margin-right: -10px;
-    clear: both;
-    float: none;
-    padding-left: 0;
-    background-color: #fff;"> 
+					<div class="easytabs" data-easytabs-options="{&quot;animate&quot;:true,&quot;transitionIn&quot;:&quot;slideDown&quot;,&quot;transitionOut&quot;:&quot;slideUp&quot;}">
+						<ul class="nav nav-tabs" role="tablist"> 
 							<li class="nav-item"> 
 								<a class="nav-link active" href="#tab1" data-toggle="tab" role="tab" aria-controls="tab1" aria-expanded="true">Home</a> 
 							</li>							 
@@ -150,17 +143,17 @@
 								<a class="nav-link" href="#tab4" data-toggle="tab" role="tab" aria-controls="tab4" aria-expanded="true">Settings</a> 
 							</li>							 
 						</ul>
-						<div>
-							<div class="active" id="tab1">
+						<div class="tab-content">
+							<div class="tab-pane active" role="tabpanel" aria-labelledby="tab1-tab" id="tab1">
 								<p>Tab 1 content goes here...Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec ullamcorper nulla non metus auctor fringilla. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
 							</div>
-							<div id="tab2">
+							<div class="tab-pane" role="tabpanel" aria-labelledby="tab2-tab" id="tab2">
 								<p>Tab 2 content goes here...Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec ullamcorper nulla non metus auctor fringilla. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
 							</div>
-							<div id="tab3">
+							<div class="tab-pane" role="tabpanel" aria-labelledby="tab3-tab" id="tab3">
 								<p>Tab 3 content goes here...Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec ullamcorper nulla non metus auctor fringilla. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
 							</div>
-							<div id="tab4">
+							<div class="tab-pane" role="tabpanel" aria-labelledby="tab4-tab" id="tab4">
 								<p>Tab 4 content goes here...</p>
 							</div>
 						</div>
