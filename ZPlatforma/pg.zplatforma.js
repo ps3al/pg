@@ -29,10 +29,7 @@ function createZPlatformaPlugin(wp, pinegrow) {
     f.detect = function(pgPage) {
         return false;
     }
-<<<<<<< HEAD
-=======
 //alert(5);
->>>>>>> parent of 4ca3238... buraya dön
 
     var fs = require('fs');
     var path = require('path');
