@@ -4,15 +4,10 @@ $(function () {
 	}
 	$("body").one("pinegrow-ready", function (e, pinegrow) {
 
-
-
 		var fs = require('fs');
+
 		var path = require('path');
-
-
 		var f = new PgFramework("ZHelperPlugin", "Z Helper");
-
-
 
 		var things = new PgComponentType('zh.things', 'THINGS');
 		things.selector = function ($el) { return true };
