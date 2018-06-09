@@ -3,8 +3,12 @@ function createZPlatformaPlugin(wp, pinegrow) {
     var type_prefix = 'pg.zplatforma';
 
     var f = new PgFramework(type_prefix, 'Z Platforma');
+<<<<<<< HEAD
     //alert(2);
 
+=======
+//alert(2);
+>>>>>>> parent of d9c4abb... 
     //This will prevent activating multiple versions of the plugin, provided that other versions set the same type
     f.allow_single_type = true;
     f.type = type_prefix;
