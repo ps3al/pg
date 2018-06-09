@@ -10,6 +10,7 @@ function createZPlatformaPlugin(wp, pinegrow) {
     f.allow_single_type = true;
     f.type = type_prefix;
 
+//alert(333);
 
     var terms = '<br><small class="text-muted">TERMS OF USE: <b>You can use Z Platforma</b> to build and deploy websites for yourself and your clients, free or paid, as many as you want. <b>You can NOT use Z Platforma</b> to create templates and themes that you then sell in template marketplaces or give away for free.</small>';
 
@@ -19,6 +20,8 @@ function createZPlatformaPlugin(wp, pinegrow) {
 
     f.setScriptFileByScriptTagId('plugin-pg-zplatforma');
 
+//alert(4444);
+
 
     //Don't show these files in CSS tab
     f.ignore_css_files = [/font\-awesome/i];
@@ -26,6 +29,7 @@ function createZPlatformaPlugin(wp, pinegrow) {
     f.detect = function(pgPage) {
         return false;
     }
+//alert(55555);
 
     var fs = require('fs');
     var path = require('path');
