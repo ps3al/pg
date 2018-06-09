@@ -26,7 +26,7 @@
 			<div class="row">
 				<div class="col-md-4">
 					<h3 class="animated" data-animated-options="{&quot;animation&quot;:&quot;bounce&quot;}">Animated Test</h3> 
-					<p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p> 
+					<p class="animated" data-animated-options="{&quot;animation&quot;:&quot;bounceInLeft&quot;,&quot;delay&quot;:&quot;0&quot;,&quot;offset&quot;:1}">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p> 
 				</div>
 			</div>
 		</div>
@@ -125,8 +125,15 @@
 			<div class="row">
 				<div class="col-md-10 offset-md-1">
 					<h3>Easy Tabs</h3>
-					<div class="easytabs" data-easytabs-options="{&quot;animate&quot;:true,&quot;transitionIn&quot;:&quot;slideDown&quot;,&quot;transitionOut&quot;:&quot;slideUp&quot;}">
-						<ul class="nav nav-tabs" role="tablist"> 
+					<div class="easytabs" data-easytabs-options="{&quot;animate&quot;:true,&quot;transitionIn&quot;:&quot;slideDown&quot;,&quot;transitionOut&quot;:&quot;slideUp&quot;}" id="tbs1" style="background-color: #f9f3f3;
+    padding: 10px;">
+						<ul style="margin-left: -10px;
+    margin-top: -10px;
+    margin-right: -10px;
+    clear: both;
+    float: none;
+    padding-left: 0;
+    background-color: #fff;"> 
 							<li class="nav-item"> 
 								<a class="nav-link active" href="#tab1" data-toggle="tab" role="tab" aria-controls="tab1" aria-expanded="true">Home</a> 
 							</li>							 
@@ -143,21 +150,189 @@
 								<a class="nav-link" href="#tab4" data-toggle="tab" role="tab" aria-controls="tab4" aria-expanded="true">Settings</a> 
 							</li>							 
 						</ul>
-						<div class="tab-content">
-							<div class="tab-pane active" role="tabpanel" aria-labelledby="tab1-tab" id="tab1">
+						<div>
+							<div class="active" id="tab1">
 								<p>Tab 1 content goes here...Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec ullamcorper nulla non metus auctor fringilla. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
 							</div>
-							<div class="tab-pane" role="tabpanel" aria-labelledby="tab2-tab" id="tab2">
+							<div id="tab2">
 								<p>Tab 2 content goes here...Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec ullamcorper nulla non metus auctor fringilla. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
 							</div>
-							<div class="tab-pane" role="tabpanel" aria-labelledby="tab3-tab" id="tab3">
+							<div id="tab3">
 								<p>Tab 3 content goes here...Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec ullamcorper nulla non metus auctor fringilla. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
 							</div>
-							<div class="tab-pane" role="tabpanel" aria-labelledby="tab4-tab" id="tab4">
+							<div id="tab4">
 								<p>Tab 4 content goes here...</p>
 							</div>
 						</div>
 					</div>					 
+				</div>
+			</div>
+		</div>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-4 col-12 offset-md-4">
+					<h3>Google Maps</h3> 					 
+				</div>
+				<div class="google-map col-12" style="height: 250px;" data-google-map-options="{&quot;draggable&quot;:true,&quot;zoomControl&quot;:true,&quot;scrollwheel&quot;:true}"> 					 
+</div>
+			</div>
+			<div class="row">
+				<div class="col-md-4">
+					<h3>Map 1</h3>
+					<div class="google-map" style="width: 100%;
+    height: 250px;" data-google-map-options="{&quot;zoom&quot;:17,&quot;mapTypeControl&quot;:true,&quot;scrollwheel&quot;:true,&quot;draggable&quot;:true}">
+</div>					 					 
+				</div>
+				<div class="col-md-4">
+					<h3>Map 2</h3>
+					<div class="google-map" style="width: 100%;
+    height: 250px;" data-google-map-options="{&quot;zoom&quot;:10,&quot;zoomControl&quot;:true,&quot;scrollwheel&quot;:true,&quot;draggable&quot;:true}">
+</div>					 					 
+				</div>
+				<div class="col-md-4">
+					<h3>Map 3</h3>
+					<div class="google-map" style="width: 100%;
+    height: 250px;" data-google-map-options="{&quot;zoom&quot;:18,&quot;zoomControl&quot;:true,&quot;scaleControl&quot;:true,&quot;mapTypeControl&quot;:true,&quot;scrollwheel&quot;:true,&quot;streetViewControl&quot;:true,&quot;draggable&quot;:true}">
+</div>					 					 
+				</div>
+			</div>
+		</div>
+		<div class="jarallax" style="background-image:url('https://images.unsplash.com/photo-1426200830301-372615e4ac54?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjIwOTIyfQ&s=a1010f1e57a4c7def732070325853851');">
+			<div class="container">
+				<div class="row">
+					<div style="background-color: rgba(0, 0, 0, 0.44);
+    margin: 50px;
+    padding: 25px;">
+						<h3 style="color: #ffffff;">Parallax Image Background from background-image style</h3> 
+						<p style="color: #dcdbdb;">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p> 
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="jarallax" data-jarallax-options="{&quot;imgSrc&quot;:&quot;https://images.unsplash.com/photo-1427955569621-3e494de2b1d2?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjIwOTIyfQ&s=c18c945d5cdd113aca199c5d169c7c90&quot;,&quot;speed&quot;:2,&quot;type&quot;:&quot;scroll&quot;}">
+			<div class="container">
+				<div class="row">
+					<div style="background-color: rgba(30, 43, 194, 0.9);
+    margin: 50px;
+    padding: 25px;">
+						<h3 style="color: #ffffff;">Parallax Image Background from Jarallax option, speed 2</h3> 
+						<p style="color: #dcdbdb;">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p> 
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="jarallax" data-jarallax-options="{&quot;imgSrc&quot;:&quot;https://images.unsplash.com/photo-1468259275383-c4f1b88d5772?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjIwOTIyfQ&s=05958ef750a49243c3f4f5668010c08d&quot;,&quot;speed&quot;:0.3,&quot;type&quot;:&quot;scroll-opacity&quot;}">
+			<div class="container">
+				<div class="row">
+					<div style="background-color: rgba(210, 6, 66, 0.9);
+    margin: 50px;
+    padding: 25px;">
+						<h3 style="color: #ffffff;">Parallax Image Background from Jarallax option, speed 0.3, scroll-opacity</h3> 
+						<p style="color: #dcdbdb;">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p> 
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="jarallax" data-jarallax-options="{&quot;type&quot;:&quot;scroll&quot;,&quot;videoSrc&quot;:&quot;https://www.youtube.com/watch?v=L2qyIpiw3tQ&index=12&list=RDrASV7F-umxo&quot;,&quot;videoStartTime&quot;:100}">
+			<div class="container pghelper-bs4-grid-parent-relative">
+				<div class="row">
+					<div style="background-color: rgba(0, 0, 0, 0.44);
+    margin: 50px;
+    padding: 25px;">
+						<h3 style="color: #ffffff;">Parallax Youtube Video Background start 100 second</h3> 
+						<p style="color: #dcdbdb;">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p> 
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4 js-player" data-type="youtube" data-video-id="CJ_GCPaKywg" style="height: 200px;" data-plyr="{&quot;enabled&quot;:true}"> 
+</div>
+				<div class="col-md-4 js-player" data-type="vimeo" data-video-id="237893785" style="height: 200px;" data-plyr="{&quot;enabled&quot;:true,&quot;autoplay&quot;:true}"> 					 
+</div>
+				<div class="col-md-4 js-player" style="height: 200px;" data-plyr="{&quot;enabled&quot;:true}" data-plyr-provider="youtube" data-plyr-embed-id="CJ_GCPaKywg"> </div>
+			</div>
+			<div data-plyr='{}' class='xjp1 js-player' data-type="youtube" data-video-id="TbsvRyYpcOQ"></div>
+			<video data-plyr='{ "autoplay": false, "volume": 1, "hideControls":false }' class="xjp2 js-player">
+				<source src="https://www.youtube.com/embed/wHyr6FdKtzY" type="youtube">
+			</video>
+			<video data-plyr='{ "autoplay": false, "volume": 1, "hideControls":false }' class="xjp3 js-player" poster="video/local-video.png" controls>
+				<source src="video/local-video.mp4" type="video/mp4">
+				<source src="video/local-video.webm" type="video/webm">
+			</video>
+			<audio data-plyr='{"autoplay":true,"hideControls":true}' class="xjp4 js-player">
+				<source src="audio/test.mp3" type="audio/mp3">
+				<source src="audio/test.ogg" type="audio/ogg">
+			</audio>
+		</div>
+		<div class="container" style="margin-top: 50px;">
+			<div class="row">
+				<div class="col-md-4"> 
+					<div class="progressbar-line" data-progressbar-options="{&quot;data&quot;:&quot;75&quot;}" style="width: 100%;
+    height: 25px;">
+</div>
+					<div class="progressbar-line" data-progressbar-options="{&quot;data&quot;:&quot;50&quot;}" style="width: 100%;
+    height: 25px;">
+</div>
+					<div class="progressbar-line" data-progressbar-options="{&quot;data&quot;:&quot;90&quot;}" style="width: 100%;
+    height: 25px;">
+</div>					 
+				</div>
+				<div class="col-md-4"> 
+					<div data-progressbar-options='{"data":40}' class="xpb2 progressbar-semicircle orange"></div>
+					<div data-progressbar-options='{"data":"65"}' class="xpb2 progressbar-semicircle orange"></div>
+					<div data-progressbar-options='{"data":"20"}' class="xpb2 progressbar-semicircle orange"></div>
+				</div>
+				<div class="col-md-4"> 
+					<div data-progressbar-options='{"data":40}' class="xpb2 orange progressbar-circle"></div>
+					<div data-progressbar-options='{"data":"65"}' class="xpb2 orange progressbar-circle"></div>
+					<div data-progressbar-options='{"data":"20"}' class="xpb2 orange progressbar-circle"></div>
+				</div>
+			</div>
+		</div>
+		<div class="container-fluid">
+			<h3>Slick Slider</h3>
+			<div data-slick-slider-options="{&quot;slidesToShow&quot;:4,&quot;slidesToScroll&quot;:1,&quot;arrows&quot;:false,&quot;cssEase&quot;:&quot;ease&quot;,&quot;speed&quot;:400,&quot;autoplay&quot;:true,&quot;responsive&quot;:[{&quot;breakpoint&quot;:900,&quot;settings&quot;:{&quot;slidesToShow&quot;:2}}]}" class="row slick-slider">
+				<div class="col-xs-6 col-lg-3">
+					<div class="partners__item">
+						Item 1
+</div>
+				</div>
+				<div class="col-xs-6 col-lg-3">
+					<div class="partners__item">
+						Item 2
+</div>
+				</div>
+				<div class="col-xs-6 col-lg-3">
+					<div class="partners__item">
+						Item 3
+</div>
+				</div>
+				<div class="col-xs-6 col-lg-3">
+					<div class="partners__item">
+						Item 4
+</div>
+				</div>
+				<div class="col-xs-6 col-lg-3">
+					<div class="partners__item">
+						Item 5
+</div>
+				</div>
+				<div class="col-xs-6 col-lg-3">
+					<div class="partners__item">
+						Item 6
+</div>
+				</div>
+				<div class="col-xs-6 col-lg-3">
+					<div class="partners__item">
+						Item 7
+</div>
+				</div>
+				<div class="col-xs-6 col-lg-3">
+					<div class="partners__item">
+						Item 8
+</div>
 				</div>
 			</div>
 		</div>
