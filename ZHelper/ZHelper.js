@@ -600,6 +600,8 @@ $(function () {
 		//0-optName, 1-type, 2-name, 3-action, 4-value, 5-placeholder, 6-live_update, 7-slider_def_unit, 8-file_picker, 9-file_picker_no_proxy, 10-show_if, 11-parent, 12-valueisarray, 13-options, 14-show_empty, 15-multiple, 16-customattribute, 17-attributeisvalue, 18-attribute, 19-emptyattribute
 		var countdownattributeoptions = [
 			["date", "text", "Date", "custom", "2032-04-23T18:25:43.511Z", "2032-04-23T18:25:43.511Z", false, "", false, false, "", "", false, null, true, false, "", false, "", false],
+			["autoStart", "checkbox", "Auto Start", "custom", true, "", false, "", false, false, "", "", false, null, true, false, "", false, "", false],
+			["text", "text", "Text", "custom", "%s days, %s hours, %s minutes, %s seconds", false, "", false, false, "", "", false, null, true, false, "", false, "", false],
 			["fast", "checkbox", "Fast", "custom", true, "", false, "", false, false, "", "", false, null, true, false, "", false, "", false]
 		];
 		//name, classStr, pgStr, dataStr, opts) 
