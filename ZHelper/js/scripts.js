@@ -349,28 +349,28 @@
 		var oc = $('.owl-carousel');
 		oc.each(function(index) {
 			var ocDefaults = {
-				nav: false,
-				dots: false,
-				navClass: ['owl-prev', 'owl-next'],
-				autoplay: true,
-				margin: 0,
-				items: 3,
-				center: true,
-				loop: true,
-				autoWidth: true,
-				autoplayTimeout: 5000,
-				autoplaySpeed: 1000,
-				responsive: {
-					0: {
-						items: 1
-					},
-					600: {
-						items: 2
-					},
-					1000: {
-						items: 3
-					}
-				}
+				// nav: false,
+				// dots: false,
+				// navClass: ['owl-prev', 'owl-next'],
+				// autoplay: true,
+				// margin: 0,
+				// items: 1,
+				// center: true,
+				// loop: true,
+				// autoWidth: true,
+				// autoplayTimeout: 5000,
+				// autoplaySpeed: 1000,
+				// responsive: {
+				// 	0: {
+				// 		items: 1
+				// 	},
+				// 	600: {
+				// 		items: 2
+				// 	},
+				// 	1000: {
+				// 		items: 3
+				// 	}
+				// }
 			}
 			var ocOptions = $(this).data('owl-carousel-options');
 			var owlx = $(this).owlCarousel($.extend(ocDefaults, ocOptions));
