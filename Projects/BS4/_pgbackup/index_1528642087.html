@@ -338,7 +338,7 @@
 			<h3 class="text-center">Owl Carousel</h3>
 			<div class="row">
 				<div class="col-md-6 offset-md-3">
-					<div class="owl-carousel owl-theme" data-owl-carousel-options="{&quot;items&quot;:2,&quot;loop&quot;:true,&quot;autoWidth&quot;:false,&quot;autoplay&quot;:true,&quot;margin&quot;:30}" owlcarousel_advanced>
+					<div class="owl-carousel owl-theme" data-owl-carousel-options="{&quot;items&quot;:1,&quot;loop&quot;:true,&quot;autoWidth&quot;:false,&quot;autoplay&quot;:true,&quot;margin&quot;:30}" owlcarousel_advanced>
 						<div class="owlitem">
 							<h3>Column title 1</h3>
 							<p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
@@ -375,60 +375,63 @@
 				</div>
 			</div>
 		</div>
-		<div class="container">
+		<div class="container" style="margin-top: 50px;
+    margin-bottom: 100px;">
 			<h3 class="text-center">Swiper Slider</h3>
 			<div class="row">
-				<div data-swiper-slider-options='{"container":"#swiper-container", "slidesPerView":1, "loop":true, "navigation": {"nextEl": "#swiper-next","prevEl": "#swiper-prev"},"pagination":"swiper-pagination","autoplay":true}' class="swiper-slider content-carousel-widget" swiperslider_advanced>
-					<!--Carousel Next Prev Button-->
-					<div class="controls">
-						<a id="swiper-prev"> <i class="fa fa-angle-left"></i>prev </a>
-						<a id="swiper-next"> <i class="fa fa-angle-right"></i>next </a>
+				<div data-swiper-slider-options='{"containerClass":".swiper-container","slidesPerView":2,"loop":true,"navigation":{"nextEl":"#swiper-next","prevEl":"#swiper-prev"},"autoplay":true,"pagination":{"el":".swiper-pagination","clickable":true},"loopedSlides":2}' class="swiper-slider content-carousel-widget swiper-container" swiperslider_advanced>
+					<div class="swiper-wrapper">
+						<div class="swiper-slide">Slide 1</div>
+						<div class="swiper-slide">Slide 2</div>
+						<div class="swiper-slide">Slide 3</div>
+						<div class="swiper-slide">Slide 4</div>
+						<div class="swiper-slide">Slide 5</div>
+						<div class="swiper-slide">Slide 6</div>
+						<div class="swiper-slide">Slide 7</div>
+						<div class="swiper-slide">Slide 8</div>
+						<div class="swiper-slide">Slide 9</div>
+						<div class="swiper-slide">Slide 10</div>
 					</div>
-					<!-- /.controls -->
-					<!--Slider Bullet Pagination-->
-					<div id="swiper-pagination">
-</div>
-					<!-- /.slider-pagination -->
-					<div id="swiper-container" class="swiper-container">
-						<div class="swiper-wrapper content-items">
-							<div class="swiper-slide item">
-								<div class="slide-image">
-									<img src="components/pg.zplatforma/img/bg/bg--mountains-ocean.jpg" alt="Content Carousel">
-								</div>
-								<!-- /.slide-image -->
-								<div class="content">
-									<h2 class="title" data-animate="fadeInUp" data-delay="0.2s"><a href="#">Holisticl coordinat cross media best practices.</a></h2>
-									<div class="meta" data-animate="fadeInUp" data-delay="0.5s">
-										<span>Posted by </span>
-										<strong>Lionel Rasel</strong>
-										<span> - </span>
-										<span>Sep 16, 201555</span>
-									</div>
-								</div>
-								<!-- /.content -->
-							</div>
-							<!-- /.item -->
-							<div class="swiper-slide item">
-								<div class="slide-image">
-									<img src="components/pg.zplatforma/img/bg/bg--mountains-ocean.jpg" alt="Content Carousel">
-								</div>
-								<!-- /.slide-image -->
-								<div class="content">
-									<h2 class="title" data-animate="fadeInUp" data-delay="0.2s"><a href="#">Holisticl coordinat cross media best practices.</a></h2>
-									<div class="meta" data-animate="fadeInUp" data-delay="0.5s">
-										<span>Posted by </span>
-										<strong>Lionel Rasel</strong>
-										<span> - </span>
-										<span>Sep 16, 2015</span>
-									</div>
-								</div>
-								<!-- /.content -->
-							</div>
-							<!-- /.item -->
-						</div>
-						<!-- /.swiper-wrapper -->
+					<!-- Add Pagination -->
+					<div class="swiper-pagination"></div>
+				</div>
+			</div>
+			<div class="row" style="margin-top: 50px;">
+				<div data-swiper-slider-options='{"containerClass":".swiper-container2","slidesPerView":2,"autoplay":true}' class="swiper-slider content-carousel-widget col-md-6 offset-md-3 swiper-container2" swiperslider_advanced style="overflow: hidden;">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide">Slide 1</div>
+						<div class="swiper-slide">Slide 2</div>
+						<div class="swiper-slide">Slide 3</div>
+						<div class="swiper-slide">Slide 4</div>
+						<div class="swiper-slide">Slide 5</div>
+						<div class="swiper-slide">Slide 6</div>
+						<div class="swiper-slide">Slide 7</div>
+						<div class="swiper-slide">Slide 8</div>
+						<div class="swiper-slide">Slide 9</div>
+						<div class="swiper-slide">Slide 10</div>
 					</div>
-					<!-- /.swiper-container -->
+					<!-- Add Pagination -->
+					<div class="swiper-pagination"></div>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div data-light-gallery-options='{}' class="xlg1 light-gallery">
+						<a href="pictures/pic--case-9.jpg">
+							<img src="pictures/pic--case-9.jpg"/>
+						</a>
+						<a href="pictures/pic--case-10.jpg">
+							<img src="pictures/pic--case-10.jpg"/>
+						</a>
+						<a href="pictures/pic--case-11.jpg">
+							<img src="pictures/pic--case-11.jpg"/>
+						</a>
+						<a href="pictures/pic--case-12.jpg">
+							<img src="pictures/pic--case-12.jpg"/>
+						</a>
+					</div>
 				</div>
 			</div>
 		</div>
