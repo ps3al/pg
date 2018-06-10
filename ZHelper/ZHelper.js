@@ -895,6 +895,7 @@ $(function () {
 			["startPosition", "slider", "startPosition", "custom", "", "0", false, "", false, false, "", "", false, null, false, false, "", false, "", false],
 			["URLhashListener", "checkbox", "URLhashListener", "custom", true, "", false, "", false, false, "advanced", "", false, null, false, false, "", false, "", false],
 			["nav", "checkbox", "nav", "custom", true, "", false, "", false, false, "", "", false, null, false, false, "", false, "", false],
+			["navClass", "text", "navClass", "custom", "", "", false, "", false, false, "", "", true, null, false, false, "", false, "", false],
 			["rewind", "checkbox", "rewind", "custom", true, "", false, "", false, false, "", "", false, null, false, false, "", false, "", false],
 			["navText", "text", "navText", "custom", "[&#x27;next&#x27;,&#x27;prev&#x27;]", "[&#x27;next&#x27;,&#x27;prev&#x27;]", false, "", false, false, "", "", true, null, false, false, "", false, "", false],
 			["navElement", "text", "navElement", "custom", "", "div", false, "", false, false, "", "", false, null, false, false, "", false, "", false],
