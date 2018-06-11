@@ -1,0 +1,24 @@
+.nav-item {
+    /* float: left */
+    list-style-type: none;
+    display: inline-block;
+    background-color: #efefef;
+}
+
+.owlitem {
+    background-color: #e9db63;
+}
+
+.swiper-slide {
+    background-color: #ecebeb;
+    border: 1px solid;
+}
+
+.isotope-filter li {
+    float: left;
+    margin: 10px;
+}
+
+.test li {
+    float: none;
+}

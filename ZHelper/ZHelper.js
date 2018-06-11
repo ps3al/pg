@@ -1335,6 +1335,7 @@ $(function () {
 			'css/animate.min.css',
 			'css/magnific-popup.css',
 			'css/jquery.smartmenus.bootstrap-4.css',
+			'css/style.css',
 			'js/jquery.min.js',
 			'js/slick.min.js',
 			'js/owl.carousel.min.js',
