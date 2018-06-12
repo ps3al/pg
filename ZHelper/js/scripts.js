@@ -116,6 +116,11 @@
 //				$elems = $currItem.find('[data-sliderx]');
 				$elems = $currItem.querySelectorAll('[data-sliderx]');
 			}
+			console.warn(sliderx);
+			console.warn(sliderx.activeIndex);
+			console.warn(sliderx.realIndex);
+			console.warn($currItem);
+			console.warn(sliderx);
 			console.warn($elems);
 			console.warn(index);
 
