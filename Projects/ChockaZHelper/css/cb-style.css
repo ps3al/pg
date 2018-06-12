@@ -12104,6 +12104,7 @@ img.equal-height-column {
 
 /* content40 */
 #content40 {
+    background-image: url('http://placehold.it/1262x1360');
     background-attachment: fixed;
     background-size: cover;
     background-position: center center;

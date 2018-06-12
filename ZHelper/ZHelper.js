@@ -1,5 +1,5 @@
 $(function () {
-	
+
 	function myTrim(x) {
 		return x.replace(/^\s+|\s+$/gm, '');
 	}
@@ -11,7 +11,9 @@ $(function () {
 		var f = new PgFramework("ZHelperPlugin", "Z Helper");
 
 		var things = new PgComponentType('zh.things', 'THINGS');
-		things.selector = function ($el) { return true };
+		things.selector = function ($el) {
+			return true
+		};
 		things.display_name = 'tag';
 		things.not_main_type = true;
 		things.sections = {
@@ -25,23 +27,78 @@ $(function () {
 						name: 'Name',
 						multiple: true,
 						live_update: true,
-						options: [
-							{ key: 'animated', name: "Animated" },
-							{ key: 'countdown', name: "Count Down" },
-							{ key: 'counterup', name: "Counter Up" },
-							{ key: 'easytabs', name: "Easy Tabs" },
-							{ key: 'google-map', name: "Google Maps" },
-							{ key: 'isotope', name: "Isotope" },
-							{ key: 'light-gallery', name: "Light Gallery" },
-							{ key: 'magnific-popup', name: "Magnific Popup" },
-							{ key: 'js-player', name: "Media Plyr" },
-							{ key: 'owl-carousel', name: "OWL Carousel" },
-							{ key: 'jarallax', name: "Parallax" },
-							{ key: 'progressbar-circle', name: "ProgressBar Circle" },
-							{ key: 'progressbar-semicircle', name: "ProgressBar Semi Circle" },
-							{ key: 'progressbar-line', name: "ProgressBar Line" },
-							{ key: 'slick-slider', name: "Slick Slider" },
-							{ key: 'swiper-slider', name: "Swiper Slider" }
+						options: [{
+								key: 'animated',
+								name: "Animated"
+							},
+							{
+								key: 'wow',
+								name: "Animated WOW"
+							},
+							{
+								key: 'countdown',
+								name: "Count Down"
+							},
+							{
+								key: 'counterup',
+								name: "Counter Up"
+							},
+							{
+								key: 'easytabs',
+								name: "Easy Tabs"
+							},
+							{
+								key: 'google-map',
+								name: "Google Maps"
+							},
+							{
+								key: 'isotope',
+								name: "Isotope"
+							},
+							{
+								key: 'light-gallery',
+								name: "Light Gallery"
+							},
+							{
+								key: 'magnific-popup',
+								name: "Magnific Popup"
+							},
+							{
+								key: 'js-player',
+								name: "Media Plyr"
+							},
+							{
+								key: 'owl-carousel',
+								name: "OWL Carousel"
+							},
+							{
+								key: 'jarallax',
+								name: "Parallax"
+							},
+							{
+								key: 'progressbar-circle',
+								name: "ProgressBar Circle"
+							},
+							{
+								key: 'progressbar-semicircle',
+								name: "ProgressBar Semi Circle"
+							},
+							{
+								key: 'progressbar-line',
+								name: "ProgressBar Line"
+							},
+							{
+								key: 'slick-slider',
+								name: "Slick Slider"
+							},
+							{
+								key: 'swiper-slider',
+								name: "Swiper Slider"
+							},
+							{
+								key: 'venobox',
+								name: "VenoBox"
+							}
 						]
 					},
 				}
@@ -115,17 +172,17 @@ $(function () {
 			if (opts[3] == "custom") {
 				if (opts[11] != '') {
 					comp[pgStr + "_" + opts[0]]["get_value"] = function (pgel) {
-						return generalGet2(pgel, dataStr, opts[0], opts[11], opts[12], opts[17]);
+						return generalGet2(pgel, dataStr, opts[0], opts[11], opts[12], opts[17], opts);
 					};
 					comp[pgStr + "_" + opts[0]]["set_value"] = function (pgel, value, values, oldValue, eventType) {
-						return generalSet2(pgel, value, values, oldValue, eventType, dataStr, opts[0], opts[11], opts[12], opts[17], opts[1]);
+						return generalSet2(pgel, value, values, oldValue, eventType, dataStr, opts[0], opts[11], opts[12], opts[17], opts[1], opts);
 					}
 				} else {
 					comp[pgStr + "_" + opts[0]]["get_value"] = function (pgel) {
-						return generalGet(pgel, dataStr, opts[0], opts[12], opts[17]);
+						return generalGet(pgel, dataStr, opts[0], opts[12], opts[17], opts);
 					};
 					comp[pgStr + "_" + opts[0]]["set_value"] = function (pgel, value, values, oldValue, eventType) {
-						return generalSet(pgel, value, values, oldValue, eventType, dataStr, opts[0], opts[12], opts[17], opts[1]);
+						return generalSet(pgel, value, values, oldValue, eventType, dataStr, opts[0], opts[12], opts[17], opts[1], opts);
 					}
 				}
 			}
@@ -140,7 +197,8 @@ $(function () {
 			}
 			return true;
 		}
-		function generalGet(pgel, dataname, attrname, valueisarray, attributeisvalue) {
+
+		function generalGet(pgel, dataname, attrname, valueisarray, attributeisvalue, opts) {
 
 			console.warn(dataname);
 			console.warn(attrname);
@@ -166,7 +224,8 @@ $(function () {
 			}
 			return null;
 		}
-		function generalGet2(pgel, dataname, attrname, parentel, valueisarray, attributeisvalue) {
+
+		function generalGet2(pgel, dataname, attrname, parentel, valueisarray, attributeisvalue, opts) {
 			if (pgel) {
 				var attr = pgel.getAttr(dataname);
 				if (attr) {
@@ -193,19 +252,20 @@ $(function () {
 			return null;
 		}
 
-		function generalSet(pgel, value, values, oldValue, eventType, dataname, attrname, valueisarray, attributeisvalue, type) {
-//			console.warn(value + " - generalSet - value");
-//			console.warn(dataname + " - generalSet - dataname");
+		function generalSet(pgel, value, values, oldValue, eventType, dataname, attrname, valueisarray, attributeisvalue, type, opts) {
+						// console.warn(value + " - generalSet - value");
+						// console.warn(dataname + " - generalSet - dataname");
 			if (pgel) {
 				var attr = pgel.getAttr(dataname);
-//				console.warn(attr + " - attr");
+				//				console.warn(attr + " - attr");
 				if (value) {
 					if (attr) {
+						if (attributeisvalue) {
+							pgel.setAttr(dataname, value);
+						}else{
 						if (IsJsonString(attr)) {
 							attr = attr.split('&quot;').join('"');
 							var obj = JSON.parse(attr);
-
-
 							switch (type) {
 								case "text":
 									obj[attrname] = value;
@@ -214,8 +274,13 @@ $(function () {
 									obj[attrname] = true;
 									break;
 								case "slider":
-									obj[attrname] = parseInt(value);
-									break;
+									if (opts[7] != "") {
+										obj[attrname] = value;
+										break;
+									} else {
+										obj[attrname] = parseInt(value);
+										break;
+									}
 								default:
 									obj[attrname] = value;
 							}
@@ -228,6 +293,7 @@ $(function () {
 						} else {
 							pgel.setAttr(dataname, value);
 						}
+					}
 					} else {
 						if (attributeisvalue) {
 							pgel.setAttr(dataname, value);
@@ -243,8 +309,13 @@ $(function () {
 										pgel.setAttr(dataname, '{"' + attrname + '":true}');
 										break;
 									case "slider":
-										pgel.setAttr(dataname, '{"' + attrname + '":' + parseInt(value) + '}');
-										break;
+										if (opts[7] != "") {
+											pgel.setAttr(dataname, '{"' + attrname + '":"' + value + '"}');
+											break;
+										} else {
+											pgel.setAttr(dataname, '{"' + attrname + '":' + parseInt(value) + '}');
+											break;
+										}
 									default:
 										pgel.setAttr(dataname, '{"' + attrname + '":"' + value + '"}');
 								}
@@ -254,11 +325,10 @@ $(function () {
 				} else {
 					if (attributeisvalue) {
 						pgel.removeAttr(dataname);
-					}
-					else {
+					} else {
 						if (attr) {
 							if (IsJsonString(attr)) {
-//								console.warn("json");
+								//								console.warn("json");
 								attr = attr.split('&quot;').join('"');
 								var obj = JSON.parse(attr);
 								delete obj[attrname];
@@ -277,12 +347,16 @@ $(function () {
 			}
 			return value;
 		}
-		function generalSet2(pgel, value, values, oldValue, eventType, dataname, attrname, parentel, valueisarray, attributeisvalue, type) {
+
+		function generalSet2(pgel, value, values, oldValue, eventType, dataname, attrname, parentel, valueisarray, attributeisvalue, type, opts) {
 
 			if (pgel) {
 				var attr = pgel.getAttr(dataname);
 				if (value) {
 					if (attr) {
+						if (attributeisvalue) {
+							pgel.setAttr(dataname, value);
+						}else{
 						if (IsJsonString(attr)) {
 							attr = attr.split('&quot;').join('"');
 							var obj = JSON.parse(attr);
@@ -299,8 +373,13 @@ $(function () {
 										obj[parentel][attrname] = true;
 										break;
 									case "slider":
-										obj[parentel][attrname] = parseInt(value);
-										break;
+										if (opts[7] != "") {
+											obj[parentel][attrname] = value;
+											break;
+										} else {
+											obj[parentel][attrname] = parseInt(value);
+											break;
+										}
 									default:
 										obj[parentel][attrname] = value;
 								}
@@ -314,6 +393,7 @@ $(function () {
 						} else {
 							pgel.setAttr(dataname, value);
 						}
+					}
 					} else {
 						if (attributeisvalue) {
 							pgel.setAttr(dataname, value);
@@ -330,8 +410,13 @@ $(function () {
 										pgel.setAttr(dataname, '{"' + parentel + '":{"' + attrname + '":true}}');
 										break;
 									case "slider":
-										pgel.setAttr(dataname, '{"' + parentel + '":{"' + attrname + '":' + parseInt(value) + '}}');
-										break;
+										if (opts[7] != "") {
+											pgel.setAttr(dataname, '{"' + parentel + '":{"' + attrname + '":"' + value + '"}}');
+											break;
+										} else {
+											pgel.setAttr(dataname, '{"' + parentel + '":{"' + attrname + '":' + parseInt(value) + '}}');
+											break;
+										}
 									default:
 										pgel.setAttr(dataname, '{"' + parentel + '":{"' + attrname + '":"' + value + '"}}');
 								}
@@ -342,8 +427,7 @@ $(function () {
 				} else {
 					if (attributeisvalue) {
 						pgel.removeAttr(dataname);
-					}
-					else {
+					} else {
 						if (attr) {
 							if (IsJsonString(attr)) {
 								attr = attr.split('&quot;').join('"');
@@ -360,8 +444,7 @@ $(function () {
 								} else {
 									pgel.setAttr(dataname, attr);
 								}
-							}
-							else {
+							} else {
 								pgel.removeAttr(dataname);
 							}
 						}
@@ -374,15 +457,38 @@ $(function () {
 
 
 
-		var attributeoptions = [
-			{ key: 'icon', name: 'icon' },
-			{ key: 'title', name: 'title' },
-			{ key: 'description', name: 'description' },
-			{ key: 'link', name: 'link' },
-			{ key: 'target', name: 'target' },
-			{ key: 'id', name: 'id' },
-			{ key: 'class', name: 'class' },
-			{ key: 'style', name: 'style' },
+		var attributeoptions = [{
+				key: 'icon',
+				name: 'icon'
+			},
+			{
+				key: 'title',
+				name: 'title'
+			},
+			{
+				key: 'description',
+				name: 'description'
+			},
+			{
+				key: 'link',
+				name: 'link'
+			},
+			{
+				key: 'target',
+				name: 'target'
+			},
+			{
+				key: 'id',
+				name: 'id'
+			},
+			{
+				key: 'class',
+				name: 'class'
+			},
+			{
+				key: 'style',
+				name: 'style'
+			},
 		];
 		var shortcodestart = new PgComponentType('zh.shortcodestart', 'Shortcode START');
 		shortcodestart.selector = '.shortcode';
@@ -508,82 +614,306 @@ $(function () {
 
 
 
-		var animations = [
-			{ key: 'bounce', name: 'bounce' },
-			{ key: 'flash', name: 'flash' },
-			{ key: 'pulse', name: 'pulse' },
-			{ key: 'rubberBand', name: 'rubberBand' },
-			{ key: 'shake', name: 'shake' },
-			{ key: 'headShake', name: 'headShake' },
-			{ key: 'swing', name: 'swing' },
-			{ key: 'tada', name: 'tada' },
-			{ key: 'wobble', name: 'wobble' },
-			{ key: 'jello', name: 'jello' },
-			{ key: 'bounceIn', name: 'bounceIn' },
-			{ key: 'bounceInDown', name: 'bounceInDown' },
-			{ key: 'bounceInLeft', name: 'bounceInLeft' },
-			{ key: 'bounceInRight', name: 'bounceInRight' },
-			{ key: 'bounceInUp', name: 'bounceInUp' },
-			{ key: 'bounceOut', name: 'bounceOut' },
-			{ key: 'bounceOutDown', name: 'bounceOutDown' },
-			{ key: 'bounceOutLeft', name: 'bounceOutLeft' },
-			{ key: 'bounceOutRight', name: 'bounceOutRight' },
-			{ key: 'bounceOutUp', name: 'bounceOutUp' },
-			{ key: 'fadeIn', name: 'fadeIn' },
-			{ key: 'fadeInDown', name: 'fadeInDown' },
-			{ key: 'fadeInDownBig', name: 'fadeInDownBig' },
-			{ key: 'fadeInLeft', name: 'fadeInLeft' },
-			{ key: 'fadeInLeftBig', name: 'fadeInLeftBig' },
-			{ key: 'fadeInRight', name: 'fadeInRight' },
-			{ key: 'fadeInRightBig', name: 'fadeInRightBig' },
-			{ key: 'fadeInUp', name: 'fadeInUp' },
-			{ key: 'fadeInUpBig', name: 'fadeInUpBig' },
-			{ key: 'fadeOut', name: 'fadeOut' },
-			{ key: 'fadeOutDown', name: 'fadeOutDown' },
-			{ key: 'fadeOutDownBig', name: 'fadeOutDownBig' },
-			{ key: 'fadeOutLeft', name: 'fadeOutLeft' },
-			{ key: 'fadeOutLeftBig', name: 'fadeOutLeftBig' },
-			{ key: 'fadeOutRight', name: 'fadeOutRight' },
-			{ key: 'fadeOutRightBig', name: 'fadeOutRightBig' },
-			{ key: 'fadeOutUp', name: 'fadeOutUp' },
-			{ key: 'fadeOutUpBig', name: 'fadeOutUpBig' },
-			{ key: 'flipInX', name: 'flipInX' },
-			{ key: 'flipInY', name: 'flipInY' },
-			{ key: 'flipOutX', name: 'flipOutX' },
-			{ key: 'flipOutY', name: 'flipOutY' },
-			{ key: 'lightSpeedIn', name: 'lightSpeedIn' },
-			{ key: 'lightSpeedOut', name: 'lightSpeedOut' },
-			{ key: 'rotateIn', name: 'rotateIn' },
-			{ key: 'rotateInDownLeft', name: 'rotateInDownLeft' },
-			{ key: 'rotateInDownRight', name: 'rotateInDownRight' },
-			{ key: 'rotateInUpLeft', name: 'rotateInUpLeft' },
-			{ key: 'rotateInUpRight', name: 'rotateInUpRight' },
-			{ key: 'rotateOut', name: 'rotateOut' },
-			{ key: 'rotateOutDownLeft', name: 'rotateOutDownLeft' },
-			{ key: 'rotateOutDownRight', name: 'rotateOutDownRight' },
-			{ key: 'rotateOutUpLeft', name: 'rotateOutUpLeft' },
-			{ key: 'rotateOutUpRight', name: 'rotateOutUpRight' },
-			{ key: 'hinge', name: 'hinge' },
-			{ key: 'rollIn', name: 'rollIn' },
-			{ key: 'rollOut', name: 'rollOut' },
-			{ key: 'zoomIn', name: 'zoomIn' },
-			{ key: 'zoomInDown', name: 'zoomInDown' },
-			{ key: 'zoomInLeft', name: 'zoomInLeft' },
-			{ key: 'zoomInRight', name: 'zoomInRight' },
-			{ key: 'zoomInUp', name: 'zoomInUp' },
-			{ key: 'zoomOut', name: 'zoomOut' },
-			{ key: 'zoomOutDown', name: 'zoomOutDown' },
-			{ key: 'zoomOutLeft', name: 'zoomOutLeft' },
-			{ key: 'zoomOutRight', name: 'zoomOutRight' },
-			{ key: 'zoomOutUp', name: 'zoomOutUp' },
-			{ key: 'slideInDown', name: 'slideInDown' },
-			{ key: 'slideInLeft', name: 'slideInLeft' },
-			{ key: 'slideInRight', name: 'slideInRight' },
-			{ key: 'slideInUp', name: 'slideInUp' },
-			{ key: 'slideOutDown', name: 'slideOutDown' },
-			{ key: 'slideOutLeft', name: 'slideOutLeft' },
-			{ key: 'slideOutRight', name: 'slideOutRight' },
-			{ key: 'slideOutUp', name: 'slideOutUp' }
+		var animations = [{
+				key: 'bounce',
+				name: 'bounce'
+			},
+			{
+				key: 'flash',
+				name: 'flash'
+			},
+			{
+				key: 'pulse',
+				name: 'pulse'
+			},
+			{
+				key: 'rubberBand',
+				name: 'rubberBand'
+			},
+			{
+				key: 'shake',
+				name: 'shake'
+			},
+			{
+				key: 'headShake',
+				name: 'headShake'
+			},
+			{
+				key: 'swing',
+				name: 'swing'
+			},
+			{
+				key: 'tada',
+				name: 'tada'
+			},
+			{
+				key: 'wobble',
+				name: 'wobble'
+			},
+			{
+				key: 'jello',
+				name: 'jello'
+			},
+			{
+				key: 'bounceIn',
+				name: 'bounceIn'
+			},
+			{
+				key: 'bounceInDown',
+				name: 'bounceInDown'
+			},
+			{
+				key: 'bounceInLeft',
+				name: 'bounceInLeft'
+			},
+			{
+				key: 'bounceInRight',
+				name: 'bounceInRight'
+			},
+			{
+				key: 'bounceInUp',
+				name: 'bounceInUp'
+			},
+			{
+				key: 'bounceOut',
+				name: 'bounceOut'
+			},
+			{
+				key: 'bounceOutDown',
+				name: 'bounceOutDown'
+			},
+			{
+				key: 'bounceOutLeft',
+				name: 'bounceOutLeft'
+			},
+			{
+				key: 'bounceOutRight',
+				name: 'bounceOutRight'
+			},
+			{
+				key: 'bounceOutUp',
+				name: 'bounceOutUp'
+			},
+			{
+				key: 'fadeIn',
+				name: 'fadeIn'
+			},
+			{
+				key: 'fadeInDown',
+				name: 'fadeInDown'
+			},
+			{
+				key: 'fadeInDownBig',
+				name: 'fadeInDownBig'
+			},
+			{
+				key: 'fadeInLeft',
+				name: 'fadeInLeft'
+			},
+			{
+				key: 'fadeInLeftBig',
+				name: 'fadeInLeftBig'
+			},
+			{
+				key: 'fadeInRight',
+				name: 'fadeInRight'
+			},
+			{
+				key: 'fadeInRightBig',
+				name: 'fadeInRightBig'
+			},
+			{
+				key: 'fadeInUp',
+				name: 'fadeInUp'
+			},
+			{
+				key: 'fadeInUpBig',
+				name: 'fadeInUpBig'
+			},
+			{
+				key: 'fadeOut',
+				name: 'fadeOut'
+			},
+			{
+				key: 'fadeOutDown',
+				name: 'fadeOutDown'
+			},
+			{
+				key: 'fadeOutDownBig',
+				name: 'fadeOutDownBig'
+			},
+			{
+				key: 'fadeOutLeft',
+				name: 'fadeOutLeft'
+			},
+			{
+				key: 'fadeOutLeftBig',
+				name: 'fadeOutLeftBig'
+			},
+			{
+				key: 'fadeOutRight',
+				name: 'fadeOutRight'
+			},
+			{
+				key: 'fadeOutRightBig',
+				name: 'fadeOutRightBig'
+			},
+			{
+				key: 'fadeOutUp',
+				name: 'fadeOutUp'
+			},
+			{
+				key: 'fadeOutUpBig',
+				name: 'fadeOutUpBig'
+			},
+			{
+				key: 'flipInX',
+				name: 'flipInX'
+			},
+			{
+				key: 'flipInY',
+				name: 'flipInY'
+			},
+			{
+				key: 'flipOutX',
+				name: 'flipOutX'
+			},
+			{
+				key: 'flipOutY',
+				name: 'flipOutY'
+			},
+			{
+				key: 'lightSpeedIn',
+				name: 'lightSpeedIn'
+			},
+			{
+				key: 'lightSpeedOut',
+				name: 'lightSpeedOut'
+			},
+			{
+				key: 'rotateIn',
+				name: 'rotateIn'
+			},
+			{
+				key: 'rotateInDownLeft',
+				name: 'rotateInDownLeft'
+			},
+			{
+				key: 'rotateInDownRight',
+				name: 'rotateInDownRight'
+			},
+			{
+				key: 'rotateInUpLeft',
+				name: 'rotateInUpLeft'
+			},
+			{
+				key: 'rotateInUpRight',
+				name: 'rotateInUpRight'
+			},
+			{
+				key: 'rotateOut',
+				name: 'rotateOut'
+			},
+			{
+				key: 'rotateOutDownLeft',
+				name: 'rotateOutDownLeft'
+			},
+			{
+				key: 'rotateOutDownRight',
+				name: 'rotateOutDownRight'
+			},
+			{
+				key: 'rotateOutUpLeft',
+				name: 'rotateOutUpLeft'
+			},
+			{
+				key: 'rotateOutUpRight',
+				name: 'rotateOutUpRight'
+			},
+			{
+				key: 'hinge',
+				name: 'hinge'
+			},
+			{
+				key: 'rollIn',
+				name: 'rollIn'
+			},
+			{
+				key: 'rollOut',
+				name: 'rollOut'
+			},
+			{
+				key: 'zoomIn',
+				name: 'zoomIn'
+			},
+			{
+				key: 'zoomInDown',
+				name: 'zoomInDown'
+			},
+			{
+				key: 'zoomInLeft',
+				name: 'zoomInLeft'
+			},
+			{
+				key: 'zoomInRight',
+				name: 'zoomInRight'
+			},
+			{
+				key: 'zoomInUp',
+				name: 'zoomInUp'
+			},
+			{
+				key: 'zoomOut',
+				name: 'zoomOut'
+			},
+			{
+				key: 'zoomOutDown',
+				name: 'zoomOutDown'
+			},
+			{
+				key: 'zoomOutLeft',
+				name: 'zoomOutLeft'
+			},
+			{
+				key: 'zoomOutRight',
+				name: 'zoomOutRight'
+			},
+			{
+				key: 'zoomOutUp',
+				name: 'zoomOutUp'
+			},
+			{
+				key: 'slideInDown',
+				name: 'slideInDown'
+			},
+			{
+				key: 'slideInLeft',
+				name: 'slideInLeft'
+			},
+			{
+				key: 'slideInRight',
+				name: 'slideInRight'
+			},
+			{
+				key: 'slideInUp',
+				name: 'slideInUp'
+			},
+			{
+				key: 'slideOutDown',
+				name: 'slideOutDown'
+			},
+			{
+				key: 'slideOutLeft',
+				name: 'slideOutLeft'
+			},
+			{
+				key: 'slideOutRight',
+				name: 'slideOutRight'
+			},
+			{
+				key: 'slideOutUp',
+				name: 'slideOutUp'
+			}
 		];
 		//0-optName, 1-type, 2-name, 3-action, 4-value, 5-placeholder, 6-live_update, 7-slider_def_unit, 8-file_picker, 9-file_picker_no_proxy, 10-show_if, 11-parent, 12-valueisarray, 13-options, 14-show_empty, 15-multiple, 16-customattribute, 17-attributeisvalue, 18-attribute, 19-emptyattribute
 		var animatedattributeoptions = [
@@ -594,6 +924,34 @@ $(function () {
 		];
 		//name, classStr, pgStr, dataStr, opts) 
 		creator("Animated", "animated", "animated", "data-animated-options", animatedattributeoptions);
+
+
+
+
+		var offsets = [
+			{ key: '100', name: '100'},
+			{ key: '200', name: '200'},
+			{ key: '300', name: '300'},
+			{ key: '400', name: '400'},
+			{ key: '500', name: '500'},
+			{ key: '600', name: '600'},
+			{ key: '700', name: '700'},
+			{ key: '800', name: '800'},
+			{ key: '900', name: '900'},
+			{ key: '1000', name: '1000'},
+	];
+
+		//0-optName, 1-type, 2-name, 3-action, 4-value, 5-placeholder, 6-live_update, 7-slider_def_unit, 8-file_picker, 9-file_picker_no_proxy, 10-show_if, 11-parent, 12-valueisarray, 13-options, 14-show_empty, 15-multiple, 16-customattribute, 17-attributeisvalue, 18-attribute, 19-emptyattribute
+		var wowattributeoptions = [
+			["animation", "select", "Animation", "apply_class_multiple", "", "", false, "", false, false, "", "", false, animations, true, false, "", false, "", false],
+			["offset", "text", "Offset", "custom", "10", "10", false, "%", false, false, "", "", false, offsets, true, false, "data-wow-offset", true, "", false],
+			["delay", "text", "Delay", "custom", "5s", "5s", false, "", false, false, "", "", false, null, false, false, "data-wow-delay", true, "", false],
+			["duration", "text", "Duration", "custom", "2s", "2s", false, "", false, false, "", "", false, null, false, false, "data-wow-duration", true, "", false],
+			["iteration", "text", "Iteration", "custom", "", "infinite, 3", false, "", false, false, "", "", false, null, false, false, "data-wow-iteration", true, "", false],
+			["mobile", "checkbox", "Disable On Mobile", "custom", "false", "", false, "", false, false, "", "", false, null, false, false, "data-wow-mobile", true, "", false]
+		];
+		//name, classStr, pgStr, dataStr, opts) 
+		creator("Animated WOW", "wow", "wow", "data-wow-options", wowattributeoptions);
 
 
 
@@ -696,10 +1054,18 @@ $(function () {
 
 
 
-		var layoutModes = [
-			{ key: 'masonry', name: 'Masonry' },
-			{ key: 'fitRows', name: 'FitRows' },
-			{ key: 'certical', name: 'Vertical' }
+		var layoutModes = [{
+				key: 'masonry',
+				name: 'Masonry'
+			},
+			{
+				key: 'fitRows',
+				name: 'FitRows'
+			},
+			{
+				key: 'certical',
+				name: 'Vertical'
+			}
 		];
 		//0-optName, 1-type, 2-name, 3-action, 4-value, 5-placeholder, 6-live_update, 7-slider_def_unit, 8-file_picker, 9-file_picker_no_proxy, 10-show_if, 11-parent, 12-valueisarray, 13-options, 14-show_empty, 15-multiple, 16-customattribute, 17-attributeisvalue, 18-attribute, 19-emptyattribute
 		var isotopeattributeoptions = [
@@ -939,22 +1305,59 @@ $(function () {
 
 
 
-		var parallaxtypes = [
-			{ key: 'scroll', name: 'Scroll' },
-			{ key: 'scale', name: 'Scale' },
-			{ key: 'opacity', name: 'Opacity' },
-			{ key: 'scroll-opacity', name: 'Scroll-Opacity' },
-			{ key: 'scale-opacity', name: 'Scale-Opacity' }
+		var parallaxtypes = [{
+				key: 'scroll',
+				name: 'Scroll'
+			},
+			{
+				key: 'scale',
+				name: 'Scale'
+			},
+			{
+				key: 'opacity',
+				name: 'Opacity'
+			},
+			{
+				key: 'scroll-opacity',
+				name: 'Scroll-Opacity'
+			},
+			{
+				key: 'scale-opacity',
+				name: 'Scale-Opacity'
+			}
 		];
-		var parallaxrepeats = [
-			{ key: 'repeat', name: 'repeat' },
-			{ key: 'repeat-x', name: 'repeat-x' },
-			{ key: 'repeat-y', name: 'repeat-y' },
-			{ key: 'no-repeat', name: 'no-repeat' },
-			{ key: 'space', name: 'space' },
-			{ key: 'round', name: 'round' },
-			{ key: 'initial', name: 'initial' },
-			{ key: 'inherit', name: 'inherit' }
+		var parallaxrepeats = [{
+				key: 'repeat',
+				name: 'repeat'
+			},
+			{
+				key: 'repeat-x',
+				name: 'repeat-x'
+			},
+			{
+				key: 'repeat-y',
+				name: 'repeat-y'
+			},
+			{
+				key: 'no-repeat',
+				name: 'no-repeat'
+			},
+			{
+				key: 'space',
+				name: 'space'
+			},
+			{
+				key: 'round',
+				name: 'round'
+			},
+			{
+				key: 'initial',
+				name: 'initial'
+			},
+			{
+				key: 'inherit',
+				name: 'inherit'
+			}
 		];
 		//0-optName, 1-type, 2-name, 3-action, 4-value, 5-placeholder, 6-live_update, 7-slider_def_unit, 8-file_picker, 9-file_picker_no_proxy, 10-show_if, 11-parent, 12-valueisarray, 13-options, 14-show_empty, 15-multiple, 16-customattribute, 17-attributeisvalue, 18-attribute, 19-emptyattribute
 		var parallaxattributeoptions = [
@@ -983,9 +1386,14 @@ $(function () {
 
 
 
-		var plyrtypes = [
-			{ key: 'youtube', name: 'Youtube' },
-			{ key: 'vimeo', name: 'Vimeo' }
+		var plyrtypes = [{
+				key: 'youtube',
+				name: 'Youtube'
+			},
+			{
+				key: 'vimeo',
+				name: 'Vimeo'
+			}
 		];
 		//0-optName, 1-type, 2-name, 3-action, 4-value, 5-placeholder, 6-live_update, 7-slider_def_unit, 8-file_picker, 9-file_picker_no_proxy, 10-show_if, 11-parent, 12-valueisarray, 13-options, 14-show_empty, 15-multiple, 16-customattribute, 17-attributeisvalue, 18-attribute, 19-emptyattribute
 		var plyrattributeoptions = [
@@ -1309,6 +1717,56 @@ $(function () {
 
 
 
+		var spinneroptions = [
+			{ key: 'rotating-plane', name: 'rotating-plane'},
+			{ key: 'rotating-plane', name: 'rotating-plane'},
+			{ key: 'wave', name: 'wave'},
+			{ key: 'wandering-cubes', name: 'wandering-cubes'},
+			{ key: 'spinner-pulse', name: 'spinner-pulse'},
+			{ key: 'three-bounce', name: 'three-bounce'},
+			{ key: 'cube-grid', name: 'cube-grid'}
+		];
+		var venoboxtypes = [
+			{ key: 'iframe', name: 'iframe'},
+			{ key: 'inline', name: 'inline'},
+			{ key: 'ajax', name: 'ajax'},
+			{ key: 'video', name: 'video'}
+		];
+			
+		//0-optName, 1-type, 2-name, 3-action, 4-value, 5-placeholder, 6-live_update, 7-slider_def_unit, 8-file_picker, 9-file_picker_no_proxy, 10-show_if, 11-parent, 12-valueisarray, 13-options, 14-show_empty, 15-multiple, 16-customattribute, 17-attributeisvalue, 18-attribute, 19-emptyattribute
+		var venoboxattributeoptions = [
+			["vbtype", "select", "Type", "custom", "", "", false, "", false, false, "", "", false, venoboxtypes, true, false, "data-vbtype", true, "", false],
+			["href", "text", "Link", "custom", "", "", false, "", false, false, "", "", false, null, true, false, "data-href", true, "", false],
+			["gall", "text", "Gallery", "custom", "", "", false, "", false, false, "", "", false, null, true, false, "data-gall", true, "", false],
+			["overlay", "text", "Overlay", "custom", "", "#ca294b rgba(95,164,255,0.8)", false, "", false, false, "", "", false, null, true, false, "data-overlay", true, "", false],
+			["css", "text", "Custom CSS", "custom", "", "", false, "", false, false, "", "", false, null, true, false, "data-css", true, "", false],
+			["arrowsColor","text","arrowsColor","custom","#B6B6B6","",false,"",false,false,"","",false,null,true,false,"",false,"",false],
+			["autoplay","chekbox","autoplay","custom",false,"",false,"",false,false,"","",false,null,true,false,"",false,"",false],
+			["bgcolor","text","bgcolor","custom","#ffffff","",false,"",false,false,"","",false,null,true,false,"",false,"",false],
+			["border","text","border","custom","0px","",false,"",false,false,"","",false,null,true,false,"",false,"",false],
+			["closeBackground","text","closeBackground","custom","#161617","",false,"",false,false,"","",false,null,true,false,"",false,"",false],
+			["closeColor","text","closeColor","custom","#d2d2d2","",false,"",false,false,"","",false,null,true,false,"",false,"",false],
+			["framewidth","text","framewidth","custom","","",false,"",false,false,"","",false,null,true,false,"",false,"",false],
+			["frameheight","text","frameheight","custom","","",false,"",false,false,"","",false,null,true,false,"",false,"",false],
+			["infinigall","checkbox","infinigall","custom",false,"",false,"",false,false,"","",false,null,true,false,"",false,"",false],
+			["numeratio","checkbox","numeratio","custom",false,"",false,"",false,false,"","",false,null,true,false,"",false,"",false],
+			["numerationBackground","text","numerationBackground","custom","#161617","",false,"",false,false,"","",false,null,true,false,"",false,"",false],
+			["numerationColor","text","numerationColor","custom","#d2d2d2","",false,"",false,false,"","",false,null,true,false,"",false,"",false],
+			["numerationPosition","text","numerationPosition","custom","top","",false,"",false,false,"","",false,null,true,false,"",false,"",false],
+			["overlayClose","checkbox","overlayClose","custom",true,"",false,"",false,false,"","",false,null,true,false,"",false,"",false],
+			["overlayColor","text","overlayColor","custom","rgba(255,255,255,0.85)","",false,"",false,false,"","",false,null,true,false,"",false,"",false],
+			["titleattr","text","titleattr","custom","title","",false,"",false,false,"","",false,null,true,false,"",false,"",false],
+			["titleBackground","text","titleBackground","custom","#161617","",false,"",false,false,"","",false,null,true,false,"",false,"",false],
+			["titleColor","text","titleColor","custom","#d2d2d2","",false,"",false,false,"","",false,null,true,false,"",false,"",false],
+			["titlePosition","text","titlePosition","custom","top","",false,"",false,false,"","",false,null,true,false,"",false,"",false],
+			["spinColor","text","spinColor","custom","#d2d2d2","",false,"",false,false,"","",false,null,true,false,"",false,"",false],
+			["spinner","select","spinner","custom","double-bounce","",false,"",false,false,"","",false,spinneroptions,true,false,"",false,"",false]
+		];
+		//name, classStr, pgStr, dataStr, opts) 
+		creator("Veno Box", "venobox", "venobox", "data-venobox-options", venoboxattributeoptions);
+
+
+
 		pinegrow.addFramework(f);
 
 
@@ -1335,7 +1793,8 @@ $(function () {
 			'css/animate.min.css',
 			'css/magnific-popup.css',
 			'css/jquery.smartmenus.bootstrap-4.css',
-			'css/style.css',
+			'css/venobox.css',
+			'css/styles.css',
 			'js/jquery.min.js',
 			'js/slick.min.js',
 			'js/owl.carousel.min.js',
@@ -1361,6 +1820,8 @@ $(function () {
 			'js/jquery.easytabs.min.js',
 			'js/jquery.smartmenus.min.js',
 			'js/jquery.smartmenus.bootstrap-4.min.js',
+			'js/wow.min.js',
+			'js/venobox.min.js',
 			'js/scripts.js',
 		];
 		for (var i = 0; i < res_files.length; i++) {
