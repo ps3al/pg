@@ -28,6 +28,23 @@
 		var etDefaults = {};
 		var etOptions = $(this).data('easytabs-options');
 		var etx = $(this).easytabs($.extend(etDefaults, etOptions));
+
+		etx.bind('easytabs:after',function(event,clicked,targetPanel, settings){
+			// console.warn("tab changed");
+			// console.warn(clicked);
+			// console.warn(targetPanel);
+
+			var $elems = targetPanel.find('.wow');
+//				alert($elems.length);
+			if($elems.length<=0){
+//					$elems = $currItem.find('.wowx');
+				$elems = targetPanel.find('[data-sliderx]');
+			}
+			doAnimations($elems,index);
+
+
+		});
+
 	});
 	/*= End of Easy Tabs =*/
 	/*=============================================<<<<<*/
@@ -92,10 +109,13 @@
 
 		ssx.on('afterChange', function(event, slick, currentSlide, nextSlide){
 
-			console.warn(currentSlide);
-			console.warn("----------------");
-			console.warn($(slick.$slides.get(currentSlide)));
-			console.warn("----------------");
+			// console.warn(currentSlide);
+			// console.warn("----------------");
+			// console.warn($(slick.$slides.get(currentSlide)));
+			// console.warn("----------------");
+
+
+
 //			$("[data-slick-index='" +currentSlide+ "']").attr('id')
 //$(slick.$slides.get(currentSlide)).attr('id')
 //$('.slick-slide.slick-current.slick-active').attr('id')
@@ -146,13 +166,13 @@
 //				$elems = $currItem.find('[data-sliderx]');
 				$elems = $currItem.querySelectorAll('[data-sliderx]');
 			}
-			console.warn(sliderx);
-			console.warn(sliderx.activeIndex);
-			console.warn(sliderx.realIndex);
-			console.warn($currItem);
-			console.warn(sliderx);
-			console.warn($elems);
-			console.warn(index);
+			// console.warn(sliderx);
+			// console.warn(sliderx.activeIndex);
+			// console.warn(sliderx.realIndex);
+			// console.warn($currItem);
+			// console.warn(sliderx);
+			// console.warn($elems);
+			// console.warn(index);
 
 			doAnimations($elems,index);
 		 });
@@ -505,7 +525,61 @@
 
 	});
 
+
+
 	function doAnimations(elems, index) {
+
+		var $keys = [];
+
+		Array.prototype.forEach.call(elems, function(el, i){
+
+			var className = "wow";
+			if (el.classList){
+				el.classList.remove(className);
+			}else{
+				el.className = el.className.replace(new RegExp('(^|\\b)' + className.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
+			}
+
+			var $ukey = el.getAttribute('data-sliderx');
+			var className2;
+
+			if($ukey){
+				className2 = $ukey;			
+			}else{
+				var $temp = new Date().getTime();
+
+				if($keys.indexOf($temp)>=0){
+					$temp = $temp+i;
+				}
+				$keys.push("a" + $temp);
+				className2 = "a" + $temp;
+			}
+
+			console.warn("ukey : " + $ukey);
+			console.warn("className2 : " + className2);
+
+			if (el.classList){
+				el.classList.remove(className2);
+			}else{
+				el.className = el.className.replace(new RegExp('(^|\\b)' + className2.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
+			}
+
+			if (el.classList){
+				el.classList.add(className2);
+			}else{
+				el.className += ' ' + className2;
+			}
+
+			el.setAttribute('data-sliderx',className2);
+
+			new WOW({boxClass:className2}).init();
+
+		});
+
+	}
+
+
+	function doAnimationsold(elems, index) {
 		// elems.each(function (index2) {
 		// 	var $this = $(this);
 		// 	$this.removeClass("wow");
@@ -553,7 +627,7 @@
 		});
 
 
-	}
+	}	
 
 	/*=============================================>>>>>
 	= Google Maps =
