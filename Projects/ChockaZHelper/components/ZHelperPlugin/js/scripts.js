@@ -89,6 +89,36 @@
 		var ssDefaults = {};
 		var ssOptions = $(this).data('slick-slider-options');
 		var ssx = $(this).slick($.extend(ssDefaults, ssOptions));
+
+		ssx.on('afterChange', function(event, slick, currentSlide, nextSlide){
+
+			console.warn(currentSlide);
+			console.warn("----------------");
+			console.warn($(slick.$slides.get(currentSlide)));
+			console.warn("----------------");
+//			$("[data-slick-index='" +currentSlide+ "']").attr('id')
+//$(slick.$slides.get(currentSlide)).attr('id')
+//$('.slick-slide.slick-current.slick-active').attr('id')
+//slick.$slides.eq(nextSlide)
+
+
+
+			// var $elems = currentSlide.querySelectorAll('.wow')
+			// if($elems.length<=0){
+			// 	$elems = currentSlide.querySelectorAll('[data-sliderx]');
+			// }
+
+
+			var $elems = $(slick.$slides.get(currentSlide)).find('.wow');
+			if($elems.length<=0){
+				$elems = $(slick.$slides.get(currentSlide)).find('[data-sliderx]');
+			}
+
+			doAnimations($elems,index);
+
+		});
+
+
 	});
 	/*= End of Slick Slider =*/
 	/*=============================================<<<<<*/
