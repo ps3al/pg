@@ -476,7 +476,7 @@ function createZPlatformaPlugin(wp, pinegrow) {
         'css/base.css',
         'css/styles.css',
         'css/flickity.css',
-        'js/jquery-3.3.1.min.js',
+        'js/jquery.min.js',
         'js/bootstrap.bundle.min.js',
         'js/webfontloader.js',
         'js/slick.min.js',
