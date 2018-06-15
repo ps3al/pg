@@ -16,58 +16,18 @@
 		<link rel="stylesheet" href="fonts/roboto.css">
 		<link rel="stylesheet" href="fonts/roboto-slab.css">
 		<link rel="stylesheet" href="css/bootstrap.min.css">
-		<link rel="stylesheet" href="css/slick.css">
-		<link rel="stylesheet" href="css/owl.carousel.min.css">
-		<link rel="stylesheet" href="css/owl.theme.default.min.css">
 		<link rel="stylesheet" href="fonts/font-awesome.min.css">
 		<link rel="stylesheet" href="fonts/material-design-iconic-font.min.css">
 		<link rel="stylesheet" href="fonts/ionicons.min.css">
-		<link rel="stylesheet" href="css/swiper.min.css">
-		<link rel="stylesheet" href="css/jarallax.css">
-		<link rel="stylesheet" href="css/plyr.css">
-		<link rel="stylesheet" href="css/animate.min.css">
-		<link rel="stylesheet" href="css/magnific-popup.css">
-		<link rel="stylesheet" href="css/lightgallery.min.css">
-		<link rel="stylesheet" href="css/jquery.smartmenus.bootstrap-4.css">
-		<link rel="stylesheet" href="css/flickity.css" />
 		<link rel="stylesheet" href="css/base.css" />
-		<link rel="stylesheet" href="css/styles.css">
 	</head>
 	<body>
 
 
-
 		<div class="js-overlay js-close-navigation js-close-menu overlay"></div>
-		<script src="js/jquery-3.2.1.min.js" defer></script>
+
 		<script src="js/bootstrap.bundle.min.js" defer></script>
 		<script src="js/webfontloader.js" defer></script>
-		<script src="js/flickity.js"></script>
-		<script src="js/jquery.filterizr.min.js" defer></script>
-		<script src="js/slick.min.js" defer></script>
-		<script src="js/owl.carousel.min.js" defer></script>
-		<script src="js/lightbox.min.js" defer></script>
-		<script src="js/isotope.pkgd.min.js" defer></script>
-		<script src="js/swiper.min.js" defer></script>
-		<script src="js/jarallax.min.js" defer></script>
-		<script src="js/jarallax-video.min.js" defer></script>
-		<script src="js/jarallax-element.min.js" defer></script>
-		<script src="js/plyr.js" defer></script>
-		<script src="js/jquery.lazyLoadGoogleMaps.js" defer></script>
-		<script src="js/jquery.waypoints.min.js" defer></script>
-		<script src="js/jquery.counterup.min.js" defer></script>
-		<script src="js/countdown.min.js" defer></script>
-		<script src="js/progressbar.min.js" defer></script>
-		<script src="js/jquery.scrollUp.min.js" defer></script>
-		<script src="js/jquery.smooth-scroll.min.js" defer></script>
-		<script src="js/jquery.easing.js" defer></script>
-		<script src="js/jquery.fitvids.js" defer></script>
-		<script src="js/jquery.magnific-popup.min.js" defer></script>
-		<script src="js/imagesloaded.pkgd.min.js" defer></script>
-		<script src="js/lightgallery-all.min.js" defer></script>
-		<script src="js/jquery.easytabs.min.js" defer></script>
-		<script src="js/jquery.smartmenus.min.js" defer></script>
-		<script src="js/jquery.smartmenus.bootstrap-4.min.js" defer></script>
-		<script src="js/main.js"></script>
-		<script src="js/scripts.js"></script>
+		<script src="js/main.js" defer></script>
 	</body>
 </html>
