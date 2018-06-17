@@ -2,14 +2,16 @@
     margin-bottom: 20px;
     border-radius: 0;
 }
+
 .plyr__play-large {
     padding: 30px;
     border: 0;
     background: rgba(255, 255, 255, 0.95);
     color: #404040;
     -webkit-filter: drop-shadow(0px 1px 1px rgba(0, 0, 0, 0.1));
-            filter: drop-shadow(0px 1px 1px rgba(0, 0, 0, 0.1));
+    filter: drop-shadow(0px 1px 1px rgba(0, 0, 0, 0.1));
 }
+
 .plyr--audio .plyr__controls {
     border: 0;
     background: rgba(0, 0, 0, 0.06);
@@ -18,6 +20,164 @@
 .visible {
     visibility: visible;
 }
+
 .animated {
     visibility: hidden;
+}
+
+/*-----------------------------------------------------------------------------------*/
+/*	03. NAVBAR
+/*-----------------------------------------------------------------------------------*/
+.navbar {
+    z-index: 9998;
+    border: 0;
+    border-radius: 0;
+    min-height: inherit;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin: 0;
+    height: 90px;
+    background: transparent;
+    transition: all 0.3s;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.container>.navbar-header {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+.navbar .navbar-brand {
+    padding: 0;
+    float: none;
+    height: auto;
+    position: relative;
+    box-shadow: none;
+    margin: 0 !important;
+}
+
+.navbar .navbar-brand a {
+    transition: none;
+}
+
+.navbar .navbar-collapse {
+    padding-right: 0;
+    padding-left: 0;
+    float: none;
+    text-align: center;
+    width: 100%;
+}
+
+.navbar .navbar-nav {
+    float: none;
+    pointer-events: none;
+}
+
+.navbar .navbar-nav > li {
+    float: none;
+    pointer-events: all;
+}
+
+.navbar .navbar-nav > li > a {
+    padding: 0;
+    font-size: 12px;
+    font-weight: 700;
+    transition: all 150ms ease-in;
+    text-transform: uppercase;
+    line-height: 1;
+    color: #FFF !important;
+    position: relative;
+}
+
+.navbar.light .navbar-nav > li > a,
+.navbar.light .btn.responsive-menu {
+    color: #3b3b3b !important;
+}
+
+.navbar .navbar-nav > li > a:focus,
+.navbar .nav > li > a:hover,
+.navbar .nav > li.current > a {
+    background: none;
+}
+
+.navbar .nav > li.current > a,
+.navbar .navbar-nav > li > a:focus,
+.navbar .nav > li > a:hover {
+    color: #70aed2 !important;
+}
+
+.navbar .dropdown-menu {
+    padding: 0;
+    margin: 0;
+    min-width: 150px;
+    border: none;
+    background: none;
+    border-radius: 0;
+    box-shadow: none;
+    padding-top: 15px;
+}
+
+.navbar .dropdown-menu li {
+    background: #26262a;
+    border: none;
+    border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.navbar .dropdown-menu li:first-child {
+    border-top: 2px solid #70aed2;
+}
+
+.navbar .dropdown-menu li a {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0;
+    text-transform: uppercase;
+    padding: 15px 20px 15px;
+    line-height: 1;
+}
+
+.navbar .dropdown-menu li a:hover,
+.navbar .dropdown-menu li a.active {
+    padding: 15px 20px 15px;
+    filter: none;
+    line-height: 1;
+}
+
+.navbar .dropdown-menu li a:hover,
+.navbar .dropdown-menu li a.active,
+.navbar .nav .open > a,
+.navbar .nav .open > a:hover,
+.navbar .nav .open > a:focus,
+.navbar .dropdown-menu > li > a:hover,
+.navbar .dropdown-menu > li > a:focus,
+.navbar .dropdown-submenu:hover > a,
+.navbar .dropdown-submenu:focus > a,
+.navbar .dropdown-menu > .active > a,
+.navbar .dropdown-menu > .active > a:hover,
+.navbar .dropdown-menu > .active > a:focus {
+    background: none;
+    color: #70aed2;
+}
+
+.navbar .nav > li > .dropdown-menu:after {
+    display: none;
+}
+
+.navbar .dropdown-menu > li > a:hover,
+.navbar .dropdown-menu > li > a:focus,
+.navbar .dropdown-submenu:hover > a,
+.navbar .dropdown-submenu:focus > a,
+.navbar .dropdown-menu > .active > a,
+.navbar .dropdown-menu > .active > a:hover,
+.navbar .dropdown-menu > .active > a:focus {
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+}
+
+.caret {
+    border-top: 4px solid;
 }
