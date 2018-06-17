@@ -1,0 +1,106 @@
+#scrollUp {
+    right: 15px;
+    bottom: 15px;
+    transition: background .15s ease-in-out;
+    -webkit-backface-visibility: hidden;
+}
+
+#scrollUp .btn {
+    font-size: 24px;
+    color: #fff;
+    background: rgba(0, 0, 0, .5);
+}
+
+#scrollUp .btn.active,
+#scrollUp .btn:active,
+#scrollUp .btn:focus,
+#scrollUp .btn:hover {
+    background: #000;
+}
+
+.visible {
+    visibility: visible;
+}
+
+.animated {
+    visibility: hidden;
+}
+
+.menu-dark {
+    height: 50px;
+    transition: all .3s ease-out;
+    background: #000;
+}
+
+a {
+    color: white;
+}
+
+#top-menu.menu-dark .p-20 {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+#top-menu > a {
+    color: #fff;
+}
+
+#masthead {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 500;
+    height: 64px;
+    padding: 0;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    transition: -webkit-transform .35s;
+    -webkit-transition: -webkit-transform .35s;
+    transition: transform .35s;
+    transition: transform .35s, -webkit-transform .35s;
+    transition: transform .35s,-webkit-transform .35s;
+}
+
+@media (min-width: 52.5em) {
+    #masthead {
+        height: 88px;
+        padding: 0;
+    }
+}
+
+.admin-bar #masthead {
+    top: 32px;
+}
+
+@media screen and (max-width: 782px) {
+    .admin-bar #masthead {
+        top: 46px;
+    }
+}
+
+/* Sticky Header on Scroll Up */
+#masthead.header-up {
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+}
+
+.admin-bar #masthead.header-up {
+    -webkit-transform: translate3d(0, -96px, 0);
+    transform: translate3d(0, -96px, 0);
+}
+
+@media screen and (max-width: 782px) {
+    .admin-bar #masthead.header-up {
+        -webkit-transform: translate3d(0, -110px, 0);
+        transform: translate3d(0, -110px, 0);
+    }
+}
+
+@media (min-width: 52.5em) {
+    .admin-bar #masthead.header-up {
+        -webkit-transform: translate3d(0, -120px, 0);
+        transform: translate3d(0, -120px, 0);
+    }
+}

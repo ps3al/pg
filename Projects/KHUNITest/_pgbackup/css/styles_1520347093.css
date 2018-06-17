@@ -1,0 +1,117 @@
+#scrollUp {
+    right: 15px;
+    bottom: 15px;
+    transition: background .15s ease-in-out;
+    -webkit-backface-visibility: hidden;
+}
+
+#scrollUp .btn {
+    font-size: 24px;
+    color: #fff;
+    background: rgba(0, 0, 0, .5);
+}
+
+#scrollUp .btn.active,
+#scrollUp .btn:active,
+#scrollUp .btn:focus,
+#scrollUp .btn:hover {
+    background: #000;
+}
+
+.visible {
+    visibility: visible;
+}
+
+.animated {
+    visibility: hidden;
+}
+
+.menu-dark {
+    height: 50px;
+    transition: all .3s ease-out;
+    background: #000;
+}
+
+a {
+    color: white;
+}
+
+#top-menu.menu-dark .p-20 {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+#top-menu > a {
+    color: #fff;
+}
+
+.logo {
+    font-family: Lato;
+    font-size: 14px;
+    color: #FFFFFF;
+    letter-spacing: 6px;
+    text-align: center;
+    line-height: 24px;
+    font-weight: 900;
+    text-decoration: none;
+}
+
+.mainmenu .navbar-nav li a {
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 1px;
+    padding: 30px 15px;
+    -webkit-transition: .3s;
+    transition: .3s;
+    font-weight: 600;
+}
+
+.mainmenu .navbar-nav li a:hover {
+    background: none;
+    color: #fff;
+    -webkit-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}
+
+.nav li a:focus,
+.nav li a:hover {
+    background: none;
+    color: #fff;
+    -webkit-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}
+
+.navbar {
+    margin: 0;
+}
+
+.mainmenu .navbar-nav li a {
+    color: #fff;
+    padding: 20px 15px;
+    -webkit-transition: .3s;
+    transition: .3s;
+}
+
+.mainmenu .navbar-nav li a:hover {
+    color: #fff;
+}
+
+a.home-btn {
+    margin-top: 40px;
+    display: inline-block;
+    color: #fff;
+    background: transparent;
+    padding: 10px 25px;
+    border: 2px solid rgba(255, 255, 255, .5);
+    border-radius: 100px;
+}
+
+#navigation9 .navbar {
+    background: rgba(40, 40, 40, 0.8);
+    padding: 0;
+    border-radius: 0;
+    border: 0;
+    margin-bottom: 0;
+    text-transform: uppercase;
+}

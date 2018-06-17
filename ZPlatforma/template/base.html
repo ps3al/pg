@@ -19,14 +19,18 @@
 		<link rel="stylesheet" href="fonts/font-awesome.min.css">
 		<link rel="stylesheet" href="fonts/material-design-iconic-font.min.css">
 		<link rel="stylesheet" href="fonts/ionicons.min.css">
+		<link rel="stylesheet" href="css/flickity.css" />
 		<link rel="stylesheet" href="css/base.css" />
+		<link rel="stylesheet" href="css/styles.css" />
 	</head>
 	<body>
 
 
 		<div class="js-overlay js-close-navigation js-close-menu overlay"></div>
 
+		<script src="js/jquery.min.js" defer></script>
 		<script src="js/bootstrap.bundle.min.js" defer></script>
+		<script src="js/flickity.js" defer></script>
 		<script src="js/webfontloader.js" defer></script>
 		<script src="js/main.js" defer></script>
 	</body>

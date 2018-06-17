@@ -1,0 +1,51 @@
+#scrollUp {
+    right: 15px;
+    bottom: 15px;
+    transition: background .15s ease-in-out;
+    -webkit-backface-visibility: hidden;
+}
+
+#scrollUp .btn {
+    font-size: 24px;
+    color: #fff;
+    background: rgba(0, 0, 0, .5);
+}
+
+#scrollUp .btn.active,
+#scrollUp .btn:active,
+#scrollUp .btn:focus,
+#scrollUp .btn:hover {
+    background: #000;
+}
+
+.visible {
+    visibility: visible;
+}
+
+.animated {
+    visibility: hidden;
+}
+
+.menu-dark {
+    height: 50px;
+    transition: all .3s ease-out;
+    background: #000;
+}
+
+a {
+    color: white;
+}
+
+#top-menu.menu-dark .p-20 {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+#top-menu > a {
+    color: #fff;
+}
+
+.nav-link {
+    display: block;
+    padding: 0 1rem;
+}
