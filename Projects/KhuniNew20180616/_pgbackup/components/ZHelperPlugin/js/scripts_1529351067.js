@@ -1,19 +1,7 @@
 (function ($) {
 	"use strict";
 
-$('#main-menu').bind({
-    'show.smapi': function(e, menu) {
-      $(menu).removeClass('fadeInUp').addClass('fadeInUp');
-    },
-    'hide.smapi': function(e, menu) {
-      $(menu).removeClass('fadeInUp').addClass('fadeInUp');
-    }
-  }).on('animationend webkitAnimationEnd oanimationend MSAnimationEnd', 'ul', function(e) {
-    $(this).removeClass('fadeInUp');
-    e.stopPropagation();
-  });
-	
-	
+
 // Hide Header on on scroll down
 	var didScroll;
 	var lastScrollTop = 0;

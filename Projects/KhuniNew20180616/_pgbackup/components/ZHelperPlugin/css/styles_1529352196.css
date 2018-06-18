@@ -182,8 +182,8 @@
     border-top: 4px solid;
 }
 
-.owl-theme .owl-dots {
-    margin-top: 30px !important;
+.owl-theme .owl-controls {
+    margin-top: 30px;
 }
 
 .owl-theme .owl-dots .owl-dot span {

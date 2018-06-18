@@ -635,7 +635,6 @@ h2 {
     font-weight: 400
 }
 
-#headers-5 h1,
 #headers-5 nav a {
     font-size: 12px;
     font-weight: 700;
@@ -646,9 +645,11 @@ h2 {
 #headers-5 h1 {
     font-family: Lato;
     font-size: 50px;
+    font-weight: 500;
     line-height: 55px;
     margin-bottom: 40px;
-    letter-spacing: 5px
+    letter-spacing: 5px;
+    color: #fff
 }
 
 #footers-15,
