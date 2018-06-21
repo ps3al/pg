@@ -53,7 +53,11 @@ $(function () {
 							},
 							{
 								key: 'hei',
-								name: "HEI"
+								name: "Hover Effect Ideas"
+							},
+							{
+								key: 'ih',
+								name: "Image Hover"
 							},
 							{
 								key: 'isotope',
@@ -1059,37 +1063,37 @@ $(function () {
 
 
 		var heieffects = [
-			{ key: 'effect-lily', name: 'lily'},
-			{ key: 'effect-sadie', name: 'sadie'},
-			{ key: 'effect-honey', name: 'honey'},
-			{ key: 'effect-layla', name: 'layla'},
-			{ key: 'effect-zoe', name: 'zoe'},
-			{ key: 'effect-oscar', name: 'oscar'},
-			{ key: 'effect-marley', name: 'marley'},
-			{ key: 'effect-ruby', name: 'ruby'},
-			{ key: 'effect-roxy', name: 'roxy'},
+			{ key: 'effect-apollo', name: 'apollo'},
 			{ key: 'effect-bubba', name: 'bubba'},
-			{ key: 'effect-romeo', name: 'romeo'},
-			{ key: 'effect-dexter', name: 'dexter'},
-			{ key: 'effect-sarah', name: 'sarah'},
 			{ key: 'effect-chico', name: 'chico'},
-			{ key: 'effect-milo', name: 'milo'},
-			{ key: 'effect-julia', name: 'julia'},
+			{ key: 'effect-dexter', name: 'dexter'},
+			{ key: 'effect-duke', name: 'duke'},
 			{ key: 'effect-goliath', name: 'goliath'},
 			{ key: 'effect-hera', name: 'hera'},
-			{ key: 'effect-winston', name: 'winston'},
-			{ key: 'effect-selena', name: 'selena'},
-			{ key: 'effect-terry', name: 'terry'},
-			{ key: 'effect-phoebe', name: 'phoebe'},
-			{ key: 'effect-apollo', name: 'apollo'},
-			{ key: 'effect-kira', name: 'kira'},
-			{ key: 'effect-steve', name: 'steve'},
-			{ key: 'effect-moses', name: 'moses'},
+			{ key: 'effect-honey', name: 'honey'},
 			{ key: 'effect-jazz', name: 'jazz'},
-			{ key: 'effect-ming', name: 'ming'},
+			{ key: 'effect-julia', name: 'julia'},
+			{ key: 'effect-kira', name: 'kira'},
+			{ key: 'effect-layla', name: 'layla'},
 			{ key: 'effect-lexi', name: 'lexi'},
-			{ key: 'effect-duke', name: 'duke'},
-	];
+			{ key: 'effect-lily', name: 'lily'},
+			{ key: 'effect-marley', name: 'marley'},
+			{ key: 'effect-milo', name: 'milo'},
+			{ key: 'effect-ming', name: 'ming'},
+			{ key: 'effect-moses', name: 'moses'},
+			{ key: 'effect-oscar', name: 'oscar'},
+			{ key: 'effect-phoebe', name: 'phoebe'},
+			{ key: 'effect-romeo', name: 'romeo'},
+			{ key: 'effect-roxy', name: 'roxy'},
+			{ key: 'effect-ruby', name: 'ruby'},
+			{ key: 'effect-sadie', name: 'sadie'},
+			{ key: 'effect-sarah', name: 'sarah'},
+			{ key: 'effect-selena', name: 'selena'},
+			{ key: 'effect-steve', name: 'steve'},
+			{ key: 'effect-terry', name: 'terry'},
+			{ key: 'effect-winston', name: 'winston'},
+			{ key: 'effect-zoe', name: 'zoe'}
+		];
 		//0-optName, 1-type, 2-name, 3-action, 4-value, 5-placeholder, 6-live_update, 7-slider_def_unit, 8-file_picker, 9-file_picker_no_proxy, 10-show_if, 11-parent, 12-valueisarray, 13-options, 14-show_empty, 15-multiple, 16-customattribute, 17-attributeisvalue, 18-attribute, 19-emptyattribute
 		var heiattributeoptions = [
 			["effect", "select", "Effect", "apply_class", "", "", false, "", false, false, "", "", false, heieffects, true, false, "", false, "", false],
@@ -1097,6 +1101,60 @@ $(function () {
 		//name, classStr, pgStr, dataStr, opts) 
 		creator("HEI", "hei", "hei", "", heiattributeoptions);
 
+
+
+		var iheffects = [
+		{key: 'imghvr-blur', name: 'blur'},
+		{key: 'imghvr-fade', name: 'fade'},
+		{key: 'imghvr-flip-diag-1', name: 'flip-diag-1'},
+		{key: 'imghvr-flip-diag-2', name: 'flip-diag-2'},
+		{key: 'imghvr-flip-horiz', name: 'flip-horiz'},
+		{key: 'imghvr-flip-vert', name: 'flip-vert'},
+		{key: 'imghvr-fold-down', name: 'fold-down'},
+		{key: 'imghvr-fold-left', name: 'fold-left'},
+		{key: 'imghvr-fold-right', name: 'fold-right'},
+		{key: 'imghvr-fold-up', name: 'fold-up'},
+		{key: 'imghvr-hinge-down', name: 'hinge-down'},
+		{key: 'imghvr-hinge-left', name: 'hinge-left'},
+		{key: 'imghvr-hinge-right', name: 'hinge-right'},
+		{key: 'imghvr-hinge-up', name: 'hinge-up'},
+		{key: 'imghvr-push-down', name: 'push-down'},
+		{key: 'imghvr-push-left', name: 'push-left'},
+		{key: 'imghvr-push-right', name: 'push-right'},
+		{key: 'imghvr-push-up', name: 'push-up'},
+		{key: 'imghvr-reveal-down', name: 'reveal-down'},
+		{key: 'imghvr-reveal-left', name: 'reveal-left'},
+		{key: 'imghvr-reveal-right', name: 'reveal-right'},
+		{key: 'imghvr-reveal-up', name: 'reveal-up'},
+		{key: 'imghvr-shutter-in-horiz', name: 'shutter-in-horiz'},
+		{key: 'imghvr-shutter-in-out-diag-1', name: 'shutter-in-out-diag-1'},
+		{key: 'imghvr-shutter-in-out-diag-2', name: 'shutter-in-out-diag-2'},
+		{key: 'imghvr-shutter-in-out-horiz', name: 'shutter-in-out-horiz'},
+		{key: 'imghvr-shutter-in-out-vert', name: 'shutter-in-out-vert'},
+		{key: 'imghvr-shutter-in-vert', name: 'shutter-in-vert'},
+		{key: 'imghvr-shutter-out-diag-1', name: 'shutter-out-diag-1'},
+		{key: 'imghvr-shutter-out-diag-2', name: 'shutter-out-diag-2'},
+		{key: 'imghvr-shutter-out-horiz', name: 'shutter-out-horiz'},
+		{key: 'imghvr-shutter-out-vert', name: 'shutter-out-vert'},
+		{key: 'imghvr-slide-down', name: 'slide-down'},
+		{key: 'imghvr-slide-left', name: 'slide-left'},
+		{key: 'imghvr-slide-right', name: 'slide-right'},
+		{key: 'imghvr-slide-up', name: 'slide-up'},
+		{key: 'imghvr-zoom-in', name: 'zoom-in'},
+		{key: 'imghvr-zoom-out', name: 'zoom-out'},
+		{key: 'imghvr-zoom-out-down', name: 'zoom-out-down'},
+		{key: 'imghvr-zoom-out-flip-horiz', name: 'zoom-out-flip-horiz'},
+		{key: 'imghvr-zoom-out-flip-vert', name: 'zoom-out-flip-vert'},
+		{key: 'imghvr-zoom-out-left', name: 'zoom-out-left'},
+		{key: 'imghvr-zoom-out-right', name: 'zoom-out-right'},
+		{key: 'imghvr-zoom-out-up', name: 'zoom-out-up'},
+	];
+		//0-optName, 1-type, 2-name, 3-action, 4-value, 5-placeholder, 6-live_update, 7-slider_def_unit, 8-file_picker, 9-file_picker_no_proxy, 10-show_if, 11-parent, 12-valueisarray, 13-options, 14-show_empty, 15-multiple, 16-customattribute, 17-attributeisvalue, 18-attribute, 19-emptyattribute
+		var ihattributeoptions = [
+			["effect", "select", "Effect", "apply_class", "", "", false, "", false, false, "", "", false, iheffects, true, false, "", false, "", false],
+		];
+		//name, classStr, pgStr, dataStr, opts) 
+		creator("IH", "ih", "ih", "", ihattributeoptions);
 
 
 
@@ -1828,6 +1886,7 @@ $(function () {
 			'img',
 			'js',
 			'css/hei.css',
+			'css/ih.css',
 			'css/slick.css',
 			'css/lightgallery.min.css',
 			'css/lg-transitions.min.css',

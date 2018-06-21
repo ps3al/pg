@@ -23,12 +23,15 @@
 		<link rel="stylesheet" href="components/ZHelperPlugin/css/lightgallery.min.css">
 		<link rel="stylesheet" href="components/ZHelperPlugin/css/lg-transitions.min.css">
 		<link rel="stylesheet" href="components/ZHelperPlugin/css/lg-fb-comment-box.min.css">
+		<link rel="stylesheet" href="components/ZHelperPlugin/css/styles.css">
+		<link rel="stylesheet" href="components/ZHelperPlugin/css/venobox.css">
+		<link rel="stylesheet" href="components/ZHelperPlugin/css/hei.css">
 	</head>
 	<body>
 		<div class="container">
 			<div class="row">
 				<div class="col-md-4">
-					<h3 class="animated" data-animated-options="{&quot;animation&quot;:&quot;bounce&quot;}">Animated Test</h3> 
+					<h3 class="animated" data-animated-options="{&quot;animation&quot;:&quot;fadeInUp&quot;}">Animated Test</h3> 
 					<p class="animated" data-animated-options="{&quot;animation&quot;:&quot;bounceInLeft&quot;,&quot;delay&quot;:&quot;0&quot;,&quot;offset&quot;:1}">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p> 
 				</div>
 			</div>
@@ -151,10 +154,10 @@
 						</ul>
 						<div>
 							<div class="active" id="tab1">
-								<p>Tab 1 content goes here...Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec ullamcorper nulla non metus auctor fringilla. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+								<p class="wow hinge">Tab 1 content goes here...Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec ullamcorper nulla non metus auctor fringilla. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
 							</div>
 							<div id="tab2">
-								<p>Tab 2 content goes here...Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec ullamcorper nulla non metus auctor fringilla. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+								<p class="wow jello">Tab 2 content goes here...Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec ullamcorper nulla non metus auctor fringilla. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
 							</div>
 							<div id="tab3">
 								<p>Tab 3 content goes here...Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec ullamcorper nulla non metus auctor fringilla. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
@@ -293,7 +296,49 @@
 		<div class="container" style="margin-top: 50px;
     margin-bottom: 50px;">
 			<h3 class="text-center">Slick Slider</h3>
-			<div data-slick-slider-options="{&quot;slidesToShow&quot;:3,&quot;slidesToScroll&quot;:3,&quot;arrows&quot;:true,&quot;cssEase&quot;:&quot;ease&quot;,&quot;speed&quot;:400,&quot;autoplay&quot;:true,&quot;responsive&quot;:[{&quot;breakpoint&quot;:900,&quot;settings&quot;:{&quot;slidesToShow&quot;:2}}],&quot;pauseOnHover&quot;:true}" class="row slick-slider" slickslider_advanced>
+			<div data-slick-slider-options="{&quot;slidesToShow&quot;:1,&quot;slidesToScroll&quot;:1,&quot;cssEase&quot;:&quot;ease&quot;,&quot;speed&quot;:400,&quot;autoplay&quot;:true,&quot;responsive&quot;:[{&quot;breakpoint&quot;:900,&quot;settings&quot;:{&quot;slidesToShow&quot;:2}}],&quot;pauseOnHover&quot;:true,&quot;asNavFor&quot;:&quot;#slick-child&quot;,&quot;arrows&quot;:false}" class="row slick-slider" slickslider_advanced id="slick-parent">
+				<div class="col-xs-6 col-lg-3">
+					<div class="partners__item">
+						Item 1
+</div>
+				</div>
+				<div class="col-xs-6 col-lg-3">
+					<div class="partners__item">
+						Item 2
+</div>
+				</div>
+				<div class="col-xs-6 col-lg-3">
+					<div class="partners__item">
+						Item 3
+</div>
+				</div>
+				<div class="col-xs-6 col-lg-3">
+					<div class="partners__item">
+						Item 4
+</div>
+				</div>
+				<div class="col-xs-6 col-lg-3">
+					<div class="partners__item">
+						Item 5
+</div>
+				</div>
+				<div class="col-xs-6 col-lg-3">
+					<div class="partners__item">
+						Item 6
+</div>
+				</div>
+				<div class="col-xs-6 col-lg-3">
+					<div class="partners__item">
+						Item 7
+</div>
+				</div>
+				<div class="col-xs-6 col-lg-3">
+					<div class="partners__item">
+						Item 8
+</div>
+				</div>
+			</div>
+			<div data-slick-slider-options="{&quot;slidesToShow&quot;:3,&quot;slidesToScroll&quot;:1,&quot;arrows&quot;:true,&quot;cssEase&quot;:&quot;ease&quot;,&quot;speed&quot;:400,&quot;autoplay&quot;:true,&quot;responsive&quot;:[{&quot;breakpoint&quot;:900,&quot;settings&quot;:{&quot;slidesToShow&quot;:2}}],&quot;pauseOnHover&quot;:true,&quot;asNavFor&quot;:&quot;#slick-parent&quot;,&quot;dots&quot;:true,&quot;centerMode&quot;:true}" class="row slick-slider" slickslider_advanced id="slick-child">
 				<div class="col-xs-6 col-lg-3">
 					<div class="partners__item">
 						Item 1
@@ -341,7 +386,7 @@
 			<h3 class="text-center">Owl Carousel</h3>
 			<div class="row">
 				<div class="col-md-6 offset-md-3">
-					<div class="owl-carousel owl-theme" data-owl-carousel-options="{&quot;items&quot;:1,&quot;loop&quot;:true,&quot;autoWidth&quot;:false,&quot;autoplay&quot;:true,&quot;margin&quot;:30}" owlcarousel_advanced>
+					<div class="owl-carousel owl-theme" data-owl-carousel-options="{&quot;items&quot;:1,&quot;loop&quot;:true,&quot;autoWidth&quot;:false,&quot;autoplay&quot;:true,&quot;margin&quot;:30,&quot;responsive&quot;:{&quot;0&quot;:{&quot;items&quot;:1,&quot;nav&quot;:true},&quot;600&quot;:{&quot;items&quot;:3,&quot;nav&quot;:false},&quot;1000&quot;:{&quot;items&quot;:4,&quot;nav&quot;:true,&quot;loop&quot;:false}}}" owlcarousel_advanced>
 						<div class="owlitem">
 							<h3>Column title 1</h3>
 							<p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
@@ -519,7 +564,7 @@
 			</div>
 		</div>
 		<div class="container" style="margin-top: 150px;
-    margin-bottom: 50px;">
+    margin-bottom: 250px;">
 			<h3 class="text-center">Isotope</h3>
 			<div class="xisotope">
 				<div class="row portfolio-grid">
@@ -542,36 +587,125 @@
 							</li>
 						</ul>
 					</div>
-					<div data-isotope-options='{"filters":".isotope-filter-button"}' class="isotope isotope-container light-gallery row" style="float: none;">
-						<div class="col-md-4 isotope-item category1 category4">
-							<a href="pictures/pic--case-1.jpg">
-								<img src="pictures/pic--case-1.jpg" alt=""/>
-							</a>
-						</div>
-						<div class="col-md-4 isotope-item category1">
-							<a href="pictures/pic--case-2.png">
-								<img src="pictures/pic--case-2.png" alt=""/>
-							</a>
-						</div>
-						<div class="col-md-4 isotope-item category2 category3">
-							<a href="pictures/pic--case-3.jpg">
-								<img src="pictures/pic--case-3.jpg" alt=""/>
-							</a>
-						</div>
-						<div class="col-md-4 isotope-item category4">
-							<a href="pictures/pic--case-4.jpg">
-								<img src="pictures/pic--case-4.jpg" alt=""/>
-							</a>
-						</div>
-						<div class="col-md-4 isotope-item category3">
-							<a href="pictures/pic--case-5.jpg">
-								<img src="pictures/pic--case-5.jpg" alt=""/>
-							</a>
-						</div>
-						<div class="col-md-4 isotope-item category1">
-							<a href="pictures/pic--case-6.jpg">
-								<img src="pictures/pic--case-6.jpg" alt=""/>
-							</a>
+				</div>
+				<div data-isotope-options='{"filters":".isotope-filter-button"}' class="row isotope isotope-container light-gallery row" style="float: none;
+    clear: both;">
+					<div class="col-md-4 isotope-item category1 category4">
+						<a href="pictures/pic--case-1.jpg">
+							<img src="pictures/pic--case-1.jpg" alt=""/>
+						</a>
+					</div>
+					<div class="col-md-4 isotope-item category1">
+						<a href="pictures/pic--case-2.png">
+							<img src="pictures/pic--case-2.png" alt=""/>
+						</a>
+					</div>
+					<div class="col-md-4 isotope-item category2 category3">
+						<a href="pictures/pic--case-3.jpg">
+							<img src="pictures/pic--case-3.jpg" alt=""/>
+						</a>
+					</div>
+					<div class="col-md-4 isotope-item category4">
+						<a href="pictures/pic--case-4.jpg">
+							<img src="pictures/pic--case-4.jpg" alt=""/>
+						</a>
+					</div>
+					<div class="col-md-4 isotope-item category3">
+						<a href="pictures/pic--case-5.jpg">
+							<img src="pictures/pic--case-5.jpg" alt=""/>
+						</a>
+					</div>
+					<div class="col-md-4 isotope-item category1">
+						<a href="pictures/pic--case-6.jpg">
+							<img src="pictures/pic--case-6.jpg" alt=""/>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container" style="margin-top: 150px;
+    margin-bottom: 250px;">
+			<h3 class="text-center">Isotope 2</h3>
+			<div class="xisotope isotope" data-isotope-options='{"filters":".isotope-filter-button2","itemSelector":".isotope-item"}'>
+				<div class="row portfolio-grid">
+					<div class="isotope-filter button-group">
+						<ul class="test" style="list-style-type: none;">
+							<li>
+								<a class="isotope-filter-button2" data-isotope-filter="*">All</a>
+							</li>
+							<li>
+								<a class="isotope-filter-button2" data-isotope-filter=".category1">Category 1</a>
+							</li>
+							<li>
+								<a class="isotope-filter-button2" data-isotope-filter=".category2">Category 2</a>
+							</li>
+							<li>
+								<a class="isotope-filter-button2" data-isotope-filter=".category3">Category 3</a>
+							</li>
+							<li>
+								<a class="isotope-filter-button2" data-isotope-filter=".category4">Category 4</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="row isotope-container light-gallery row" style="float: none;
+    clear: both;">
+					<div class="col-md-4 isotope-item category1 category4 hei effect-ruby">
+						<img src="pictures/pic--case-1.jpg" alt="" class="img-fluid"/>
+						<div class="caption">
+							<h2>Crazy <span>Layla</span></h2>
+							<p>When Layla appears, she brings an eternal summer along.</p>
+							<a href="#">View more</a>
+						</div>						 
+					</div>
+					<div class="col-md-4 isotope-item category1">
+						<a href="pictures/pic--case-2.png">
+							<img src="pictures/pic--case-2.png" alt=""/>
+						</a>
+					</div>
+					<div class="col-md-4 isotope-item category2 category3">
+						<a href="pictures/pic--case-3.jpg">
+							<img src="pictures/pic--case-3.jpg" alt=""/>
+						</a>
+					</div>
+					<div class="col-md-4 isotope-item category4">
+						<a href="pictures/pic--case-4.jpg">
+							<img src="pictures/pic--case-4.jpg" alt=""/>
+						</a>
+					</div>
+					<div class="col-md-4 isotope-item category3">
+						<a href="pictures/pic--case-5.jpg">
+							<img src="pictures/pic--case-5.jpg" alt=""/>
+						</a>
+					</div>
+					<div class="col-md-4 isotope-item category1">
+						<a href="pictures/pic--case-6.jpg">
+							<img src="pictures/pic--case-6.jpg" alt=""/>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4"> 
+					<div class="hei effect-layla">
+						<img class="img-fluid" src="pictures/pic--case-11.jpg" alt="img06">
+					</div>
+				</div>
+				<div class="col-md-4"> 					 
+
+					<div class="hei effect-zoe">
+						<img class="img-fluid" src="pictures/pic--case-11.jpg" alt="img06"> 
+					</div>
+				</div>
+				<div class="col-md-4"> 					 
+
+					<div class="hei effect-oscar">
+						<img class="img-fluid" src="pictures/pic--case-11.jpg" alt="img06"> 
+						<div class="caption">
+							<h2>Dark <span>Kira</span></h2>
+							<p> <a href="#"><i class="fa fa-fw fa-home"></i></a> <a href="#"><i class="fa fa-fw fa-download"></i></a> <a href="#"><i class="fa fa-fw fa-heart"></i></a> <a href="#"><i class="fa fa-fw fa-share"></i></a> </p>
 						</div>
 					</div>
 				</div>
@@ -611,5 +745,7 @@
 		<script type="text/javascript" src="components/ZHelperPlugin/js/jquery.smartmenus.min.js"></script>
 		<script type="text/javascript" src="components/ZHelperPlugin/js/jquery.smartmenus.bootstrap-4.min.js"></script>
 		<script type="text/javascript" src="components/ZHelperPlugin/js/scripts.js"></script>
+		<script type="text/javascript" src="components/ZHelperPlugin/js/wow.min.js"></script>
+		<script type="text/javascript" src="components/ZHelperPlugin/js/venobox.min.js"></script>
 	</body>
 </html>
