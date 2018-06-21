@@ -52,6 +52,10 @@ $(function () {
 								name: "Google Maps"
 							},
 							{
+								key: 'hei',
+								name: "HEI"
+							},
+							{
 								key: 'isotope',
 								name: "Isotope"
 							},
@@ -1054,6 +1058,48 @@ $(function () {
 
 
 
+		var heieffects = [
+			{ key: 'effect-lily', name: 'lily'},
+			{ key: 'effect-sadie', name: 'sadie'},
+			{ key: 'effect-honey', name: 'honey'},
+			{ key: 'effect-layla', name: 'layla'},
+			{ key: 'effect-zoe', name: 'zoe'},
+			{ key: 'effect-oscar', name: 'oscar'},
+			{ key: 'effect-marley', name: 'marley'},
+			{ key: 'effect-ruby', name: 'ruby'},
+			{ key: 'effect-roxy', name: 'roxy'},
+			{ key: 'effect-bubba', name: 'bubba'},
+			{ key: 'effect-romeo', name: 'romeo'},
+			{ key: 'effect-dexter', name: 'dexter'},
+			{ key: 'effect-sarah', name: 'sarah'},
+			{ key: 'effect-chico', name: 'chico'},
+			{ key: 'effect-milo', name: 'milo'},
+			{ key: 'effect-julia', name: 'julia'},
+			{ key: 'effect-goliath', name: 'goliath'},
+			{ key: 'effect-hera', name: 'hera'},
+			{ key: 'effect-winston', name: 'winston'},
+			{ key: 'effect-selena', name: 'selena'},
+			{ key: 'effect-terry', name: 'terry'},
+			{ key: 'effect-phoebe', name: 'phoebe'},
+			{ key: 'effect-apollo', name: 'apollo'},
+			{ key: 'effect-kira', name: 'kira'},
+			{ key: 'effect-steve', name: 'steve'},
+			{ key: 'effect-moses', name: 'moses'},
+			{ key: 'effect-jazz', name: 'jazz'},
+			{ key: 'effect-ming', name: 'ming'},
+			{ key: 'effect-lexi', name: 'lexi'},
+			{ key: 'effect-duke', name: 'duke'},
+	];
+		//0-optName, 1-type, 2-name, 3-action, 4-value, 5-placeholder, 6-live_update, 7-slider_def_unit, 8-file_picker, 9-file_picker_no_proxy, 10-show_if, 11-parent, 12-valueisarray, 13-options, 14-show_empty, 15-multiple, 16-customattribute, 17-attributeisvalue, 18-attribute, 19-emptyattribute
+		var heiattributeoptions = [
+			["effect", "select", "Effect", "apply_class", "", "", false, "", false, false, "", "", false, heieffects, true, false, "", false, "", false],
+		];
+		//name, classStr, pgStr, dataStr, opts) 
+		creator("HEI", "hei", "hei", "", heiattributeoptions);
+
+
+
+
 		var layoutModes = [{
 				key: 'masonry',
 				name: 'Masonry'
@@ -1781,6 +1827,7 @@ $(function () {
 			'fonts',
 			'img',
 			'js',
+			'css/hei.css',
 			'css/slick.css',
 			'css/lightgallery.min.css',
 			'css/lg-transitions.min.css',
