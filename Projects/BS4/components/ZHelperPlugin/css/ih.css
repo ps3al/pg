@@ -3516,6 +3516,233 @@
 
 /* imghvr-book-open-vert
    ----------------------------- */
+.imghvr-book-open-vert .caption {
+    -webkit-perspective: 50em;
+    -moz-perspective: 50em;
+    perspective: 50em;
+}
+
+.imghvr-book-open-vert .caption * {
+    opacity: 0;
+}
+
+.imghvr-book-open-vert .caption:before, .imghvr-book-open-vert .caption:after {
+    height: 50%;
+    width: 100%;
+    left: 0;
+}
+
+.imghvr-book-open-vert .caption:before {
+    background-image: -webkit-linear-gradient( top , transparent 60%, rgba(0, 0, 0, 0.1) 99%, rgba(0, 0, 0, 0.15) 100%);
+    background-image: linear-gradient(to bottom, transparent 60%, rgba(0, 0, 0, 0.1) 99%, rgba(0, 0, 0, 0.15) 100%);
+    top: 0;
+    -webkit-transform: rotateX(-90deg);
+    -moz-transform: rotateX(-90deg);
+    -ms-transform: rotateX(-90deg);
+    -o-transform: rotateX(-90deg);
+    transform: rotateX(-90deg);
+    -webkit-transform-origin: 50% 100%;
+    -moz-transform-origin: 50% 100%;
+    -ms-transform-origin: 50% 100%;
+    -o-transform-origin: 50% 100%;
+    transform-origin: 50% 100%;
+}
+
+.imghvr-book-open-vert .caption:after {
+    background-image: -webkit-linear-gradient( bottom , transparent 60%, rgba(0, 0, 0, 0.13) 99%, rgba(0, 0, 0, 0.15) 100%);
+    background-image: linear-gradient(to top, transparent 60%, rgba(0, 0, 0, 0.13) 99%, rgba(0, 0, 0, 0.15) 100%);
+    bottom: 0;
+    -webkit-transform: rotateX(90deg);
+    -moz-transform: rotateX(90deg);
+    -ms-transform: rotateX(90deg);
+    -o-transform: rotateX(90deg);
+    transform: rotateX(90deg);
+    -webkit-transform-origin: 50% 0%;
+    -moz-transform-origin: 50% 0%;
+    -ms-transform-origin: 50% 0%;
+    -o-transform-origin: 50% 0%;
+    transform-origin: 50% 0%;
+}
+
+.imghvr-book-open-vert:hover .caption * {
+    opacity: 1;
+    -webkit-transition-delay: 0.21s;
+    -moz-transition-delay: 0.21s;
+    transition-delay: 0.21s;
+}
+
+/* imghvr-book-open-up
+   ----------------------------- */
+.imghvr-book-open-up {
+    -webkit-perspective: 50em;
+    -moz-perspective: 50em;
+    perspective: 50em;
+}
+
+.imghvr-book-open-up > img {
+    -webkit-transform-origin: 50% 0%;
+    -moz-transform-origin: 50% 0%;
+    -ms-transform-origin: 50% 0%;
+    -o-transform-origin: 50% 0%;
+    transform-origin: 50% 0%;
+}
+
+.imghvr-book-open-up .caption {
+    z-index: -1;
+}
+
+.imghvr-book-open-up .caption * {
+    opacity: 1;
+}
+
+.imghvr-book-open-up .caption:after {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-image: -webkit-linear-gradient( bottom , transparent 80%, rgba(0, 0, 0, 0.2) 99%, rgba(0, 0, 0, 0.3) 100%);
+    background-image: linear-gradient(to top, transparent 80%, rgba(0, 0, 0, 0.2) 99%, rgba(0, 0, 0, 0.3) 100%);
+    left: 0;
+}
+
+.imghvr-book-open-up:hover > img {
+    -webkit-transform: rotateX(86deg);
+    -moz-transform: rotateX(86deg);
+    -ms-transform: rotateX(86deg);
+    -o-transform: rotateX(86deg);
+    transform: rotateX(86deg);
+}
+
+/* imghvr-book-open-down
+   ----------------------------- */
+.imghvr-book-open-down {
+    -webkit-perspective: 50em;
+    -moz-perspective: 50em;
+    perspective: 50em;
+}
+
+.imghvr-book-open-down > img {
+    -webkit-transform-origin: 50% 100%;
+    -moz-transform-origin: 50% 100%;
+    -ms-transform-origin: 50% 100%;
+    -o-transform-origin: 50% 100%;
+    transform-origin: 50% 100%;
+}
+
+.imghvr-book-open-down .caption {
+    z-index: -1;
+}
+
+.imghvr-book-open-down .caption * {
+    opacity: 1;
+}
+
+.imghvr-book-open-down .caption:after {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-image: -webkit-linear-gradient( top , transparent 80%, rgba(0, 0, 0, 0.2) 99%, rgba(0, 0, 0, 0.3) 100%);
+    background-image: linear-gradient(to bottom, transparent 80%, rgba(0, 0, 0, 0.2) 99%, rgba(0, 0, 0, 0.3) 100%);
+    left: 0;
+}
+
+.imghvr-book-open-down:hover > img {
+    -webkit-transform: rotateX(-86deg);
+    -moz-transform: rotateX(-86deg);
+    -ms-transform: rotateX(-86deg);
+    -o-transform: rotateX(-86deg);
+    transform: rotateX(-86deg);
+}
+
+/* imghvr-book-open-left
+   ----------------------------- */
+.imghvr-book-open-left {
+    -webkit-perspective: 50em;
+    -moz-perspective: 50em;
+    perspective: 50em;
+}
+
+.imghvr-book-open-left > img {
+    -webkit-transform-origin: 0% 50%;
+    -moz-transform-origin: 0% 50%;
+    -ms-transform-origin: 0% 50%;
+    -o-transform-origin: 0% 50%;
+    transform-origin: 0% 50%;
+}
+
+.imghvr-book-open-left .caption {
+    z-index: -1;
+}
+
+.imghvr-book-open-left .caption * {
+    opacity: 1;
+}
+
+.imghvr-book-open-left .caption:after {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-image: -webkit-linear-gradient( right , transparent 80%, rgba(0, 0, 0, 0.2) 99%, rgba(0, 0, 0, 0.3) 100%);
+    background-image: linear-gradient(to left, transparent 80%, rgba(0, 0, 0, 0.2) 99%, rgba(0, 0, 0, 0.3) 100%);
+    left: 0;
+}
+
+.imghvr-book-open-left:hover > img {
+    -webkit-transform: rotateY(-86deg);
+    -moz-transform: rotateY(-86deg);
+    -ms-transform: rotateY(-86deg);
+    -o-transform: rotateY(-86deg);
+    transform: rotateY(-86deg);
+}
+
+/* imghvr-book-open-right
+   ----------------------------- */
+.imghvr-book-open-right {
+    -webkit-perspective: 50em;
+    -moz-perspective: 50em;
+    perspective: 50em;
+}
+
+.imghvr-book-open-right > img {
+    -webkit-transform-origin: 100% 50%;
+    -moz-transform-origin: 100% 50%;
+    -ms-transform-origin: 100% 50%;
+    -o-transform-origin: 100% 50%;
+    transform-origin: 100% 50%;
+}
+
+.imghvr-book-open-right .caption {
+    z-index: -1;
+}
+
+.imghvr-book-open-right .caption * {
+    opacity: 1;
+}
+
+.imghvr-book-open-right .caption:after {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-image: -webkit-linear-gradient( left , transparent 80%, rgba(0, 0, 0, 0.2) 99%, rgba(0, 0, 0, 0.3) 100%);
+    background-image: linear-gradient(to right, transparent 80%, rgba(0, 0, 0, 0.2) 99%, rgba(0, 0, 0, 0.3) 100%);
+    left: 0;
+}
+
+.imghvr-book-open-right:hover > img {
+    -webkit-transform: rotateY(86deg);
+    -moz-transform: rotateY(86deg);
+    -ms-transform: rotateY(86deg);
+    -o-transform: rotateY(86deg);
+    transform: rotateY(86deg);
+}
+
 /* imghvr-circle-*
    ----------------------------- */
 [class^='imghvr-circle-']:before, [class*=' imghvr-circle-']:before {
