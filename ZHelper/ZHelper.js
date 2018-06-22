@@ -60,6 +60,10 @@ $(function () {
 								name: "Image Hover"
 							},
 							{
+								key: 'ihe',
+								name: "Image Hover Effect"
+							},
+							{
 								key: 'isotope',
 								name: "Isotope"
 							},
@@ -1099,7 +1103,7 @@ $(function () {
 			["effect", "select", "Effect", "apply_class", "", "", false, "", false, false, "", "", false, heieffects, true, false, "", false, "", false],
 		];
 		//name, classStr, pgStr, dataStr, opts) 
-		creator("HEI", "hei", "hei", "", heiattributeoptions);
+		creator("Hover Effect Ideas", "hei", "hei", "", heiattributeoptions);
 
 
 
@@ -1154,8 +1158,37 @@ $(function () {
 			["effect", "select", "Effect", "apply_class", "", "", false, "", false, false, "", "", false, iheffects, true, false, "", false, "", false],
 		];
 		//name, classStr, pgStr, dataStr, opts) 
-		creator("IH", "ih", "ih", "", ihattributeoptions);
+		creator("Image Hovers", "ih", "ih", "", ihattributeoptions);
 
+
+
+
+		var iheeffects = [
+			{key:'ehover1',name:'ehover1'},
+			{key:'ehover2',name:'ehover2'},
+			{key:'ehover3',name:'ehover3'},
+			{key:'ehover4',name:'ehover4'},
+			{key:'ehover42',name:'ehover42'},
+			{key:'ehover1v2',name:'ehover1v2'},
+			{key:'ehover5',name:'ehover5'},
+			{key:'ehover6',name:'ehover6'},
+			{key:'ehover7',name:'ehover7'},
+			{key:'ehover7',name:'ehover7'},
+			{key:'ehover8',name:'ehover8'},
+			{key:'ehover9',name:'ehover9'},
+			{key:'ehover10',name:'ehover10'},
+			{key:'ehover11',name:'ehover11'},
+			{key:'ehover12',name:'ehover12'},
+			{key:'ehover13',name:'ehover13'},
+			{key:'ehover14',name:'ehover14'}
+		];
+
+		//0-optName, 1-type, 2-name, 3-action, 4-value, 5-placeholder, 6-live_update, 7-slider_def_unit, 8-file_picker, 9-file_picker_no_proxy, 10-show_if, 11-parent, 12-valueisarray, 13-options, 14-show_empty, 15-multiple, 16-customattribute, 17-attributeisvalue, 18-attribute, 19-emptyattribute
+		var iheattributeoptions = [
+			["effect", "select", "Effect", "apply_class", "", "", false, "", false, false, "", "", false, iheeffects, true, false, "", false, "", false],
+		];
+		//name, classStr, pgStr, dataStr, opts) 
+		creator("Image Hover Effects", "ihe", "ihe", "", iheattributeoptions);
 
 
 		var layoutModes = [{
