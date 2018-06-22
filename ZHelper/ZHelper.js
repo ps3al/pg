@@ -1920,6 +1920,7 @@ $(function () {
 			'js',
 			'css/hei.css',
 			'css/ih.css',
+			'css/ihe.css',
 			'css/slick.css',
 			'css/lightgallery.min.css',
 			'css/lg-transitions.min.css',

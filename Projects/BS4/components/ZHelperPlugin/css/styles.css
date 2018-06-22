@@ -2,16 +2,14 @@
     margin-bottom: 20px;
     border-radius: 0;
 }
-
 .plyr__play-large {
     padding: 30px;
     border: 0;
     background: rgba(255, 255, 255, 0.95);
     color: #404040;
     -webkit-filter: drop-shadow(0px 1px 1px rgba(0, 0, 0, 0.1));
-    filter: drop-shadow(0px 1px 1px rgba(0, 0, 0, 0.1));
+            filter: drop-shadow(0px 1px 1px rgba(0, 0, 0, 0.1));
 }
-
 .plyr--audio .plyr__controls {
     border: 0;
     background: rgba(0, 0, 0, 0.06);
@@ -20,15 +18,6 @@
 .visible {
     visibility: visible;
 }
-
 .animated {
     visibility: hidden;
-}
-
-.ih {
-    animation-play-state: paused;
-}
-
-.ih:hover {
-    animation-play-state: running;
 }
