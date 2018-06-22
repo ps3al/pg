@@ -126,9 +126,9 @@ $(function () {
 		//dataStr
 
 
-		function creator(name, classStr, pgStr, dataStr, opts) {
+		function creator(name, selectorStr, pgStr, dataStr, opts) {
 			var temp = new PgComponentType('zh.' + pgStr + '_def', name);
-			temp.selector = '.' + classStr;
+			temp.selector = selectorStr;
 			temp.sections = {};
 			temp.sections[pgStr + '_options'] = {};
 			temp.sections[pgStr + '_options']['name'] = name + " options";
@@ -142,11 +142,33 @@ $(function () {
 		}
 
 
+		function creator2(name, selectorStr, pgStr, dataStr, opts) {
+			var temp = new PgComponentType('zh.' + pgStr + '_def', name);
+
+			var parentClass = selectorStr.replace('.','').split('>'); 
+            temp.selector_new = function(pgel) {
+				return (pgel.parent.hasClass(parentClass[1].replace('.','')) && pgel.parent.parent.hasClass(parentClass[0].replace('.','')));
+            };
+            temp.parent_selector= selectorStr;
+			temp.sections = {};
+			temp.sections[pgStr + '_options'] = {};
+			temp.sections[pgStr + '_options']['name'] = name + " options";
+			temp.sections[pgStr + '_options']['fields'] = {};
+
+			for (var i = 0; i < opts.length; i++) {
+				optionCreator(temp.sections[pgStr + '_options']['fields'], opts[i], pgStr, dataStr);
+			}
+
+			f.addComponentType(temp);
+		}
+
+
+
 		//0-optName, 1-type, 2-name, 3-action, 4-value, 5-placeholder, 6-live_update, 7-slider_def_unit, 8-file_picker, 9-file_picker_no_proxy, 10-show_if, 11-parent, 12-valueisarray, 13-options, 14-show_empty, 15-multiple, 16-customattribute, 17-attributeisvalue, 18-attribute, 19-emptyattribute
 		function optionCreator(comp, opts, pgStr, dataStr) {
 
-			console.warn(pgStr + "------------------------------------------------");
-			console.warn(opts);
+//			console.warn(pgStr + "------------------------------------------------");
+//			console.warn(opts);
 			comp[pgStr + "_" + opts[0]] = {};
 			comp[pgStr + "_" + opts[0]]["type"] = opts[1];
 			comp[pgStr + "_" + opts[0]]["name"] = opts[2];
@@ -934,8 +956,8 @@ $(function () {
 			["delay", "text", "Delay", "custom", "1000", "1000", false, "", false, false, "", "", false, null, false, false, "", false, "", false],
 			["triggerOnce", "checkbox", "Trigger Once", "custom", true, "", false, "", false, false, "", "", false, null, false, false, "", false, "", false]
 		];
-		//name, classStr, pgStr, dataStr, opts) 
-		creator("Animated", "animated", "animated", "data-animated-options", animatedattributeoptions);
+		//name, selectorStr, pgStr, dataStr, opts) 
+		creator("Animated", ".animated", "animated", "data-animated-options", animatedattributeoptions);
 
 
 
@@ -962,8 +984,8 @@ $(function () {
 			["iteration", "text", "Iteration", "custom", "", "infinite, 3", false, "", false, false, "", "", false, null, false, false, "data-wow-iteration", true, "", false],
 			["mobile", "checkbox", "Disable On Mobile", "custom", "false", "", false, "", false, false, "", "", false, null, false, false, "data-wow-mobile", true, "", false]
 		];
-		//name, classStr, pgStr, dataStr, opts) 
-		creator("Animated WOW", "wow", "wow", "data-wow-options", wowattributeoptions);
+		//name, selectorStr, pgStr, dataStr, opts) 
+		creator("Animated WOW", ".wow", "wow", "data-wow-options", wowattributeoptions);
 
 
 
@@ -974,8 +996,8 @@ $(function () {
 			["text", "text", "Text", "custom", "%s days, %s hours, %s minutes, %s seconds", false, "", false, false, "", "", false, null, true, false, "", false, "", false],
 			["fast", "checkbox", "Fast", "custom", true, "", false, "", false, false, "", "", false, null, true, false, "", false, "", false]
 		];
-		//name, classStr, pgStr, dataStr, opts) 
-		creator("Count Down", "countdown", "countdown", "data-countdown-options", countdownattributeoptions);
+		//name, selectorStr, pgStr, dataStr, opts) 
+		creator("Count Down", ".countdown", "countdown", "data-countdown-options", countdownattributeoptions);
 
 
 		//0-optName, 1-type, 2-name, 3-action, 4-value, 5-placeholder, 6-live_update, 7-slider_def_unit, 8-file_picker, 9-file_picker_no_proxy, 10-show_if, 11-parent, 12-valueisarray, 13-options, 14-show_empty, 15-multiple, 16-customattribute, 17-attributeisvalue, 18-attribute, 19-emptyattribute
@@ -983,8 +1005,8 @@ $(function () {
 			["time", "slider", "Time", "custom", "1000", "1000", false, "", false, false, "", "", false, null, true, false, "", false, "", false],
 			["delay", "slider", "Delay", "custom", "10", "10", false, "", false, false, "", "", false, null, true, false, "", false, "", false]
 		];
-		//name, classStr, pgStr, dataStr, opts) 
-		creator("Counter Up", "counterup", "counterup", "data-counterup-options", counterupattributeoptions);
+		//name, selectorStr, pgStr, dataStr, opts) 
+		creator("Counter Up", ".counterup", "counterup", "data-counterup-options", counterupattributeoptions);
 
 
 
@@ -1043,8 +1065,8 @@ $(function () {
 			["updateHash", "checkbox", "updateHash", "custom", true, "", false, "", false, false, "", "", false, null, true, false, "", false, "", false],
 			["uiTabs", "checkbox", "uiTabs", "custom", true, "", false, "", false, false, "", "", false, null, true, false, "", false, "", false]
 		];
-		//name, classStr, pgStr, dataStr, opts) 
-		creator("Easy Tabs", "easytabs", "easytabs", "data-easytabs-options", easytabsattributeoptions);
+		//name, selectorStr, pgStr, dataStr, opts) 
+		creator("Easy Tabs", ".easytabs", "easytabs", "data-easytabs-options", easytabsattributeoptions);
 
 
 		//0-optName, 1-type, 2-name, 3-action, 4-value, 5-placeholder, 6-live_update, 7-slider_def_unit, 8-file_picker, 9-file_picker_no_proxy, 10-show_if, 11-parent, 12-valueisarray, 13-options, 14-show_empty, 15-multiple, 16-customattribute, 17-attributeisvalue, 18-attribute, 19-emptyattribute
@@ -1061,8 +1083,8 @@ $(function () {
 			["draggable", "checkbox", "Draggable", "custom", true, "", false, "", false, false, "", "", false, null, true, false, "", false, "", false],
 			["overviewMapControl", "checkbox", "Overview Map Control", "custom", true, "", false, "", false, false, "", "", false, null, true, false, "", false, "", false]
 		];
-		//name, classStr, pgStr, dataStr, opts) 
-		creator("Google Maps", "google-map", "googlemap", "data-google-map-options", googlemapattributeoptions);
+		//name, selectorStr, pgStr, dataStr, opts) 
+		creator("Google Maps", ".google-map", "googlemap", "data-google-map-options", googlemapattributeoptions);
 
 
 
@@ -1102,8 +1124,8 @@ $(function () {
 		var heiattributeoptions = [
 			["effect", "select", "Effect", "apply_class", "", "", false, "", false, false, "", "", false, heieffects, true, false, "", false, "", false],
 		];
-		//name, classStr, pgStr, dataStr, opts) 
-		creator("Hover Effect Ideas", "hei", "hei", "", heiattributeoptions);
+		//name, selectorStr, pgStr, dataStr, opts) 
+		creator("Hover Effect Ideas", ".hei", "hei", "", heiattributeoptions);
 
 
 
@@ -1157,10 +1179,41 @@ $(function () {
 		var ihattributeoptions = [
 			["effect", "select", "Effect", "apply_class", "", "", false, "", false, false, "", "", false, iheffects, true, false, "", false, "", false],
 		];
-		//name, classStr, pgStr, dataStr, opts) 
-		creator("Image Hovers", "ih", "ih", "", ihattributeoptions);
+		//name, selectorStr, pgStr, dataStr, opts) 
+		creator("Image Hovers", ".ih", "ih", "", ihattributeoptions);
 
-
+//		.ih .caption *
+//ih-fade-down ih-delay-sm 
+var ihceffects = [
+	{key:'ih-fade',name:'fade'},
+	{key:'ih-fade-up',name:'fade-up'},
+	{key:'ih-fade-down',name:'fade-down'},
+	{key:'ih-fade-left',name:'fade-left'},
+	{key:'ih-fade-right',name:'fade-right'},
+	{key:'ih-fade-up-big',name:'fade-up-big'},
+	{key:'ih-fade-down-big',name:'fade-down-big'},
+	{key:'ih-fade-left-big',name:'fade-left-big'},
+	{key:'ih-fade-right-big',name:'fade-right-big'},
+	{key:'ih-zoom-in',name:'zoom-in'},
+	{key:'ih-zoom-out',name:'zoom-out'},
+	{key:'ih-flip-x',name:'flip-x'},
+	{key:'ih-flip-y',name:'flip-y'}
+];
+var ihcdelays = [
+	{key:'ih-delay-xs',name:'Delay-xs'},
+	{key:'ih-delay-sm',name:'Delay-sm'},
+	{key:'ih-delay-md',name:'Delay-md'},
+	{key:'ih-delay-lg',name:'Delay-lg'},
+	{key:'ih-delay-xl',name:'Delay-xl'},
+	{key:'ih-delay-xxl',name:'Delay-xxl'}
+];
+//0-optName, 1-type, 2-name, 3-action, 4-value, 5-placeholder, 6-live_update, 7-slider_def_unit, 8-file_picker, 9-file_picker_no_proxy, 10-show_if, 11-parent, 12-valueisarray, 13-options, 14-show_empty, 15-multiple, 16-customattribute, 17-attributeisvalue, 18-attribute, 19-emptyattribute
+		var ihcattributeoptions = [
+			["effect", "select", "Effect", "apply_class", "", "", false, "", false, false, "", "", false, ihceffects, true, false, "", false, "", false],
+			["delay", "select", "Delay", "apply_class", "", "", false, "", false, false, "", "", false, ihcdelays, true, false, "", false, "", false],
+		];
+		//name, selectorStr, pgStr, dataStr, opts) 
+		creator2("Image Hovers", ".ih>.caption", "ihcaptionel", "", ihcattributeoptions);
 
 
 		var iheeffects = [
@@ -1187,8 +1240,8 @@ $(function () {
 		var iheattributeoptions = [
 			["effect", "select", "Effect", "apply_class", "", "", false, "", false, false, "", "", false, iheeffects, true, false, "", false, "", false],
 		];
-		//name, classStr, pgStr, dataStr, opts) 
-		creator("Image Hover Effects", "ihe", "ihe", "", iheattributeoptions);
+		//name, selectorStr, pgStr, dataStr, opts) 
+		creator("Image Hover Effects", ".ihe", "ihe", "", iheattributeoptions);
 
 
 		var layoutModes = [{
@@ -1235,8 +1288,8 @@ $(function () {
 			["fitWidth", "checkbox", "fitWidth", "custom", true, "", false, "", false, false, "", "", false, null, true, false, "", false, "", false],
 			["horizontalOrder", "checkbox", "horizontalOrder", "custom", true, "", false, "", false, false, "", "", false, null, true, false, "", false, "", false]
 		];
-		//name, classStr, pgStr, dataStr, opts) 
-		creator("Isotope Gallery", "isotope", "isotope", "data-isotope-options", isotopeattributeoptions);
+		//name, selectorStr, pgStr, dataStr, opts) 
+		creator("Isotope Gallery", ".isotope", "isotope", "data-isotope-options", isotopeattributeoptions);
 
 
 
@@ -1331,8 +1384,8 @@ $(function () {
 			["pinterest", "checkbox", "pinterest", "custom", true, "", false, "", false, false, "", "", false, null, true, false, "", false, "", false],
 			["pinterestDropdownText", "text", "pinterestDropdownText", "custom", "", "", false, "", false, false, "", "", false, null, true, false, "", false, "", false]
 		];
-		//name, classStr, pgStr, dataStr, opts) 
-		creator("Light Gallery", "light-gallery", "lightgallery", "data-light-gallery-options", lightgalleryattributeoptions);
+		//name, selectorStr, pgStr, dataStr, opts) 
+		creator("Light Gallery", ".light-gallery", "lightgallery", "data-light-gallery-options", lightgalleryattributeoptions);
 
 
 		//0-optName, 1-type, 2-name, 3-action, 4-value, 5-placeholder, 6-live_update, 7-slider_def_unit, 8-file_picker, 9-file_picker_no_proxy, 10-show_if, 11-parent, 12-valueisarray, 13-options, 14-show_empty, 15-multiple, 16-customattribute, 17-attributeisvalue, 18-attribute, 19-emptyattribute
@@ -1374,8 +1427,8 @@ $(function () {
 			["easing", "text", "easing", "custom", "", "", false, "", false, false, "", "", false, null, true, false, "", false, "", false],
 			["opener", "text", "opener", "custom", "", "", false, "", false, false, "", "", false, null, true, false, "", false, "", false]
 		];
-		//name, classStr, pgStr, dataStr, opts) 
-		creator("Magnific Popup", "magnific-popup", "magnificpopup", "data-magnific-popup-options", magnificpopupattributeoptions);
+		//name, selectorStr, pgStr, dataStr, opts) 
+		creator("Magnific Popup", ".magnific-popup", "magnificpopup", "data-magnific-popup-options", magnificpopupattributeoptions);
 
 
 
@@ -1436,8 +1489,8 @@ $(function () {
 			["dotsContainer", "text", "dotsContainer", "custom", "", "", false, "", false, false, "advanced", "", false, null, false, false, "", false, "", false],
 			["checkVisible", "checkbox", "checkVisible", "custom", true, true, false, "", false, false, "advanced", "", false, null, false, false, "", false, "", false]
 		];
-		//name, classStr, pgStr, dataStr, opts) 
-		creator("OWL Carousel", "owl-carousel", "owlcarousel", "data-owl-carousel-options", owlcarouselattributeoptions);
+		//name, selectorStr, pgStr, dataStr, opts) 
+		creator("OWL Carousel", ".owl-carousel", "owlcarousel", "data-owl-carousel-options", owlcarouselattributeoptions);
 
 
 
@@ -1518,8 +1571,8 @@ $(function () {
 			["videoVolume", "slider", "videoVolume", "custom", "0", "", false, "", false, false, "", "", false, null, false, false, "", false, "", false],
 			["videoPlayOnlyVisible", "checkbox", "videoPlayOnlyVisible", "custom", true, "", false, "", false, false, "", "", false, null, false, false, "", false, "", false]
 		];
-		//name, classStr, pgStr, dataStr, opts) 
-		creator("Parallax", "jarallax", "jarallax", "data-jarallax-options", parallaxattributeoptions);
+		//name, selectorStr, pgStr, dataStr, opts) 
+		creator("Parallax", ".jarallax", "jarallax", "data-jarallax-options", parallaxattributeoptions);
 
 
 
@@ -1567,30 +1620,30 @@ $(function () {
 			["loop", "Object", "loop", "custom", "{ active: false }", "", false, "", false, false, "", "", false, null, true, false, "", false, "", false],
 			["ads", "Object", "ads", "custom", "{ enabled: false, publisherId: '' }", "", false, "", false, false, "", "", false, null, true, false, "", false, "", false]
 		];
-		//name, classStr, pgStr, dataStr, opts) 
-		creator("Media Plyr", "js-player", "plyr", "data-plyr", plyrattributeoptions);
+		//name, selectorStr, pgStr, dataStr, opts) 
+		creator("Media Plyr", ".js-player", "plyr", "data-plyr", plyrattributeoptions);
 
 
 		//0-optName, 1-type, 2-name, 3-action, 4-value, 5-placeholder, 6-live_update, 7-slider_def_unit, 8-file_picker, 9-file_picker_no_proxy, 10-show_if, 11-parent, 12-valueisarray, 13-options, 14-show_empty, 15-multiple, 16-customattribute, 17-attributeisvalue, 18-attribute, 19-emptyattribute
 		var progressbarcircleattributeoptions = [
 			["data", "text", "Data", "custom", "99", "99", false, "", false, false, "", "", false, null, true, false, "", false, "", false]
 		];
-		//name, classStr, pgStr, dataStr, opts) 
-		creator("Progress Bar Circle", "progressbar-circle", "progressbarcircle", "data-progressbar-options", progressbarcircleattributeoptions);
+		//name, selectorStr, pgStr, dataStr, opts) 
+		creator("Progress Bar Circle", ".progressbar-circle", "progressbarcircle", "data-progressbar-options", progressbarcircleattributeoptions);
 
 		//0-optName, 1-type, 2-name, 3-action, 4-value, 5-placeholder, 6-live_update, 7-slider_def_unit, 8-file_picker, 9-file_picker_no_proxy, 10-show_if, 11-parent, 12-valueisarray, 13-options, 14-show_empty, 15-multiple, 16-customattribute, 17-attributeisvalue, 18-attribute, 19-emptyattribute
 		var progressbarsemicircleattributeoptions = [
 			["data", "text", "Data", "custom", "99", "99", false, "", false, false, "", "", false, null, true, false, "", false, "", false]
 		];
-		//name, classStr, pgStr, dataStr, opts) 
-		creator("Progress Bar Semi Circle", "progressbar-semicircle", "progressbarsemicircle", "data-progressbar-options", progressbarsemicircleattributeoptions);
+		//name, selectorStr, pgStr, dataStr, opts) 
+		creator("Progress Bar Semi Circle", ".progressbar-semicircle", "progressbarsemicircle", "data-progressbar-options", progressbarsemicircleattributeoptions);
 
 		//0-optName, 1-type, 2-name, 3-action, 4-value, 5-placeholder, 6-live_update, 7-slider_def_unit, 8-file_picker, 9-file_picker_no_proxy, 10-show_if, 11-parent, 12-valueisarray, 13-options, 14-show_empty, 15-multiple, 16-customattribute, 17-attributeisvalue, 18-attribute, 19-emptyattribute
 		var progressbarlineattributeoptions = [
 			["data", "text", "Data", "custom", "99", "99", false, "", false, false, "", "", false, null, true, false, "", false, "", false]
 		];
-		//name, classStr, pgStr, dataStr, opts) 
-		creator("Progress Bar Line", "progressbar-line", "progressbarline", "data-progressbar-options", progressbarlineattributeoptions);
+		//name, selectorStr, pgStr, dataStr, opts) 
+		creator("Progress Bar Line", ".progressbar-line", "progressbarline", "data-progressbar-options", progressbarlineattributeoptions);
 
 
 
@@ -1651,8 +1704,8 @@ $(function () {
 			["waitForAnimate", "checkbox", "waitForAnimate", "custom", true, "", false, "", false, false, "advanced", "", false, null, true, false, "", false, "", false],
 			["zIndex", "slider", "zIndex", "custom", "", "", false, "", false, false, "", "", false, null, true, false, "", false, "", false]
 		];
-		//name, classStr, pgStr, dataStr, opts) 
-		creator("Slick Slider", "slick-slider", "slickslider", "data-slick-slider-options", slicksliderattributeoptions);
+		//name, selectorStr, pgStr, dataStr, opts) 
+		creator("Slick Slider", ".slick-slider", "slickslider", "data-slick-slider-options", slicksliderattributeoptions);
 
 
 
@@ -1849,8 +1902,8 @@ $(function () {
 			["paginationBulletMessage", "text", "paginationBulletMessage", "custom", "", "", false, "", false, false, "advanced", "", false, null, true, false, "", false, "", false],
 			["notificationClass", "text", "notificationClass", "custom", "", "", false, "", false, false, "advanced", "", false, null, true, false, "", false, "", false]
 		];
-		//name, classStr, pgStr, dataStr, opts) 
-		creator("Swiper Slider", "swiper-slider", "swiperslider", "data-swiper-slider-options", swipersliderattributeoptions);
+		//name, selectorStr, pgStr, dataStr, opts) 
+		creator("Swiper Slider", ".swiper-slider", "swiperslider", "data-swiper-slider-options", swipersliderattributeoptions);
 
 
 
@@ -1899,8 +1952,8 @@ $(function () {
 			["spinColor","text","spinColor","custom","#d2d2d2","",false,"",false,false,"","",false,null,true,false,"",false,"",false],
 			["spinner","select","spinner","custom","double-bounce","",false,"",false,false,"","",false,spinneroptions,true,false,"",false,"",false]
 		];
-		//name, classStr, pgStr, dataStr, opts) 
-		creator("Veno Box", "venobox", "venobox", "data-venobox-options", venoboxattributeoptions);
+		//name, selectorStr, pgStr, dataStr, opts) 
+		creator("Veno Box", ".venobox", "venobox", "data-venobox-options", venoboxattributeoptions);
 
 
 
