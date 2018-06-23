@@ -1241,6 +1241,7 @@ $(function () {
 		{key:'imghvr-dive',name:'dive'},
 		{key:'imghvr-dive-cc',name:'dive-cc'},
 		{key:'imghvr-dive-ccc',name:'dive-ccc'},
+		{key:'imghvr-fade',name:'fade'},
 		{key:'imghvr-fade-in-down',name:'fade-in-down'},
 		{key:'imghvr-fade-in-left',name:'fade-in-left'},
 		{key:'imghvr-fade-in-right',name:'fade-in-right'},
@@ -2246,3 +2247,58 @@ var ihcdelays = [
 		f.addLibSection(libsection);
 	});
 });
+
+
+
+
+function creator2(name, selectorStr, pgStr, dataStr, opts) {
+	var temp = new PgComponentType('zh.' + pgStr + '_def', name);
+	var parentClass = selectorStr.replace('.','').split('>');
+	temp.selector_new = function(pgel) {
+		return (pgel.parent.hasClass(parentClass[1].replace('.','')) && pgel.parent.parent.hasClass(parentClass[0].replace('.','')));
+	};
+	temp.parent_selector= selectorStr;
+	temp.sections = {};
+	temp.sections[pgStr + '_options'] = {};
+	temp.sections[pgStr + '_options']['name'] = name + " options";
+	temp.sections[pgStr + '_options']['fields'] = {};
+
+	for (var i = 0; i < opts.length; i++) {
+		optionCreator(temp.sections[pgStr + '_options']['fields'], opts[i], pgStr, dataStr);
+	}
+	f.addComponentType(temp);
+}
+...
+...
+...
+
+var ihceffects = [
+	{key:'ih-fade',name:'fade'},
+	{key:'ih-fade-up',name:'fade-up'},
+	{key:'ih-fade-down',name:'fade-down'},
+	{key:'ih-fade-left',name:'fade-left'},
+	{key:'ih-fade-right',name:'fade-right'},
+	{key:'ih-fade-up-big',name:'fade-up-big'},
+	{key:'ih-fade-down-big',name:'fade-down-big'},
+	{key:'ih-fade-left-big',name:'fade-left-big'},
+	{key:'ih-fade-right-big',name:'fade-right-big'},
+	{key:'ih-zoom-in',name:'zoom-in'},
+	{key:'ih-zoom-out',name:'zoom-out'},
+	{key:'ih-flip-x',name:'flip-x'},
+	{key:'ih-flip-y',name:'flip-y'}
+];
+var ihcdelays = [
+	{key:'ih-delay-xs',name:'Delay-xs'},
+	{key:'ih-delay-sm',name:'Delay-sm'},
+	{key:'ih-delay-md',name:'Delay-md'},
+	{key:'ih-delay-lg',name:'Delay-lg'},
+	{key:'ih-delay-xl',name:'Delay-xl'},
+	{key:'ih-delay-xxl',name:'Delay-xxl'}
+];
+//0-optName, 1-type, 2-name, 3-action, 4-value, 5-placeholder, 6-live_update, 7-slider_def_unit, 8-file_picker, 9-file_picker_no_proxy, 10-show_if, 11-parent, 12-valueisarray, 13-options, 14-show_empty, 15-multiple, 16-customattribute, 17-attributeisvalue, 18-attribute, 19-emptyattribute
+var ihcattributeoptions = [
+	["effect", "select", "Effect", "apply_class", "", "", false, "", false, false, "", "", false, ihceffects, true, false, "", false, "", false],
+	["delay", "select", "Delay", "apply_class", "", "", false, "", false, false, "", "", false, ihcdelays, true, false, "", false, "", false]
+];
+//name, selectorStr, pgStr, dataStr, opts) 
+creator2("Image Hover Utility", ".ih>.caption", "ihcaptionel", "", ihcattributeoptions);
