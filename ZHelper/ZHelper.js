@@ -52,6 +52,10 @@ $(function () {
 								name: "Google Maps"
 							},
 							{
+								key: 'h',
+								name: "Hover"
+							},
+							{
 								key: 'hei',
 								name: "Hover Effect Ideas"
 							},
@@ -1086,6 +1090,126 @@ $(function () {
 		//name, selectorStr, pgStr, dataStr, opts) 
 		creator("Google Maps", ".google-map", "googlemap", "data-google-map-options", googlemapattributeoptions);
 
+
+		var heffects = [
+			{key:'h-back-pulse',name:'back-pulse'},
+			{key:'h-backward',name:'backward'},
+			{key:'h-bob',name:'bob'},
+			{key:'h-border-fade',name:'border-fade'},
+			{key:'h-bounce-in',name:'bounce-in'},
+			{key:'h-bounce-out',name:'bounce-out'},
+			{key:'h-bounce-to-bottom',name:'bounce-to-bottom'},
+			{key:'h-bounce-to-left',name:'bounce-to-left'},
+			{key:'h-bounce-to-right',name:'bounce-to-right'},
+			{key:'h-bounce-to-top',name:'bounce-to-top'},
+			{key:'h-box-shadow-inset',name:'box-shadow-inset'},
+			{key:'h-box-shadow-outset',name:'box-shadow-outset'},
+			{key:'h-bubble-bottom',name:'bubble-bottom'},
+			{key:'h-bubble-float-bottom',name:'bubble-float-bottom'},
+			{key:'h-bubble-float-left',name:'bubble-float-left'},
+			{key:'h-bubble-float-right',name:'bubble-float-right'},
+			{key:'h-bubble-float-top',name:'bubble-float-top'},
+			{key:'h-bubble-left',name:'bubble-left'},
+			{key:'h-bubble-right',name:'bubble-right'},
+			{key:'h-bubble-top',name:'bubble-top'},
+			{key:'h-buzz',name:'buzz'},
+			{key:'h-buzz-out',name:'buzz-out'},
+			{key:'h-curl-bottom-left',name:'curl-bottom-left'},
+			{key:'h-curl-bottom-right',name:'curl-bottom-right'},
+			{key:'h-curl-top-left',name:'curl-top-left'},
+			{key:'h-curl-top-right',name:'curl-top-right'},
+			{key:'h-fade',name:'fade'},
+			{key:'h-float',name:'float'},
+			{key:'h-float-shadow',name:'float-shadow'},
+			{key:'h-forward',name:'forward'},
+			{key:'h-glow',name:'glow'},
+			{key:'h-grow',name:'grow'},
+			{key:'h-grow-rotate',name:'grow-rotate'},
+			{key:'h-grow-shadow',name:'grow-shadow'},
+			{key:'h-hang',name:'hang'},
+			{key:'h-hollow',name:'hollow'},
+			{key:'h-icon',name:'icon'},
+			{key:'h-icon-back',name:'icon-back'},
+			{key:'h-icon-bob',name:'icon-bob'},
+			{key:'h-icon-bounce',name:'icon-bounce'},
+			{key:'h-icon-buzz',name:'icon-buzz'},
+			{key:'h-icon-buzz-out',name:'icon-buzz-out'},
+			{key:'h-icon-down',name:'icon-down'},
+			{key:'h-icon-drop',name:'icon-drop'},
+			{key:'h-icon-fade',name:'icon-fade'},
+			{key:'h-icon-float',name:'icon-float'},
+			{key:'h-icon-float-away',name:'icon-float-away'},
+			{key:'h-icon-forward',name:'icon-forward'},
+			{key:'h-icon-grow',name:'icon-grow'},
+			{key:'h-icon-grow-rotate',name:'icon-grow-rotate'},
+			{key:'h-icon-hang',name:'icon-hang'},
+			{key:'h-icon-pop',name:'icon-pop'},
+			{key:'h-icon-pulse',name:'icon-pulse'},
+			{key:'h-icon-pulse-grow',name:'icon-pulse-grow'},
+			{key:'h-icon-pulse-shrink',name:'icon-pulse-shrink'},
+			{key:'h-icon-push',name:'icon-push'},
+			{key:'h-icon-rotate',name:'icon-rotate'},
+			{key:'h-icon-shrink',name:'icon-shrink'},
+			{key:'h-icon-sink',name:'icon-sink'},
+			{key:'h-icon-sink-away',name:'icon-sink-away'},
+			{key:'h-icon-spin',name:'icon-spin'},
+			{key:'h-icon-up',name:'icon-up'},
+			{key:'h-icon-wobble-horizontal',name:'icon-wobble-horizontal'},
+			{key:'h-icon-wobble-vertical',name:'icon-wobble-vertical'},
+			{key:'h-outline-in',name:'outline-in'},
+			{key:'h-outline-out',name:'outline-out'},
+			{key:'h-overline-from-center',name:'overline-from-center'},
+			{key:'h-overline-from-left',name:'overline-from-left'},
+			{key:'h-overline-from-right',name:'overline-from-right'},
+			{key:'h-overline-reveal',name:'overline-reveal'},
+			{key:'h-pop',name:'pop'},
+			{key:'h-pulse',name:'pulse'},
+			{key:'h-pulse-grow',name:'pulse-grow'},
+			{key:'h-pulse-shrink',name:'pulse-shrink'},
+			{key:'h-push',name:'push'},
+			{key:'h-radial-in',name:'radial-in'},
+			{key:'h-radial-out',name:'radial-out'},
+			{key:'h-rectangle-in',name:'rectangle-in'},
+			{key:'h-rectangle-out',name:'rectangle-out'},
+			{key:'h-reveal',name:'reveal'},
+			{key:'h-ripple-in',name:'ripple-in'},
+			{key:'h-ripple-out',name:'ripple-out'},
+			{key:'h-rotate',name:'rotate'},
+			{key:'h-round-corners',name:'round-corners'},
+			{key:'h-shadow',name:'shadow'},
+			{key:'h-shadow-radial',name:'shadow-radial'},
+			{key:'h-shrink',name:'shrink'},
+			{key:'h-shutter-in-horizontal',name:'shutter-in-horizontal'},
+			{key:'h-shutter-in-vertical',name:'shutter-in-vertical'},
+			{key:'h-shutter-out-horizontal',name:'shutter-out-horizontal'},
+			{key:'h-shutter-out-vertical',name:'shutter-out-vertical'},
+			{key:'h-sink',name:'sink'},
+			{key:'h-skew',name:'skew'},
+			{key:'h-skew-backward',name:'skew-backward'},
+			{key:'h-skew-forward',name:'skew-forward'},
+			{key:'h-sweep-to-bottom',name:'sweep-to-bottom'},
+			{key:'h-sweep-to-left',name:'sweep-to-left'},
+			{key:'h-sweep-to-right',name:'sweep-to-right'},
+			{key:'h-sweep-to-top',name:'sweep-to-top'},
+			{key:'h-trim',name:'trim'},
+			{key:'h-underline-from-center',name:'underline-from-center'},
+			{key:'h-underline-from-left',name:'underline-from-left'},
+			{key:'h-underline-from-right',name:'underline-from-right'},
+			{key:'h-underline-reveal',name:'underline-reveal'},
+			{key:'h-wobble-bottom',name:'wobble-bottom'},
+			{key:'h-wobble-horizontal',name:'wobble-horizontal'},
+			{key:'h-wobble-skew',name:'wobble-skew'},
+			{key:'h-wobble-to-bottom-right',name:'wobble-to-bottom-right'},
+			{key:'h-wobble-to-top-right',name:'wobble-to-top-right'},
+			{key:'h-wobble-top',name:'wobble-top'},
+			{key:'h-wobble-vertical',name:'wobble-vertical'},
+		];
+		//0-optName, 1-type, 2-name, 3-action, 4-value, 5-placeholder, 6-live_update, 7-slider_def_unit, 8-file_picker, 9-file_picker_no_proxy, 10-show_if, 11-parent, 12-valueisarray, 13-options, 14-show_empty, 15-multiple, 16-customattribute, 17-attributeisvalue, 18-attribute, 19-emptyattribute
+		var hattributeoptions = [
+			["effect", "select", "Effect", "apply_class", "", "", false, "", false, false, "", "", false, heffects, true, false, "", false, "", false],
+		];
+		//name, selectorStr, pgStr, dataStr, opts) 
+		creator("Hover", "*", "h", "", hattributeoptions);
 
 
 		var heieffects = [
@@ -2179,6 +2303,7 @@ var ihcdelays = [
 			'fonts',
 			'img',
 			'js',
+			'css/h.css',
 			'css/hei.css',
 			'css/ih.css',
 			'css/ihe.css',
@@ -2247,58 +2372,3 @@ var ihcdelays = [
 		f.addLibSection(libsection);
 	});
 });
-
-
-
-
-function creator2(name, selectorStr, pgStr, dataStr, opts) {
-	var temp = new PgComponentType('zh.' + pgStr + '_def', name);
-	var parentClass = selectorStr.replace('.','').split('>');
-	temp.selector_new = function(pgel) {
-		return (pgel.parent.hasClass(parentClass[1].replace('.','')) && pgel.parent.parent.hasClass(parentClass[0].replace('.','')));
-	};
-	temp.parent_selector= selectorStr;
-	temp.sections = {};
-	temp.sections[pgStr + '_options'] = {};
-	temp.sections[pgStr + '_options']['name'] = name + " options";
-	temp.sections[pgStr + '_options']['fields'] = {};
-
-	for (var i = 0; i < opts.length; i++) {
-		optionCreator(temp.sections[pgStr + '_options']['fields'], opts[i], pgStr, dataStr);
-	}
-	f.addComponentType(temp);
-}
-...
-...
-...
-
-var ihceffects = [
-	{key:'ih-fade',name:'fade'},
-	{key:'ih-fade-up',name:'fade-up'},
-	{key:'ih-fade-down',name:'fade-down'},
-	{key:'ih-fade-left',name:'fade-left'},
-	{key:'ih-fade-right',name:'fade-right'},
-	{key:'ih-fade-up-big',name:'fade-up-big'},
-	{key:'ih-fade-down-big',name:'fade-down-big'},
-	{key:'ih-fade-left-big',name:'fade-left-big'},
-	{key:'ih-fade-right-big',name:'fade-right-big'},
-	{key:'ih-zoom-in',name:'zoom-in'},
-	{key:'ih-zoom-out',name:'zoom-out'},
-	{key:'ih-flip-x',name:'flip-x'},
-	{key:'ih-flip-y',name:'flip-y'}
-];
-var ihcdelays = [
-	{key:'ih-delay-xs',name:'Delay-xs'},
-	{key:'ih-delay-sm',name:'Delay-sm'},
-	{key:'ih-delay-md',name:'Delay-md'},
-	{key:'ih-delay-lg',name:'Delay-lg'},
-	{key:'ih-delay-xl',name:'Delay-xl'},
-	{key:'ih-delay-xxl',name:'Delay-xxl'}
-];
-//0-optName, 1-type, 2-name, 3-action, 4-value, 5-placeholder, 6-live_update, 7-slider_def_unit, 8-file_picker, 9-file_picker_no_proxy, 10-show_if, 11-parent, 12-valueisarray, 13-options, 14-show_empty, 15-multiple, 16-customattribute, 17-attributeisvalue, 18-attribute, 19-emptyattribute
-var ihcattributeoptions = [
-	["effect", "select", "Effect", "apply_class", "", "", false, "", false, false, "", "", false, ihceffects, true, false, "", false, "", false],
-	["delay", "select", "Delay", "apply_class", "", "", false, "", false, false, "", "", false, ihcdelays, true, false, "", false, "", false]
-];
-//name, selectorStr, pgStr, dataStr, opts) 
-creator2("Image Hover Utility", ".ih>.caption", "ihcaptionel", "", ihcattributeoptions);
