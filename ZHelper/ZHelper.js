@@ -48,24 +48,28 @@ $(function () {
 								name: "Easy Tabs"
 							},
 							{
-								key: 'google-map',
-								name: "Google Maps"
+								key: 'che',
+								name: "Effects - Caption Hover Effetcs"
 							},
 							{
 								key: 'h',
-								name: "Hover"
+								name: "Effects - Hover.css"
 							},
 							{
 								key: 'hei',
-								name: "Hover Effect Ideas"
+								name: "Effects - Hover Effect Ideas"
 							},
 							{
 								key: 'ih',
-								name: "Image Hover"
+								name: "Effects - Image Hover"
 							},
 							{
 								key: 'ihe',
-								name: "Image Hover Effect"
+								name: "Effects - Image Hover Effect"
+							},
+							{
+								key: 'google-map',
+								name: "Google Maps"
 							},
 							{
 								key: 'isotope',
@@ -1073,22 +1077,22 @@ $(function () {
 		creator("Easy Tabs", ".easytabs", "easytabs", "data-easytabs-options", easytabsattributeoptions);
 
 
+		var cheeffects = [
+			{key:'style1',name:'style1'},
+			{key:'style2',name:'style2'},
+			{key:'style3',name:'style3'},
+			{key:'style4',name:'style4'},
+			{key:'style5',name:'style5'},
+			{key:'style6',name:'style6'}
+		];
+
 		//0-optName, 1-type, 2-name, 3-action, 4-value, 5-placeholder, 6-live_update, 7-slider_def_unit, 8-file_picker, 9-file_picker_no_proxy, 10-show_if, 11-parent, 12-valueisarray, 13-options, 14-show_empty, 15-multiple, 16-customattribute, 17-attributeisvalue, 18-attribute, 19-emptyattribute
-		var googlemapattributeoptions = [
-			["lat", "text", "Latitude", "custom", "", "", false, "", false, false, "", "", false, null, false, false, "data-lat", true, "", false],
-			["lng", "text", "Longitude", "custom", "", "", false, "", false, false, "", "", false, null, false, false, "data-lng", true, "", false],
-			["zoom", "slider", "Zoom", "custom", true, "", false, "", false, false, "", "", false, null, true, false, "", false, "", false],
-			["zoomControl", "checkbox", "Zoom Control", "custom", true, "", false, "", false, false, "", "", false, null, true, false, "", false, "", false],
-			["disableDoubleClickZoom", "checkbox", "Disable Double Click Zoom", "custom", true, "", false, "", false, false, "", "", false, null, true, false, "", false, "", false],
-			["mapTypeControl", "checkbox", "Map Type Control", "custom", true, "", false, "", false, false, "", "", false, null, true, false, "", false, "", false],
-			["scaleControl", "checkbox", "Scale Control", "custom", true, "", false, "", false, false, "", "", false, null, true, false, "", false, "", false],
-			["scrollwheel", "checkbox", "Scroll Wheel", "custom", true, "", false, "", false, false, "", "", false, null, true, false, "", false, "", false],
-			["streetViewControl", "checkbox", "Street View Control", "custom", true, "", false, "", false, false, "", "", false, null, true, false, "", false, "", false],
-			["draggable", "checkbox", "Draggable", "custom", true, "", false, "", false, false, "", "", false, null, true, false, "", false, "", false],
-			["overviewMapControl", "checkbox", "Overview Map Control", "custom", true, "", false, "", false, false, "", "", false, null, true, false, "", false, "", false]
+		var cheattributeoptions = [
+			["effect", "select", "Effect", "apply_class", "", "", false, "", false, false, "", "", false, cheeffects, true, false, "", false, "", false],
 		];
 		//name, selectorStr, pgStr, dataStr, opts) 
-		creator("Google Maps", ".google-map", "googlemap", "data-google-map-options", googlemapattributeoptions);
+		creator("Effects - Caption Hover Effects", ".che", "che", "", cheattributeoptions);
+
 
 
 		var heffects = [
@@ -1209,7 +1213,7 @@ $(function () {
 			["effect", "select", "Effect", "apply_class", "", "", false, "", false, false, "", "", false, heffects, true, false, "", false, "", false],
 		];
 		//name, selectorStr, pgStr, dataStr, opts) 
-		creator("Hover", "*", "h", "", hattributeoptions);
+		creator("Effects - Hover.css", "*", "h", "", hattributeoptions);
 
 
 		var heieffects = [
@@ -1249,7 +1253,7 @@ $(function () {
 			["effect", "select", "Effect", "apply_class", "", "", false, "", false, false, "", "", false, heieffects, true, false, "", false, "", false],
 		];
 		//name, selectorStr, pgStr, dataStr, opts) 
-		creator("Hover Effect Ideas", ".hei", "hei", "", heiattributeoptions);
+		creator("Effects - Hover Effect Ideas", ".hei", "hei", "", heiattributeoptions);
 
 
 
@@ -1512,7 +1516,7 @@ $(function () {
 			["effect", "select", "Effect", "apply_class", "", "", false, "", false, false, "", "", false, iheffects, true, false, "", false, "", false],
 		];
 		//name, selectorStr, pgStr, dataStr, opts) 
-		creator("Image Hover", ".ih", "ih", "", ihattributeoptions);
+		creator("Effects - Image Hover", ".ih", "ih", "", ihattributeoptions);
 
 //		.ih .caption *
 //ih-fade-down ih-delay-sm 
@@ -1545,7 +1549,7 @@ var ihcdelays = [
 			["delay", "select", "Delay", "apply_class", "", "", false, "", false, false, "", "", false, ihcdelays, true, false, "", false, "", false],
 		];
 		//name, selectorStr, pgStr, dataStr, opts) 
-		creator2("Image Hover Utility", ".ih>.caption", "ihcaptionel", "", ihcattributeoptions);
+		creator2("Effects - Image Hover Utility", ".ih>.caption", "ihcaptionel", "", ihcattributeoptions);
 
 
 		var iheeffects = [
@@ -1573,7 +1577,28 @@ var ihcdelays = [
 			["effect", "select", "Effect", "apply_class", "", "", false, "", false, false, "", "", false, iheeffects, true, false, "", false, "", false],
 		];
 		//name, selectorStr, pgStr, dataStr, opts) 
-		creator("Image Hover Effects", ".ihe", "ihe", "", iheattributeoptions);
+		creator("Effects - Image Hover Effects", ".ihe", "ihe", "", iheattributeoptions);
+
+
+
+
+		//0-optName, 1-type, 2-name, 3-action, 4-value, 5-placeholder, 6-live_update, 7-slider_def_unit, 8-file_picker, 9-file_picker_no_proxy, 10-show_if, 11-parent, 12-valueisarray, 13-options, 14-show_empty, 15-multiple, 16-customattribute, 17-attributeisvalue, 18-attribute, 19-emptyattribute
+		var googlemapattributeoptions = [
+			["lat", "text", "Latitude", "custom", "", "", false, "", false, false, "", "", false, null, false, false, "data-lat", true, "", false],
+			["lng", "text", "Longitude", "custom", "", "", false, "", false, false, "", "", false, null, false, false, "data-lng", true, "", false],
+			["zoom", "slider", "Zoom", "custom", true, "", false, "", false, false, "", "", false, null, true, false, "", false, "", false],
+			["zoomControl", "checkbox", "Zoom Control", "custom", true, "", false, "", false, false, "", "", false, null, true, false, "", false, "", false],
+			["disableDoubleClickZoom", "checkbox", "Disable Double Click Zoom", "custom", true, "", false, "", false, false, "", "", false, null, true, false, "", false, "", false],
+			["mapTypeControl", "checkbox", "Map Type Control", "custom", true, "", false, "", false, false, "", "", false, null, true, false, "", false, "", false],
+			["scaleControl", "checkbox", "Scale Control", "custom", true, "", false, "", false, false, "", "", false, null, true, false, "", false, "", false],
+			["scrollwheel", "checkbox", "Scroll Wheel", "custom", true, "", false, "", false, false, "", "", false, null, true, false, "", false, "", false],
+			["streetViewControl", "checkbox", "Street View Control", "custom", true, "", false, "", false, false, "", "", false, null, true, false, "", false, "", false],
+			["draggable", "checkbox", "Draggable", "custom", true, "", false, "", false, false, "", "", false, null, true, false, "", false, "", false],
+			["overviewMapControl", "checkbox", "Overview Map Control", "custom", true, "", false, "", false, false, "", "", false, null, true, false, "", false, "", false]
+		];
+		//name, selectorStr, pgStr, dataStr, opts) 
+		creator("Google Maps", ".google-map", "googlemap", "data-google-map-options", googlemapattributeoptions);
+
 
 
 		var layoutModes = [{
@@ -2303,6 +2328,7 @@ var ihcdelays = [
 			'fonts',
 			'img',
 			'js',
+			'css/che.css',
 			'css/h.css',
 			'css/hei.css',
 			'css/ih.css',
