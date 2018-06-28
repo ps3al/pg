@@ -68,6 +68,10 @@ $(function () {
 								name: "Effects - Image Hover Effect"
 							},
 							{
+								key: 'tilt',
+								name: "Effects - Tilt.js"
+							},
+							{
 								key: 'google-map',
 								name: "Google Maps"
 							},
@@ -1581,6 +1585,29 @@ var ihcdelays = [
 
 
 
+		var tiltaxis = [
+			{key:'x',name:'X'},
+			{key:'y',name:'Y'}
+		];
+
+		//0-optName, 1-type, 2-name, 3-action, 4-value, 5-placeholder, 6-live_update, 7-slider_def_unit, 8-file_picker, 9-file_picker_no_proxy, 10-show_if, 11-parent, 12-valueisarray, 13-options, 14-show_empty, 15-multiple, 16-customattribute, 17-attributeisvalue, 18-attribute, 19-emptyattribute
+		var tiltattributeoptions = [
+			["maxTilt","slider","maxTilt","custom","","",false,"",false,false,"","",false,null,true,false,"",false,"",false],
+			["perspective","slider","perspective","custom","","",false,"",false,false,"","",false,null,true,false,"",false,"",false],
+			["easing","text","easing","custom","cubic-bezier(.03,.98,.52,.99)","",false,"",false,false,"","",false,null,true,false,"",false,"",false],
+			["scale","slider","scale","custom","","",false,"",false,false,"","",false,null,true,false,"",false,"",false],
+			["speed","slider","speed","custom","","",false,"",false,false,"","",false,null,true,false,"",false,"",false],
+			["transition","checkbox","transition","custom","","",false,"",false,false,"","",false,null,true,false,"",false,"",false],
+			["disableAxis","select","disableAxis","custom","","",false,"",false,false,"","",false,tiltaxis,true,false,"",false,"",false],
+			["reset","checkbox","reset","custom","","",false,"",false,false,"","",false,null,true,false,"",false,"",false],
+			["glare","checkbox","glare","custom","","",false,"",false,false,"","",false,null,true,false,"",false,"",false],
+			["maxGlare","slider","maxGlare","custom","","",false,"",false,false,"","",false,null,true,false,"",false,"",false]
+		];
+		//name, selectorStr, pgStr, dataStr, opts) 
+		creator("Effects - Tilt.js", ".tilt", "tilt", "data-tilt-options", tiltattributeoptions);
+
+
+
 
 		//0-optName, 1-type, 2-name, 3-action, 4-value, 5-placeholder, 6-live_update, 7-slider_def_unit, 8-file_picker, 9-file_picker_no_proxy, 10-show_if, 11-parent, 12-valueisarray, 13-options, 14-show_empty, 15-multiple, 16-customattribute, 17-attributeisvalue, 18-attribute, 19-emptyattribute
 		var googlemapattributeoptions = [
@@ -2374,6 +2401,7 @@ var ihcdelays = [
 			'js/jquery.easytabs.min.js',
 			'js/jquery.smartmenus.min.js',
 			'js/jquery.smartmenus.bootstrap-4.min.js',
+			'js/tilt.jquery.js',
 			'js/wow.min.js',
 			'js/venobox.min.js',
 			'js/scripts.js',
