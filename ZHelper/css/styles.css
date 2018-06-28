@@ -21,3 +21,51 @@
 .animated {
     visibility: hidden;
 }
+
+
+.kenburns{
+	animation: kenburns 30s infinite;
+}
+/* KENBURNS ANIMATIONS */
+@keyframes kenburns {
+    5% {
+      transform: scale3d(1, 1, 1) translate3d(0px, 0px, 0px);
+      animation-timing-function: ease-in;
+    }
+    45% {
+      transform: scale3d(1.5, 1.5, 1.5) translate3d(-100px, -30px, 0px);
+      animation-timing-function: ease-in;
+    }
+    60% {
+      transform: scale3d(1.5, 1.5, 1.5) translate3d(-100px, -30px, 0px);
+      animation-timing-function: ease-in;
+    }
+    100% {
+      transform: scale3d(1, 1, 1) translate3d(0px, 0px, 0px);
+      animation-timing-function: ease-in;
+    }
+  }
+  @keyframes mobileburns {
+    5% {
+      transform: scale3d(1, 1, 1) translate3d(0px, 0px, 0px);
+      animation-timing-function: ease-in;
+    }
+    65% {
+      transform: scale3d(2.5, 2.5, 2.5) translate3d(-100px, -30px, 0px);
+      animation-timing-function: ease-in;
+    }
+    80% {
+      transform: scale3d(2.5, 2.5, 2.5) translate3d(-100px, -30px, 0px);
+      animation-timing-function: ease-in;
+    }
+    100% {
+      transform: scale3d(1, 1, 1) translate3d(0px, 0px, 0px);
+      animation-timing-function: ease-in;
+    }
+  }
+  @keyframes noburns {
+    100% {
+      transform: scale3d(1, 1, 1) translate3d(0px, 0px, 0px);
+      animation-timing-function: ease-in;
+    }
+  }

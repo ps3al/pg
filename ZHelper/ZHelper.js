@@ -29,11 +29,15 @@ $(function () {
 						live_update: true,
 						options: [{
 								key: 'animated',
-								name: "Animated"
+								name: "Animations - Animated"
 							},
 							{
 								key: 'wow',
-								name: "Animated WOW"
+								name: "Animations - Animated WOW"
+							},
+							{
+								key: 'kenburns',
+								name: "Animations - Kenburns"
 							},
 							{
 								key: 'countdown',
@@ -969,7 +973,7 @@ $(function () {
 			["triggerOnce", "checkbox", "Trigger Once", "custom", true, "", false, "", false, false, "", "", false, null, false, false, "", false, "", false]
 		];
 		//name, selectorStr, pgStr, dataStr, opts) 
-		creator("Animated", ".animated", "animated", "data-animated-options", animatedattributeoptions);
+		creator("Animations - Animated", ".animated", "animated", "data-animated-options", animatedattributeoptions);
 
 
 
@@ -997,7 +1001,7 @@ $(function () {
 			["mobile", "checkbox", "Disable On Mobile", "custom", "false", "", false, "", false, false, "", "", false, null, false, false, "data-wow-mobile", true, "", false]
 		];
 		//name, selectorStr, pgStr, dataStr, opts) 
-		creator("Animated WOW", ".wow", "wow", "data-wow-options", wowattributeoptions);
+		creator("Animations - Animated WOW", ".wow", "wow", "data-wow-options", wowattributeoptions);
 
 
 
