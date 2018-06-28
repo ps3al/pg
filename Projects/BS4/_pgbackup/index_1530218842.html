@@ -30,6 +30,8 @@
 		<link rel="stylesheet" href="components/ZHelperPlugin/css/ihe.css">
 		<link rel="stylesheet" href="components/ZHelperPlugin/css/h.css">
 		<link rel="stylesheet" href="components/ZHelperPlugin/css/che.css">
+		<link rel="stylesheet" href="components/ZHelperPlugin/css/cle.css">
+		<link rel="stylesheet" href="components/ZHelperPlugin/css/lhe.css">
 	</head>
 	<body>
 		<div class="container">
@@ -473,7 +475,7 @@
 			<div class="row">
 				<div class="xlg1 light-gallery" data-light-gallery-options="{&quot;autoplay&quot;:true}">
 					<div class="row pg-empty-placeholder">
-						<div class="col-md-4"> 
+						<div class="col-md-4 tilt" data-tilt-options="{&quot;maxTilt&quot;:20}"> 
 							<a href="pictures/pic--case-9.jpg">
 								<img src="pictures/pic--case-9.jpg" class="img-fluid"/>
 							</a>
@@ -544,9 +546,11 @@
 							<img src="pictures/pic--case-4.jpg" class="img-fluid"/>
 						</a>
 					</div>
-					<div class="col-md-4"> 
+					<div class="col-md-4 tilt tilt-parallax" data-tilt-options="{&quot;maxGlare&quot;:0.5,&quot;glare&quot;:true}"> 
 						<a href="pictures/pic--case-5.jpg">
 							<img src="pictures/pic--case-5.jpg" class="img-fluid"/>
+							<p class="tilt-parallax-item">
+		TEST </p>
 						</a>
 					</div>
 					<div class="col-md-4"> 
@@ -594,7 +598,7 @@
 				</div>
 				<div data-isotope-options='{"filters":".isotope-filter-button"}' class="row isotope isotope-container light-gallery row" style="float: none;
     clear: both;">
-					<div class="col-md-4 isotope-item category1 category4">
+					<div class="col-md-4 isotope-item category1 category4 tilt">
 						<a href="pictures/pic--case-1.jpg" class="ih imghvr-push-left">
 							<img src="pictures/pic--case-1.jpg" alt=""/>
 							<div class="caption">
@@ -603,7 +607,7 @@
 							</div>
 						</a>
 					</div>
-					<div class="col-md-4 isotope-item category1">
+					<div class="col-md-4 isotope-item category1 tilt">
 						<a href="pictures/pic--case-2.png" class="ihe ehover14">
 							<img src="pictures/pic--case-2.png" alt=""/>
 							<div class="caption">
@@ -612,7 +616,7 @@
 							</div>
 						</a>
 					</div>
-					<div class="col-md-4 isotope-item category2 category3">
+					<div class="col-md-4 isotope-item category2 category3 tilt">
 						<a href="pictures/pic--case-3.jpg" class="ihe ehover1">
 							<img src="pictures/pic--case-3.jpg" alt=""/>
 							<div class="caption">
@@ -621,12 +625,12 @@
 							</div>
 						</a>
 					</div>
-					<div class="col-md-4 isotope-item category4">
+					<div class="col-md-4 isotope-item category4 tilt">
 						<a href="pictures/pic--case-4.jpg" class="ih imghvr-blur">
 							<img src="pictures/pic--case-4.jpg" alt=""/>
 						</a>
 					</div>
-					<div class="col-md-4 isotope-item category3">
+					<div class="col-md-4 isotope-item category3 tilt">
 						<a href="pictures/pic--case-5.jpg" class="ih imghvr-fade imghvr-hinge-down">
 							<img src="pictures/pic--case-5.jpg" alt=""/>
 							<div class="caption">
@@ -634,25 +638,15 @@
 </div>
 						</a>
 					</div>
-					<div class="col-md-4 isotope-item category1">
+					<div class="col-md-4 isotope-item category1 tilt" data-tilt-options="{&quot;disableAxis&quot;:&quot;x&quot;,&quot;maxGlare&quot;:1}">
 						<a href="pictures/pic--case-6.jpg" class="ih imghvr-strip-horiz-bottom-left">
 							<img src="pictures/pic--case-6.jpg" alt="" class="countdown"/>
-							<div class="caption easytabs" data-easytabs-options="{&quot;animate&quot;:true}">
+							<div class="caption">
 								<h3 class="ih-delay-sm ih-fade">Oscar Wilde</h3>
 								<p class="ih-zoom-in ih-delay-xs"><i>"I have the simplest tastes, I am always satisfied with the best."</i></p>
 								<span class="ih-fade-up ih-delay-xs button primary" href="#">Read More</span>
 							</div>
 						</a>
-					</div>
-					<div class="col-md-4 isotope-item category1">
-						<div class="che style1">
-							<img src="pictures/pic--case-6.jpg" alt="img01" class="img-fluid">
-							<div class="caption">
-								<h3>Camera</h3>
-								<span>Jacob Cummings</span>
-								<a href="http://dribbble.com/shots/1115632-Camera">Take a look</a>
-							</div>
-						</div>
 					</div>
 				</div>
 			</div>
@@ -722,9 +716,183 @@
 		</div>
 		<div class="container">
 			<div class="row">
+				<div class="col">
+					<div class="che style1">
+						<img src="pictures/pic--case-1.jpg" alt="img01" class="img-fluid">
+						<div class="caption">
+							<h3>Camera</h3>
+							<span>Jacob Cummings</span>
+							<a href="http://dribbble.com/shots/1115632-Camera">Take a look</a>
+						</div>
+					</div>
+				</div>
+				<div class="col">
+					<div class="che style1">
+						<img src="pictures/pic--case-2.png" alt="img02">
+						<div class="caption">
+							<h3>Music</h3>
+							<span>Jacob Cummings</span>
+							<a href="http://dribbble.com/shots/1115960-Music">Take a look</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col">&nbsp;
+</div>
+				<div class="col">
+</div>
+			</div>
+			<div class="row">
+				<div class="col">
+					<div class="che style2">
+						<img src="pictures/pic--case-3.jpg" alt="img03">
+						<div class="caption">
+							<h3>Music</h3>
+							<span>Jacob Cummings</span>
+							<a href="http://dribbble.com/shots/1115960-Music">Take a look</a>
+						</div>
+					</div>
+				</div>
+				<div class="col">
+					<div class="che style2">
+						<img src="pictures/pic--case-4.jpg" alt="img04">
+						<div class="caption">
+							<h3>Settings</h3>
+							<span>Jacob Cummings</span>
+							<a href="https://dribbble.com/shots/1116685-Settings">Take a look</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col">&nbsp;
+</div>
+				<div class="col">
+</div>
+			</div>
+			<div class="row">
+				<div class="col">
+					<div class="che style3">
+						<img src="pictures/pic--case-5.jpg" alt="img05">
+						<div class="caption">
+							<h3>Music</h3>
+							<span>Jacob Cummings</span>
+							<a href="http://dribbble.com/shots/1115960-Music">Take a look</a>
+						</div>
+					</div>
+				</div>
+				<div class="col">
+					<div class="che style3">
+						<img src="pictures/pic--case-6.jpg" alt="img06">
+						<div class="caption">
+							<h3>Settings</h3>
+							<span>Jacob Cummings</span>
+							<a href="https://dribbble.com/shots/1116685-Settings">Take a look</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col">&nbsp;
+</div>
+				<div class="col">
+</div>
+			</div>
+			<div class="row">
+				<div class="col">
+					<div class="che style4">
+						<div>
+							<img src="pictures/pic--case-1.jpg" alt="img02">
+						</div>
+						<div class="caption">
+							<h3>Music</h3>
+							<span>Jacob Cummings</span>
+							<a href="http://dribbble.com/shots/1115960-Music">Take a look</a>
+						</div>
+					</div>
+				</div>
+				<div class="col">
+					<div class="che style4">
+						<div>
+							<img src="pictures/pic--case-2.png" alt="img02">
+						</div>
+						<div class="caption">
+							<h3>Settings</h3>
+							<span>Jacob Cummings</span>
+							<a href="https://dribbble.com/shots/1116685-Settings">Take a look</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col">&nbsp;
+</div>
+				<div class="col">
+</div>
+			</div>
+			<div class="row">
+				<div class="col">
+					<div class="che style5">
+						<img src="pictures/pic--case-3.jpg" alt="img03">
+						<div class="caption">
+							<h3>Music</h3>
+							<span>Jacob Cummings</span>
+							<a href="http://dribbble.com/shots/1115960-Music">Take a look</a>
+						</div>
+					</div>
+				</div>
+				<div class="col">
+					<div class="che style5">
+						<img src="pictures/pic--case-4.jpg" alt="img04">
+						<div class="caption">
+							<h3>Settings</h3>
+							<span>Jacob Cummings</span>
+							<a href="https://dribbble.com/shots/1116685-Settings">Take a look</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col">&nbsp;
+</div>
+				<div class="col">
+</div>
+			</div>			 
+			<div class="row">
+				<div class="col">
+					<div class="che style6">
+						<img src="pictures/pic--case-5.jpg" alt="img05">
+						<div class="caption">
+							<h3>Music</h3>
+							<span>Jacob Cummings</span>
+							<a href="http://dribbble.com/shots/1115960-Music">Take a look</a>
+						</div>
+					</div>
+				</div>
+				<div class="col">
+					<div class="che style6">
+						<img src="pictures/pic--case-6.jpg" alt="img06">
+						<div class="caption">
+							<h3>Settings</h3>
+							<span>Jacob Cummings</span>
+							<a href="https://dribbble.com/shots/1116685-Settings">Take a look</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col">&nbsp;
+</div>
+				<div class="col">
+</div>
+			</div>			 
+		</div>
+		<div class="container">
+			<div class="row">
 				<div class="col-md-4"> 
 					<div class="hei effect-layla">
-						<img class="img-fluid" src="pictures/pic--case-11.jpg" alt="img06">
+						<img class="img-fluid kenburns" src="pictures/pic--case-11.jpg" alt="img06">
 					</div>
 				</div>
 				<div class="col-md-4"> 
@@ -809,5 +977,6 @@
 		<script type="text/javascript" src="components/ZHelperPlugin/js/scripts.js"></script>
 		<script type="text/javascript" src="components/ZHelperPlugin/js/wow.min.js"></script>
 		<script type="text/javascript" src="components/ZHelperPlugin/js/venobox.min.js"></script>
+		<script type="text/javascript" src="components/ZHelperPlugin/js/tilt.jquery.js"></script>
 	</body>
 </html>

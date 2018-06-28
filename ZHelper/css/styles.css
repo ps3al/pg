@@ -69,3 +69,10 @@
       animation-timing-function: ease-in;
     }
   }
+
+  .tilt-parallax{
+    transform-style: preserve-3d;
+  }
+  .tilt-parallax-item{
+    transform: translateZ(20px)
+  }

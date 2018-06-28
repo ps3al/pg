@@ -162,9 +162,18 @@ $(function () {
 			var temp = new PgComponentType('zh.' + pgStr + '_def', name);
 
 			var parentClass = selectorStr.replace('.','').split('>'); 
-            temp.selector_new = function(pgel) {
-				return (pgel.parent.hasClass(parentClass[1].replace('.','')) && pgel.parent.parent.hasClass(parentClass[0].replace('.','')));
-            };
+			if(parentClass[1]){
+				temp.selector_new = function(pgel) {
+					return (pgel.parent.hasClass(parentClass[1].replace('.','')) && pgel.parent.parent.hasClass(parentClass[0].replace('.','')));
+				};
+			}else{
+				temp.selector_new = function(pgel) {
+//					console.warn('zzzzz ' + selectorStr);
+//					return (pgel.parents.hasClass(selectorStr.replace('.','')));
+					return (pgel.parent.hasClass(selectorStr.replace('.','')) || pgel.parent.parent.hasClass(selectorStr.replace('.','')));
+
+				}
+			}
             temp.parent_selector= selectorStr;
 			temp.sections = {};
 			temp.sections[pgStr + '_options'] = {};
@@ -1605,10 +1614,17 @@ var ihcdelays = [
 			["disableAxis","select","disableAxis","custom","","",false,"",false,false,"","",false,tiltaxis,true,false,"",false,"",false],
 			["reset","checkbox","reset","custom",true,"",false,"",false,false,"","",false,null,true,false,"",false,"",false],
 			["glare","checkbox","glare","custom",true,"",false,"",false,false,"","",false,null,true,false,"",false,"",false],
-			["maxGlare","slider","maxGlare","custom","","",false,"",false,false,"","",false,null,true,false,"",false,"",false]
+			["maxGlare","slider","maxGlare","custom","","",false,"",false,false,"","",false,null,true,false,"",false,"",false],
+			["tiltParallax","checkbox","Parallax Items","apply_class","tilt-parallax","",false,"",false,false,"","",false,null,true,false,"",false,"",false]
 		];
 		//name, selectorStr, pgStr, dataStr, opts) 
 		creator("Effects - Tilt.js", ".tilt", "tilt", "data-tilt-options", tiltattributeoptions);
+
+		var tiltparallaxitemattributeoptions = [
+			["tiltParallaxItem","checkbox","Enable Item Parallax","apply_class","tilt-parallax-item","",false,"",false,false,"","",false,null,true,false,"",false,"",false]
+		];
+		//name, selectorStr, pgStr, dataStr, opts) 
+		creator2("Effects - Tilt.js Parallax Item", ".tilt-parallax", "tiltparallax", "", tiltparallaxitemattributeoptions);
 
 
 
