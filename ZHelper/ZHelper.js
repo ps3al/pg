@@ -1601,10 +1601,10 @@ var ihcdelays = [
 			["easing","text","easing","custom","cubic-bezier(.03,.98,.52,.99)","",false,"",false,false,"","",false,null,true,false,"",false,"",false],
 			["scale","slider","scale","custom","","",false,"",false,false,"","",false,null,true,false,"",false,"",false],
 			["speed","slider","speed","custom","","",false,"",false,false,"","",false,null,true,false,"",false,"",false],
-			["transition","checkbox","transition","custom","","",false,"",false,false,"","",false,null,true,false,"",false,"",false],
+			["transition","checkbox","transition","custom",true,"",false,"",false,false,"","",false,null,true,false,"",false,"",false],
 			["disableAxis","select","disableAxis","custom","","",false,"",false,false,"","",false,tiltaxis,true,false,"",false,"",false],
-			["reset","checkbox","reset","custom","","",false,"",false,false,"","",false,null,true,false,"",false,"",false],
-			["glare","checkbox","glare","custom","","",false,"",false,false,"","",false,null,true,false,"",false,"",false],
+			["reset","checkbox","reset","custom",true,"",false,"",false,false,"","",false,null,true,false,"",false,"",false],
+			["glare","checkbox","glare","custom",true,"",false,"",false,false,"","",false,null,true,false,"",false,"",false],
 			["maxGlare","slider","maxGlare","custom","","",false,"",false,false,"","",false,null,true,false,"",false,"",false]
 		];
 		//name, selectorStr, pgStr, dataStr, opts) 
