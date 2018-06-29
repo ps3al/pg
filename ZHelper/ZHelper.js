@@ -2074,11 +2074,11 @@ var ihcdelays = [
 		//0-optName, 1-type, 2-name, 3-action, 4-value, 5-placeholder, 6-live_update, 7-slider_def_unit, 8-file_picker, 9-file_picker_no_proxy, 10-show_if, 11-parent, 12-valueisarray, 13-options, 14-show_empty, 15-multiple, 16-customattribute, 17-attributeisvalue, 18-attribute, 19-emptyattribute
 		var rellaxattributeoptions = [
 			["speed","slider","speed","custom","","",false,"",false,false,"","",false,null,true,false,"data-rellax-speed",true,"",false],
-			["center","checkbox","center","custom",true,"",false,"",false,false,"","",false,null,true,false,"",false,"",false],
-			["wrapper","text","wrapper","custom","","",false,"",false,false,"","",false,null,true,false,"",false,"",false],
-			["round","checkbox","round","custom",true,"",false,"",false,false,"","",false,null,true,false,"",,"",false],
-			["vertical","checkbox","vertical","custom",true,"",false,"",false,false,"","",false,null,true,false,"",false,"",false],
-			["horizontal","checkbox","horizontal","custom",true,"",false,"",false,false,"","",false,null,true,false,"",false,"",false],
+			// ["center","checkbox","center","custom",true,"",false,"",false,false,"","",false,null,true,false,"",false,"",false],
+			// ["wrapper","text","wrapper","custom","","",false,"",false,false,"","",false,null,true,false,"",false,"",false],
+			// ["round","checkbox","round","custom",true,"",false,"",false,false,"","",false,null,true,false,"",,"",false],
+			// ["vertical","checkbox","vertical","custom",true,"",false,"",false,false,"","",false,null,true,false,"",false,"",false],
+			// ["horizontal","checkbox","horizontal","custom",true,"",false,"",false,false,"","",false,null,true,false,"",false,"",false],
 			["percentage","slider","percentage","custom","","",false,"",false,false,"","",false,null,true,false,"data-rellax-percentage",true,"",false],
 			["zindex","slider","zindex","custom","","",false,"",false,false,"","",false,null,true,false,"data-rellax-zindex",true,"",false]
 		];

@@ -201,12 +201,17 @@
 	/*=============================================>>>>>
 	= Rellax =
 	===============================================>>>>>*/
-	$('.rellax').each(function (index) {
-		var rllxDefaults = {};
-		var rllxOptions = $(this).data('rellax-options');
-		console.warn($(this));
-		var rellax = new Rellax($(this),$.extend(rllxDefaults, rllxOptions));
-	});
+	// $('.rellax').each(function (index) {
+	// 	var rllxDefaults = {};
+	// 	var rllxOptions = $(this).data('rellax-options');
+	// 	console.warn($(this));
+	// 	var rellax = new Rellax(this,$.extend(rllxDefaults, rllxOptions));
+	// });
+	if($('.rellax').length>0){
+		var rellax = new Rellax('.rellax');
+	}
+
+
 	/*= End of Rellax =*/
 	/*=============================================<<<<<*/
 
