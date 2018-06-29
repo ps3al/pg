@@ -36,6 +36,10 @@ $(function () {
 								name: "Animations - Animated WOW"
 							},
 							{
+								key: 'aos',
+								name: "Animations - AOS"
+							},
+							{
 								key: 'kenburns',
 								name: "Animations - Kenburns"
 							},
@@ -102,6 +106,10 @@ $(function () {
 							{
 								key: 'jarallax',
 								name: "Parallax"
+							},
+							{
+								key: 'rellax',
+								name: "Rellax"
 							},
 							{
 								key: 'progressbar-circle',
@@ -983,6 +991,89 @@ $(function () {
 		];
 		//name, selectorStr, pgStr, dataStr, opts) 
 		creator("Animations - Animated", ".animated", "animated", "data-animated-options", animatedattributeoptions);
+
+
+
+
+
+		var aoseffects = [
+			{ key:'fade',name:'fade'},
+			{ key:'fade-up',name:'fade-up'},
+			{ key:'fade-down',name:'fade-down'},
+			{ key:'fade-left',name:'fade-left'},
+			{ key:'fade-right',name:'fade-right'},
+			{ key:'fade-up-right',name:'fade-up-right'},
+			{ key:'fade-up-left',name:'fade-up-left'},
+			{ key:'fade-down-right',name:'fade-down-right'},
+			{ key:'fade-down-left',name:'fade-down-left'},
+			{ key:'flip-up',name:'flip-up'},
+			{ key:'flip-down',name:'flip-down'},
+			{ key:'flip-left',name:'flip-left'},
+			{ key:'flip-right',name:'flip-right'},
+			{ key:'slide-up',name:'slide-up'},
+			{ key:'slide-down',name:'slide-down'},
+			{ key:'slide-left',name:'slide-left'},
+			{ key:'slide-right',name:'slide-right'},
+			{ key:'zoom-in',name:'zoom-in'},
+			{ key:'zoom-in-up',name:'zoom-in-up'},
+			{ key:'zoom-in-down',name:'zoom-in-down'},
+			{ key:'zoom-in-left',name:'zoom-in-left'},
+			{ key:'zoom-in-right',name:'zoom-in-right'},
+			{ key:'zoom-out',name:'zoom-out'},
+			{ key:'zoom-out-up',name:'zoom-out-up'},
+			{ key:'zoom-out-down',name:'zoom-out-down'},
+			{ key:'zoom-out-left',name:'zoom-out-left'},
+			{ key:'zoom-out-right',name:'zoom-out-right'}
+		];
+
+		var aosanchorplacement = [
+			{ key:'top-bottom', name:'top-bottom'},
+			{ key:'top-center', name:'top-center'},
+			{ key:'top-top', name:'top-top'},
+			{ key:'center-bottom', name:'center-bottom'},
+			{ key:'center-center', name:'center-center'},
+			{ key:'center-top', name:'center-top'},
+			{ key:'bottom-bottom', name:'bottom-bottom'},
+			{ key:'bottom-center', name:'bottom-center'},
+			{ key:'bottom-top', name:'bottom-top'}
+		];
+
+		var aoseasing = [
+			{ key:'linear', name:'linear'},
+			{ key:'ease', name:'ease'},
+			{ key:'ease-in', name:'ease-in'},
+			{ key:'ease-out', name:'ease-out'},
+			{ key:'ease-in-out', name:'ease-in-out'},
+			{ key:'ease-in-back', name:'ease-in-back'},
+			{ key:'ease-out-back', name:'ease-out-back'},
+			{ key:'ease-in-out-back', name:'ease-in-out-back'},
+			{ key:'ease-in-sine', name:'ease-in-sine'},
+			{ key:'ease-out-sine', name:'ease-out-sine'},
+			{ key:'ease-in-out-sine', name:'ease-in-out-sine'},
+			{ key:'ease-in-quad', name:'ease-in-quad'},
+			{ key:'ease-out-quad', name:'ease-out-quad'},
+			{ key:'ease-in-out-quad', name:'ease-in-out-quad'},
+			{ key:'ease-in-cubic', name:'ease-in-cubic'},
+			{ key:'ease-out-cubic', name:'ease-out-cubic'},
+			{ key:'ease-in-out-cubic', name:'ease-in-out-cubic'},
+			{ key:'ease-in-quart', name:'ease-in-quart'},
+			{ key:'ease-out-quart', name:'ease-out-quart'},
+			{ key:'ease-in-out-quart', name:'ease-in-out-quart'}
+		];
+
+		//0-optName, 1-type, 2-name, 3-action, 4-value, 5-placeholder, 6-live_update, 7-slider_def_unit, 8-file_picker, 9-file_picker_no_proxy, 10-show_if, 11-parent, 12-valueisarray, 13-options, 14-show_empty, 15-multiple, 16-customattribute, 17-attributeisvalue, 18-attribute, 19-emptyattribute
+		var aosattributeoptions = [
+			["data-aos","select","Effect","custom","","",false,"",false,false,"","",false,aoseffects,true,false,"data-aos",true,"",false],
+			["data-aos-offset","slider","Offset","custom","","",false,"",false,false,"","",false,null,true,false,"data-aos-offset",true,"",false],
+			["data-aos-duration","slider","Duration","custom","","",false,"",false,false,"","",false,null,true,false,"data-aos-duration",true,"",false],
+			["data-aos-easing","select","Easing","custom","","",false,"",false,false,"","",false,aoseasing,true,false,"data-aos-easing",true,"",false],
+			["data-aos-delay","slider","Delay","custom","","",false,"",false,false,"","",false,null,true,false,"data-aos-delay",true,"",false],
+			["data-aos-anchor","text","Anchor","custom","","",false,"",false,false,"","",false,null,true,false,"data-aos-anchor",true,"",false],
+			["data-aos-anchor-placement","select","Anchor Placement","custom","","",false,"",false,false,"","",false,aosanchorplacement,true,false,"data-aos-anchor-placement",true,"",false],
+			["data-aos-once","checkbox","Once","custom","true","",false,"",false,false,"","",false,null,false,false,"data-aos-once",true,"",false]
+		];
+		//name, selectorStr, pgStr, dataStr, opts) 
+		creator("Animations - AOS", ".aos", "aos", "data-aos-options", aosattributeoptions);
 
 
 
@@ -1980,6 +2071,22 @@ var ihcdelays = [
 
 
 
+		//0-optName, 1-type, 2-name, 3-action, 4-value, 5-placeholder, 6-live_update, 7-slider_def_unit, 8-file_picker, 9-file_picker_no_proxy, 10-show_if, 11-parent, 12-valueisarray, 13-options, 14-show_empty, 15-multiple, 16-customattribute, 17-attributeisvalue, 18-attribute, 19-emptyattribute
+		var rellaxattributeoptions = [
+			["speed","slider","speed","custom","","",false,"",false,false,"","",false,null,true,false,"data-rellax-speed",true,"",false],
+			["center","checkbox","center","custom",true,"",false,"",false,false,"","",false,null,true,false,"",false,"",false],
+			["wrapper","text","wrapper","custom","","",false,"",false,false,"","",false,null,true,false,"",false,"",false],
+			["round","checkbox","round","custom",true,"",false,"",false,false,"","",false,null,true,false,"",,"",false],
+			["vertical","checkbox","vertical","custom",true,"",false,"",false,false,"","",false,null,true,false,"",false,"",false],
+			["horizontal","checkbox","horizontal","custom",true,"",false,"",false,false,"","",false,null,true,false,"",false,"",false],
+			["percentage","slider","percentage","custom","","",false,"",false,false,"","",false,null,true,false,"data-rellax-percentage",true,"",false],
+			["zindex","slider","zindex","custom","","",false,"",false,false,"","",false,null,true,false,"data-rellax-zindex",true,"",false]
+		];
+		//name, selectorStr, pgStr, dataStr, opts) 
+		creator("Rellax", ".rellax", "rellax", "data-rellax-options", rellaxattributeoptions);
+
+
+
 		var plyrtypes = [{
 				key: 'youtube',
 				name: 'Youtube'
@@ -2375,6 +2482,7 @@ var ihcdelays = [
 			'fonts',
 			'img',
 			'js',
+			'css/aos.css',
 			'css/che.css',
 			'css/cle.css',
 			'css/h.css',
@@ -2397,6 +2505,7 @@ var ihcdelays = [
 			'css/venobox.css',
 			'css/styles.css',
 			'js/jquery.min.js',
+			'js/aos.js',
 			'js/slick.min.js',
 			'js/owl.carousel.min.js',
 			'js/lightbox.min.js',
@@ -2405,6 +2514,7 @@ var ihcdelays = [
 			'js/jarallax.min.js',
 			'js/jarallax-video.min.js',
 			'js/jarallax-element.min.js',
+			'js/rellax.min.js',
 			'js/plyr.js',
 			'js/jquery.lazyLoadGoogleMaps.js',
 			'js/jquery.waypoints.min.js',

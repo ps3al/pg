@@ -198,6 +198,35 @@
 
 
 
+	/*=============================================>>>>>
+	= Rellax =
+	===============================================>>>>>*/
+	$('.rellax').each(function (index) {
+		var rllxDefaults = {};
+		var rllxOptions = $(this).data('rellax-options');
+		console.warn($(this));
+		var rellax = new Rellax($(this),$.extend(rllxDefaults, rllxOptions));
+	});
+	/*= End of Rellax =*/
+	/*=============================================<<<<<*/
+
+
+	// $('.swiper-slider').each(function (index) {
+	// 	var swDefaults = {};
+	// 	var swiperConf = $(this).data('swiper-slider-options');
+	// 	$.extend(swDefaults, swiperConf);
+	// 	var slider = new Swiper(swiperConf['containerClass'], swDefaults);
+
+
+	// var rellax = new Rellax('.rellax', {
+    //     // center: true
+    //     callback: function(position) {
+    //         // callback every position change
+    //         console.log(position);
+    //     }
+    //   });
+
+
 
 	/*=============================================>>>>>
 	= Plyr =
@@ -360,6 +389,8 @@
 
 		var wow = new WOW({});
 		wow.init();
+
+		AOS.init();
 
 		/*=============================================>>>>>
 		= Animated =
