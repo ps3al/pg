@@ -2532,6 +2532,7 @@ var ihcdelays = [
 			'js/jquery.smartmenus.min.js',
 			'js/jquery.smartmenus.bootstrap-4.min.js',
 			'js/tilt.jquery.js',
+			'js/tutorial.js',
 			'js/wow.min.js',
 			'js/venobox.min.js',
 			'js/scripts.js',
