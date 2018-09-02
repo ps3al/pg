@@ -1,4 +1,11 @@
 var gulp = require('gulp');
+
+var postcss = require('gulp-postcss');
+var sorting = require('postcss-sorting');
+var orderedvalues = require('postcss-ordered-values');
+var uniqueselectors = require('postcss-unique-selectors');
+
+
 var uncss = require('gulp-uncss');
 var csscomb = require('gulp-csscomb');
 var cssnano = require('gulp-cssnano');
@@ -14,8 +21,11 @@ gulp.task('css', function () {
 		.pipe(uncss({ html: ['base.html'] }))
 		.pipe(cssnano({ zindex: false }))
 		.pipe(csscomb())
-		.pipe(csso())
+/*		.pipe(csso())*/
 		.pipe(jsbeautifier())
+		.pipe(postcss([sorting({ "properties-order": ["width","min-width","max-width","height","min-height","max-height","padding","margin","top","left","right","bottom","position","z-index","display","vertical-align","overflow","float","clear","opacity","object-fit","object-position","border-radius","border","font-family","font-size","line-height","color","font-weight","letter-spacing","font-style","font-variant","text-decoration","text-transform","text-align","white-space","word-break","direction","background","background-color","background-image","background-repeat","background-position","background-attachment","background-size","background-origin","background-clip","flex-direction","align-items","justify-content","flex-wrap","align-content","flex-basis","flex-grow","flex-shrink","order","align-self","box-shadow","text-shadow","transform","transition","list-style-type","list-style-position","list-style-image"] })]))
+		.pipe(postcss([orderedvalues()]))
+		.pipe(postcss([uniqueselectors()]))
 		.pipe(rename('new.css'))
 		.pipe(gulp.dest('css'));
 });
@@ -33,8 +43,11 @@ gulp.task('csslast', function () {
 		.pipe(uncss({ html: ['new.html'] }))
 		.pipe(cssnano({ zindex: false }))
 		.pipe(csscomb())
-		.pipe(csso())
+/*		.pipe(csso())*/
 		.pipe(jsbeautifier())
+		.pipe(postcss([sorting({ "properties-order": ["width","min-width","max-width","height","min-height","max-height","padding","margin","top","left","right","bottom","position","z-index","display","vertical-align","overflow","float","clear","opacity","object-fit","object-position","border-radius","border","font-family","font-size","line-height","color","font-weight","letter-spacing","font-style","font-variant","text-decoration","text-transform","text-align","white-space","word-break","direction","background","background-color","background-image","background-repeat","background-position","background-attachment","background-size","background-origin","background-clip","flex-direction","align-items","justify-content","flex-wrap","align-content","flex-basis","flex-grow","flex-shrink","order","align-self","box-shadow","text-shadow","transform","transition","list-style-type","list-style-position","list-style-image"] })]))
+		.pipe(postcss([orderedvalues()]))
+		.pipe(postcss([uniqueselectors()]))
 		.pipe(rename('last.css'))
 		.pipe(gulp.dest('css'));
 });
@@ -65,8 +78,11 @@ gulp.task('cssc', function () {
 	gulp.src('css/new.css')
 		.pipe(cssnano({ zindex: false }))
 		.pipe(csscomb())
-		.pipe(csso())
+/*		.pipe(csso())*/
 		.pipe(jsbeautifier())
+		.pipe(postcss([sorting({ "properties-order": ["width","min-width","max-width","height","min-height","max-height","padding","margin","top","left","right","bottom","position","z-index","display","vertical-align","overflow","float","clear","opacity","object-fit","object-position","border-radius","border","font-family","font-size","line-height","color","font-weight","letter-spacing","font-style","font-variant","text-decoration","text-transform","text-align","white-space","word-break","direction","background","background-color","background-image","background-repeat","background-position","background-attachment","background-size","background-origin","background-clip","flex-direction","align-items","justify-content","flex-wrap","align-content","flex-basis","flex-grow","flex-shrink","order","align-self","box-shadow","text-shadow","transform","transition","list-style-type","list-style-position","list-style-image"] })]))
+		.pipe(postcss([orderedvalues()]))
+		.pipe(postcss([uniqueselectors()]))
 		.pipe(gulp.dest('css'));
 });
 
@@ -74,8 +90,11 @@ gulp.task('cssl', function () {
 	gulp.src('css/last.css')
 		.pipe(cssnano({ zindex: false }))
 		.pipe(csscomb())
-		.pipe(csso())
+/*		.pipe(csso())*/
 		.pipe(jsbeautifier())
+		.pipe(postcss([sorting({ "properties-order": ["width","min-width","max-width","height","min-height","max-height","padding","margin","top","left","right","bottom","position","z-index","display","vertical-align","overflow","float","clear","opacity","object-fit","object-position","border-radius","border","font-family","font-size","line-height","color","font-weight","letter-spacing","font-style","font-variant","text-decoration","text-transform","text-align","white-space","word-break","direction","background","background-color","background-image","background-repeat","background-position","background-attachment","background-size","background-origin","background-clip","flex-direction","align-items","justify-content","flex-wrap","align-content","flex-basis","flex-grow","flex-shrink","order","align-self","box-shadow","text-shadow","transform","transition","list-style-type","list-style-position","list-style-image"] })]))
+		.pipe(postcss([orderedvalues()]))
+		.pipe(postcss([uniqueselectors()]))
 		.pipe(gulp.dest('css'));
 });
 
@@ -136,7 +155,7 @@ gulp.task('cssc2', function () {
 	gulp.src('css/new.css')
 		.pipe(cssnano({ zindex: false }))
 		.pipe(csscomb())
-		.pipe(csso())
+/*		.pipe(csso())*/
 		.pipe(jsbeautifier())
 		.pipe(gulp.dest('css'));
 });
@@ -145,7 +164,7 @@ gulp.task('cssl2', function () {
 	gulp.src('css/last.css')
 		.pipe(cssnano({ zindex: false }))
 		.pipe(csscomb())
-		.pipe(csso())
+/*		.pipe(csso())*/
 		.pipe(jsbeautifier())
 		.pipe(gulp.dest('css'));
 });

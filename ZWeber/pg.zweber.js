@@ -177,7 +177,7 @@ function createZWeberPlugin(wp, pinegrow) {
 
         var comps = [];
         for (var i = 0; i < resx.length; i++) {
-            addTo(comps, f.pgbCreateComponent(slug + '/' + resx[i] + '/index.html', '#'+resx[i], name, function (pgel, c) {}));
+            addTo(comps, f.pgbCreateComponent(slug + '/' + resx[i] + '/index.html', '#'+resx[i], resx[i], function (pgel, c) {}));
         }
 //        alert(comps.length);
         pgbAddSection(slug, name + ' Blocks', comps);
@@ -848,6 +848,7 @@ function createZWeberPlugin(wp, pinegrow) {
         'css',
         'fonts',
         'img',
+        'images',
         'js',
         'video',
         'fonts/lato.css ',

@@ -72,10 +72,6 @@ $(function () {
 								name: "Effects - Image Hover"
 							},
 							{
-								key: 'ihe',
-								name: "Effects - Image Hover Effect"
-							},
-							{
 								key: 'tilt',
 								name: "Effects - Tilt.js"
 							},
@@ -144,6 +140,14 @@ $(function () {
 
 
 
+
+
+
+
+
+
+
+
 		//name
 		//classStr
 		//pgStr
@@ -172,15 +176,45 @@ $(function () {
 			var parentClass = selectorStr.replace('.','').split('>'); 
 			if(parentClass[1]){
 				temp.selector_new = function(pgel) {
-					return (pgel.parent.hasClass(parentClass[1].replace('.','')) && pgel.parent.parent.hasClass(parentClass[0].replace('.','')));
+//					return (pgel.parent.hasClass(parentClass[1].replace('.','')) && pgel.parent.parent.hasClass(parentClass[0].replace('.','')));
+
+
+					var xtemp;
+					try {
+
+						xtemp = pgel.parent.hasClass(parentClass[1].replace('.','')) && pgel.parent.parent.hasClass(parentClass[0].replace('.',''));
+						
+					} catch (error) {
+						xtemp = '';	
+					}
+
+					return xtemp;
+
+
 				};
 			}else{
-				temp.selector_new = function(pgel) {
-//					console.warn('zzzzz ' + selectorStr);
-//					return (pgel.parents.hasClass(selectorStr.replace('.','')));
-					return (pgel.parent.hasClass(selectorStr.replace('.','')) || pgel.parent.parent.hasClass(selectorStr.replace('.','')));
 
-				}
+					temp.selector_new = function(pgel) {
+
+
+							//					console.warn('zzzzz ' + selectorStr);
+							//					return (pgel.parents.hasClass(selectorStr.replace('.','')));
+//							return (pgel.parent.hasClass(selectorStr.replace('.','')) || pgel.parent.parent.hasClass(selectorStr.replace('.','')));
+
+
+						var ytemp;
+						try {
+
+							ytemp = pgel.parent.hasClass(selectorStr.replace('.','')) || pgel.parent.parent.hasClass(selectorStr.replace('.',''));
+							
+						} catch (yerror) {
+							ytemp = '';	
+						}
+
+						return ytemp;
+					}
+
+
 			}
             temp.parent_selector= selectorStr;
 			temp.sections = {};
@@ -667,9 +701,12 @@ $(function () {
             ob_end_clean();\n\
             return $render;\n\
         }\n\
-            ?>';
+			?>';
+			
+			
 		f.addComponentType(shortcodestart);
 		f.addComponentType(shortcodeend);
+
 
 
 
@@ -1660,34 +1697,6 @@ var ihcdelays = [
 		creator2("Effects - Image Hover Utility", ".ih>.caption", "ihcaptionel", "", ihcattributeoptions);
 
 
-		var iheeffects = [
-			{key:'ehover1',name:'ehover1'},
-			{key:'ehover2',name:'ehover2'},
-			{key:'ehover3',name:'ehover3'},
-			{key:'ehover4',name:'ehover4'},
-			{key:'ehover42',name:'ehover42'},
-			{key:'ehover1v2',name:'ehover1v2'},
-			{key:'ehover5',name:'ehover5'},
-			{key:'ehover6',name:'ehover6'},
-			{key:'ehover7',name:'ehover7'},
-			{key:'ehover7',name:'ehover7'},
-			{key:'ehover8',name:'ehover8'},
-			{key:'ehover9',name:'ehover9'},
-			{key:'ehover10',name:'ehover10'},
-			{key:'ehover11',name:'ehover11'},
-			{key:'ehover12',name:'ehover12'},
-			{key:'ehover13',name:'ehover13'},
-			{key:'ehover14',name:'ehover14'}
-		];
-
-		//0-optName, 1-type, 2-name, 3-action, 4-value, 5-placeholder, 6-live_update, 7-slider_def_unit, 8-file_picker, 9-file_picker_no_proxy, 10-show_if, 11-parent, 12-valueisarray, 13-options, 14-show_empty, 15-multiple, 16-customattribute, 17-attributeisvalue, 18-attribute, 19-emptyattribute
-		var iheattributeoptions = [
-			["effect", "select", "Effect", "apply_class", "", "", false, "", false, false, "", "", false, iheeffects, true, false, "", false, "", false],
-		];
-		//name, selectorStr, pgStr, dataStr, opts) 
-		creator("Effects - Image Hover Effects", ".ihe", "ihe", "", iheattributeoptions);
-
-
 
 		var tiltaxis = [
 			{key:'x',name:'X'},
@@ -2468,6 +2477,11 @@ var ihcdelays = [
 
 
 
+
+
+
+
+
 		pinegrow.addFramework(f);
 
 
@@ -2488,7 +2502,6 @@ var ihcdelays = [
 			'css/h.css',
 			'css/hei.css',
 			'css/ih.css',
-			'css/ihe.css',
 			'css/slick.css',
 			'css/lightgallery.min.css',
 			'css/lg-transitions.min.css',
@@ -2557,5 +2570,216 @@ var ihcdelays = [
 		libsection.setComponentTypes([shortcodestart, shortcodeend]);
 
 		f.addLibSection(libsection);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// SHORT CODE BLOCKS
+
+
+
+
+
+var fs = require('fs');
+var path = require('path');
+var source_relative = 'code/';
+var type_prefix = 'pg.zhelper';
+var source_cache = {};
+var source_base = f.getResourceUrl(source_relative);
+
+var pgbGetSourceFileUrl = function (fn) {
+	return source_base + fn;
+}	
+
+var pgbGetSourceNode = function (fn) {
+
+	if (!(fn in source_cache)) {
+		source_cache[fn] = pinegrow.getSourceNodeOfUrl(pgbGetSourceFileUrl(fn), true);
+	}
+	return source_cache[fn];
+}
+var components_map = {};
+var combined_css = '';
+var combined_css_file_included = {};
+
+var getComponent = function (type) {
+	return components_map[type_prefix + '.' + type];
+}
+
+var pgbAddSection = function (key, name, list) {
+	var section = new PgFrameworkLibSection(type_prefix + '.' + key, name);
+	section.setComponentTypes(list);
+	f.addLibSection(section);
+}
+
+
+f.pgbCreateComponent = function (source_url, selector, name, transform_code) {
+
+var clist = [];
+var sourceNode = pgbGetSourceNode(source_url);
+
+var list = sourceNode.find(selector);
+
+for (var i = 0; i < list.length; i++) {
+	var pgel = list[i];
+	var suff = list.length > 1 ? '-' + (i + 1) : '';
+	var x = selector.replace('#', '');
+	var key = x.replace('.', '') + suff;
+	//            var key = selector.replace('.', '') + suff;
+	var type = type_prefix + '.' + key;
+	var c = new PgComponentType(type, name + suff);
+	c.selector = selector;
+
+	if (list.length > 1) {
+		c.selector += suff;
+		pgel.addClass(c.selector.replace('.', ''));
+	}
+	c.parent_selector = 'body';
+	c.sections = {};
+
+	if (transform_code) transform_code(pgel, c, i);
+
+	c.code = pgel.toStringOriginal(true);
+	c.preview_image = c.type.replace('.wp.', '.') + '.png';
+	c.button_image = c.preview_image;
+
+	c.tags = 'block';
+
+	var bck_el = pgel.findOne('.background-image-holder');
+	if (bck_el) {
+		addBackgroundControl(c, '.background-image-holder');
+	}
+
+	f.addComponentType(c);
+
+	clist.push(c);
+
+	components_map[c.type] = c;
+}
+
+processCSSFile2(source_url.replace('.html', '.css'));
+
+
+return clist;
+}
+
+
+var processCSSFile2 = function (dir, name) {
+	var css_file = f.getResourceFile(source_relative + '/css/' + name);
+	if (!(css_file in combined_css_file_included)) {
+		try {
+			var css = fs.readFileSync(css_file, {
+				encoding: 'utf8'
+			});
+			combined_css += css;
+			combined_css_file_included[css_file] = true;
+		} catch (err) {}
+	}
+}
+
+
+
+
+var addTo = function (list, new_list) {
+	for (var i = 0; i < new_list.length; i++) {
+		list.push(new_list[i]);
+	}
+}
+
+var sccomps = [];
+
+function addShortCodeComponent(name, selector, opt, yn) {
+	addTo(
+		sccomps,
+		f.pgbCreateComponent(
+			'index.html',
+			selector,
+			name,
+			function (pgel, c) {
+			}
+		)
+	);
+}
+
+
+//addShortCodeComponent("", ".x");
+
+
+addShortCodeComponent("Icon 1", ".xi1", "", false);
+addShortCodeComponent("Icon 2", ".xi2", "", false);
+addShortCodeComponent("Icon 3", ".xi3", "", false);
+addShortCodeComponent("Icon 4", ".xi4", "", false);
+addShortCodeComponent("Icon 5", ".xi5", "", false);
+addShortCodeComponent("Icon 6", ".xi6", "", false);
+addShortCodeComponent("Icon 7", ".xi7", "", false);
+addShortCodeComponent("Icon 8", ".xi8", "", false);
+addShortCodeComponent("Icon 9", ".xi9", "", false);
+addShortCodeComponent("Icon 10", ".xi10", "", false);
+addShortCodeComponent("Icon 11", ".xi11", "", false);
+addShortCodeComponent("Icon 12", ".xi12", "", false);
+addShortCodeComponent("Icon 13", ".xi13", "", false);
+addShortCodeComponent("Icon 14", ".xi14", "", false);
+
+
+addShortCodeComponent("Progressbar Circle", ".xpb1", "progressbar-options", true);
+addShortCodeComponent("Progressbar Semi Circle", ".xpb2", "progressbar-options", true);
+addShortCodeComponent("Progressbar Line", ".xpb3", "progressbar-options", true);
+
+addShortCodeComponent("CounterUp", ".xcu1", "counterup-options", true);
+
+addShortCodeComponent("Count Down", ".xcd1", "countdown-options", true);
+addShortCodeComponent("Count Down 2", ".xcd2", "countdown-options", true);
+addShortCodeComponent("Count Down 3", ".xcd3", "countdown-options", true);
+
+addShortCodeComponent("Parallax 1", ".xp1", "jarallax-options", true);
+addShortCodeComponent("Parallax 2", ".xp2", "jarallax-options", true);
+addShortCodeComponent("Parallax 3", ".xp3", "jarallax-options", true);
+addShortCodeComponent("Parallax 4", ".xp4", "jarallax-options", true);
+addShortCodeComponent("Parallax 5", ".xp5", "jarallax-options", true);
+addShortCodeComponent("Parallax 6", ".xp6", "jarallax-options", true);
+
+addShortCodeComponent("Google Maps", ".xgm1", "googlemaps-options", true);
+
+addShortCodeComponent("Media Youtube", ".xjp1", "plyr", true);
+addShortCodeComponent("Media Youtube 2", ".xjp2", "plyr", true);
+addShortCodeComponent("Media Local", ".xjp3", "plyr", true);
+addShortCodeComponent("Media Sound", ".xjp4", "plyr", true);
+
+addShortCodeComponent("Slider - Slick Slider", "#xss1", "slick-options", true);
+addShortCodeComponent("Slider - Swiper Slider", "#xsc1", "swiper-options", true);
+addShortCodeComponent("Slider - OWL Carousel", "#xowl1", "owlcarousel-options", true);
+
+addShortCodeComponent("Preloader", ".xpl1", "preloader-options", true);
+
+addShortCodeComponent("Animated", ".xa1", "animation-options", true);
+
+addShortCodeComponent("Gallery - Light Gallery", ".xlg1", "lightgallery-options", true);
+
+addShortCodeComponent("Gallery - Magnific Popup", ".xmp1", "magnificpopup-options", true);
+
+addShortCodeComponent("Gallery - Isotope", "#xisotope1", "isotope-options", true);
+
+addShortCodeComponent("Easy Tabs", ".xet1", "easytabs-options", true);
+
+
+pgbAddSection('xshortcode', 'ShortCode Blocks', sccomps);
+
+
+// SHORT CODE BLOCKS END
+
+
+
+
+
 	});
 });

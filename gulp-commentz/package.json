@@ -1,0 +1,21 @@
+{
+  "name": "gulp-commentz",
+  "version": "1.0.0",
+  "description": "Add Section START and END Comments",
+  "main": "index.js",
+  "keywords": [
+      "gulpplugin",
+      "text",
+      "comment",
+      "start",
+      "end"
+  ],
+  "author": "Semih MEMIS",
+  "license": "GPL",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-dest": "^0.2.2",
+    "gulp-util": "^3.0.6",
+    "through2": "^2.0.0"
+  }
+}
