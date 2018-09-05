@@ -28,9 +28,12 @@ $(function () {
 						multiple: true,
 						live_update: true,
 						options: [{
-								key: 'animated',
-								name: "Animations - Animated"
-							},
+							key: 'anijs',
+							name: "AniJS"
+						},{
+							key: 'animated',
+							name: "Animations - Animated"
+						},
 							{
 								key: 'wow',
 								name: "Animations - Animated WOW"
@@ -715,6 +718,12 @@ $(function () {
 
 
 
+		//0-optName, 1-type, 2-name, 3-action, 4-value, 5-placeholder, 6-live_update, 7-slider_def_unit, 8-file_picker, 9-file_picker_no_proxy, 10-show_if, 11-parent, 12-valueisarray, 13-options, 14-show_empty, 15-multiple, 16-customattribute, 17-attributeisvalue, 18-attribute, 19-emptyattribute
+		var anijsattributeoptions = [
+			["data", "text", "Data", "custom", "if: click, on:h1, do: pulse animated, to:h2", "if: click, on:h1, do: pulse animated, to:h2", false, "", false, false, "", "", false, null, true, false, "", true, "", false]
+		];
+		//name, selectorStr, pgStr, dataStr, opts) 
+		creator("AniJS", ".anijs", "anijs", "data-anijs", anijsattributeoptions);
 
 
 
@@ -2518,6 +2527,9 @@ var ihcdelays = [
 			'css/venobox.css',
 			'css/styles.css',
 			'js/jquery.min.js',
+			'js/anijs-min.js',
+			'js/anijs-helper-dom-min.js',
+			'js/anijs-helper-scrollreveal-min.js',
 			'js/aos.js',
 			'js/slick.min.js',
 			'js/owl.carousel.min.js',
