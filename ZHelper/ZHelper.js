@@ -717,7 +717,6 @@ $(function () {
 
 
 
-
 		//0-optName, 1-type, 2-name, 3-action, 4-value, 5-placeholder, 6-live_update, 7-slider_def_unit, 8-file_picker, 9-file_picker_no_proxy, 10-show_if, 11-parent, 12-valueisarray, 13-options, 14-show_empty, 15-multiple, 16-customattribute, 17-attributeisvalue, 18-attribute, 19-emptyattribute
 		var anijsattributeoptions = [
 			["code", "text", "Code", "custom", "if: click, on:h1, do: pulse animated, to:h2", "if: click, on:h1, do: pulse animated, to:h2", false, "", false, false, "", "", false, null, true, false, "", true, "", false]
