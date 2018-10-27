@@ -2176,10 +2176,8 @@ var ihcdelays = [
 			["trailColor", "text", "Trail Color", "custom", "#0f0", "#0f0", false, "", false, false, "", "", false, null, true, false, "", false, "", false],
 			["trailWidth", "text", "Trail Width", "custom", "2", "2", false, "", false, false, "", "", false, null, true, false, "", false, "", false],
 			["textcolor", "text", "Text Color", "custom", "#999", "#999", false, "", false, false, "", "", false, null, true, false, "", false, "", false],
-			["textleft", "text", "Text Left", "custom", "0", "0", false, "", false, false, "", "", false, null, true, false, "", false, "", false],
 			["textright", "text", "Text Right", "custom", "0", "0", false, "", false, false, "", "", false, null, true, false, "", false, "", false],
 			["texttop", "text", "Text Top", "custom", "0", "0", false, "", false, false, "", "", false, null, true, false, "", false, "", false],
-			["textbottom", "text", "Text Bottom", "custom", "0", "0", false, "", false, false, "", "", false, null, true, false, "", false, "", false],
 			["textpadding", "text", "Text Padding", "custom", "0", "0", false, "", false, false, "", "", false, null, true, false, "", false, "", false],
 			["textmargin", "text", "Text Margin", "custom", "0", "0", false, "", false, false, "", "", false, null, true, false, "", false, "", false]
 		];
