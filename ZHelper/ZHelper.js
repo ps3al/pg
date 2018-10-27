@@ -2168,7 +2168,20 @@ var ihcdelays = [
 
 		//0-optName, 1-type, 2-name, 3-action, 4-value, 5-placeholder, 6-live_update, 7-slider_def_unit, 8-file_picker, 9-file_picker_no_proxy, 10-show_if, 11-parent, 12-valueisarray, 13-options, 14-show_empty, 15-multiple, 16-customattribute, 17-attributeisvalue, 18-attribute, 19-emptyattribute
 		var progressbarlineattributeoptions = [
-			["data", "text", "Data", "custom", "99", "99", false, "", false, false, "", "", false, null, true, false, "", false, "", false]
+			["data", "text", "Data", "custom", "99", "99", false, "", false, false, "", "", false, null, true, false, "", false, "", false],
+			["strokeWidth", "text", "Stroke Width", "custom", "2", "2", false, "", false, false, "", "", false, null, true, false, "", false, "", false],
+			["easing", "text", "Easing", "custom", "easeInOut", "easeInOut", false, "", false, false, "", "", false, null, true, false, "", false, "", false],
+			["duration", "text", "Duration", "custom", "1400", "1400", false, "", false, false, "", "", false, null, true, false, "", false, "", false],
+			["color", "text", "Color", "custom", "#f00", "#f00", false, "", false, false, "", "", false, null, true, false, "", false, "", false],
+			["trailColor", "text", "Trail Color", "custom", "#0f0", "#0f0", false, "", false, false, "", "", false, null, true, false, "", false, "", false],
+			["trailWidth", "text", "Trail Width", "custom", "2", "2", false, "", false, false, "", "", false, null, true, false, "", false, "", false],
+			["textcolor", "text", "Text Color", "custom", "#999", "#999", false, "", false, false, "", "", false, null, true, false, "", false, "", false],
+			["textleft", "text", "Text Left", "custom", "0", "0", false, "", false, false, "", "", false, null, true, false, "", false, "", false],
+			["textright", "text", "Text Right", "custom", "0", "0", false, "", false, false, "", "", false, null, true, false, "", false, "", false],
+			["texttop", "text", "Text Top", "custom", "0", "0", false, "", false, false, "", "", false, null, true, false, "", false, "", false],
+			["textbottom", "text", "Text Bottom", "custom", "0", "0", false, "", false, false, "", "", false, null, true, false, "", false, "", false],
+			["textpadding", "text", "Text Padding", "custom", "0", "0", false, "", false, false, "", "", false, null, true, false, "", false, "", false],
+			["textmargin", "text", "Text Margin", "custom", "0", "0", false, "", false, false, "", "", false, null, true, false, "", false, "", false]
 		];
 		//name, selectorStr, pgStr, dataStr, opts) 
 		creator("Progress Bar Line", ".progressbar-line", "progressbarline", "data-progressbar-options", progressbarlineattributeoptions);

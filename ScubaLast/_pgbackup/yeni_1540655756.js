@@ -28,23 +28,17 @@
 	
 	var tx = $('.titlex');
 	tx.each(function (index) {
-		var scale = $(this).data("scale")!=""?$(this).data("scale"):"2";
-		
-//		var zindex = $(this).data("zindex")!=""?$(this).data("zindex"):"-1";
-
-		
+		var scale = $(this).data("scale")?$(this).data("scale"):"2";
+//		var zindex = $(this).data("zindex")?$(this).data("zindex"):"0";
 		var zindex = $(this).data("zindex")
-		console.warn(zindex);
-		if(zindex==""){
-			zindex="-2";
+		if(zindex==null){
+			zindex="0";
 		}
+		var color = $(this).data("color")?$(this).data("color"):"#e2e2e236";
+		var text = $(this).data("text")?$(this).data("text"):"";
+		var temp = $(this).clone().insertAfter($(this)).css("position","relative");
 		
-		var color = $(this).data("color")!=""?$(this).data("color"):"#e2e2e236";
-		var text = $(this).data("text")!=""?$(this).data("text"):"";
-console.warn(zindex);
-console.warn($(this).data("zindex"));
-console.warn($(this));
-		var temp = $(this).clone().insertAfter($(this)).css({
+		$(this).css({
 			"user-select":"none",
 			"position": "absolute",
 			"color": color,
@@ -55,7 +49,7 @@ console.warn($(this));
 			"transform" : "scale(" + scale + ")"			
 		});
 		if(text){
-			temp.text(text);
+			$(this).text(text);
 		}
 	});
 	

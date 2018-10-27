@@ -374,6 +374,16 @@
 		});
 
 		$pline.each(function (i) {
+			
+			var progresbarOptions = $(this).data('progressbar-options');
+			
+			var textcolor = progresbarOptions['textcolor'] ? progresbarOptions['textcolor'] : 'inherit';
+			var textright = progresbarOptions['textright'] ? progresbarOptions['textright'] : '0';
+			var texttop = progresbarOptions['texttop'] ? progresbarOptions['texttop'] : '-30px';
+			var textpadding = progresbarOptions['textpadding'] ? progresbarOptions['textpadding'] : '0';
+			var textmargin = progresbarOptions['textmargin'] ? progresbarOptions['textmargin'] : '0';
+						
+			
 			var progresbarDefaults = {
 				strokeWidth: 3,
 				trailWidth: 3,
@@ -382,12 +392,12 @@
 				offset: "100%",
 				text: {
 					style: {
-						color: 'inherit',
+						color: textcolor,
 						position: 'absolute',
-						right: '0',
-						top: '-30px',
-						padding: 0,
-						margin: 0,
+						right: textright,
+						top: texttop,
+						padding: textpadding,
+						margin: textmargin,
 						transform: null
 					},
 					autoStyleContainer: false
@@ -396,7 +406,6 @@
 					line.setText(Math.round(line.value() * 100) + ' %');
 				}
 			}
-			var progresbarOptions = $(this).data('progressbar-options');
 			$.extend(progresbarDefaults, progresbarOptions);
 			var line = new ProgressBar.Line(this, progresbarDefaults);
 			var value = progresbarDefaults['data'] / 100;
