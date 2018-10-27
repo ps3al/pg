@@ -175,7 +175,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col">
-						<h1 class="text-center titlex mb-4" style="font-family: Oswald-Bold; font-size: 48px; color: #25262c; letter-spacing: 0; text-align: center; line-height: 63px;">About Me</h1> 
+						<h1 class="text-center titlex mb-4" style="font-family: Oswald-Bold; font-size: 48px; color: #25262c; letter-spacing: 0; text-align: center; line-height: 63px;" data-zindex="0">About Me</h1> 
 					</div>
 				</div>
 				<div class="row">
@@ -192,16 +192,13 @@ position: absolute; width: 100px; height: 50px; top: 25px; left: -100px; border-
 						</div>
 						<div style="height: 100px;" class="container">
 							<div class="row">
-								<div class="col-md-4"> 									 
-
+								<div class="col-md-4"> 
 									<div data-progressbar-options='{"data":40}' class="xpb2 progressbar-semicircle orange"></div>
 								</div>
-								<div class="col-md-4"> 									 
-
+								<div class="col-md-4"> 
 									<div data-progressbar-options='{"data":40}' class="xpb2 progressbar-semicircle orange"></div>
 								</div>
-								<div class="col-md-4"> 									 
-
+								<div class="col-md-4"> 
 									<div data-progressbar-options='{"data":40}' class="xpb2 progressbar-semicircle orange"></div>
 								</div>
 							</div>
@@ -226,7 +223,7 @@ position: absolute; width: 100px; height: 50px; top: 25px; left: -100px; border-
 			<div class="container">
 				<div class="row">
 					<div class="col"> 
-						<h1 class="titlex" style="font-family: Oswald-Bold; font-size: 48px; color: #25262c; letter-spacing: 0; text-align: center; line-height: 63px;" data-scale="6">Services</h1>
+						<h1 class="titlex" style="font-family: Oswald-Bold; font-size: 48px; color: #25262c; letter-spacing: 0; text-align: center; line-height: 63px;" data-scale="6" data-zindex="0">Services</h1>
 						<div class="easytabs">
 							<div class="tab-panel" id="tab1">
 								<div class="row align-items-start">
@@ -306,21 +303,13 @@ font-family: Oswald-Medium; font-size: 36px; color: #000000; letter-spacing: 0; 
 				<div class="container">
 					<div class="row">
 						<div class="col"> 
-							<h1 style="font-family: Oswald-Bold; font-size: 48px; color: #000000; letter-spacing: 0; text-align: center; line-height: 63px;" class="titlex" data-scale="5">What I Saw</h1>
-							<ul class="nav nav-tabs" style="font-family: Oswald-Medium; font-size: 24px; color: #000000; letter-spacing: 0; line-height: 24px; background-color: white;">
-								<li class="active col">
-									<a class="isotope-filter-button" data-isotope-filter="*">All</a>
-								</li>
-								<li class="col">
-									<a class="isotope-filter-button" data-isotope-filter=".divers">Divers</a>
-								</li>
-								<li class="col">
-									<a class="isotope-filter-button" data-isotope-filter=".animals">Animals</a>
-								</li>
-								<li class="col">
-									<a class="isotope-filter-button" data-isotope-filter=".nature">Nature</a>
-								</li>
-							</ul>
+							<h1 style="font-family: Oswald-Bold; font-size: 48px; color: #000000; letter-spacing: 0; text-align: center; line-height: 63px;" class="titlex mb-4" data-scale="3">What I Saw</h1>
+							<div class="d-flex justify-content-center mb-3" id="filter" style="position: relative;">
+								<button class="btn btn-dark isotope-filter-button mx-2 active" data-isotope-filter="*">All</button>
+								<button class="btn btn-dark isotope-filter-button mx-2" data-isotope-filter=".divers">Divers</button>
+								<button class="btn btn-dark isotope-filter-button mx-2" data-isotope-filter=".animals">Animals</button>
+								<button class="btn btn-dark isotope-filter-button mx-2" data-isotope-filter=".nature">Nature</button>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -405,7 +394,12 @@ background-color: #f9f9f9;">
 		<section class="text-center jarallax" style="background-position: center center; background-size: cover; background-image: url('img/whaleshark.jpg');">
 			<div class="pg-empty-placeholder" style="background-color: rgba(0, 0, 0, 0.40); position: absolute; width: 100%; height: 100%; top: 0; left: 0;"></div>
 			<div class="container">
-				<h1 class="titlex" style="font-family: Oswald-Bold; font-size: 48px; color: #FFFFFF; letter-spacing: 0; text-align: center; line-height: 63px; margin-bottom: 60px;">Pricing Table</h1>
+				<div class="row">
+					<div class="col"> 						 
+
+						<h1 class="titlex" style="font-family: Oswald-Bold; font-size: 48px; color: #FFFFFF; letter-spacing: 0; text-align: center; line-height: 63px; margin-bottom: 60px;">Pricing Table</h1>
+					</div>
+				</div>
 				<div class="row">
 					<div class="col-12 col-sm-4">
 						<div class="card d-flex flex-column justify-content-between" style="background: #f0f0f0;">
@@ -459,7 +453,12 @@ opacity: 0.8; font-family: Roboto-Bold; font-size: 24px; color: #000000; letter-
 		<!-- START Blogs 16 -->
 		<section style="background-image: url('img/latchi-dive-centre-2.jpg'); background-repeat: no-repeat; background-position: right center; background-size: auto;" id="blog" data-jarallax-options="{&quot;automaticResize&quot;:false,&quot;imgSize&quot;:&quot;auto&quot;,&quot;imgPosition&quot;:&quot;100% 0&quot;}" class="jarallax">
 			<div class="container">
-				<h1 class="text-center titlex" style="font-family: Oswald-Bold; font-size: 48px; color: #000000; letter-spacing: 0; text-align: center; line-height: 63px;">Blog</h1>
+				<div class="row">
+					<div class="col"> 						 
+
+						<h1 class="text-center titlex" style="font-family: Oswald-Bold; font-size: 48px; color: #000000; letter-spacing: 0; text-align: center; line-height: 63px;">Blog</h1>
+					</div>
+				</div>
 				<div class="row justify-content-center">
 					<div class="col-md-10">
 						<div class="row">
@@ -529,7 +528,12 @@ opacity: 0.8; font-family: Roboto-Bold; font-size: 24px; color: #000000; letter-
 		<!-- START Contacts 5 -->
 		<section class="text-center jarallax" id="contact" style="background-image: url('img/ic302.jpg'); background-position: center center; background-size: cover; background-color: white;">
 			<div class="container">
-				<h1 class="titlex" style="font-family: Oswald-Bold; font-size: 48px; color: #000000; letter-spacing: 0; text-align: center; line-height: 63px;" data-scale="4">Contact Me</h1>
+				<div class="row">
+					<div class="col"> 						 
+
+						<h1 class="titlex" style="font-family: Oswald-Bold; font-size: 48px; color: #000000; letter-spacing: 0; text-align: center; line-height: 63px;" data-scale="4">Contact Me</h1>
+					</div>
+				</div>
 				<div class="row justify-content-center">
 					<div class="col-12 col-sm-5" style="background-color: rgba(255, 255, 255, 0.53); padding-top: 15px; padding-bottom: 15px;">
 						<div>
@@ -583,7 +587,7 @@ opacity: 0.8; font-family: Roboto-Bold; font-size: 24px; color: #000000; letter-
 		</section>
 		<!-- END Contacts 5 -->
 		<!-- START Footers 13 -->
-		<section class="footers jarallax" data-jarallax-options="{&quot;imgElement&quot;:&quot;#bottom-img&quot;,&quot;imgSize&quot;:&quot;auto&quot;,&quot;imgPosition&quot;:&quot;100% 0&quot;}">
+		<section class="footers">
 			<div class="container">
 				<div class="row justify-content-center">
 					<div class="col-md-3" style="background-image: url('img/latchi-dive-centre-11.jpg'); background-position: center top; height: 600px;">
