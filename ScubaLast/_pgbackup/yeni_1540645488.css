@@ -236,7 +236,6 @@ nav {
 .btn-solid.btn-light:hover {
     color: #ffffff !important;
     background-color: #000000 !important;
-    border-color: #000000 !important;
     transition: all .3s ease-in;
 }
 
@@ -255,7 +254,6 @@ nav {
 
 .btn-solid.btn-dark {
     color: #ffffff !important;
-    background-color: #000000 !important;
 }
 
 .btn-solid.btn-dark:hover {

@@ -220,26 +220,6 @@ nav {
     border-color: #ffffff;
 }
 
-.btn-light:hover {
-    color: #000000;
-    background-color: #ffffff;
-    border-color: #ffffff;
-    text-decoration: none;
-    transition: all .3s ease-in;
-}
-
-.btn-solid.btn-light {
-    color: #000000 !important;
-    background-color: #ffffff !important;
-}
-
-.btn-solid.btn-light:hover {
-    color: #ffffff !important;
-    background-color: #000000 !important;
-    border-color: #000000 !important;
-    transition: all .3s ease-in;
-}
-
 .btn-dark {
     color: #000000;
     border-color: #000000;
@@ -253,14 +233,11 @@ nav {
     transition: all .3s ease-in;
 }
 
-.btn-solid.btn-dark {
-    color: #ffffff !important;
-    background-color: #000000 !important;
-}
-
-.btn-solid.btn-dark:hover {
-    color: #000000 !important;
-    background-color: #ffffff !important;
+.btn-light:hover {
+    color: #000000;
+    background-color: #ffffff;
+    border-color: #ffffff;
+    text-decoration: none;
     transition: all .3s ease-in;
 }
 
