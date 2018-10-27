@@ -1,0 +1,254 @@
+section {
+    position: relative;
+    padding-top: 6.25rem;
+    padding-bottom: 6.25rem;
+}
+
+.bg-dark {
+    background-color: #25262c !important;
+}
+
+#scrollUp {
+    bottom: 0;
+    right: 0;
+}
+
+nav {
+    transition: all .35s ease-in-out;
+}
+
+@media (max-width:991px) {
+    nav {
+        background-color: #25262c !important;
+    }
+
+    nav.mt-3 {
+        margin-top: 0 !important;
+    }
+}
+
+@media (min-width:992px) {
+    .nav-link.active1 {
+        border: 1px solid;
+    }
+
+    a.active1 {
+        padding: 6px !important;
+    }
+
+    .nav-link.active {
+        position: relative;
+    }
+
+    .nav-link.active:after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border: 2px solid;
+        top: 0;
+        left: 0;
+    }
+}
+
+.nav-link {
+    font-family: Oswald-Medium;
+    font-size: 1.05rem;
+    padding: 0.3rem 1rem;
+}
+
+.pic-sm {
+    width: auto;
+    height: 366px;
+}
+
+/*********** HERO ****************/
+.hero {
+    height: 100vh;
+    position: relative;
+    background-color: rgb(10, 9, 9);
+}
+
+.slidex1 {
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.49);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% center;
+}
+
+.slidex1::after {
+    content: "";
+    position: absolute;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.33);
+    width: 100%;
+    height: 100%;
+}
+
+.slider2container {
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    position: absolute;
+    overflow: hidden;
+}
+
+.slider2 .col {
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 4px 0px;
+    height: 200px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: rgb(255, 255, 255);
+    border-image: initial;
+}
+
+.slider2 .slick-slide {
+    margin: 0px 10px;
+}
+
+.slider2 .col::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.33);
+}
+
+.slider2 .col:hover::after {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.slider2 .col::after {
+}
+
+.slider2 .slick-current .col::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.slider2container h3 {
+    font-family: Oswald-Bold;
+    font-size: 24px;
+    color: #FFFFFF;
+    letter-spacing: 0;
+    line-height: 32px;
+    transition: all .3s ease-in;
+}
+
+.slider2container h4 {
+    font-family: Oswald-Bold;
+    font-size: 16px;
+    color: #FFFFFF;
+    letter-spacing: 0;
+    line-height: 20px;
+    display: none;
+    transition: all .3s ease-in;
+}
+
+.slider2container .slick-current h3 {
+    //: #000000;
+    z-index: 1;
+}
+
+.slider2container .slick-current h4,
+.slider2 .col:hover h4 {
+    display: block;
+    z-index: 1;
+}
+
+.slide-itemx {
+    z-index: 10001;
+}
+
+.slide-itemx h3 {
+    font-family: Oswald-Bold;
+    font-size: 64px;
+    color: rgb(255, 255, 255);
+    letter-spacing: -1.38px;
+    text-align: center;
+    line-height: 47px;
+}
+
+.slider-arrows {
+    width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    position: absolute;
+    top: 50%;
+    z-index: 10000;
+    transform: translateY(-50%);
+}
+
+.slider-arrows .fa-border {
+    padding: .2em .25em .15em;
+    border: solid 2px rgba(255, 255, 255, 0.5);
+    border-radius: 0;
+}
+
+.slider-arrows i {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 40px;
+    cursor: pointer;
+}
+
+.slider-arrows i:hover {
+    color: rgba(0, 0, 0, 1);
+    background-color: #ffffff;
+}
+
+.slider-arrows .fa-border:hover {
+    border-color: rgba(255, 255, 255, 1);
+}
+
+.btn-light,
+.btn-dark {
+    background: transparent;
+    font-family: Oswald-Medium;
+    font-size: 1.25rem;
+    letter-spacing: 0;
+    text-align: center;
+    line-height: 1.6875rem;
+    padding: 0.3rem 0.5rem;
+    border: 0.125rem solid;
+    border-radius: 0;
+}
+
+.btn-light {
+    color: #ffffff;
+    border-color: #ffffff;
+}
+
+.btn-dark {
+    color: #000000;
+    border-color: #000000;
+}
+
+.btn-dark:hover {
+    color: #ffffff;
+    background-color: #000000;
+    border-color: #000000;
+    text-decoration: none;
+    transition: all .3s ease-in;
+}
+
+.btn-light:hover {
+    color: #000000;
+    background-color: #ffffff;
+    border-color: #ffffff;
+    text-decoration: none;
+    transition: all .3s ease-in;
+}
+
+.slide-itemx p {
+    font-family: Roboto-Regular;
+    font-size: 1.125rem;
+    color: #FFFFFF;
+    letter-spacing: 0;
+
+    /* text-align: center */
+    line-height: 26px;
+}
