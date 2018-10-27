@@ -332,6 +332,10 @@
 			var progresbarOptions = $(this).data('progressbar-options');
 			
 			var textcolor = progresbarOptions['textcolor'] ? progresbarOptions['textcolor'] : 'inherit';
+			var textright = progresbarOptions['textright'] ? progresbarOptions['textright'] : '0';
+			var texttop = progresbarOptions['texttop'] ? progresbarOptions['texttop'] : '-30px';
+			var textpadding = progresbarOptions['textpadding'] ? progresbarOptions['textpadding'] : '0';
+			var textmargin = progresbarOptions['textmargin'] ? progresbarOptions['textmargin'] : '0';
 			
 			var progresbarDefaults = {
 				data: 50,
@@ -342,7 +346,13 @@
 				offset: "100%",
 				text: {
 					style: {
-						color: textcolor
+						color: textcolor,
+						position: 'absolute',
+						right: textright,
+						top: texttop,
+						padding: textpadding,
+						margin: textmargin,
+						transform: null
 					},
 					autoStyleContainer: false
 				},
@@ -366,6 +376,10 @@
 			var progresbarOptions = $(this).data('progressbar-options');
 			
 			var textcolor = progresbarOptions['textcolor'] ? progresbarOptions['textcolor'] : 'inherit';
+			var textright = progresbarOptions['textright'] ? progresbarOptions['textright'] : '0';
+			var texttop = progresbarOptions['texttop'] ? progresbarOptions['texttop'] : '-30px';
+			var textpadding = progresbarOptions['textpadding'] ? progresbarOptions['textpadding'] : '0';
+			var textmargin = progresbarOptions['textmargin'] ? progresbarOptions['textmargin'] : '0';
 			
 			var progresbarDefaults = {
 				data: 50,
@@ -377,6 +391,12 @@
 				text: {
 					style: {
 						color: textcolor,
+						position: 'absolute',
+						right: textright,
+						top: texttop,
+						padding: textpadding,
+						margin: textmargin,
+						transform: null
 					},
 					autoStyleContainer: false
 				},

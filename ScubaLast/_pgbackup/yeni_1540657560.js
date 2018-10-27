@@ -328,11 +328,6 @@
 		var $psemi = $('.progressbar-semicircle');
 		var $pline = $('.progressbar-line');
 		$pcircle.each(function (i) {
-			
-			var progresbarOptions = $(this).data('progressbar-options');
-			
-			var textcolor = progresbarOptions['textcolor'] ? progresbarOptions['textcolor'] : 'inherit';
-			
 			var progresbarDefaults = {
 				data: 50,
 				strokeWidth: 4,
@@ -340,17 +335,11 @@
 				duration: 5000,
 				easing: 'easeInOut',
 				offset: "100%",
-				text: {
-					style: {
-						color: textcolor
-					},
-					autoStyleContainer: false
-				},
 				step: function (state, circle, attachment) {
 					circle.setText(Math.round(circle.value() * 100));
 				}
 			}
-
+			var progresbarOptions = $(this).data('progressbar-options');
 			$.extend(progresbarDefaults, progresbarOptions);
 			var circle = new ProgressBar.Circle(this, progresbarDefaults);
 			var value = progresbarDefaults['data'] / 100;
@@ -362,11 +351,6 @@
 		});
 
 		$psemi.each(function (i) {
-
-			var progresbarOptions = $(this).data('progressbar-options');
-			
-			var textcolor = progresbarOptions['textcolor'] ? progresbarOptions['textcolor'] : 'inherit';
-			
 			var progresbarDefaults = {
 				data: 50,
 				strokeWidth: 4,
@@ -374,17 +358,11 @@
 				duration: 5000,
 				easing: 'easeInOut',
 				offset: "100%",
-				text: {
-					style: {
-						color: textcolor,
-					},
-					autoStyleContainer: false
-				},
 				step: function (state, circle, attachment) {
 					circle.setText(Math.round(circle.value() * 100));
 				}
 			}
-
+			var progresbarOptions = $(this).data('progressbar-options');
 			$.extend(progresbarDefaults, progresbarOptions);
 			var semi = new ProgressBar.SemiCircle(this, progresbarDefaults);
 			var value = progresbarDefaults['data'] / 100;
