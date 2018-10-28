@@ -465,12 +465,10 @@
 		$('.counterup').each(function () {
 			var counterDefaults = {
 				delay: '10',
-				time: '5000'
+				time: '1000',
+				offset: '70',
+				beginAt: '100'
 			};
-//			if($(this).html()){
-				$(this).attr('data-counterup-nums','');
-//			}
-			
 			var counterOptions = $(this).data('counterup-options');
 			$.extend(counterDefaults, counterOptions);
 			var elem = $(this);
