@@ -467,6 +467,10 @@
 				delay: '10',
 				time: '5000'
 			};
+//			if($(this).html()){
+				$(this).attr('data-counterup-nums','');
+//			}
+			
 			var counterOptions = $(this).data('counterup-options');
 			$.extend(counterDefaults, counterOptions);
 			var elem = $(this);
