@@ -13,7 +13,6 @@
 	$(window).on("scroll", function (e) {
 		
 		var st = $(window).scrollTop();
-//		console.warn(st);
 
 		if(st>=nt){
 			$("nav").removeClass('mt-3');
@@ -67,7 +66,7 @@
 	= Smooth Scroll =
 	===============================================>>>>>*/
 	$('.smoothscroll').smoothScroll({
-		offset:0-nh
+		offset:1-nh
 	});
 	/*= End of Smooth Scrolll =*/
 	/*=============================================<<<<<*/

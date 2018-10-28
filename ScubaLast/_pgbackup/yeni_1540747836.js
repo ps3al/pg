@@ -29,14 +29,16 @@
 	var tx = $('.titlex');
 	tx.each(function (index) {
 		var scale = $(this).data("scale")?$(this).data("scale"):"2";
-//		var zindex = $(this).data("zindex")?$(this).data("zindex"):"-1";
+//		var zindex = $(this).data("zindex")?$(this).data("zindex"):"0";
 		var zindex = $(this).data("zindex")
 		if(zindex==null){
-			zindex="-1";
+			zindex="0";
 		}
 		var color = $(this).data("color")?$(this).data("color"):"#e2e2e236";
 		var text = $(this).data("text")?$(this).data("text"):"";
-		var temp = $(this).clone().insertAfter($(this)).css({
+		var temp = $(this).clone().insertAfter($(this)).css("position","relative");
+		
+		$(this).css({
 			"user-select":"none",
 			"position": "absolute",
 			"color": color,
@@ -47,7 +49,7 @@
 			"transform" : "scale(" + scale + ")"			
 		});
 		if(text){
-			temp.text(text);
+			$(this).text(text);
 		}
 	});
 	
@@ -326,6 +328,11 @@
 		var $psemi = $('.progressbar-semicircle');
 		var $pline = $('.progressbar-line');
 		$pcircle.each(function (i) {
+			
+			var progresbarOptions = $(this).data('progressbar-options');
+			
+			var textcolor = progresbarOptions['textcolor'] ? progresbarOptions['textcolor'] : 'inherit';
+			
 			var progresbarDefaults = {
 				data: 50,
 				strokeWidth: 4,
@@ -333,11 +340,17 @@
 				duration: 5000,
 				easing: 'easeInOut',
 				offset: "100%",
+				text: {
+					style: {
+						color: textcolor
+					},
+					autoStyleContainer: false
+				},
 				step: function (state, circle, attachment) {
 					circle.setText(Math.round(circle.value() * 100));
 				}
 			}
-			var progresbarOptions = $(this).data('progressbar-options');
+
 			$.extend(progresbarDefaults, progresbarOptions);
 			var circle = new ProgressBar.Circle(this, progresbarDefaults);
 			var value = progresbarDefaults['data'] / 100;
@@ -349,6 +362,11 @@
 		});
 
 		$psemi.each(function (i) {
+
+			var progresbarOptions = $(this).data('progressbar-options');
+			
+			var textcolor = progresbarOptions['textcolor'] ? progresbarOptions['textcolor'] : 'inherit';
+			
 			var progresbarDefaults = {
 				data: 50,
 				strokeWidth: 4,
@@ -356,11 +374,17 @@
 				duration: 5000,
 				easing: 'easeInOut',
 				offset: "100%",
+				text: {
+					style: {
+						color: textcolor,
+					},
+					autoStyleContainer: false
+				},
 				step: function (state, circle, attachment) {
 					circle.setText(Math.round(circle.value() * 100));
 				}
 			}
-			var progresbarOptions = $(this).data('progressbar-options');
+
 			$.extend(progresbarDefaults, progresbarOptions);
 			var semi = new ProgressBar.SemiCircle(this, progresbarDefaults);
 			var value = progresbarDefaults['data'] / 100;
@@ -372,6 +396,16 @@
 		});
 
 		$pline.each(function (i) {
+			
+			var progresbarOptions = $(this).data('progressbar-options');
+			
+			var textcolor = progresbarOptions['textcolor'] ? progresbarOptions['textcolor'] : 'inherit';
+			var textright = progresbarOptions['textright'] ? progresbarOptions['textright'] : '0';
+			var texttop = progresbarOptions['texttop'] ? progresbarOptions['texttop'] : '-30px';
+			var textpadding = progresbarOptions['textpadding'] ? progresbarOptions['textpadding'] : '0';
+			var textmargin = progresbarOptions['textmargin'] ? progresbarOptions['textmargin'] : '0';
+						
+			
 			var progresbarDefaults = {
 				strokeWidth: 3,
 				trailWidth: 3,
@@ -380,12 +414,12 @@
 				offset: "100%",
 				text: {
 					style: {
-						color: 'inherit',
+						color: textcolor,
 						position: 'absolute',
-						right: '0',
-						top: '-30px',
-						padding: 0,
-						margin: 0,
+						right: textright,
+						top: texttop,
+						padding: textpadding,
+						margin: textmargin,
 						transform: null
 					},
 					autoStyleContainer: false
@@ -394,7 +428,6 @@
 					line.setText(Math.round(line.value() * 100) + ' %');
 				}
 			}
-			var progresbarOptions = $(this).data('progressbar-options');
 			$.extend(progresbarDefaults, progresbarOptions);
 			var line = new ProgressBar.Line(this, progresbarDefaults);
 			var value = progresbarDefaults['data'] / 100;
@@ -432,7 +465,9 @@
 		$('.counterup').each(function () {
 			var counterDefaults = {
 				delay: '10',
-				time: '5000'
+				time: '1000',
+				offset: '70',
+				beginAt: '0'
 			};
 			var counterOptions = $(this).data('counterup-options');
 			$.extend(counterDefaults, counterOptions);
