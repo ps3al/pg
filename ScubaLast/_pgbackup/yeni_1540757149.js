@@ -259,8 +259,8 @@
 			speed: $(this).data('rellax-speed') ? $(this).data('rellax-speed') :-2,
 			center: $(this).data('rellax-center') ? $(this).data('rellax-center') : false,
 			wrapper: $(this).data('rellax-wrapper') ? $(this).data('rellax-wrapper') : null,
-			relativetowrapper: $(this).data('rellax-relativetowrapper') ? $(this).data('rellax-relativetowrapper') : false,
-			round: $(this).data('rellax-round') ? $(this).data('rellax-round') : false,
+			relativetowrapper: $(this).data('rellax-relativetowrapper') ? true : false,
+			round: $(this).data('rellax-round') ? true : false,
 			vertical: $(this).data('rellax-vertical') ? $(this).data('rellax-vertical') : true,
 			horizontal: $(this).data('rellax-horizontal') ? $(this).data('rellax-horizontal') : false,
 			callback: function(){}			

@@ -254,24 +254,15 @@
 	/*=============================================>>>>>
 	= Rellax =
 	===============================================>>>>>*/
-	 $('.rellax').each(function (index) {
-	 	var rllxDefaults = {
-			speed: $(this).data('rellax-speed') ? $(this).data('rellax-speed') :-2,
-			center: $(this).data('rellax-center') ? $(this).data('rellax-center') : false,
-			wrapper: $(this).data('rellax-wrapper') ? $(this).data('rellax-wrapper') : null,
-			relativetowrapper: $(this).data('rellax-relativetowrapper') ? $(this).data('rellax-relativetowrapper') : false,
-			round: $(this).data('rellax-round') ? $(this).data('rellax-round') : false,
-			vertical: $(this).data('rellax-vertical') ? $(this).data('rellax-vertical') : true,
-			horizontal: $(this).data('rellax-horizontal') ? $(this).data('rellax-horizontal') : false,
-			callback: function(){}			
-		};
-		 console.warn(rllxDefaults);
-	 	var rellax = new Rellax(this,rllxDefaults);
-	 });
-
-//	if($('.rellax').length>0){
-//		var rellax = new Rellax('.rellax');
-//	}
+	// $('.rellax').each(function (index) {
+	// 	var rllxDefaults = {};
+	// 	var rllxOptions = $(this).data('rellax-options');
+	// 	console.warn($(this));
+	// 	var rellax = new Rellax(this,$.extend(rllxDefaults, rllxOptions));
+	// });
+	if($('.rellax').length>0){
+		var rellax = new Rellax('.rellax');
+	}
 
 
 	/*= End of Rellax =*/
