@@ -294,11 +294,7 @@ nav {
     opacity: 1;
 }
 
-.clients .slick-track {
+.clients .slick-slide {
     display: flex;
     align-items: center;
-}
-
-.slick-slide img {
-    width: auto !important;
 }

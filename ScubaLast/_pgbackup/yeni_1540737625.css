@@ -298,7 +298,3 @@ nav {
     display: flex;
     align-items: center;
 }
-
-.slick-slide img {
-    width: auto !important;
-}

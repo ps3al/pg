@@ -293,12 +293,3 @@ nav {
 .hover-caption:hover {
     opacity: 1;
 }
-
-.clients .slick-track {
-    display: flex;
-    align-items: center;
-}
-
-.slick-slide img {
-    width: auto !important;
-}
