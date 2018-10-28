@@ -287,9 +287,10 @@ nav {
     padding: 15px;
     color: white;
     opacity: 0;
-    transition: all .3s ease-in-out;
+    transition: all 1 ease-in-out;
 }
 
 .hover-caption:hover {
     opacity: 1;
+    transition: all 1s ease-in-out;
 }

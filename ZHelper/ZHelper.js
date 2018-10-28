@@ -1887,7 +1887,7 @@ var ihcdelays = [
 			["enableZoomAfter", "slider", "enableZoomAfter", "custom", "", "", false, "", false, false, "", "", false, null, true, false, "", false, "", false],
 			["actualSize", "checkbox", "actualSize", "custom", true, "", false, "", false, false, "", "", false, null, true, false, "", false, "", false],
 			["hash", "checkbox", "hash", "custom", true, "", false, "", false, false, "", "", false, null, true, false, "", false, "", false],
-			["galleryId", "slider", "galleryId", "custom", "", "", false, "", false, false, "", "", false, null, true, false, "", false, "", false],
+			["galleryId", "text", "galleryId", "custom", "", "", false, "", false, false, "", "", false, null, true, false, "", false, "", false],
 			["share", "checkbox", "share", "custom", true, "", false, "", false, false, "", "", false, null, true, false, "", false, "", false],
 			["facebook", "checkbox", "facebook", "custom", true, "", false, "", false, false, "", "", false, null, true, false, "", false, "", false],
 			["facebookDropdownText", "text", "facebookDropdownText", "custom", "", "", false, "", false, false, "", "", false, null, true, false, "", false, "", false],
