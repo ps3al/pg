@@ -13,7 +13,6 @@
 	$(window).on("scroll", function (e) {
 		
 		var st = $(window).scrollTop();
-//		console.warn(st);
 
 		if(st>=nt){
 			$("nav").removeClass('mt-3');
@@ -67,7 +66,7 @@
 	= Smooth Scroll =
 	===============================================>>>>>*/
 	$('.smoothscroll').smoothScroll({
-		offset:0-nh
+		offset:1-nh
 	});
 	/*= End of Smooth Scrolll =*/
 	/*=============================================<<<<<*/
@@ -255,15 +254,24 @@
 	/*=============================================>>>>>
 	= Rellax =
 	===============================================>>>>>*/
-	// $('.rellax').each(function (index) {
-	// 	var rllxDefaults = {};
-	// 	var rllxOptions = $(this).data('rellax-options');
-	// 	console.warn($(this));
-	// 	var rellax = new Rellax(this,$.extend(rllxDefaults, rllxOptions));
-	// });
-	if($('.rellax').length>0){
-		var rellax = new Rellax('.rellax');
-	}
+	 $('.rellax').each(function (index) {
+	 	var rllxDefaults = {
+			speed: $(this).data('rellax-speed') ? $(this).data('rellax-speed') :-2,
+			center: $(this).data('rellax-center') ? $(this).data('rellax-center') : false,
+			wrapper: $(this).data('rellax-wrapper') ? $(this).data('rellax-wrapper') : null,
+			relativetowrapper: $(this).data('rellax-relativetowrapper') ? $(this).data('rellax-relativetowrapper') : false,
+			round: $(this).data('rellax-round') ? $(this).data('rellax-round') : false,
+			vertical: $(this).data('rellax-vertical') ? $(this).data('rellax-vertical') : true,
+			horizontal: $(this).data('rellax-horizontal') ? $(this).data('rellax-horizontal') : false,
+			callback: function(){}			
+		};
+		 console.warn(rllxDefaults);
+	 	var rellax = new Rellax(this,rllxDefaults);
+	 });
+
+//	if($('.rellax').length>0){
+//		var rellax = new Rellax('.rellax');
+//	}
 
 
 	/*= End of Rellax =*/
@@ -297,7 +305,7 @@
 
 	$(window).on("load", function (e) {
 
-
+//<button type="button" class="btn btn-dark btn-solid">Contact Me</button>
 		/*=============================================>>>>>
 		= Scroll Up =
 		===============================================>>>>>*/
@@ -310,7 +318,7 @@
 			animation: 'fade',
 			animationInSpeed: 200,
 			animationOutSpeed: 200,
-			scrollText: '<span class="btn btn-square btn-rounded btn-icon"><i class="fa fa-chevron-up"></i>yukarı</span>',
+			scrollText: '<span class="btn btn-dark btn-solid mb-2 mr-2"><i class="fa fa-chevron-up"></i></span>',
 			scrollTitle: false,
 			scrollImg: false,
 			activeOverlay: false,
@@ -467,7 +475,7 @@
 				delay: '10',
 				time: '1000',
 				offset: '70',
-				beginAt: '100'
+				beginAt: '0'
 			};
 			var counterOptions = $(this).data('counterup-options');
 			$.extend(counterDefaults, counterOptions);

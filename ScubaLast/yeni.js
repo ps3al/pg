@@ -265,7 +265,6 @@
 			horizontal: $(this).data('rellax-horizontal') ? $(this).data('rellax-horizontal') : false,
 			callback: function(){}			
 		};
-		 console.warn(rllxDefaults);
 	 	var rellax = new Rellax(this,rllxDefaults);
 	 });
 
