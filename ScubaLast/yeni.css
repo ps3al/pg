@@ -353,6 +353,7 @@ nav {
     text-align: center;
     line-height: 16px;
     background-color: #ffffff;
+    border-radius: 0;
 }
 
 .card.active,
@@ -372,5 +373,46 @@ nav {
 
 .card:hover .price,
 .card.active .price {
+    color: #ffffff;
+}
+
+.blog:before {
+    padding-bottom: 100%;
+    display: block;
+    content: '';
+}
+
+.blog>div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: #f9f9f9;
+}
+
+.ratio2_1:before {
+    padding-top: 50%;
+}
+
+.ratio1_2:before {
+    padding-top: 200%;
+}
+
+.ratio4_3:before {
+    padding-top: 75%;
+}
+
+.ratio16_9:before {
+    padding-top: 56.25%;
+}
+
+.blog {
+    margin-left: -15px;
+    margin-right: -15px;
+    color: #000000;
+}
+
+.big {
     color: #ffffff;
 }
