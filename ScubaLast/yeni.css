@@ -64,7 +64,8 @@ nav {
 
 .pic-sm {
     width: auto;
-    height: 366px;
+
+    /*height: 366px*/
 }
 
 /*********** HERO ****************/
