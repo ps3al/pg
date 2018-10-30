@@ -28,9 +28,8 @@
 	var tx = $('.titlex');
 	tx.each(function (index) {
 		var scale = $(this).data("scale")?$(this).data("scale"):"1.5";
-		var fontSize = $(this).data("font-size")?$(this).data("font-size"):parseInt($(this).css("font-size")) * scale + "px";
-//		var fontSize = parseInt($(this).css("font-size"));
-//		fontSize = fontSize * scale + "px";
+		var fontSize = parseInt($(this).css("font-size"));
+		fontSize = fontSize * scale + "px";
 		//		var zindex = $(this).data("zindex")?$(this).data("zindex"):"0";
 		var zindex = $(this).data("zindex")
 		if(zindex==null){

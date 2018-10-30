@@ -27,11 +27,8 @@
 	
 	var tx = $('.titlex');
 	tx.each(function (index) {
-		var scale = $(this).data("scale")?$(this).data("scale"):"1.5";
-		var fontSize = $(this).data("font-size")?$(this).data("font-size"):parseInt($(this).css("font-size")) * scale + "px";
-//		var fontSize = parseInt($(this).css("font-size"));
-//		fontSize = fontSize * scale + "px";
-		//		var zindex = $(this).data("zindex")?$(this).data("zindex"):"0";
+		var scale = $(this).data("scale")?$(this).data("scale"):"2";
+//		var zindex = $(this).data("zindex")?$(this).data("zindex"):"0";
 		var zindex = $(this).data("zindex")
 		if(zindex==null){
 			zindex="0";
@@ -39,17 +36,16 @@
 		var color = $(this).data("color")?$(this).data("color"):"#e2e2e236";
 		var text = $(this).data("text")?$(this).data("text"):"";
 		var temp = $(this).clone().insertAfter($(this)).css("position","relative");
-//		console.warn(text + " - " + $(this).css("font-size") + " " + scale + " " + fontSize);
 		
 		$(this).css({
 			"user-select":"none",
 			"position": "absolute",
-			"font-size": fontSize,
 			"color": color,
 			"top": "0",
 			"left": "0",
 			"right": "0",
-			"z-index": zindex
+			"z-index": zindex,
+			"transform" : "scale(" + scale + ")"			
 		});
 		if(text){
 			$(this).text(text);
