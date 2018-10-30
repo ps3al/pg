@@ -56,7 +56,8 @@ nav {
 }
 
 .nav-link {
-    font-family: Oswald-Medium;
+    font-family: Oswald;
+    font-weight: 500;
     font-size: 1.05rem;
     padding: 0.3rem 1rem;
 }
@@ -133,7 +134,8 @@ nav {
 }
 
 .slider2container h3 {
-    font-family: Oswald-Bold;
+    font-family: Oswald;
+    font-weight: 700;
     font-size: 24px;
     color: #FFFFFF;
     letter-spacing: 0;
@@ -142,7 +144,8 @@ nav {
 }
 
 .slider2container h4 {
-    font-family: Oswald-Bold;
+    font-family: Oswald;
+    font-weight: 700;
     font-size: 16px;
     color: #FFFFFF;
     letter-spacing: 0;
@@ -167,7 +170,8 @@ nav {
 }
 
 .slide-itemx h3 {
-    font-family: Oswald-Bold;
+    font-family: Oswald;
+    font-weight: 700;
     font-size: 64px;
     color: rgb(255, 255, 255);
     letter-spacing: -1.38px;
@@ -209,7 +213,8 @@ nav {
 .btn-light,
 .btn-dark {
     background: transparent;
-    font-family: Oswald-Medium;
+    font-family: Oswald;
+    font-weight: 500;
     font-size: 1.25rem;
     letter-spacing: 0;
     text-align: center;
@@ -269,7 +274,8 @@ nav {
 }
 
 .slide-itemx p {
-    font-family: Roboto-Regular;
+    font-family: Roboto;
+    font-weight: 400;
     font-size: 1.125rem;
     color: #FFFFFF;
     letter-spacing: 0;
@@ -315,7 +321,8 @@ nav {
 
 .card h3 {
     /* Personal: */
-    font-family: Roboto-Black;
+    font-family: Roboto;
+    font-weight: 900;
     font-size: 20px;
     color: #000000;
     letter-spacing: 0;
@@ -326,7 +333,8 @@ nav {
 .card p {
     /* Far far away, behind: */
     opacity: 0.8;
-    font-family: Roboto-Regular;
+    font-family: Roboto;
+    font-weight: 400;
     font-size: 16px;
     color: #000000;
     letter-spacing: 0;
@@ -337,7 +345,8 @@ nav {
 .card .price {
     /* Free: */
     opacity: 0.8;
-    font-family: Roboto-Bold;
+    font-family: Roboto;
+    font-weight: 700;
     font-size: 24px;
     color: #000000;
     letter-spacing: 0;
@@ -346,7 +355,8 @@ nav {
 }
 
 .card .btn {
-    font-family: Roboto-Medium;
+    font-family: Roboto;
+    font-weight: 500;
     font-size: 16px;
     color: #000000;
     letter-spacing: 0;
