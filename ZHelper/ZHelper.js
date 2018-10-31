@@ -341,15 +341,17 @@ var columns_section_def = {
 				{ key: 'font-weight-900', name: '900' },
 				{ key: 'font-weight-thin', name: 'Thin' },
 				{ key: 'font-weight-extra-light', name: 'Extra Light' },
+				{ key: 'font-weight-light', name: 'Light' },
+				{ key: 'font-weight-normal', name: 'Normal' },
 				{ key: 'font-weight-medium', name: 'Medium' },
 				{ key: 'font-weight-semi-bold', name: 'Semi Bold' },
+				{ key: 'font-weight-bold', name: 'Bold' },
 				{ key: 'font-weight-extra-bold', name: 'Extra Bold' },
 				{ key: 'font-weight-black', name: 'Black' }				
 			]
 		}
     }
 };
-
 
 var def_all = new PgComponentType(prefix + 'all', 'All elements', {
     selector : function(pgel) { return true },
@@ -609,29 +611,17 @@ f.addComponentType(def_all);
     font-weight: 900!important
 }
 
-.font-weight-thin {
-    font-weight: 100!important
-}
+.font-weight-thin {font-weight: 100 !important;}
+.font-weight-extra-light {font-weight: 200 !important;}
+.font-weight-light {font-weight: 300 !important;}
+.font-weight-normal {font-weight: 400 !important;}
+.font-weight-medium {font-weight: 500 !important;}
+.font-weight-semi-bold {font-weight: 600 !important;}
+.font-weight-bold {font-weight: 700 !important;}
+.font-weight-extra-bold {font-weight: 800 !important;}
+.font-weight-black {font-weight: 900 !important;}
 
-.font-weight-extra-light {
-    font-weight: 200!important
-}
 
-.font-weight-medium {
-    font-weight: 500!important
-}
-
-.font-weight-semi-bold {
-    font-weight: 600!important
-}
-
-.font-weight-extra-bold {
-    font-weight: 800!important
-}
-
-.font-weight-black {
-    font-weight: 900!important
-}
 
 */
 
