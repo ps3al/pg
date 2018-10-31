@@ -1,3 +1,215 @@
+body {
+    /*overflow-x: hidden*/
+}
+
+.fs--1 {
+    font-size: .75rem;
+}
+
+.fs-0 {
+    font-size: 1rem;
+}
+
+.fs-1 {
+    font-size: 1.333rem;
+}
+
+.fs-2 {
+    font-size: 1.777rem;
+}
+
+.fs-3 {
+    font-size: 2.369rem;
+}
+
+.fs-4 {
+    font-size: 3.157rem;
+}
+
+.fs-5 {
+    font-size: 4.199rem;
+}
+
+.fs-6 {
+    font-size: 5.584rem;
+}
+
+.fs-7 {
+    font-size: 7.427rem;
+}
+
+.fs-8 {
+    font-size: 9.878rem;
+}
+
+@media (min-width: 576px) {
+    .fs-sm--1 {
+        font-size: .75rem;
+    }
+
+    .fs-sm-0 {
+        font-size: 1rem;
+    }
+
+    .fs-sm-1 {
+        font-size: 1.333rem;
+    }
+
+    .fs-sm-2 {
+        font-size: 1.777rem;
+    }
+
+    .fs-sm-3 {
+        font-size: 2.369rem;
+    }
+
+    .fs-sm-4 {
+        font-size: 3.157rem;
+    }
+
+    .fs-sm-5 {
+        font-size: 4.199rem;
+    }
+
+    .fs-sm-6 {
+        font-size: 5.584rem;
+    }
+
+    .fs-sm-7 {
+        font-size: 7.427rem;
+    }
+
+    .fs-sm-8 {
+        font-size: 9.878rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .fs-md--1 {
+        font-size: .75rem;
+    }
+
+    .fs-md-0 {
+        font-size: 1rem;
+    }
+
+    .fs-md-1 {
+        font-size: 1.333rem;
+    }
+
+    .fs-md-2 {
+        font-size: 1.777rem;
+    }
+
+    .fs-md-3 {
+        font-size: 2.369rem;
+    }
+
+    .fs-md-4 {
+        font-size: 3.157rem;
+    }
+
+    .fs-md-5 {
+        font-size: 4.199rem;
+    }
+
+    .fs-md-6 {
+        font-size: 5.584rem;
+    }
+
+    .fs-md-7 {
+        font-size: 7.427rem;
+    }
+
+    .fs-md-8 {
+        font-size: 9.878rem;
+    }
+}
+
+@media (min-width: 992px) {
+    .fs-lg--1 {
+        font-size: .75rem;
+    }
+
+    .fs-lg-0 {
+        font-size: 1rem;
+    }
+
+    .fs-lg-1 {
+        font-size: 1.333rem;
+    }
+
+    .fs-lg-2 {
+        font-size: 1.777rem;
+    }
+
+    .fs-lg-3 {
+        font-size: 2.369rem;
+    }
+
+    .fs-lg-4 {
+        font-size: 3.157rem;
+    }
+
+    .fs-lg-5 {
+        font-size: 4.199rem;
+    }
+
+    .fs-lg-6 {
+        font-size: 5.584rem;
+    }
+
+    .fs-lg-7 {
+        font-size: 7.427rem;
+    }
+
+    .fs-lg-8 {
+        font-size: 9.878rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    .fs-xl--1 {
+        font-size: .75rem;
+    }
+
+    .fs-xl-0 {
+        font-size: 1rem;
+    }
+
+    .fs-xl-1 {
+        font-size: 1.333rem;
+    }
+
+    .fs-xl-2 {
+        font-size: 1.777rem;
+    }
+
+    .fs-xl-3 {
+        font-size: 2.369rem;
+    }
+
+    .fs-xl-4 {
+        font-size: 3.157rem;
+    }
+
+    .fs-xl-5 {
+        font-size: 4.199rem;
+    }
+
+    .fs-xl-6 {
+        font-size: 5.584rem;
+    }
+
+    .fs-xl-7 {
+        font-size: 7.427rem;
+    }
+
+    .fs-xl-8 {
+        font-size: 9.878rem;
+    }
+}
+
 section {
     position: relative;
     padding-top: 6.25rem;
@@ -52,14 +264,16 @@ nav {
 }
 
 .nav-link {
-    font-family: Oswald-Medium;
+    font-family: Oswald;
+    font-weight: 500;
     font-size: 1.05rem;
     padding: 0.3rem 1rem;
 }
 
 .pic-sm {
     width: auto;
-    height: 366px;
+
+    /*height: 366px*/
 }
 
 /*********** HERO ****************/
@@ -129,7 +343,8 @@ nav {
 }
 
 .slider2container h3 {
-    font-family: Oswald-Bold;
+    font-family: Oswald;
+    font-weight: 700;
     font-size: 24px;
     color: #FFFFFF;
     letter-spacing: 0;
@@ -138,7 +353,8 @@ nav {
 }
 
 .slider2container h4 {
-    font-family: Oswald-Bold;
+    font-family: Oswald;
+    font-weight: 700;
     font-size: 16px;
     color: #FFFFFF;
     letter-spacing: 0;
@@ -163,7 +379,8 @@ nav {
 }
 
 .slide-itemx h3 {
-    font-family: Oswald-Bold;
+    font-family: Oswald;
+    font-weight: 700;
     font-size: 64px;
     color: rgb(255, 255, 255);
     letter-spacing: -1.38px;
@@ -205,7 +422,8 @@ nav {
 .btn-light,
 .btn-dark {
     background: transparent;
-    font-family: Oswald-Medium;
+    font-family: Oswald;
+    font-weight: 500;
     font-size: 1.25rem;
     letter-spacing: 0;
     text-align: center;
@@ -265,7 +483,8 @@ nav {
 }
 
 .slide-itemx p {
-    font-family: Roboto-Regular;
+    font-family: Roboto;
+    font-weight: 400;
     font-size: 1.125rem;
     color: #FFFFFF;
     letter-spacing: 0;
@@ -292,4 +511,127 @@ nav {
 
 .hover-caption:hover {
     opacity: 1;
+}
+
+.clients .slick-track {
+    display: flex;
+    align-items: center;
+}
+
+.slick-slide img {
+    width: auto !important;
+}
+
+.card {
+    min-height: 100%;
+    background-color: rgba(255, 255, 255, 0.74);
+    border-radius: 0;
+}
+
+.card h3 {
+    /* Personal: */
+    font-family: Roboto;
+    font-weight: 900;
+    font-size: 20px;
+    color: #000000;
+    letter-spacing: 0;
+    text-align: center;
+    line-height: 30px;
+}
+
+.card p {
+    /* Far far away, behind: */
+    opacity: 0.8;
+    font-family: Roboto;
+    font-weight: 400;
+    font-size: 16px;
+    color: #000000;
+    letter-spacing: 0;
+    text-align: center;
+    line-height: 25px;
+}
+
+.card .price {
+    /* Free: */
+    opacity: 0.8;
+    font-family: Roboto;
+    font-weight: 700;
+    font-size: 24px;
+    color: #000000;
+    letter-spacing: 0;
+    text-align: center;
+    line-height: 25px;
+}
+
+.card .btn {
+    font-family: Roboto;
+    font-weight: 500;
+    font-size: 16px;
+    color: #000000;
+    letter-spacing: 0;
+    text-align: center;
+    line-height: 16px;
+    background-color: #ffffff;
+    border-radius: 0;
+}
+
+.card.active,
+.card:hover {
+    background: #000000;
+}
+
+.card:hover h3,
+.card.active h3 {
+    color: #ffffff;
+}
+
+.card:hover p,
+.card.active p {
+    color: #ffffff;
+}
+
+.card:hover .price,
+.card.active .price {
+    color: #ffffff;
+}
+
+.blog:before {
+    padding-bottom: 100%;
+    display: block;
+    content: '';
+}
+
+.blog>div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: #f9f9f9;
+}
+
+.ratio2_1:before {
+    padding-top: 50%;
+}
+
+.ratio1_2:before {
+    padding-top: 200%;
+}
+
+.ratio4_3:before {
+    padding-top: 75%;
+}
+
+.ratio16_9:before {
+    padding-top: 56.25%;
+}
+
+.blog {
+    margin-left: -15px;
+    margin-right: -15px;
+    color: #000000;
+}
+
+.big {
+    color: #ffffff;
 }

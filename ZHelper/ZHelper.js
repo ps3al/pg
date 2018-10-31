@@ -144,7 +144,500 @@ $(function () {
 
 
 
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+var prefix = 'zbs4.';
 
+var num_columns = parseInt(pinegrow.getSetting('bootstrap-col-num', '12')) || 12;
+var sizes = ["xs", "sm", "md", "lg", "xl"];
+var sizes_names = ["Extra Small", "Small", "Medium", "Large", "Extra Large"];
+var sizes_breakpoints = [0, 576, 768, 992, 1200];
+var sizes_view_sizes = [320, 640, 768, 1024, 1280];
+var sizes_icons = ['icon-Xs', 'icon-IPAD', 'icon-tableta-lezeca', 'icon-ikone100--copy_laptop', 'icon-Lg'];
+
+var size_for_all = sizes[0];
+
+var sizes_breakpoints_map = {};
+for(var i = 0; i < sizes.length; i++) {
+    sizes_breakpoints_map[sizes[i]] = sizes_breakpoints[i];
+}
+
+var isColumn = function(pgel) {
+    if(pgel.tagName == 'div') {
+        if(pgel.parent && pgel.parent.isSelector('.row,.form-row') && !pgel.hasClass('row')) return true;
+        if(pgel.getData(prefix + 'was-column')) return true;
+    }
+    if(pgel.tagName == 'label') return false;
+    var cls = pgel.getAttr('class');
+    if(cls) {
+        if(cls.match(/(\s|^)col($|[\-\s])/i)) return true; //handle .col as well
+    }
+    return false;
+}
+
+var isContainer = function(pgel) {
+    return pgel.hasClass('container') || pgel.hasClass('container-fluid')
+}
+
+var bs_options = {
+    num_columns: num_columns,
+    sizes: sizes,
+    sizes_breakpoints: sizes_breakpoints,
+    sizes_breakpoints_map: sizes_breakpoints_map,
+    sizes_view_sizes: sizes_view_sizes,
+    sizes_icons: sizes_icons,
+    size_for_all: size_for_all,
+    sizes_names: sizes_names,
+    prefix: prefix,
+    col_prefix_class: 'col',
+    isColumn: isColumn,
+    onClickOnColumnPoint: function() {
+        var q = PgQuickProperties([def_all.sections[this.options.prefix + 'columns']], this.menu.pgel, this.$element, 'Column size &amp; order', 300);
+    }
+}
+
+var gh = PgBootstrapHelpers(bs_options, f, 4);
+
+var size_values = [
+//    {key: '-1', name: '-1'}
+]
+//var weight_values = []
+for (var i = -1; i <= 8; i++) {
+    size_values.push({key: '-' + i, name: i});
+//    weight_values.push({key: '-' + i, name: i});
+}
+
+
+        //Return a function that will create the control
+        var getGridControlFactory = function(control_id, rows) {
+            //Returns function that creates the control
+            return function() {
+                //will keep helper functions and vars private
+
+                //Create control, needs a unique id
+                var c = new PgCustomPropertyControl(prefix + control_id);
+
+                //Register subfields.
+                c.onDefine = function () {
+
+                    //These fields will not be shown when just registered. This is neccessary to get values.
+                    for (var n = 0; n < rows.length; n++) {
+                        for (var m = 0; m < sizes.length; m++) {
+                            var field = prefix + rows[n].field_prefix + '.' + sizes[m];
+                            this.registerInputField(field, createFieldDef(rows[n], sizes[m]))
+                        }
+                    }
+                }
+
+                //Show control. Return the control $el.
+                c.onShow = function () {
+                    var $table = $("<table/>", {class: 'grid-control columns-control six-col-grid'});
+                    var html = '<td></td>';
+                    sizes.forEach(function(size) {
+                        html += '<td><label class="grid-control-size">' + size + '</label></td>';
+                    })
+                    var $row = $("<tr/>").html(html).appendTo($table);
+
+                    for (var n = 0; n < rows.length; n++) {
+                        $row = $("<tr/>", {class: ''}).appendTo($table);
+                        var $td = $("<td/>").html('<label>' + rows[n].name + '</label>').appendTo($row);
+
+                        for (var m = 0; m < sizes.length; m++) {
+                            $td = $("<td/>").appendTo($row);
+                            var field = prefix + rows[n].field_prefix + '.' + sizes[m];
+                            this.showInputField($td, field, createFieldDef(rows[n], sizes[m]));
+                        }
+                    }
+                    return $table;
+                }
+
+                //Called when control is recycled and new values are set
+                c.onSetValues = function () {
+                    //Nothing to do in this case. PG will take care of updating sub fields with new values
+                }
+
+                //Helper functions and vars
+
+                var createFieldDef = function(row, size) {
+                    var size_part = (size == size_for_all) ? '' : ('-' + size);
+                    var base = row.class_prefix + size_part;
+                    var span_select = {
+                        'type': 'select',
+                        'name': null,
+                        'action': 'apply_class',
+                        draggable_list : true,
+                        'show_empty': true,
+                        'options': [],
+/*                        'on_changed' : function(pgel, prop, value) {
+                            pgel.setData(prefix + 'was-column', true);
+                            if(value) {
+                                if(!pgel.parent.hasClass('row')) {
+                                    pinegrow.showAlert('<p>Column must have a Row parent element.</p><p>Would you like to add a Row?</p>', 'Every Column needs a Row', 'No', 'Yes, add a Row', null, function() {
+                                        if(!pgel.isDeleted) {
+                                            var row = pgCreate('<div class="row"></div>');
+                                            row.insertBefore(pgel);
+                                            row.append(pgel);
+                                            pinegrow.showQuickMessage('Parent Row added.');
+                                        }
+                                    })
+                                }
+                            }
+                        }*/
+                    }
+                    row.values.forEach(function(d) {
+                        span_select.options.push({key: base + d.key, name: d.name});
+                    })
+                    return span_select;
+                }
+
+                //Return the control
+                return c;
+            };
+        }
+
+        //all section and field keys should be prefixed by prefix bs4.
+        var addPrefixToSectionsAndFields = function (sections) {
+            return gh.addPrefixToSectionsAndFields(sections);
+        }
+
+var columns_section_def = {
+    name : "Z FONT",
+    fields : {
+        layout_control: {
+            type: 'custom',
+            name: 'layout_control',
+            action: 'none',
+            control: getGridControlFactory('column-span', [
+                {
+                    field_prefix: 'zfontsize',
+                    class_prefix: 'fs',
+                    values: size_values,
+                    name: 'Font Size'
+				}
+				// ,
+                // {
+                //     field_prefix: 'zweight',
+                //     class_prefix: 'zweight',
+                //     values: weight_values,
+                //     name: 'Font Weights'
+				// }
+            ])
+		},
+		zweight: {
+			'type' : 'select',
+			'name' : 'Font Weight',
+			'action' : 'apply_class',
+			'show_empty': true,
+			'options' : [
+				{ key: 'font-weight-100', name: '100' },
+				{ key: 'font-weight-200', name: '200' },
+				{ key: 'font-weight-300', name: '300' },
+				{ key: 'font-weight-400', name: '400' },
+				{ key: 'font-weight-500', name: '500' },
+				{ key: 'font-weight-600', name: '600' },
+				{ key: 'font-weight-700', name: '700' },
+				{ key: 'font-weight-800', name: '800' },
+				{ key: 'font-weight-900', name: '900' },
+				{ key: 'font-weight-thin', name: 'Thin' },
+				{ key: 'font-weight-extra-light', name: 'Extra Light' },
+				{ key: 'font-weight-medium', name: 'Medium' },
+				{ key: 'font-weight-semi-bold', name: 'Semi Bold' },
+				{ key: 'font-weight-extra-bold', name: 'Extra Bold' },
+				{ key: 'font-weight-black', name: 'Black' }				
+			]
+		}
+    }
+};
+
+
+var def_all = new PgComponentType(prefix + 'all', 'All elements', {
+    selector : function(pgel) { return true },
+    name : 'Div',
+    display_name : 'tag',
+    priority : 2001,
+    sections : addPrefixToSectionsAndFields({
+		columns : columns_section_def,
+	})
+})
+f.addComponentType(def_all);
+
+/*
+
+
+.fs--1 {
+    font-size: .75rem
+}
+
+.fs-0 {
+    font-size: 1rem
+}
+
+.fs-1 {
+    font-size: 1.333rem
+}
+
+.fs-2 {
+    font-size: 1.777rem
+}
+
+.fs-3 {
+    font-size: 2.369rem
+}
+
+.fs-4 {
+    font-size: 3.157rem
+}
+
+.fs-5 {
+    font-size: 4.199rem
+}
+
+.fs-6 {
+    font-size: 5.584rem
+}
+
+.fs-7 {
+    font-size: 7.427rem
+}
+
+.fs-8 {
+    font-size: 9.878rem
+}
+
+@media (min-width: 576px) {
+    .fs-sm--1 {
+        font-size:.75rem
+    }
+
+    .fs-sm-0 {
+        font-size: 1rem
+    }
+
+    .fs-sm-1 {
+        font-size: 1.333rem
+    }
+
+    .fs-sm-2 {
+        font-size: 1.777rem
+    }
+
+    .fs-sm-3 {
+        font-size: 2.369rem
+    }
+
+    .fs-sm-4 {
+        font-size: 3.157rem
+    }
+
+    .fs-sm-5 {
+        font-size: 4.199rem
+    }
+
+    .fs-sm-6 {
+        font-size: 5.584rem
+    }
+
+    .fs-sm-7 {
+        font-size: 7.427rem
+    }
+
+    .fs-sm-8 {
+        font-size: 9.878rem
+    }
+}
+
+@media (min-width: 768px) {
+    .fs-md--1 {
+        font-size:.75rem
+    }
+
+    .fs-md-0 {
+        font-size: 1rem
+    }
+
+    .fs-md-1 {
+        font-size: 1.333rem
+    }
+
+    .fs-md-2 {
+        font-size: 1.777rem
+    }
+
+    .fs-md-3 {
+        font-size: 2.369rem
+    }
+
+    .fs-md-4 {
+        font-size: 3.157rem
+    }
+
+    .fs-md-5 {
+        font-size: 4.199rem
+    }
+
+    .fs-md-6 {
+        font-size: 5.584rem
+    }
+
+    .fs-md-7 {
+        font-size: 7.427rem
+    }
+
+    .fs-md-8 {
+        font-size: 9.878rem
+    }
+}
+
+@media (min-width: 992px) {
+    .fs-lg--1 {
+        font-size:.75rem
+    }
+
+    .fs-lg-0 {
+        font-size: 1rem
+    }
+
+    .fs-lg-1 {
+        font-size: 1.333rem
+    }
+
+    .fs-lg-2 {
+        font-size: 1.777rem
+    }
+
+    .fs-lg-3 {
+        font-size: 2.369rem
+    }
+
+    .fs-lg-4 {
+        font-size: 3.157rem
+    }
+
+    .fs-lg-5 {
+        font-size: 4.199rem
+    }
+
+    .fs-lg-6 {
+        font-size: 5.584rem
+    }
+
+    .fs-lg-7 {
+        font-size: 7.427rem
+    }
+
+    .fs-lg-8 {
+        font-size: 9.878rem
+    }
+}
+
+@media (min-width: 1200px) {
+    .fs-xl--1 {
+        font-size:.75rem
+    }
+
+    .fs-xl-0 {
+        font-size: 1rem
+    }
+
+    .fs-xl-1 {
+        font-size: 1.333rem
+    }
+
+    .fs-xl-2 {
+        font-size: 1.777rem
+    }
+
+    .fs-xl-3 {
+        font-size: 2.369rem
+    }
+
+    .fs-xl-4 {
+        font-size: 3.157rem
+    }
+
+    .fs-xl-5 {
+        font-size: 4.199rem
+    }
+
+    .fs-xl-6 {
+        font-size: 5.584rem
+    }
+
+    .fs-xl-7 {
+        font-size: 7.427rem
+    }
+
+    .fs-xl-8 {
+        font-size: 9.878rem
+    }
+}
+
+.font-weight-100 {
+    font-weight: 100!important
+}
+
+.font-weight-200 {
+    font-weight: 200!important
+}
+
+.font-weight-300 {
+    font-weight: 300!important
+}
+
+.font-weight-400 {
+    font-weight: 400!important
+}
+
+.font-weight-500 {
+    font-weight: 500!important
+}
+
+.font-weight-600 {
+    font-weight: 600!important
+}
+
+.font-weight-700 {
+    font-weight: 700!important
+}
+
+.font-weight-800 {
+    font-weight: 800!important
+}
+
+.font-weight-900 {
+    font-weight: 900!important
+}
+
+.font-weight-thin {
+    font-weight: 100!important
+}
+
+.font-weight-extra-light {
+    font-weight: 200!important
+}
+
+.font-weight-medium {
+    font-weight: 500!important
+}
+
+.font-weight-semi-bold {
+    font-weight: 600!important
+}
+
+.font-weight-extra-bold {
+    font-weight: 800!important
+}
+
+.font-weight-black {
+    font-weight: 900!important
+}
+
+*/
+
+///////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////
 
 
 
