@@ -572,7 +572,8 @@
 			var isotopeDefaults = {
 				filter: '*'
 			};
-			var isotopeOptions = $.parseJSON(grid.attr('data-isotope-options'));
+//			var isotopeOptions = $.parseJSON(grid.attr('data-isotope-options'));
+			var isotopeOptions = $(this).data('isotope-options');
 			var isotopeFilters = isotopeOptions.filters;
 			$(isotopeFilters).on('click', function () {
 				$(isotopeFilters).removeClass("active");
