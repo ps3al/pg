@@ -5072,18 +5072,8 @@ nav {
     left: 0;
     bottom: 0;
     right: 0;
-    padding: 2rem;
     background-color: #f9f9f9;
-    color: #000;
-}
-
-.blog.big>div {
-    color: #fff;
-}
-
-.blog:hover>div {
-    background-color: #25262c;
-    color: #ffffff;
+    padding: 2rem;
 }
 
 .blog {
@@ -5327,11 +5317,6 @@ nav {
 }
 
 .blog.big a {
-    color: #ffffff;
-    text-decoration: none;
-}
-
-.blog > div a {
     color: #ffffff;
     text-decoration: none;
 }
