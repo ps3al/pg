@@ -5132,7 +5132,6 @@ nav {
 #service-tabs a {
     display: block;
     color: #25262c;
-    text-decoration: none;
 }
 
 #service-tabs .active a {

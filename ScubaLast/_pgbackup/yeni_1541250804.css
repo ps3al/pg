@@ -2565,7 +2565,7 @@ body {
 }
 
 .p-2 {
-    padding: .5rem !important;
+    padding: .5rem!important;
 }
 
 .pt-2 {
@@ -5127,12 +5127,6 @@ nav {
 #service-tabs .active {
     background-color: #25262c;
     color: #ffffff;
-}
-
-#service-tabs a {
-    display: block;
-    color: #25262c;
-    text-decoration: none;
 }
 
 #service-tabs .active a {

@@ -5129,12 +5129,11 @@ nav {
     color: #ffffff;
 }
 
+#service-tabs .active a {
+    color: #ffffff;
+}
+
 #service-tabs a {
     display: block;
     color: #25262c;
-    text-decoration: none;
-}
-
-#service-tabs .active a {
-    color: #ffffff;
 }
