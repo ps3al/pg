@@ -24,7 +24,7 @@
 		}
 		
 	});	
-	
+	 
 	var tx = $('.titlex');
 	tx.each(function (index) {
 		var scale = $(this).data("scale")?$(this).data("scale"):"1.5";
@@ -308,6 +308,7 @@
 
 	$(window).on("load", function (e) {
 
+		$('body').addClass('loaded');
 //<button type="button" class="btn btn-dark btn-solid">Contact Me</button>
 		/*=============================================>>>>>
 		= Scroll Up =
