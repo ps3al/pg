@@ -37,6 +37,11 @@
 		<link rel="stylesheet" href="yeni.css">
 	</head>
 	<body>
+		<div id="loader-wrapper">
+			<div id="loader"></div>
+			<div class="loader-section section-left"></div>
+			<div class="loader-section section-right"></div>
+		</div>
 		<nav class="navbar fixed-top mt-3 navbar-dark navbar-expand-lg"> 
 			<div class="container">
 				<a class="navbar-brand" href="#" style="font-family: Oswald; font-size: 2.5rem; color: #ffffff; letter-spacing: 0; line-height: 3rem; font-weight: 700;">EDGAR CROSS<small style="display: block; font-family: Roboto; font-weight:400; font-size: 1.125rem; color: #ffffff; letter-spacing: -0.69px; line-height: 1.25rem;">Live for Diving</small></a>
@@ -271,19 +276,19 @@ c21.2-8.1,52.2-18.2,79.7-24.2C399.3,7.9,411.6,7.5,421.9,6.5z" style="fill: #f0f0
 			<div class="container">
 				<div class="row">
 					<div class="col"> 
-						<h1 class="titlex" style="font-family: Oswald; font-weight:700; font-size: 48px; color: #25262c; letter-spacing: 0; text-align: center; line-height: 63px;" data-zindex="0">Services</h1>
-						<div class="easytabs mb-6" data-easytabs-options="{&quot;tabsClass&quot;:&quot;service-tabs&quot;,&quot;panelClass&quot;:&quot;tab-panel&quot;}">
+						<h1 class="titlex mb-4" style="font-family: Oswald; font-weight:700; font-size: 48px; color: #25262c; letter-spacing: 0; text-align: center; line-height: 63px;" data-zindex="0">Services</h1>
+						<div class="easytabs mb-6" data-easytabs-options="{&quot;tabsClass&quot;:&quot;service-tabs&quot;,&quot;panelClass&quot;:&quot;tab-panel&quot;}" style="min-height: 500px;">
 							<ul class="nav nav-tabs d-flex my-3 service-tabs" style="font-family: Oswald; font-weight:500; font-size: 24px; color: #000000; letter-spacing: 0; line-height: 24px; background-color: white;" id="service-tabs">
-								<li class="active p-0 col-12 col-md">
+								<li class="active p-0 col-12 col-md text-center">
 									<a href="#tab1" data-toggle="tab" class="p-2">LEARN SCUBA</a>
 								</li>
-								<li class="p-0 col-12 col-md">
+								<li class="p-0 col-12 col-md text-center">
 									<a href="#tab2" data-toggle="tab" class="p-2">CERTIFICATE</a>
 								</li>
-								<li class="p-0 col-12 col-md">
+								<li class="p-0 col-12 col-md text-center">
 									<a href="#tab3" data-toggle="tab" class="p-2">LOCATIONS</a>
 								</li>
-								<li class="p-0 col-12 col-md">
+								<li class="p-0 col-12 col-md text-center">
 									<a href="#tab4" data-toggle="tab" class="p-2">EQUIPMENT</a>
 								</li>
 							</ul>
@@ -644,15 +649,15 @@ font-family: Oswald; font-weight:500; font-size: 36px; color: #000000; letter-sp
 			<div class="container">
 				<div class="row">
 					<div class="col"> 
-						<h1 class="text-center titlex" style="font-family: Oswald; font-weight:700; font-size: 48px; color: #000000; letter-spacing: 0; text-align: center; line-height: 63px;">Blog</h1>
+						<h1 class="text-center titlex mb-5" style="font-family: Oswald; font-weight:700; font-size: 48px; color: #000000; letter-spacing: 0; text-align: center; line-height: 63px;">Blog</h1>
 					</div>
 				</div>
 				<div class="row justify-content-center">
 					<div class="col-md-10">
 						<div class="row">
-							<div class="col-12 text-center col-sm-6 mb-3">
+							<div class="col-12 col-sm-6 mb-4">
 								<div class="blog big">
-									<div class="d-flex mx-2" style="background-image: url('img/Lalati-Dive-Resort-Adventure-Spa-Beqa-Lagoon-Fiji-top-9.jpg'); background-repeat: no-repeat; background-position: center center; background-size: cover;">
+									<div class="d-flex mx-2" style="background-image: url('img/Lalati-Dive-Resort-Adventure-Spa-Beqa-Lagoon-Fiji-top-9.jpg');">
 										<div class="align-self-center">
 											<h2>Platforma wireframe kit</h2>
 											<p>Far far away, behind the word mountains, far from the countries Vokalia.</p>
@@ -661,10 +666,10 @@ font-family: Oswald; font-weight:500; font-size: 36px; color: #000000; letter-sp
 									</div>
 								</div>
 							</div>
-							<div class="col-12 text-center col-sm-6 mb-3">
+							<div class="col-12 col-sm-6 mb-4">
 								<div class="blog big">
-									<div class="d-flex mx-2" style="background-image: url('img/wreck-daymaniyat-1.jpg'); background-repeat: no-repeat; background-position: center center; background-size: cover;">
-										<div class="align-self-center">
+									<div class="mx-2 d-flex" style="background-image: url('img/wreck-daymaniyat-1.jpg');">
+										<div class="align-self-center" style="z-index: 2;">
 											<h2>Wireframe connects the underlying structure</h2>
 											<p>Far far away, behind the word mountains, far from the countries Vokalia.</p>
 											<a href="">Read more</a>
@@ -672,10 +677,10 @@ font-family: Oswald; font-weight:500; font-size: 36px; color: #000000; letter-sp
 									</div>
 								</div>
 							</div>
-							<div class="col-12 col-sm-4 mb-3">
-								<div class="blog">
-									<div class="d-flex mx-2">
-										<div class="align-self-center">
+							<div class="col-12 col-sm-4 mb-4">
+								<div class="blog ratio4_3">
+									<div class="mx-2">
+										<div>
 											<h3>Platforma wireframe kit</h3>
 											<p>Far far away, behind the word mountains, far from the countries Vokalia.</p>
 											<a href="">Read more</a>
@@ -683,21 +688,21 @@ font-family: Oswald; font-weight:500; font-size: 36px; color: #000000; letter-sp
 									</div>
 								</div>
 							</div>
-							<div class="col-12 col-sm-4 mb-3">
-								<div class="blog">
-									<div class="d-flex mx-2">
-										<div class="align-self-center">
+							<div class="col-12 col-sm-4 mb-4">
+								<div class="blog ratio4_3">
+									<div class="mx-2">
+										<div>
 											<h3>Platforma wireframe kit</h3>
-											<p>Far far away, behind the word mountains, far from the countries Vokalia.</p>
-											<a href="">Read more</a>
+											<p>Far far away,&nbsp;</p>
+											<a href="" style="font-size: 1rem;">Read more</a>
 										</div>
 									</div>
 								</div>
 							</div>
-							<div class="col-12 col-sm-4 mb-3">
-								<div class="blog">
-									<div class="d-flex mx-2">
-										<div class="align-self-center">
+							<div class="col-12 col-sm-4 mb-4">
+								<div class="blog ratio4_3">
+									<div class="mx-2">
+										<div>
 											<h3>Platforma wireframe kit</h3>
 											<p>Far far away, behind the word mountains, far from the countries Vokalia.</p>
 											<a href="">Read more</a>
@@ -714,7 +719,7 @@ font-family: Oswald; font-weight:500; font-size: 36px; color: #000000; letter-sp
 		<!-- START Testimonials 3 -->
 		<!-- END Testimonials 3 -->
 		<!-- START Contacts 5 -->
-		<section class="text-center jarallax" id="contact" style="background-position: center center; background-size: cover; background-color: white;" data-jarallax-options="{&quot;videoSrc&quot;:&quot;https://www.youtube.com/watch?v=GEin62WxE30&quot;}">
+		<section class="jarallax" id="contact" style="background-position: center center; background-size: cover; background-color: white;" data-jarallax-options="{&quot;videoSrc&quot;:&quot;https://www.youtube.com/watch?v=GEin62WxE30&quot;}">
 			<div style="background-color: rgba(0, 123, 255, 0.30); position: absolute; width: 100%; height: 100%; top: 0; left: 0;"></div>
 			<div class="container">
 				<div class="row">
@@ -725,20 +730,24 @@ font-family: Oswald; font-weight:500; font-size: 36px; color: #000000; letter-sp
 				<div class="row justify-content-center my-5">
 					<div class="col-12 col-sm-5" style="background-color: rgba(255, 255, 255, 0.53); padding-top: 15px; padding-bottom: 15px;">
 						<div>
-							<input class="form-control" type="text" placeholder="Input"/>
+							<input class="form-control" type="text" placeholder="Name"/>
 						</div>
 						<div>
-							<textarea class="form-control" placeholder="Input" rows="4"></textarea>
+							<input class="form-control" type="text" placeholder="E-Mail"/>
 						</div>
-						<button class="btn">Button</button>
+						<div>
+							<textarea class="form-control" placeholder="Message" rows="4"></textarea>
+						</div>
+						<button class="btn">Send</button>
 					</div>
 					<div class="col-12 col-sm-auto" style="background-color: rgba(255, 255, 255, 0.53); padding-top: 15px; padding-bottom: 15px;">
 						<h5 style="font-family: Oswald; font-weight:500; font-size: 16px; color: #000000; letter-spacing: 0; line-height: 22px;">Platforma wireframe kit</h5>
 						<div>
-							<p><a href="mailto:" style="opacity: 0.8; font-family: Roboto; font-weight:400; font-size: 16px; color: #000000; letter-spacing: 0; line-height: 22px;">hello@greatsimple.io</a></p>
-							<p style="opacity: 0.8; font-family: Roboto; font-weight:400; font-size: 16px; color: #000000; letter-spacing: 0; line-height: 22px;">+1 222-345-0000</p>
+							<p style="opacity: 0.8; font-family: Roboto; font-weight:400; font-size: 16px; color: #000000; letter-spacing: 0; line-height: 22px;"><i class="fa fa-globe"></i>+1 222-345-0000</p>
+							<p><i class="fa fa-envelope-o"></i><a href="mailto:" style="opacity: 0.8; font-family: Roboto; font-weight:400; font-size: 16px; color: #000000; letter-spacing: 0; line-height: 22px;">hello@greatsimple.io</a></p>
+							<p style="opacity: 0.8; font-family: Roboto; font-weight:400; font-size: 16px; color: #000000; letter-spacing: 0; line-height: 22px;"><i class="fa fa-phone"></i>+1 222-345-0000</p>
 						</div>
-						<h5 style="font-family: Oswald; font-weight:500; font-size: 16px; color: #2A4A5B; letter-spacing: 0; line-height: 21px;">Follow us</h5>
+						<h5 style="font-family: Oswald; font-weight:500; font-size: 16px; color: #2A4A5B; letter-spacing: 0; line-height: 21px;">Follow me</h5>
 						<div>
 							<a href=""> <i class="fa fa-facebook fa-2x" style="color: #000000; font-size: 24px;"></i> </a>
 							<a href=""> <i class="fa fa-2x fa-twitter" style="color: #000000; font-size: 24px;"></i> </a>
@@ -807,41 +816,32 @@ font-family: Oswald; font-weight:500; font-size: 36px; color: #000000; letter-sp
 font-family: Oswald; font-weight:700; font-size: 24px; color: #000000; letter-spacing: 0; text-align: center; line-height: 32px;">EDGAR CROSS</a>
 								</div>
 								<p style="opacity: 0.8; font-family: Roboto; font-weight:400; font-size: 16px; color: #000000; letter-spacing: 0; line-height: 23px;">Far far away, behid the word mountains, far from the countries Vokalia and Consonantia</p>
-							</div>
-							<div class="col-12 col-md-auto">
-								<div class="row align-items-start">
-									<div class="col-sm-auto">
-										<h5>First</h5>
-										<p><a href="">Menu One</a></p>
-										<p><a href="">Menu Two</a></p>
-										<p><a href="">Menu Three</a></p>
-									</div>
-									<div class="col-sm-auto">
-										<h5>Second</h5>
-										<p><a href="">Menu One</a></p>
-										<p><a href="">Menu Two</a></p>
-										<p><a href="">Menu Three</a></p>
-									</div>
-									<div class="col-sm-auto">
-										<h5>Third</h5>
-										<p><a href="">Menu One</a></p>
-										<p><a href="">Menu Two</a></p>
-										<p><a href="">Menu Three</a></p>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="row justify-content-center align-items-center justify-content-sm-between">
-							<div class="col-auto">
-								<p>© 1823 — 2016 Great Simple Studio</p>
-							</div>
-							<div class="col-auto">
 								<div>
 									<a href=""> <i class="fa fa-facebook fa-2x" style="color: #000000; font-size: 24px;"></i> </a>
 									<a href=""> <i class="fa fa-2x fa-twitter" style="color: #000000; font-size: 24px;"></i> </a>
 									<a href=""> <i class="fa fa-2x fa-instagram" style="color: #000000; font-size: 24px;"></i> </a>
 									<a href=""> <i class="fa fa-2x fa-google-plus" style="color: #000000; font-size: 24px;"></i></a>
 								</div>
+							</div>
+							<div class="col-12 col-md">
+								<div class="row align-items-start">
+									<div class="col-sm">
+										<h5>Links</h5>
+										<button type="button" class="btn btn-dark m-1" style="font-family: Oswald; font-weight: 500; font-size: 14px; letter-spacing: 0; text-align: center; line-height: 27px;">Contact Me</button>
+										<button type="button" class="btn btn-dark m-1" style="font-family: Oswald; font-weight: 500; font-size: 14px; letter-spacing: 0; text-align: center; line-height: 27px;">Contact</button>
+										<button type="button" class="btn btn-dark m-1" style="font-family: Oswald; font-weight: 500; font-size: 14px; letter-spacing: 0; text-align: center; line-height: 27px;">World Diving</button>
+										<button type="button" class="btn btn-dark m-1" style="font-family: Oswald; font-weight: 500; font-size: 14px; letter-spacing: 0; text-align: center; line-height: 27px;">Club Marine</button>
+										<button type="button" class="btn btn-dark m-1" style="font-family: Oswald; font-weight: 500; font-size: 14px; letter-spacing: 0; text-align: center; line-height: 27px;">Contact Me</button>
+										<button type="button" class="btn btn-dark m-1" style="font-family: Oswald; font-weight: 500; font-size: 14px; letter-spacing: 0; text-align: center; line-height: 27px;">Contact Me</button>
+										<button type="button" class="btn btn-dark m-1" style="font-family: Oswald; font-weight: 500; font-size: 14px; letter-spacing: 0; text-align: center; line-height: 27px;">Contact Me</button>
+										<button type="button" class="btn btn-dark m-1" style="font-family: Oswald; font-weight: 500; font-size: 14px; letter-spacing: 0; text-align: center; line-height: 27px;">Contact Me</button>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="row justify-content-center align-items-center justify-content-sm-between">
+							<div class="col-auto">
+								<p class="my-5">© 1823 — 2016 Great Simple Studio</p>
 							</div>
 						</div>
 					</div>
