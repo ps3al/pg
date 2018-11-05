@@ -4943,6 +4943,7 @@ nav {
 .btn-solid.btn-dark:hover {
     color: #000000 !important;
     background-color: #ffffff !important;
+    border-color: #ffffff !important;
     transition: all .3s ease-in;
 }
 
