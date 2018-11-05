@@ -283,11 +283,11 @@ body {
 }
 
 .font-1 {
-    font-family: "Source Sans Pro",sans-serif;
+    font-family: "Oswald",sans-serif;
 }
 
 .font-2 {
-    font-family: "Open Sans",sans-serif;
+    font-family: "Roboto",sans-serif;
 }
 
 .lh-0 {
@@ -4943,6 +4943,7 @@ nav {
 .btn-solid.btn-dark:hover {
     color: #000000 !important;
     background-color: #ffffff !important;
+    border-color: #ffffff !important;
     transition: all .3s ease-in;
 }
 
@@ -5061,7 +5062,7 @@ nav {
 }
 
 .blog:before {
-    padding-bottom: 100%;
+    padding-top: 100%;
     display: block;
     content: '';
 }
@@ -5072,7 +5073,18 @@ nav {
     left: 0;
     bottom: 0;
     right: 0;
+    padding: 2rem;
     background-color: #f9f9f9;
+    color: #000;
+}
+
+.blog.big>div {
+    color: #fff;
+}
+
+.blog:hover>div {
+    background-color: #25262c;
+    color: #ffffff;
 }
 
 .blog {
@@ -5145,7 +5157,8 @@ nav {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 1000;
+    z-index: 100000;
+    display: none;
 }
 
 #loader {
@@ -5158,7 +5171,7 @@ nav {
     margin: -75px 0 0 -75px;
     border-radius: 50%;
     border: 3px solid transparent;
-    border-top-color: #3498db;
+    border-top-color: #000000;
     -webkit-animation: spin 2s linear infinite;
     animation: spin 2s linear infinite;
     z-index: 1001;
@@ -5173,7 +5186,7 @@ nav {
     bottom: 5px;
     border-radius: 50%;
     border: 3px solid transparent;
-    border-top-color: #e74c3c;
+    border-top-color: #777777;
     -webkit-animation: spin 3s linear infinite;
     animation: spin 3s linear infinite;
 }
@@ -5187,7 +5200,7 @@ nav {
     bottom: 15px;
     border-radius: 50%;
     border: 3px solid transparent;
-    border-top-color: #f9c922;
+    border-top-color: #bdbdbd;
     -webkit-animation: spin 1.5s linear infinite;
     animation: spin 1.5s linear infinite;
 }
@@ -5197,7 +5210,7 @@ nav {
     top: 0;
     width: 51%;
     height: 100%;
-    background: #222;
+    background: #ffffff;
     z-index: 1000;
 }
 
@@ -5249,7 +5262,6 @@ nav {
     }
 }
 
-/*! CSS Used keyframes */
 @-webkit-keyframes spin{
     0% {
         -webkit-transform: rotate(0deg);
@@ -5276,4 +5288,52 @@ nav {
         -ms-transform: rotate(360deg);
         transform: rotate(360deg);
     }
+}
+
+.blog.big:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.20);
+    z-index: 1;
+    margin-left: .5rem;
+    margin-right: .5rem;
+}
+
+.blog:hover.big:after {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.blog.big>div {
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
+.blog h2,
+.blog h3 {
+    font-family: Oswald;
+}
+
+.blog.big > div > div {
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.25);
+    padding: 1rem;
+}
+
+.blog:hover.big > div > div {
+    background-color: rgba(0, 0, 0, 0.75);
+}
+
+.blog.big a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.blog > div a {
+    /*color: #ffffff*/
+    text-decoration: none;
 }
