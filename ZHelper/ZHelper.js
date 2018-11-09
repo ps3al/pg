@@ -208,11 +208,10 @@ for (var i = -1; i <= 8; i++) {
     size_values.push({key: '-' + i, name: i});
 }
 var spacing_values = [];
-for (var i = 0; i <= 8; i++) {
-    spacing_values.push({key: '-' + i , name: i});
-}
-spacing_values.push({ key: '-font-1', name: 'Font 1' });
-spacing_values.push({ key: '-font-2', name: 'Font 2' });
+spacing_values.push({ key: '-normal', name: 'Normal' });
+spacing_values.push({ key: '-tight', name: 'Tight' });
+spacing_values.push({ key: '-wide', name: 'Wide' });
+spacing_values.push({ key: '-wider', name: 'Wider' });
 
 
 var weight_values = [];

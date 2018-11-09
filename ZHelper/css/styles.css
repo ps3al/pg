@@ -801,229 +801,74 @@
 }
 
 
-.letter-spacing-0 {
-  letter-spacing: 0rem !important;
+.letter-spacing-normal {
+  letter-spacing: normal !important;
 }
-
-.letter-spacing-font-1 {
-  letter-spacing: .7rem !important;
+.letter-spacing-tight {
+  letter-spacing: -0.05em !important;
 }
-
-.letter-spacing-font-2 {
-  letter-spacing: .85rem !important;
+.letter-spacing-wide {
+  letter-spacing: 0.5em !important;
 }
-
-.letter-spacing-1 {
-  letter-spacing: 1rem !important;
-}
-
-.letter-spacing-2 {
-  letter-spacing: 1.15rem !important;
-}
-
-.letter-spacing-3 {
-  letter-spacing: 1.3rem !important;
-}
-
-.letter-spacing-4 {
-  letter-spacing: 1.45rem !important;
-}
-
-.letter-spacing-5 {
-  letter-spacing: 1.6rem !important;
-}
-
-.letter-spacing-6 {
-  letter-spacing: 1.75rem !important;
-}
-
-.letter-spacing-7 {
-  letter-spacing: 1.9rem !important;
-}
-
-.letter-spacing-8 {
-  letter-spacing: 2.05rem !important;
+.letter-spacing-wider {
+  letter-spacing: 1em !important;
 }
 
 @media (min-width:36em){
-  .letter-spacing-sm-0 {
-      letter-spacing: 0rem !important;
+  .letter-spacing-sm-normal {
+    letter-spacing: normal !important;
   }
-  
-  .letter-spacing-sm-font-1 {
-      letter-spacing: .7rem !important;
+  .letter-spacing-sm-tight {
+    letter-spacing: -0.05em !important;
   }
-  
-  .letter-spacing-sm-font-2 {
-      letter-spacing: .85rem !important;
+  .letter-spacing-sm-wide {
+    letter-spacing: 0.5em !important;
   }
-  
-  .letter-spacing-sm-1 {
-      letter-spacing: 1rem !important;
-  }
-  
-  .letter-spacing-sm-2 {
-      letter-spacing: 1.15rem !important;
-  }
-  
-  .letter-spacing-sm-3 {
-      letter-spacing: 1.3rem !important;
-  }
-  
-  .letter-spacing-sm-4 {
-      letter-spacing: 1.45rem !important;
-  }
-  
-  .letter-spacing-sm-5 {
-      letter-spacing: 1.6rem !important;
-  }
-  
-  .letter-spacing-sm-6 {
-      letter-spacing: 1.75rem !important;
-  }
-  
-  .letter-spacing-sm-7 {
-      letter-spacing: 1.9rem !important;
-  }
-  
-  .letter-spacing-sm-8 {
-      letter-spacing: 2.05rem !important;
-  }    
+  .letter-spacing-sm-wider {
+    letter-spacing: 1em !important;
+  } 
 }
 @media (min-width:48em){
-  .letter-spacing-md-0 {
-      letter-spacing: 0rem !important;
+  .letter-spacing-md-normal {
+    letter-spacing: normal !important;
   }
-  
-  .letter-spacing-md-font-1 {
-      letter-spacing: .7rem !important;
+  .letter-spacing-md-tight {
+    letter-spacing: -0.05em !important;
   }
-  
-  .letter-spacing-md-font-2 {
-      letter-spacing: .85rem !important;
+  .letter-spacing-md-wide {
+    letter-spacing: 0.5em !important;
   }
-  
-  .letter-spacing-md-1 {
-      letter-spacing: 1rem !important;
-  }
-  
-  .letter-spacing-md-2 {
-      letter-spacing: 1.15rem !important;
-  }
-  
-  .letter-spacing-md-3 {
-      letter-spacing: 1.3rem !important;
-  }
-  
-  .letter-spacing-md-4 {
-      letter-spacing: 1.45rem !important;
-  }
-  
-  .letter-spacing-md-5 {
-      letter-spacing: 1.6rem !important;
-  }
-  
-  .letter-spacing-md-6 {
-      letter-spacing: 1.75rem !important;
-  }
-  
-  .letter-spacing-md-7 {
-      letter-spacing: 1.9rem !important;
-  }
-  
-  .letter-spacing-md-8 {
-      letter-spacing: 2.05rem !important;
-  }    
+  .letter-spacing-md-wider {
+    letter-spacing: 1em !important;
+  } 
 }
 @media (min-width:62em){
-  .letter-spacing-lg-0 {
-      letter-spacing: 0rem !important;
+  .letter-spacing-lg-normal {
+    letter-spacing: normal !important;
   }
-  
-  .letter-spacing-lg-font-1 {
-      letter-spacing: .7rem !important;
+  .letter-spacing-lg-tight {
+    letter-spacing: -0.05em !important;
   }
-  
-  .letter-spacing-lg-font-2 {
-      letter-spacing: .85rem !important;
+  .letter-spacing-lg-wide {
+    letter-spacing: 0.5em !important;
   }
-  
-  .letter-spacing-lg-1 {
-      letter-spacing: 1rem !important;
-  }
-  
-  .letter-spacing-lg-2 {
-      letter-spacing: 1.15rem !important;
-  }
-  
-  .letter-spacing-lg-3 {
-      letter-spacing: 1.3rem !important;
-  }
-  
-  .letter-spacing-lg-4 {
-      letter-spacing: 1.45rem !important;
-  }
-  
-  .letter-spacing-lg-5 {
-      letter-spacing: 1.6rem !important;
-  }
-  
-  .letter-spacing-lg-6 {
-      letter-spacing: 1.75rem !important;
-  }
-  
-  .letter-spacing-lg-7 {
-      letter-spacing: 1.9rem !important;
-  }
-  
-  .letter-spacing-lg-8 {
-      letter-spacing: 2.05rem !important;
-  }    
+  .letter-spacing-lg-wider {
+    letter-spacing: 1em !important;
+  } 
 }
 @media (min-width:75em){
-  .letter-spacing-xl-0 {
-      letter-spacing: 0rem !important;
+  .letter-spacing-xl-normal {
+    letter-spacing: normal !important;
   }
-  
-  .letter-spacing-xl-font-1 {
-      letter-spacing: .7rem !important;
+  .letter-spacing-xl-tight {
+    letter-spacing: -0.05em !important;
   }
-  
-  .letter-spacing-xl-font-2 {
-      letter-spacing: .85rem !important;
+  .letter-spacing-xl-wide {
+    letter-spacing: 0.5em !important;
   }
-  
-  .letter-spacing-xl-1 {
-      letter-spacing: 1rem !important;
-  }
-  
-  .letter-spacing-xl-2 {
-      letter-spacing: 1.15rem !important;
-  }
-  
-  .letter-spacing-xl-3 {
-      letter-spacing: 1.3rem !important;
-  }
-  
-  .letter-spacing-xl-4 {
-      letter-spacing: 1.45rem !important;
-  }
-  
-  .letter-spacing-xl-5 {
-      letter-spacing: 1.6rem !important;
-  }
-  
-  .letter-spacing-xl-6 {
-      letter-spacing: 1.75rem !important;
-  }
-  
-  .letter-spacing-xl-7 {
-      letter-spacing: 1.9rem !important;
-  }
-  
-  .letter-spacing-xl-8 {
-      letter-spacing: 2.05rem !important;
-  }    
+  .letter-spacing-xl-wider {
+    letter-spacing: 1em !important;
+  } 
 }
 
 
@@ -6939,7 +6784,7 @@
     padding-top: auto!important;
     padding-bottom: auto!important;
   }
-  
+
   .p-xl-0 {
       padding: 0!important;
   }
