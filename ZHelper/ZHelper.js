@@ -288,7 +288,6 @@ border_values.push({key:'-instagram',name:'instagram'});
 border_values.push({key:'-pinterest',name:'pinterest'});
 border_values.push({key:'-github',name:'github'});
 
-
 var line_values = [];
 for (var i = 1; i <= 8; i++) {
     line_values.push({key: '-' + i, name: i});
@@ -301,7 +300,10 @@ for (var i = 0; i <= 11; i++) {
     padding_values.push({key: '-' + i, name: i});
 }
 
-        //Return a function that will create the control
+
+
+
+//Return a function that will create the control
         var getGridControlFactory = function(control_id, rows) {
             //Returns function that creates the control
             return function() {
@@ -393,10 +395,767 @@ for (var i = 0; i <= 11; i++) {
             return gh.addPrefixToSectionsAndFields(sections);
         }
 
+
+
+
+////////// Margins & Paddings
+
+isSizeVisible = function(page_or_pv, size) {
+    var pv = page_or_pv instanceof PgPageView ? page_or_pv : page_or_pv.activeView;
+//    return pv.deviceWidth >= options.sizes_breakpoints_map[size];
+    return pv.deviceWidth >= sizes_breakpoints_map[size];
+}
+
+
+makeFieldLabelForSize = function(label, size) {
+    return '<span class="sc-label">' + label + '</span><span class="sc-device-size">' + size + '</span>';
+}
+
+getDevicesControlFactory = function(control_id, title, func) {
+
+    //Returns function that creates the control
+    var forSize = function(f) {
+        sizes.forEach(function(size) {
+            f(size, size == size_for_all ? '' : '-' + size, prefix + control_id + '.' + size);
+        })
+    }
+
+    return function() {
+        //will keep helper functions and vars private
+
+        //Create control, needs a unique id
+        var c = new PgCustomPropertyControl(options.prefix + control_id);
+
+        //Register subfields.
+        c.onDefine = function () {
+
+            //These fields will not be shown when just registered. This is neccessary to get values.
+            forSize(function(size, size_token, field_key) {
+                var field = func(size, size_token);
+                c.registerInputField(field_key, field);
+            })
+        }
+
+        //Show control. Return the control $el.
+        c.onShow = function () {
+            var $div = $("<div/>", {class: 'sc-device-control'});
+            $('<div class="sc-device-control-title">' + title + '</div>').appendTo($div);
+            forSize(function(size, size_token, field_key) {
+                var field_def = func(size, size_token);
+                var field = c.showInputField($div, field_key, field_def);
+                field.$field.attr('data-device-size', size);
+            })
+            return $div;
+        }
+
+        //Called when control is recycled and new values are set
+        c.onSetValues = function(values) {
+            //return;
+            var none_or_all = true;
+
+            forSize(function(size, size_token, field_key) {
+                var $field = c.get$Field(field_key);
+                if(c.values[field_key]) {
+                    $field.addClass('sc-has-value');
+                    if(size != size_for_all) {
+                        none_or_all = false;
+                    }
+                } else {
+                    $field.removeClass('sc-has-value');
+                }
+            })
+            if(none_or_all) {
+                c.$element.addClass('sc-none-or-all');
+            } else {
+                c.$element.removeClass('sc-none-or-all');
+            }
+        }
+
+        //Return the control
+        return c;
+    };
+}
+
+
+
+var open_device_sections_map = {};
+
+ZonSectionWithDevicesControlsShown = function(secdef, uiSection) {
+
+    // options.framework_prefix = 'bs' + version;
+    // options.container_selector = '.container,.container-fluid';
+    // options.grid_container_selector = 'row';
+    // options.style = '';
+
+    // var pgFrameworkHelpers = new PgFrameworkHelpers('Bootstrap', options, f, version, PgBSMenuPointColumnSize);
+
+////    var gh = pgFrameworkHelpers;
+
+    //var setActive = function($li, )
+    var active = {}
+    var no_active = true;
+
+    // options.sizes.forEach(function(size) {
+    //     if(open_device_sections_map[secdef.section_key] && open_device_sections_map[secdef.section_key][size]) {
+    //         active[size] = true;
+    //     }
+    // })
+    sizes.forEach(function(size) {
+        if(open_device_sections_map[secdef.section_key] && open_device_sections_map[secdef.section_key][size]) {
+            active[size] = true;
+        }
+    })
+
+    var fields = uiSection.$content.get(0).querySelectorAll('[data-device-size]');
+
+    fields.forEach(function(field) {
+        var size = field.getAttribute('data-device-size');
+        if(!active[size]) {
+            var has = field.classList.contains('sc-has-value');
+            active[size] = has;
+            no_active = no_active && !has;
+        }
+    })
+
+    if(no_active) {
+        active[options.size_for_all] = true;
+    }
+
+    fields.forEach(function(field) {
+        var size = field.getAttribute('data-device-size');
+        var display = field.getAttribute('data-device-display') || 'flex';
+
+        if(active[size]) {
+            pgShow(field, display);
+        } else {
+            pgHide(field);
+        }
+    })
+
+    var html = '<ul class="sc-device-selector">';
+    // options.sizes.forEach(function(size) {
+    //     html += '<li data-size="' + size + '" class="' + (active[size] ? 'sc-active' : '') + '">' + size + '</li>';
+    // })
+    sizes.forEach(function(size) {
+        html += '<li data-size="' + size + '" class="' + (active[size] ? 'sc-active' : '') + '">' + size + '</li>';
+    })
+    html += '</ul>';
+    var $c = $(html);
+    uiSection.$title.append($c);
+
+    $c.on('click', 'li', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+
+        var $li = $(this);
+        var size = $li.attr('data-size');
+        var a = $li.hasClass('sc-active');
+        a = !a;
+
+        active[size] = a;
+
+        if(!a) {
+            if($c.find('li.sc-active').length == 1) {
+                pinegrow.showQuickError('At least one device size must be active.');
+                return;
+            }
+        }
+
+        if(!open_device_sections_map[secdef.section_key]) {
+            open_device_sections_map[secdef.section_key] = {};
+        }
+
+        open_device_sections_map[secdef.section_key][size] = a;
+
+        var $fields = uiSection.$content.find('[data-device-size="' + size + '"]');
+        $fields.each(function(i, field) {
+            var display = field.getAttribute('data-device-display') || 'flex';
+
+            if (a) {
+                pg$Show($(field), display);
+                $li.addClass('sc-active');
+            } else {
+                pg$Hide($(field));
+                $li.removeClass('sc-active');
+            }
+        });
+        updateLabels();
+    })
+
+    var updateVisibility = function() {
+        var page = pinegrow.getSelectedPage();
+        fields.forEach(function(field) {
+            var size = field.getAttribute('data-device-size');
+            // if(gh.isSizeVisible(page, size)) {
+            //     field.classList.remove('sc-size-not-visible');
+            // } else {
+            //     field.classList.add('sc-size-not-visible');
+            // }
+            if(isSizeVisible(page, size)) {
+                field.classList.remove('sc-size-not-visible');
+            } else {
+                field.classList.add('sc-size-not-visible');
+            }
+        })
+
+        $c.children().each(function(i, li) {
+            var size = li.getAttribute('data-size');
+            // if(gh.isSizeVisible(page, size)) {
+            //     li.classList.remove('sc-size-not-visible');
+            // } else {
+            //     li.classList.add('sc-size-not-visible');
+            // }
+            if(isSizeVisible(page, size)) {
+                li.classList.remove('sc-size-not-visible');
+            } else {
+                li.classList.add('sc-size-not-visible');
+            }
+        })
+    }
+
+    var updateLabels = function() {
+        var num_shown = 0;
+        var all_shown = false;
+
+        // options.sizes.forEach(function(size) {
+        //     if(active[size]) {
+        //         num_shown++;
+        //         if(size == options.size_for_all) {
+        //             all_shown = true;
+        //         }
+        //     }
+        // })
+        sizes.forEach(function(size) {
+            if(active[size]) {
+                num_shown++;
+                if(size == size_for_all) {
+                    all_shown = true;
+                }
+            }
+        })
+
+        var $controls = uiSection.$content.find('.sc-device-control');
+
+        if(num_shown > 1) {
+            $controls.removeClass('sc-single-size');
+        } else {
+            $controls.addClass('sc-single-size');
+        }
+        if(all_shown) {
+            $controls.addClass('sc-for-all-shown');
+        } else {
+            $controls.removeClass('sc-for-all-shown');
+        }
+    }
+
+    updateVisibility();
+    updateLabels();
+
+}
+var directions = ['', 'x', 'y', 't', 'r', 'b', 'l'];
+var spacingVal = ['auto', 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+var spacing = 11;
+
+
+var marginPaddingObjs = {};
+var marginPaddingActiveBtn = {};
+
+var getNumFromMarginPaddingValue = function (value) {
+    if (!value) return null;
+
+    var arr = value.split('-');
+    if (arr.length > 1) return arr[arr.length - 1];
+
+    return '';
+}
+
+var getNewMarginPaddingValueFor = function (type, direction, size, field_key, values, valDirection) {
+    return type + direction + (size != 'xs' ? '-' + size : '') + '-' + getNumFromMarginPaddingValue(values[field_key + valDirection]);
+}
+
+var updateAllMarginPaddingFields = function (pgel, type, size, field_key, values, skipDirection) {
+    for (var i = 3; i < directions.length; i++) {
+        pgel.removeClass(values[field_key + directions[i]]);
+
+        if (directions[i] != skipDirection) {
+            var field = marginPaddingObjs[size][type + directions[i]];
+
+            var currValue = getNewMarginPaddingValueFor(type, directions[i], size, field_key, values, '');
+            values[field_key + directions[i]] = currValue;
+            field.setValue(currValue);
+        }
+    }
+}
+
+var getClassNameForMarginAndPadding = function (type, direction, size, num) {
+    if (!num) return null;
+    return type + direction + (size != 'xs' ? '-' + size : '') + '-' + num;
+}
+
+var setAllMarginPaddingValue = function (pgel, type, size, control_id, values, value) {
+    var elClass;
+    var field_key = control_id + '.' + size + '.' + type;
+
+    var col = pinegrow.getCollectionForElement(pgel);
+
+    pinegrow.makeChanges(col, 'Set spacing', function() {
+
+        col.forEachElement(function(pgel) {
+
+            var allMarginPaddingUpdated = false;
+
+            for (var i = 1; i < directions.length; i++) {
+                for (var j = 0; j < spacingVal.length; j++) {
+                    currClass = getClassNameForMarginAndPadding(type, directions[i], size, spacingVal[j]);
+                    if (pgel.hasClass(currClass)) {
+                        pgel.removeClass(currClass);
+
+                        var newClass = type + (size != 'xs' ? '-' + size : '') + '-' + spacingVal[j];
+                        pgel.addClass(newClass);
+                        values[field_key] = newClass;
+
+                        updateAllMarginPaddingFields(pgel, type, size, field_key, values, directions[i]);
+
+                        allMarginPaddingUpdated = true;
+                        break;
+                    }
+                }
+
+                if (allMarginPaddingUpdated) break;
+            }
+        })
+    })
+}
+
+var isAllValuesEqual = function (pgel, type, size, control_id, direction, value) {
+    var numValue = getNumFromMarginPaddingValue(value);
+
+    var directionClassFound = true;
+    for (var i = 3; i < directions.length; i++) {
+        if (directions[i] != direction) {
+            var directionClass = type + directions[i] + (size != 'xs' ? '-' + size : '') + '-' + numValue;
+            if (!pgel.hasClass(directionClass)) {
+                directionClassFound = false;
+                break;
+            }
+        }
+    }
+
+    return directionClassFound;
+}
+
+var toggleIconActivation = function (e, type, control) {
+    var $target = $(e.target);
+    var $icon = $target.closest('.change-all-icon');
+    $icon.toggleClass('active');
+
+    var isActive = $icon.hasClass('active');
+
+    if (isActive) {
+        var size = $icon.data('size');
+        setAllMarginPaddingValue(control.obj, type, size, control.control_id, control.values);
+    }
+}
+
+ZgetDevicesMarginAndPaddingControlFactory = function(control_id, func) {
+    //Returns function that creates the control
+    var types = ['m', 'p'];
+
+    var forSize = function(f) {
+        // options.sizes.forEach(function(size) {
+        //     f(size, size == options.size_for_all ? '' : '-' + size, options.prefix + control_id + '.' + size);
+        // })
+        sizes.forEach(function(size) {
+            f(size, size == size_for_all ? '' : '-' + size, prefix + control_id + '.' + size);
+        })
+    }
+
+    return function() {
+        //will keep helper functions and vars private
+        var updateFieldsValues = function (size, size_token, field_key) {
+            var types = ['p', 'm'];
+            var directions = ['t', 'r', 'l', 'b'];
+
+            var getPureValue = function (type) {
+                var type_field_key = field_key + '.' + type;
+                var value_directions = ['', 'x', 'y'];
+                var values = [];
+
+                for (var i = 0; i < value_directions.length; i++) {
+                    var dir = value_directions[i]
+                    var value = c.values[type_field_key + dir];
+                    if (value) {
+                        var value_arr = value.split('-');
+
+                        values.push({
+                            direction: dir,
+                            value: value_arr[value_arr.length - 1]
+                        });
+                    }
+                }
+
+                if (values.length > 0) {
+                    return values;
+                }
+                return null;
+            }
+
+            var getNewValue = function (type, direction, value) {
+                return type + direction + (size_token ? '-' + size_token : '') + '-' + value;
+            }
+
+            var isAllowedToOverwrite = function (value_direction, type_direction) {
+                if (type_direction == '') {
+                    return true;
+                }
+                else if (type_direction == 'x') {
+                    if (['r', 'l'].indexOf(value_direction) > -1) return true;
+                }
+                else if (type_direction == 'y') {
+                    if (['t', 'b'].indexOf(value_direction) > -1) return true;
+                }
+
+                return false;
+            }
+
+            for (var i = 0; i < types.length; i++) {
+                var type = types[i];
+                var values = getPureValue(type);
+                var $activeBtn = marginPaddingActiveBtn[size][type];
+
+                if (values && values.length > 0) {
+                    for (var k = 0; k < values.length; k++) {
+                        var value_obj = values[k];
+                        var pure_value = value_obj.value;
+                        var type_direction = value_obj.direction;
+
+                        for (var j = 0; j < directions.length; j++) {
+                            var direction = directions[j];
+                            if (!isAllowedToOverwrite(direction, type_direction)) continue;
+
+                            var type_dir_field_key = field_key + '.' + type + direction;
+
+                            if (!c.values[type_dir_field_key]) {
+                                var pgField = marginPaddingObjs[size][type + direction];
+                                var newValue = getNewValue(type, direction, pure_value);
+
+                                c.values[type_dir_field_key] = newValue;
+                                pgField.setValue(newValue);
+                            }
+                        }
+
+                        if (value_obj.direction == '') {
+                            $activeBtn.addClass('active');
+                            break;
+                        }
+                    }
+                }
+                else {
+                    $activeBtn.removeClass('active');
+                }
+            }
+        }
+
+        var hasValue = function (field_key) {
+            var types = ['m', 'p'];
+            var directions = ['t', 'l', 'r', 'b'];
+
+            for (let i = 0; i < types.length; i++) {
+                var type = types[i];
+
+                for (let j = 0; j < directions.length; j++) {
+                    var direction = directions[j];
+
+                    var full_field_key = field_key + '.' + type + direction;
+                    if (c.values[full_field_key]) return true;
+                }
+            }
+
+            return false;
+        }
+
+        //Create control, needs a unique id
+        var c = new PgCustomPropertyControl(options.prefix + control_id);
+
+        //Register subfields.
+        c.onDefine = function () {
+            forSize(function(size, size_token, field_key) {
+                for (var i = 0; i < types.length; i++) {
+                    for (var j = 0; j < directions.length; j++) {
+                        var field = func(size, types[i], directions[j], size_token);
+                        var full_field_key = field_key + '.' + types[i] + directions[j];
+                        c.registerInputField(full_field_key, field);
+                    }
+                }
+            });
+        }
+
+        //Show control. Return the control $el.
+        c.onShow = function () {
+            var $div = $('<div class="crsa-css-gui bs4-margin-and-padding"></div>');
+            var _this = this;
+            var type = '', direction = '';
+            var field_def, field, full_field_key;
+
+            forSize(function(size, size_token, field_key) {
+                var $container = $('<div class="margin-and-padding-container text-center" data-device-size="' + size + '"></div>').appendTo($div);
+                var $labelSize = $('<label/>', { 'class': "size-label" }).html('<span class="sc-device-size">' + size + '</span>').appendTo($container);
+
+                marginPaddingObjs[size] = {};
+                marginPaddingActiveBtn[size] = {};
+
+                // Margin top
+                type = 'm'; direction = 't';
+                field_def = func(size, type, direction, size_token);
+                full_field_key = field_key + '.' + type + direction;
+                field = c.showInputField($container, full_field_key, field_def);
+                field.$field.addClass('crsa-field-margin-top crsa-small-input crsa-align-center-input crsa-inline-container');
+                marginPaddingObjs[size][type + direction] = field;
+
+                // Margin left
+                direction = 'l';
+                field_def = func(size, type, direction, size_token);
+                full_field_key = field_key + '.' + type + direction;
+                field = c.showInputField($container, full_field_key, field_def);
+                field.$field.addClass('crsa-field-margin-left crsa-small-input crsa-align-center-input crsa-inline-container');
+                marginPaddingObjs[size][type + direction] = field;
+
+                var $marginBorder = $('<div class="margin-border"></div>').appendTo($container);
+
+                var $marginIcon = $('<div class="change-all-margin-icon change-all-icon">\
+                                            <i class="icon-same"></i>\
+                                        </div>').appendTo($marginBorder);
+
+                marginPaddingActiveBtn[size]['m'] = $marginIcon;
+                $marginIcon.data('size', size);
+                $marginIcon.on('click', function (e) {
+                    toggleIconActivation(e, 'm', _this);
+                });
+
+                var $paddingContainer = $('<div class="padding-container"></div>').appendTo($marginBorder);
+
+                // Padding top
+                type = 'p'; direction = 't';
+                field_def = func(size, type, direction, size_token);
+                full_field_key = field_key + '.' + type + direction;
+                field = c.showInputField($paddingContainer, full_field_key, field_def);
+                field.$field.addClass('crsa-field-padding-top crsa-small-input crsa-align-center-input crsa-inline-container');
+                marginPaddingObjs[size][type + direction] = field;
+
+                // Padding left
+                direction = 'l';
+                field_def = func(size, type, direction, size_token);
+                full_field_key = field_key + '.' + type + direction;
+                field = c.showInputField($paddingContainer, full_field_key, field_def);
+                field.$field.addClass('crsa-field-padding-left crsa-small-input crsa-align-center-input crsa-inline-container');
+                marginPaddingObjs[size][type + direction] = field;
+
+                var $paddingIcon = $('<div class="padding-border">\
+                        <div class="change-all-padding-icon change-all-icon"><i class="icon-same"></i></div>\
+                    </div>').appendTo($paddingContainer).find('> .change-all-icon');
+
+                marginPaddingActiveBtn[size]['p'] = $paddingIcon;
+                $paddingIcon.data('size', size);
+                $paddingIcon.on('click', function (e) {
+                    toggleIconActivation(e, 'p', _this);
+                });
+
+                // Padding right
+                direction = 'r';
+                field_def = func(size, type, direction, size_token);
+                full_field_key = field_key + '.' + type + direction;
+                field = c.showInputField($paddingContainer, full_field_key, field_def);
+                field.$field.addClass('crsa-field-padding-right crsa-small-input crsa-align-center-input crsa-inline-container');
+                marginPaddingObjs[size][type + direction] = field;
+
+                // Padding bottom
+                direction = 'b';
+                field_def = func(size, type, direction, size_token);
+                full_field_key = field_key + '.' + type + direction;
+                field = c.showInputField($paddingContainer, full_field_key, field_def);
+                field.$field.addClass('crsa-field-padding-bottom crsa-small-input crsa-align-center-input crsa-inline-container');
+                marginPaddingObjs[size][type + direction] = field;
+
+                // Margin right
+                type = 'm'; direction = 'r';
+                field_def = func(size, type, direction, size_token);
+                full_field_key = field_key + '.' + type + direction;
+                field = c.showInputField($container, full_field_key, field_def);
+                field.$field.addClass('crsa-field-margin-right crsa-small-input crsa-align-center-input crsa-inline-container');
+                marginPaddingObjs[size][type + direction] = field;
+
+
+                // Margin bottom
+                direction = 'b';
+                field_def = func(size, type, direction, size_token);
+                full_field_key = field_key + '.' + type + direction;
+                field = c.showInputField($container, full_field_key, field_def);
+                field.$field.addClass('crsa-field-margin-bottom crsa-small-input crsa-align-center-input crsa-inline-container');
+                marginPaddingObjs[size][type + direction] = field;
+            });
+
+            return $div;
+        }
+
+        //Called when control is recycled and new values are set
+        c.onSetValues = function(values) {
+            //return;
+            var none_or_all = true;
+
+            forSize(function(size, size_token, field_key) {
+                // Check padding and margin
+                updateFieldsValues(size, size_token, field_key);
+
+                var $field = c.$element.find('> [data-device-size="' + size + '"]');
+                if (hasValue(field_key)) {
+                    $field.addClass('sc-has-value');
+                    if (size != options.size_for_all) {
+                        none_or_all = false;
+                    }
+                } else {
+                    $field.removeClass('sc-has-value');
+                }
+            })
+            if(none_or_all) {
+                c.$element.addClass('sc-none-or-all');
+            } else {
+                c.$element.removeClass('sc-none-or-all');
+            }
+        }
+
+        //Return the control
+        return c;
+    };
+}
+
+ZgetSpacingControl = function() {
+    return ZgetDevicesMarginAndPaddingControlFactory('margin.padding', function(size, type, direction_token, size_token) {
+        var base = type + direction_token + size_token + '-';
+        var optionsValue = [{ 'key' : base + 'auto', 'name' : 'Auto' }];
+        for (var i = 0; i <= spacing; i++) {
+            optionsValue.push({ 'key' : base + i, 'name' : i, num: i });
+        }
+
+        var field = {
+            type : 'select',
+            name : null,
+            placeholder : direction_token,
+            show_empty : true,
+            options : optionsValue,
+            action : 'custom',
+            draggable_list : true,
+            more_prop: {
+                size: size,
+                type: type,
+                direction: direction_token
+            },
+            get_value: function(pgel, fn, values, fv) {
+                var optionsValue = fv.options;
+                for (var i = 0; i < optionsValue.length; i++) {
+                    if (pgel.hasClass(optionsValue[i].key)) return optionsValue[i].key;
+                }
+
+                var size      = fv.more_prop.size,
+                    type      = fv.more_prop.type,
+                    direction = fv.more_prop.direction;
+
+                if (direction && direction != 'x' && direction != 'y') {
+                    var field_key = options.prefix + 'margin.padding.' + size + '.' + type;
+                    if (values[field_key]) {
+                        var currValue = getNewMarginPaddingValueFor(type, direction, size, field_key, values, '');
+                        values[field_key + direction] = currValue;
+                        return currValue
+                    }
+
+                    if (direction == 'r' || direction == 'l') {
+                        if (values[field_key + 'x']) {
+                            var currValue = getNewMarginPaddingValueFor(type, direction, size, field_key, values, 'x');
+                            values[field_key + direction] = currValue;
+                            return currValue;
+                        }
+                    }
+                    else if (direction == 't' || direction == 'b') {
+                        if (values[field_key + 'y']) {
+                            var currValue = getNewMarginPaddingValueFor(type, direction, size, field_key, values, 'y');
+                            values[field_key + direction] = currValue;
+                            return currValue;
+                        }
+                    }
+                }
+
+                return '';
+            },
+            set_value: function(pgel, value, values, oldValue, eventType, fdef) {
+
+                $.each(optionsValue, function (i, opt) {
+                    if (opt.key == value) return true;
+                    if (pgel.hasClass(opt.key)) {
+                        pgel.removeClass(opt.key);
+                    }
+                });
+
+                //pgel.removeClass(oldValue);
+
+                var size       = fdef.more_prop.size,
+                    type       = fdef.more_prop.type,
+                    direction  = fdef.more_prop.direction;
+
+                var control_id = options.prefix + 'margin.padding.';
+
+                var $icon = marginPaddingActiveBtn[size][type];
+                var isActive = $icon.hasClass('active');
+                if (isActive || isAllValuesEqual(pgel, type, size, control_id, direction, value)) {
+                    var field_key = control_id + size + '.' + type;
+                    var currClass = getClassNameForMarginAndPadding(type, '', size, getNumFromMarginPaddingValue(oldValue));
+                    var newClass  = getClassNameForMarginAndPadding(type, '', size, getNumFromMarginPaddingValue(value));
+                    pgel.removeClass(currClass);
+
+                    for (var i = 3; i < directions.length; i++) {
+                        var colNum;
+                        if (directions[i] == direction) {
+                            colNum = getNumFromMarginPaddingValue(oldValue);
+                        }
+                        else {
+                            colNum = getNumFromMarginPaddingValue(value);
+                        }
+
+                        var directionClass = type + directions[i] + (size != 'xs' ? '-' + size : '') + '-' + colNum;
+                        pgel.removeClass(directionClass);
+                    }
+
+                    pgel.addClass(newClass);
+                    values[field_key] = newClass;
+
+                    updateAllMarginPaddingFields(pgel, type, size, field_key, values, direction);
+                }
+                else {
+                    var field_key = control_id + size + '.' + type
+                    var oldClass = values[field_key];
+
+                    values[field_key] = '';
+                    pgel.removeClass(oldClass);
+
+                    for (var i = 3; i < directions.length; i++) {
+                        if (directions[i] != direction) {
+                            pgel.addClass(values[field_key + directions[i]]);
+                        }
+                    }
+                    pgel.addClass(value);
+                }
+
+                return value;
+            }
+        }
+
+        return field;
+    })
+}
+///////////Margin & Paddings End
+
 var columns_section_def = {
-    name : "Z HELPERS",
+    name : "FONT & COLOR",
     fields : {
-		fontsize: {
+		fontcolor: {
             type: 'custom',
             name: 'fontsize',
             action: 'none',
@@ -437,8 +1196,8 @@ var columns_section_def = {
 				}
 				,
                 {
-                    field_prefix: 'color',
-                    class_prefix: 'color',
+                    field_prefix: 'text',
+                    class_prefix: 'text',
                     values: color_values,
                     name: 'Color'
 				}
@@ -629,105 +1388,105 @@ var columns_section_def = {
 		// 		{key:'border-color-warning',name:'warning'},
 		// 		{key:'border-color-white',name:'white'}
 		// 	]
+        // },
+		// margins: {
+        //     type: 'custom',
+        //     name: 'margins',
+        //     action: 'none',
+        //     control: getGridControlFactory('m-span', [
+        //         {
+        //             field_prefix: 'm',
+        //             class_prefix: 'm',
+        //             values: margin_values,
+        //             name: 'Margin'
+		// 		},
+        //         {
+        //             field_prefix: 'mt',
+        //             class_prefix: 'mt',
+        //             values: margin_values,
+        //             name: 'Margin Top'
+		// 		},
+        //         {
+        //             field_prefix: 'mr',
+        //             class_prefix: 'mr',
+        //             values: margin_values,
+        //             name: 'Margin Right'
+		// 		},
+        //         {
+        //             field_prefix: 'mb',
+        //             class_prefix: 'mb',
+        //             values: margin_values,
+        //             name: 'Margin Bottom'
+		// 		},
+        //         {
+        //             field_prefix: 'ml',
+        //             class_prefix: 'ml',
+        //             values: margin_values,
+        //             name: 'Margin Left'
+		// 		},
+        //         {
+        //             field_prefix: 'mx',
+        //             class_prefix: 'mx',
+        //             values: margin_values,
+        //             name: 'Margin X'
+		// 		},
+        //         {
+        //             field_prefix: 'my',
+        //             class_prefix: 'my',
+        //             values: margin_values,
+        //             name: 'Margin Y'
+		// 		}
+        //     ])
 		// },
-		margins: {
-            type: 'custom',
-            name: 'margins',
-            action: 'none',
-            control: getGridControlFactory('m-span', [
-                {
-                    field_prefix: 'm',
-                    class_prefix: 'm',
-                    values: margin_values,
-                    name: 'Margin'
-				},
-                {
-                    field_prefix: 'mt',
-                    class_prefix: 'mt',
-                    values: margin_values,
-                    name: 'Margin Top'
-				},
-                {
-                    field_prefix: 'mr',
-                    class_prefix: 'mr',
-                    values: margin_values,
-                    name: 'Margin Right'
-				},
-                {
-                    field_prefix: 'mb',
-                    class_prefix: 'mb',
-                    values: margin_values,
-                    name: 'Margin Bottom'
-				},
-                {
-                    field_prefix: 'ml',
-                    class_prefix: 'ml',
-                    values: margin_values,
-                    name: 'Margin Left'
-				},
-                {
-                    field_prefix: 'mx',
-                    class_prefix: 'mx',
-                    values: margin_values,
-                    name: 'Margin X'
-				},
-                {
-                    field_prefix: 'my',
-                    class_prefix: 'my',
-                    values: margin_values,
-                    name: 'Margin Y'
-				}
-            ])
-		},
-		paddings: {
-            type: 'custom',
-            name: 'paddings',
-            action: 'none',
-            control: getGridControlFactory('p-span', [
-                {
-                    field_prefix: 'p',
-                    class_prefix: 'p',
-                    values: padding_values,
-                    name: 'Padding'
-				},
-                {
-                    field_prefix: 'pt',
-                    class_prefix: 'pt',
-                    values: padding_values,
-                    name: 'Padding Top'
-				},
-                {
-                    field_prefix: 'pr',
-                    class_prefix: 'pr',
-                    values: padding_values,
-                    name: 'Padding Right'
-				},
-                {
-                    field_prefix: 'pb',
-                    class_prefix: 'pb',
-                    values: padding_values,
-                    name: 'Padding Bottom'
-				},
-                {
-                    field_prefix: 'pl',
-                    class_prefix: 'pl',
-                    values: padding_values,
-                    name: 'Padding Left'
-				},
-                {
-                    field_prefix: 'px',
-                    class_prefix: 'px',
-                    values: padding_values,
-                    name: 'Padding X'
-				},
-                {
-                    field_prefix: 'py',
-                    class_prefix: 'py',
-                    values: padding_values,
-                    name: 'Padding Y'
-				}
-            ])
-		}
+		// paddings: {
+        //     type: 'custom',
+        //     name: 'paddings',
+        //     action: 'none',
+        //     control: getGridControlFactory('p-span', [
+        //         {
+        //             field_prefix: 'p',
+        //             class_prefix: 'p',
+        //             values: padding_values,
+        //             name: 'Padding'
+		// 		},
+        //         {
+        //             field_prefix: 'pt',
+        //             class_prefix: 'pt',
+        //             values: padding_values,
+        //             name: 'Padding Top'
+		// 		},
+        //         {
+        //             field_prefix: 'pr',
+        //             class_prefix: 'pr',
+        //             values: padding_values,
+        //             name: 'Padding Right'
+		// 		},
+        //         {
+        //             field_prefix: 'pb',
+        //             class_prefix: 'pb',
+        //             values: padding_values,
+        //             name: 'Padding Bottom'
+		// 		},
+        //         {
+        //             field_prefix: 'pl',
+        //             class_prefix: 'pl',
+        //             values: padding_values,
+        //             name: 'Padding Left'
+		// 		},
+        //         {
+        //             field_prefix: 'px',
+        //             class_prefix: 'px',
+        //             values: padding_values,
+        //             name: 'Padding X'
+		// 		},
+        //         {
+        //             field_prefix: 'py',
+        //             class_prefix: 'py',
+        //             values: padding_values,
+        //             name: 'Padding Y'
+		// 		}
+        //     ])
+		// }
     }
 };
 
@@ -739,7 +1498,178 @@ var def_all = new PgComponentType(prefix + 'all', 'All elements', {
     display_name : 'tag',
     priority : 2001,
     sections : addPrefixToSectionsAndFields({
-		columns : columns_section_def,
+        columns : columns_section_def,
+        spacing: {
+            name : "Spacing",
+            on_section_shown : ZonSectionWithDevicesControlsShown,
+            fields : {
+                margin_control: {
+                    type: 'custom',
+                    name: 'layout_control',
+                    action: 'none',
+                    control: ZgetSpacingControl()
+                }
+                ,
+                divmx : {
+                    type: 'custom',
+                    name: 'MarginX',
+                    action: 'none',
+                    control: getDevicesControlFactory('marginx', 'MarginX', function(size, size_token) {
+                        var base = 'mx' + size_token + '-';
+                        var field = {
+                            'type' : 'select',
+                            'name' : makeFieldLabelForSize('MarginX', size),
+                            'action' : 'apply_class',
+                            'show_empty' : true,
+                            'options' : [
+                                { 'key' : base + 'auto',         'name' : 'Auto' },
+                                { 'key' : base + '0',         'name' : '0' },
+                                { 'key' : base + '1',         'name' : '1' },
+                                { 'key' : base + '2',         'name' : '2' },
+                                { 'key' : base + '3',         'name' : '3' },
+                                { 'key' : base + '4',         'name' : '4' },
+                                { 'key' : base + '5',         'name' : '5' },
+                                { 'key' : base + '6',         'name' : '6' },
+                                { 'key' : base + '7',         'name' : '7' },
+                                { 'key' : base + '8',         'name' : '8' },
+                                { 'key' : base + '9',         'name' : '9' },
+                                { 'key' : base + '10',         'name' : '10' },
+                                { 'key' : base + '11',         'name' : '11' },
+                            ]
+                        }
+                     return field;
+                    })
+                },
+                divmy : {
+                    type: 'custom',
+                    name: 'MarginY',
+                    action: 'none',
+                    control: getDevicesControlFactory('marginy', 'MarginY', function(size, size_token) {
+                        var base = 'my' + size_token + '-';
+                        var field = {
+                            'type' : 'select',
+                            'name' : makeFieldLabelForSize('MarginY', size),
+                            'action' : 'apply_class',
+                            'show_empty' : true,
+                            'options' : [
+                                { 'key' : base + 'auto',         'name' : 'Auto' },
+                                { 'key' : base + '0',         'name' : '0' },
+                                { 'key' : base + '1',         'name' : '1' },
+                                { 'key' : base + '2',         'name' : '2' },
+                                { 'key' : base + '3',         'name' : '3' },
+                                { 'key' : base + '4',         'name' : '4' },
+                                { 'key' : base + '5',         'name' : '5' },
+                                { 'key' : base + '6',         'name' : '6' },
+                                { 'key' : base + '7',         'name' : '7' },
+                                { 'key' : base + '8',         'name' : '8' },
+                                { 'key' : base + '9',         'name' : '9' },
+                                { 'key' : base + '10',         'name' : '10' },
+                                { 'key' : base + '11',         'name' : '11' },
+                            ]
+                        }
+                     return field;
+                    })
+                },
+                divpx : {
+                    type: 'custom',
+                    name: 'PaddingX',
+                    action: 'none',
+                    control: getDevicesControlFactory('paddingx', 'PaddingX', function(size, size_token) {
+                        var base = 'px' + size_token + '-';
+                        var field = {
+                            'type' : 'select',
+                            'name' : makeFieldLabelForSize('PaddingX', size),
+                            'action' : 'apply_class',
+                            'show_empty' : true,
+                            'options' : [
+                                { 'key' : base + 'auto',         'name' : 'Auto' },
+                                { 'key' : base + '0',         'name' : '0' },
+                                { 'key' : base + '1',         'name' : '1' },
+                                { 'key' : base + '2',         'name' : '2' },
+                                { 'key' : base + '3',         'name' : '3' },
+                                { 'key' : base + '4',         'name' : '4' },
+                                { 'key' : base + '5',         'name' : '5' },
+                                { 'key' : base + '6',         'name' : '6' },
+                                { 'key' : base + '7',         'name' : '7' },
+                                { 'key' : base + '8',         'name' : '8' },
+                                { 'key' : base + '9',         'name' : '9' },
+                                { 'key' : base + '10',         'name' : '10' },
+                                { 'key' : base + '11',         'name' : '11' },
+                            ]
+                        }
+                     return field;
+                    })
+                },
+                divpy : {
+                    type: 'custom',
+                    name: 'PaddingY',
+                    action: 'none',
+                    control: getDevicesControlFactory('paddingy', 'PaddingY', function(size, size_token) {
+                        var base = 'py' + size_token + '-';
+                        var field = {
+                            'type' : 'select',
+                            'name' : makeFieldLabelForSize('PaddingY', size),
+                            'action' : 'apply_class',
+                            'show_empty' : true,
+                            'options' : [
+                                { 'key' : base + 'auto',         'name' : 'Auto' },
+                                { 'key' : base + '0',         'name' : '0' },
+                                { 'key' : base + '1',         'name' : '1' },
+                                { 'key' : base + '2',         'name' : '2' },
+                                { 'key' : base + '3',         'name' : '3' },
+                                { 'key' : base + '4',         'name' : '4' },
+                                { 'key' : base + '5',         'name' : '5' },
+                                { 'key' : base + '6',         'name' : '6' },
+                                { 'key' : base + '7',         'name' : '7' },
+                                { 'key' : base + '8',         'name' : '8' },
+                                { 'key' : base + '9',         'name' : '9' },
+                                { 'key' : base + '10',         'name' : '10' },
+                                { 'key' : base + '11',         'name' : '11' },
+                            ]
+                        }
+                     return field;
+                    })
+                },
+                // margins: {
+                //     type: 'custom',
+                //     name: 'margins',
+                //     action: 'none',
+                //     control: getGridControlFactory('m-span', [
+                //         {
+                //             field_prefix: 'mx',
+                //             class_prefix: 'mx',
+                //             values: margin_values,
+                //             name: 'Margin X'
+                //         },
+                //         {
+                //             field_prefix: 'my',
+                //             class_prefix: 'my',
+                //             values: margin_values,
+                //             name: 'Margin Y'
+                //         }
+                //     ])
+                // },
+                // paddings: {
+                //     type: 'custom',
+                //     name: 'paddings',
+                //     action: 'none',
+                //     control: getGridControlFactory('p-span', [
+                //         {
+                //             field_prefix: 'px',
+                //             class_prefix: 'px',
+                //             values: padding_values,
+                //             name: 'Padding X'
+                //         },
+                //         {
+                //             field_prefix: 'py',
+                //             class_prefix: 'py',
+                //             values: padding_values,
+                //             name: 'Padding Y'
+                //         }
+                //     ])
+                // }
+            }            
+        },
 	})
 })
 f.addComponentType(def_all);

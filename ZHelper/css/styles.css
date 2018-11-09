@@ -1029,7 +1029,7 @@
 
 
 
-.color-black {
+.text-black {
   color: #000!important;
 }
 
@@ -1041,7 +1041,7 @@
   border-color: #000!important;
 }
 
-.color-1 {
+.text-1 {
   color: #141414!important;
 }
 
@@ -1053,7 +1053,7 @@
   border-color: #141414!important;
 }
 
-.color-2 {
+.text-2 {
   color: #2b2b2b!important;
 }
 
@@ -1065,7 +1065,7 @@
   border-color: #2b2b2b!important;
 }
 
-.color-3 {
+.text-3 {
   color: #404040!important;
 }
 
@@ -1077,7 +1077,7 @@
   border-color: #404040!important;
 }
 
-.color-4 {
+.text-4 {
   color: #555!important;
 }
 
@@ -1089,7 +1089,7 @@
   border-color: #555!important;
 }
 
-.color-5 {
+.text-5 {
   color: #6a6a6a!important;
 }
 
@@ -1101,7 +1101,7 @@
   border-color: #6a6a6a!important;
 }
 
-.color-6 {
+.text-6 {
   color: #7f7f7f!important;
 }
 
@@ -1113,7 +1113,7 @@
   border-color: #7f7f7f!important;
 }
 
-.color-7 {
+.text-7 {
   color: #949494!important;
 }
 
@@ -1125,7 +1125,7 @@
   border-color: #949494!important;
 }
 
-.color-8 {
+.text-8 {
   color: #bebebe!important;
 }
 
@@ -1137,7 +1137,7 @@
   border-color: #bebebe!important;
 }
 
-.color-9 {
+.text-9 {
   color: #e1e1e1!important;
 }
 
@@ -1149,7 +1149,7 @@
   border-color: #e1e1e1!important;
 }
 
-.color-10 {
+.text-10 {
   color: #f2f2f2!important;
 }
 
@@ -1161,7 +1161,7 @@
   border-color: #f2f2f2!important;
 }
 
-.color-11 {
+.text-11 {
   color: #fafafa!important;
 }
 
@@ -1173,7 +1173,7 @@
   border-color: #fafafa!important;
 }
 
-.color-white {
+.text-white {
   color: #fff!important;
 }
 
@@ -1185,7 +1185,7 @@
   border-color: #fff!important;
 }
 
-.color-primary {
+.text-primary {
   color: #007aff!important;
 }
 
@@ -1197,7 +1197,7 @@
   border-color: #007aff!important;
 }
 
-.color-secondary {
+.text-secondary {
   color: #6c757d!important;
 }
 
@@ -1209,7 +1209,7 @@
   border-color: #6c757d!important;
 }
 
-.color-info {
+.text-info {
   color: #5ac8fa!important;
 }
 
@@ -1221,7 +1221,7 @@
   border-color: #5ac8fa!important;
 }
 
-.color-success {
+.text-success {
   color: #4cd964!important;
 }
 
@@ -1233,7 +1233,7 @@
   border-color: #4cd964!important;
 }
 
-.color-warning {
+.text-warning {
   color: #ff9500!important;
 }
 
@@ -1245,7 +1245,7 @@
   border-color: #ff9500!important;
 }
 
-.color-danger {
+.text-danger {
   color: #ff3b30!important;
 }
 
@@ -1257,7 +1257,7 @@
   border-color: #ff3b30!important;
 }
 
-.color-facebook {
+.text-facebook {
   color: #3b5998!important;
 }
 
@@ -1269,7 +1269,7 @@
   border-color: #3b5998!important;
 }
 
-.color-twitter {
+.text-twitter {
   color: #1da1f2!important;
 }
 
@@ -1281,7 +1281,7 @@
   border-color: #1da1f2!important;
 }
 
-.color-google-plus {
+.text-google-plus {
   color: #db4437!important;
 }
 
@@ -1293,7 +1293,7 @@
   border-color: #db4437!important;
 }
 
-.color-github {
+.text-github {
   color: #24292e!important;
 }
 
@@ -1305,7 +1305,7 @@
   border-color: #24292e!important;
 }
 
-.color-pinterest {
+.text-pinterest {
   color: #bd081d!important;
 }
 
@@ -1317,7 +1317,7 @@
   border-color: #bd081d!important;
 }
 
-.color-instagram {
+.text-instagram {
   color: #c53f70!important;
 }
 
@@ -1341,7 +1341,7 @@
 }
 
 @media (min-width:36em){
-  .color-sm-black {
+  .text-sm-black {
     color: #000!important;
   }
   
@@ -1353,7 +1353,7 @@
     border-color: #000!important;
   }
   
-  .color-sm-1 {
+  .text-sm-1 {
     color: #141414!important;
   }
   
@@ -1365,7 +1365,7 @@
     border-color: #141414!important;
   }
   
-  .color-sm-2 {
+  .text-sm-2 {
     color: #2b2b2b!important;
   }
   
@@ -1377,7 +1377,7 @@
     border-color: #2b2b2b!important;
   }
   
-  .color-sm-3 {
+  .text-sm-3 {
     color: #404040!important;
   }
   
@@ -1389,7 +1389,7 @@
     border-color: #404040!important;
   }
   
-  .color-sm-4 {
+  .text-sm-4 {
     color: #555!important;
   }
   
@@ -1401,7 +1401,7 @@
     border-color: #555!important;
   }
   
-  .color-sm-5 {
+  .text-sm-5 {
     color: #6a6a6a!important;
   }
   
@@ -1413,7 +1413,7 @@
     border-color: #6a6a6a!important;
   }
   
-  .color-sm-6 {
+  .text-sm-6 {
     color: #7f7f7f!important;
   }
   
@@ -1425,7 +1425,7 @@
     border-color: #7f7f7f!important;
   }
   
-  .color-sm-7 {
+  .text-sm-7 {
     color: #949494!important;
   }
   
@@ -1437,7 +1437,7 @@
     border-color: #949494!important;
   }
   
-  .color-sm-8 {
+  .text-sm-8 {
     color: #bebebe!important;
   }
   
@@ -1449,7 +1449,7 @@
     border-color: #bebebe!important;
   }
   
-  .color-sm-9 {
+  .text-sm-9 {
     color: #e1e1e1!important;
   }
   
@@ -1461,7 +1461,7 @@
     border-color: #e1e1e1!important;
   }
   
-  .color-sm-10 {
+  .text-sm-10 {
     color: #f2f2f2!important;
   }
   
@@ -1473,7 +1473,7 @@
     border-color: #f2f2f2!important;
   }
   
-  .color-sm-11 {
+  .text-sm-11 {
     color: #fafafa!important;
   }
   
@@ -1485,7 +1485,7 @@
     border-color: #fafafa!important;
   }
   
-  .color-sm-white {
+  .text-sm-white {
     color: #fff!important;
   }
   
@@ -1497,7 +1497,7 @@
     border-color: #fff!important;
   }
   
-  .color-sm-primary {
+  .text-sm-primary {
     color: #007aff!important;
   }
   
@@ -1509,7 +1509,7 @@
     border-color: #007aff!important;
   }
   
-  .color-sm-secondary {
+  .text-sm-secondary {
     color: #6c757d!important;
   }
   
@@ -1521,7 +1521,7 @@
     border-color: #6c757d!important;
   }
   
-  .color-sm-info {
+  .text-sm-info {
     color: #5ac8fa!important;
   }
   
@@ -1533,7 +1533,7 @@
     border-color: #5ac8fa!important;
   }
   
-  .color-sm-success {
+  .text-sm-success {
     color: #4cd964!important;
   }
   
@@ -1545,7 +1545,7 @@
     border-color: #4cd964!important;
   }
   
-  .color-sm-warning {
+  .text-sm-warning {
     color: #ff9500!important;
   }
   
@@ -1557,7 +1557,7 @@
     border-color: #ff9500!important;
   }
   
-  .color-sm-danger {
+  .text-sm-danger {
     color: #ff3b30!important;
   }
   
@@ -1569,7 +1569,7 @@
     border-color: #ff3b30!important;
   }
   
-  .color-sm-facebook {
+  .text-sm-facebook {
     color: #3b5998!important;
   }
   
@@ -1581,7 +1581,7 @@
     border-color: #3b5998!important;
   }
   
-  .color-sm-twitter {
+  .text-sm-twitter {
     color: #1da1f2!important;
   }
   
@@ -1593,7 +1593,7 @@
     border-color: #1da1f2!important;
   }
   
-  .color-sm-google-plus {
+  .text-sm-google-plus {
     color: #db4437!important;
   }
   
@@ -1605,7 +1605,7 @@
     border-color: #db4437!important;
   }
   
-  .color-sm-github {
+  .text-sm-github {
     color: #24292e!important;
   }
   
@@ -1617,7 +1617,7 @@
     border-color: #24292e!important;
   }
   
-  .color-sm-pinterest {
+  .text-sm-pinterest {
     color: #bd081d!important;
   }
   
@@ -1629,7 +1629,7 @@
     border-color: #bd081d!important;
   }
   
-  .color-sm-instagram {
+  .text-sm-instagram {
     color: #c53f70!important;
   }
   
@@ -1653,7 +1653,7 @@
   }  
 }
 @media (min-width:48em){
-  .color-md-black {
+  .text-md-black {
     color: #000!important;
   }
   
@@ -1665,7 +1665,7 @@
     border-color: #000!important;
   }
   
-  .color-md-1 {
+  .text-md-1 {
     color: #141414!important;
   }
   
@@ -1677,7 +1677,7 @@
     border-color: #141414!important;
   }
   
-  .color-md-2 {
+  .text-md-2 {
     color: #2b2b2b!important;
   }
   
@@ -1689,7 +1689,7 @@
     border-color: #2b2b2b!important;
   }
   
-  .color-md-3 {
+  .text-md-3 {
     color: #404040!important;
   }
   
@@ -1701,7 +1701,7 @@
     border-color: #404040!important;
   }
   
-  .color-md-4 {
+  .text-md-4 {
     color: #555!important;
   }
   
@@ -1713,7 +1713,7 @@
     border-color: #555!important;
   }
   
-  .color-md-5 {
+  .text-md-5 {
     color: #6a6a6a!important;
   }
   
@@ -1725,7 +1725,7 @@
     border-color: #6a6a6a!important;
   }
   
-  .color-md-6 {
+  .text-md-6 {
     color: #7f7f7f!important;
   }
   
@@ -1737,7 +1737,7 @@
     border-color: #7f7f7f!important;
   }
   
-  .color-md-7 {
+  .text-md-7 {
     color: #949494!important;
   }
   
@@ -1749,7 +1749,7 @@
     border-color: #949494!important;
   }
   
-  .color-md-8 {
+  .text-md-8 {
     color: #bebebe!important;
   }
   
@@ -1761,7 +1761,7 @@
     border-color: #bebebe!important;
   }
   
-  .color-md-9 {
+  .text-md-9 {
     color: #e1e1e1!important;
   }
   
@@ -1773,7 +1773,7 @@
     border-color: #e1e1e1!important;
   }
   
-  .color-md-10 {
+  .text-md-10 {
     color: #f2f2f2!important;
   }
   
@@ -1785,7 +1785,7 @@
     border-color: #f2f2f2!important;
   }
   
-  .color-md-11 {
+  .text-md-11 {
     color: #fafafa!important;
   }
   
@@ -1797,7 +1797,7 @@
     border-color: #fafafa!important;
   }
   
-  .color-md-white {
+  .text-md-white {
     color: #fff!important;
   }
   
@@ -1809,7 +1809,7 @@
     border-color: #fff!important;
   }
   
-  .color-md-primary {
+  .text-md-primary {
     color: #007aff!important;
   }
   
@@ -1821,7 +1821,7 @@
     border-color: #007aff!important;
   }
   
-  .color-md-secondary {
+  .text-md-secondary {
     color: #6c757d!important;
   }
   
@@ -1833,7 +1833,7 @@
     border-color: #6c757d!important;
   }
   
-  .color-md-info {
+  .text-md-info {
     color: #5ac8fa!important;
   }
   
@@ -1845,7 +1845,7 @@
     border-color: #5ac8fa!important;
   }
   
-  .color-md-success {
+  .text-md-success {
     color: #4cd964!important;
   }
   
@@ -1857,7 +1857,7 @@
     border-color: #4cd964!important;
   }
   
-  .color-md-warning {
+  .text-md-warning {
     color: #ff9500!important;
   }
   
@@ -1869,7 +1869,7 @@
     border-color: #ff9500!important;
   }
   
-  .color-md-danger {
+  .text-md-danger {
     color: #ff3b30!important;
   }
   
@@ -1881,7 +1881,7 @@
     border-color: #ff3b30!important;
   }
   
-  .color-md-facebook {
+  .text-md-facebook {
     color: #3b5998!important;
   }
   
@@ -1893,7 +1893,7 @@
     border-color: #3b5998!important;
   }
   
-  .color-md-twitter {
+  .text-md-twitter {
     color: #1da1f2!important;
   }
   
@@ -1905,7 +1905,7 @@
     border-color: #1da1f2!important;
   }
   
-  .color-md-google-plus {
+  .text-md-google-plus {
     color: #db4437!important;
   }
   
@@ -1917,7 +1917,7 @@
     border-color: #db4437!important;
   }
   
-  .color-md-github {
+  .text-md-github {
     color: #24292e!important;
   }
   
@@ -1929,7 +1929,7 @@
     border-color: #24292e!important;
   }
   
-  .color-md-pinterest {
+  .text-md-pinterest {
     color: #bd081d!important;
   }
   
@@ -1941,7 +1941,7 @@
     border-color: #bd081d!important;
   }
   
-  .color-md-instagram {
+  .text-md-instagram {
     color: #c53f70!important;
   }
   
@@ -1965,7 +1965,7 @@
   }  
 }
 @media (min-width:62em){
-  .color-lg-black {
+  .text-lg-black {
     color: #000!important;
   }
   
@@ -1977,7 +1977,7 @@
     border-color: #000!important;
   }
   
-  .color-lg-1 {
+  .text-lg-1 {
     color: #141414!important;
   }
   
@@ -1989,7 +1989,7 @@
     border-color: #141414!important;
   }
   
-  .color-lg-2 {
+  .text-lg-2 {
     color: #2b2b2b!important;
   }
   
@@ -2001,7 +2001,7 @@
     border-color: #2b2b2b!important;
   }
   
-  .color-lg-3 {
+  .text-lg-3 {
     color: #404040!important;
   }
   
@@ -2013,7 +2013,7 @@
     border-color: #404040!important;
   }
   
-  .color-lg-4 {
+  .text-lg-4 {
     color: #555!important;
   }
   
@@ -2025,7 +2025,7 @@
     border-color: #555!important;
   }
   
-  .color-lg-5 {
+  .text-lg-5 {
     color: #6a6a6a!important;
   }
   
@@ -2037,7 +2037,7 @@
     border-color: #6a6a6a!important;
   }
   
-  .color-lg-6 {
+  .text-lg-6 {
     color: #7f7f7f!important;
   }
   
@@ -2049,7 +2049,7 @@
     border-color: #7f7f7f!important;
   }
   
-  .color-lg-7 {
+  .text-lg-7 {
     color: #949494!important;
   }
   
@@ -2061,7 +2061,7 @@
     border-color: #949494!important;
   }
   
-  .color-lg-8 {
+  .text-lg-8 {
     color: #bebebe!important;
   }
   
@@ -2073,7 +2073,7 @@
     border-color: #bebebe!important;
   }
   
-  .color-lg-9 {
+  .text-lg-9 {
     color: #e1e1e1!important;
   }
   
@@ -2085,7 +2085,7 @@
     border-color: #e1e1e1!important;
   }
   
-  .color-lg-10 {
+  .text-lg-10 {
     color: #f2f2f2!important;
   }
   
@@ -2097,7 +2097,7 @@
     border-color: #f2f2f2!important;
   }
   
-  .color-lg-11 {
+  .text-lg-11 {
     color: #fafafa!important;
   }
   
@@ -2109,7 +2109,7 @@
     border-color: #fafafa!important;
   }
   
-  .color-lg-white {
+  .text-lg-white {
     color: #fff!important;
   }
   
@@ -2121,7 +2121,7 @@
     border-color: #fff!important;
   }
   
-  .color-lg-primary {
+  .text-lg-primary {
     color: #007aff!important;
   }
   
@@ -2133,7 +2133,7 @@
     border-color: #007aff!important;
   }
   
-  .color-lg-secondary {
+  .text-lg-secondary {
     color: #6c757d!important;
   }
   
@@ -2145,7 +2145,7 @@
     border-color: #6c757d!important;
   }
   
-  .color-lg-info {
+  .text-lg-info {
     color: #5ac8fa!important;
   }
   
@@ -2157,7 +2157,7 @@
     border-color: #5ac8fa!important;
   }
   
-  .color-lg-success {
+  .text-lg-success {
     color: #4cd964!important;
   }
   
@@ -2169,7 +2169,7 @@
     border-color: #4cd964!important;
   }
   
-  .color-lg-warning {
+  .text-lg-warning {
     color: #ff9500!important;
   }
   
@@ -2181,7 +2181,7 @@
     border-color: #ff9500!important;
   }
   
-  .color-lg-danger {
+  .text-lg-danger {
     color: #ff3b30!important;
   }
   
@@ -2193,7 +2193,7 @@
     border-color: #ff3b30!important;
   }
   
-  .color-lg-facebook {
+  .text-lg-facebook {
     color: #3b5998!important;
   }
   
@@ -2205,7 +2205,7 @@
     border-color: #3b5998!important;
   }
   
-  .color-lg-twitter {
+  .text-lg-twitter {
     color: #1da1f2!important;
   }
   
@@ -2217,7 +2217,7 @@
     border-color: #1da1f2!important;
   }
   
-  .color-lg-google-plus {
+  .text-lg-google-plus {
     color: #db4437!important;
   }
   
@@ -2229,7 +2229,7 @@
     border-color: #db4437!important;
   }
   
-  .color-lg-github {
+  .text-lg-github {
     color: #24292e!important;
   }
   
@@ -2241,7 +2241,7 @@
     border-color: #24292e!important;
   }
   
-  .color-lg-pinterest {
+  .text-lg-pinterest {
     color: #bd081d!important;
   }
   
@@ -2253,7 +2253,7 @@
     border-color: #bd081d!important;
   }
   
-  .color-lg-instagram {
+  .text-lg-instagram {
     color: #c53f70!important;
   }
   
@@ -2277,7 +2277,7 @@
   }  
 }
 @media (min-width:75em){
-  .color-xl-black {
+  .text-xl-black {
     color: #000!important;
   }
   
@@ -2289,7 +2289,7 @@
     border-color: #000!important;
   }
   
-  .color-xl-1 {
+  .text-xl-1 {
     color: #141414!important;
   }
   
@@ -2301,7 +2301,7 @@
     border-color: #141414!important;
   }
   
-  .color-xl-2 {
+  .text-xl-2 {
     color: #2b2b2b!important;
   }
   
@@ -2313,7 +2313,7 @@
     border-color: #2b2b2b!important;
   }
   
-  .color-xl-3 {
+  .text-xl-3 {
     color: #404040!important;
   }
   
@@ -2325,7 +2325,7 @@
     border-color: #404040!important;
   }
   
-  .color-xl-4 {
+  .text-xl-4 {
     color: #555!important;
   }
   
@@ -2337,7 +2337,7 @@
     border-color: #555!important;
   }
   
-  .color-xl-5 {
+  .text-xl-5 {
     color: #6a6a6a!important;
   }
   
@@ -2349,7 +2349,7 @@
     border-color: #6a6a6a!important;
   }
   
-  .color-xl-6 {
+  .text-xl-6 {
     color: #7f7f7f!important;
   }
   
@@ -2361,7 +2361,7 @@
     border-color: #7f7f7f!important;
   }
   
-  .color-xl-7 {
+  .text-xl-7 {
     color: #949494!important;
   }
   
@@ -2373,7 +2373,7 @@
     border-color: #949494!important;
   }
   
-  .color-xl-8 {
+  .text-xl-8 {
     color: #bebebe!important;
   }
   
@@ -2385,7 +2385,7 @@
     border-color: #bebebe!important;
   }
   
-  .color-xl-9 {
+  .text-xl-9 {
     color: #e1e1e1!important;
   }
   
@@ -2397,7 +2397,7 @@
     border-color: #e1e1e1!important;
   }
   
-  .color-xl-10 {
+  .text-xl-10 {
     color: #f2f2f2!important;
   }
   
@@ -2409,7 +2409,7 @@
     border-color: #f2f2f2!important;
   }
   
-  .color-xl-11 {
+  .text-xl-11 {
     color: #fafafa!important;
   }
   
@@ -2421,7 +2421,7 @@
     border-color: #fafafa!important;
   }
   
-  .color-xl-white {
+  .text-xl-white {
     color: #fff!important;
   }
   
@@ -2433,7 +2433,7 @@
     border-color: #fff!important;
   }
   
-  .color-xl-primary {
+  .text-xl-primary {
     color: #007aff!important;
   }
   
@@ -2445,7 +2445,7 @@
     border-color: #007aff!important;
   }
   
-  .color-xl-secondary {
+  .text-xl-secondary {
     color: #6c757d!important;
   }
   
@@ -2457,7 +2457,7 @@
     border-color: #6c757d!important;
   }
   
-  .color-xl-info {
+  .text-xl-info {
     color: #5ac8fa!important;
   }
   
@@ -2469,7 +2469,7 @@
     border-color: #5ac8fa!important;
   }
   
-  .color-xl-success {
+  .text-xl-success {
     color: #4cd964!important;
   }
   
@@ -2481,7 +2481,7 @@
     border-color: #4cd964!important;
   }
   
-  .color-xl-warning {
+  .text-xl-warning {
     color: #ff9500!important;
   }
   
@@ -2493,7 +2493,7 @@
     border-color: #ff9500!important;
   }
   
-  .color-xl-danger {
+  .text-xl-danger {
     color: #ff3b30!important;
   }
   
@@ -2505,7 +2505,7 @@
     border-color: #ff3b30!important;
   }
   
-  .color-xl-facebook {
+  .text-xl-facebook {
     color: #3b5998!important;
   }
   
@@ -2517,7 +2517,7 @@
     border-color: #3b5998!important;
   }
   
-  .color-xl-twitter {
+  .text-xl-twitter {
     color: #1da1f2!important;
   }
   
@@ -2529,7 +2529,7 @@
     border-color: #1da1f2!important;
   }
   
-  .color-xl-google-plus {
+  .text-xl-google-plus {
     color: #db4437!important;
   }
   
@@ -2541,7 +2541,7 @@
     border-color: #db4437!important;
   }
   
-  .color-xl-github {
+  .text-xl-github {
     color: #24292e!important;
   }
   
@@ -2553,7 +2553,7 @@
     border-color: #24292e!important;
   }
   
-  .color-xl-pinterest {
+  .text-xl-pinterest {
     color: #bd081d!important;
   }
   
@@ -2565,7 +2565,7 @@
     border-color: #bd081d!important;
   }
   
-  .color-xl-instagram {
+  .text-xl-instagram {
     color: #c53f70!important;
   }
   
@@ -2589,6 +2589,38 @@
   }  
 }
 
+
+
+
+.m-auto {
+  margin: auto!important;
+}
+
+.mt-auto {
+  margin-top: auto!important;
+}
+
+.mr-auto {
+  margin-right: auto!important;
+}
+
+.mb-auto {
+  margin-bottom: auto!important;
+}
+
+.ml-auto {
+  margin-left: auto!important;
+}
+
+.mx-auto {
+  margin-left: auto!important;
+  margin-right: auto!important;
+}
+
+.my-auto {
+  margin-top: auto!important;
+  margin-bottom: auto!important;
+}
 
 .m-0 {
   margin: 0!important;
@@ -2951,6 +2983,37 @@
 }
 
 @media (max-width:35.99em){
+
+  .m-xs-auto {
+    margin: auto!important;
+  }
+  
+  .mt-xs-auto {
+    margin-top: auto!important;
+  }
+  
+  .mr-xs-auto {
+    margin-right: auto!important;
+  }
+  
+  .mb-xs-auto {
+    margin-bottom: auto!important;
+  }
+  
+  .ml-xs-auto {
+    margin-left: auto!important;
+  }
+  
+  .mx-xs-auto {
+    margin-left: auto!important;
+    margin-right: auto!important;
+  }
+  
+  .my-xs-auto {
+    margin-top: auto!important;
+    margin-bottom: auto!important;
+  }
+  
   .m-xs-0 {
       margin: 0!important;
   }
@@ -3313,6 +3376,37 @@
 }
 
 @media (min-width:36em){
+
+  .m-sm-auto {
+    margin: auto!important;
+  }
+  
+  .mt-sm-auto {
+    margin-top: auto!important;
+  }
+  
+  .mr-sm-auto {
+    margin-right: auto!important;
+  }
+  
+  .mb-sm-auto {
+    margin-bottom: auto!important;
+  }
+  
+  .ml-sm-auto {
+    margin-left: auto!important;
+  }
+  
+  .mx-sm-auto {
+    margin-left: auto!important;
+    margin-right: auto!important;
+  }
+  
+  .my-sm-auto {
+    margin-top: auto!important;
+    margin-bottom: auto!important;
+  }  
+
   .m-sm-0 {
       margin: 0!important;
   }
@@ -3675,6 +3769,37 @@
 }
 
 @media (min-width:48em){
+
+  .m-md-auto {
+    margin: auto!important;
+  }
+  
+  .mt-md-auto {
+    margin-top: auto!important;
+  }
+  
+  .mr-md-auto {
+    margin-right: auto!important;
+  }
+  
+  .mb-md-auto {
+    margin-bottom: auto!important;
+  }
+  
+  .ml-md-auto {
+    margin-left: auto!important;
+  }
+  
+  .mx-md-auto {
+    margin-left: auto!important;
+    margin-right: auto!important;
+  }
+  
+  .my-md-auto {
+    margin-top: auto!important;
+    margin-bottom: auto!important;
+  }
+  
   .m-md-0 {
       margin: 0!important;
   }
@@ -4037,6 +4162,37 @@
 }
 
 @media (min-width:62em){
+
+  .m-lg-auto {
+    margin: auto!important;
+  }
+  
+  .mt-lg-auto {
+    margin-top: auto!important;
+  }
+  
+  .mr-lg-auto {
+    margin-right: auto!important;
+  }
+  
+  .mb-lg-auto {
+    margin-bottom: auto!important;
+  }
+  
+  .ml-lg-auto {
+    margin-left: auto!important;
+  }
+  
+  .mx-lg-auto {
+    margin-left: auto!important;
+    margin-right: auto!important;
+  }
+  
+  .my-lg-auto {
+    margin-top: auto!important;
+    margin-bottom: auto!important;
+  }
+  
   .m-lg-0 {
       margin: 0!important;
   }
@@ -4399,6 +4555,37 @@
 }
 
 @media (min-width:75em){
+  .m-xl-auto {
+    margin: auto!important;
+  }
+  
+  .mt-xl-auto {
+    margin-top: auto!important;
+  }
+  
+  .mr-xl-auto {
+    margin-right: auto!important;
+  }
+  
+  .mb-xl-auto {
+    margin-bottom: auto!important;
+  }
+  
+  .ml-xl-auto {
+    margin-left: auto!important;
+  }
+  
+  .mx-xl-auto {
+    margin-left: auto!important;
+    margin-right: auto!important;
+  }
+  
+  .my-xl-auto {
+    margin-top: auto!important;
+    margin-bottom: auto!important;
+  }
+  
+  
   .m-xl-0 {
       margin: 0!important;
   }
@@ -4758,6 +4945,37 @@
       margin-top: 15rem!important;
       margin-bottom: 15rem!important;
   }
+}
+
+
+.p-auto {
+  padding: auto!important;
+}
+
+.pt-auto {
+  padding-top: auto!important;
+}
+
+.pr-auto {
+  padding-right: auto!important;
+}
+
+.pb-auto {
+  padding-bottom: auto!important;
+}
+
+.pl-auto {
+  padding-left: auto!important;
+}
+
+.px-auto {
+  padding-left: auto!important;
+  padding-right: auto!important;
+}
+
+.py-auto {
+  padding-top: auto!important;
+  padding-bottom: auto!important;
 }
 
 .p-0 {
@@ -5121,6 +5339,37 @@
 }
 
 @media (max-width:35.99em){
+
+  .p-xs-auto {
+    padding: auto!important;
+  }
+  
+  .pt-xs-auto {
+    padding-top: auto!important;
+  }
+  
+  .pr-xs-auto {
+    padding-right: auto!important;
+  }
+  
+  .pb-xs-auto {
+    padding-bottom: auto!important;
+  }
+  
+  .pl-xs-auto {
+    padding-left: auto!important;
+  }
+  
+  .px-xs-auto {
+    padding-left: auto!important;
+    padding-right: auto!important;
+  }
+  
+  .py-xs-auto {
+    padding-top: auto!important;
+    padding-bottom: auto!important;
+  }
+
   .p-xs-0 {
       padding: 0!important;
   }
@@ -5483,6 +5732,37 @@
 }
 
 @media (min-width:36em){
+
+  .p-sm-auto {
+    padding: auto!important;
+  }
+  
+  .pt-sm-auto {
+    padding-top: auto!important;
+  }
+  
+  .pr-sm-auto {
+    padding-right: auto!important;
+  }
+  
+  .pb-sm-auto {
+    padding-bottom: auto!important;
+  }
+  
+  .pl-sm-auto {
+    padding-left: auto!important;
+  }
+  
+  .px-sm-auto {
+    padding-left: auto!important;
+    padding-right: auto!important;
+  }
+  
+  .py-sm-auto {
+    padding-top: auto!important;
+    padding-bottom: auto!important;
+  }
+
   .p-sm-0 {
       padding: 0!important;
   }
@@ -5845,6 +6125,36 @@
 }
 
 @media (min-width:48em){
+  .p-md-auto {
+    padding: auto!important;
+  }
+  
+  .pt-md-auto {
+    padding-top: auto!important;
+  }
+  
+  .pr-md-auto {
+    padding-right: auto!important;
+  }
+  
+  .pb-md-auto {
+    padding-bottom: auto!important;
+  }
+  
+  .pl-md-auto {
+    padding-left: auto!important;
+  }
+  
+  .px-md-auto {
+    padding-left: auto!important;
+    padding-right: auto!important;
+  }
+  
+  .py-md-auto {
+    padding-top: auto!important;
+    padding-bottom: auto!important;
+  }
+
   .p-md-0 {
       padding: 0!important;
   }
@@ -6207,6 +6517,37 @@
 }
 
 @media (min-width:62em){
+
+  .p-lg-auto {
+    padding: auto!important;
+  }
+  
+  .pt-lg-auto {
+    padding-top: auto!important;
+  }
+  
+  .pr-lg-auto {
+    padding-right: auto!important;
+  }
+  
+  .pb-lg-auto {
+    padding-bottom: auto!important;
+  }
+  
+  .pl-lg-auto {
+    padding-left: auto!important;
+  }
+  
+  .px-lg-auto {
+    padding-left: auto!important;
+    padding-right: auto!important;
+  }
+  
+  .py-lg-auto {
+    padding-top: auto!important;
+    padding-bottom: auto!important;
+  }
+
   .p-lg-0 {
       padding: 0!important;
   }
@@ -6569,6 +6910,36 @@
 }
 
 @media (min-width:75em){
+  .p-xl-auto {
+    padding: auto!important;
+  }
+  
+  .pt-xl-auto {
+    padding-top: auto!important;
+  }
+  
+  .pr-xl-auto {
+    padding-right: auto!important;
+  }
+  
+  .pb-xl-auto {
+    padding-bottom: auto!important;
+  }
+  
+  .pl-xl-auto {
+    padding-left: auto!important;
+  }
+  
+  .px-xl-auto {
+    padding-left: auto!important;
+    padding-right: auto!important;
+  }
+  
+  .py-xl-auto {
+    padding-top: auto!important;
+    padding-bottom: auto!important;
+  }
+  
   .p-xl-0 {
       padding: 0!important;
   }
