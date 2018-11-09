@@ -199,14 +199,101 @@ var bs_options = {
 
 var gh = PgBootstrapHelpers(bs_options, f, 4);
 
-var size_values = [];
-for (var i = -1; i <= 8; i++) {
-    size_values.push({key: '-' + i, name: i});
-}
 var font_values = [];
 for (var i = 1; i <= 2; i++) {
     font_values.push({key: '-' + i, name: i});
 }
+var size_values = [];
+for (var i = -1; i <= 8; i++) {
+    size_values.push({key: '-' + i, name: i});
+}
+var spacing_values = [];
+for (var i = 0; i <= 8; i++) {
+    spacing_values.push({key: '-' + i , name: i});
+}
+spacing_values.push({ key: '-font-1', name: 'Font 1' });
+spacing_values.push({ key: '-font-2', name: 'Font 2' });
+
+
+var weight_values = [];
+for (var i = 1; i <= 9; i++) {
+    weight_values.push({key: '-' + i + '00', name: i + '00'});
+}
+weight_values.push({ key: '-thin', name: 'Thin' });
+weight_values.push({ key: '-extra-light', name: 'Extra Light' });
+weight_values.push({ key: '-light', name: 'Light' });
+weight_values.push({ key: '-normal', name: 'Normal' });
+weight_values.push({ key: '-medium', name: 'Medium' });
+weight_values.push({ key: '-semi-bold', name: 'Semi Bold' });
+weight_values.push({ key: '-bold', name: 'Bold' });
+weight_values.push({ key: '-extra-bold', name: 'Extra Bold' });
+weight_values.push({ key: '-black', name: 'Black' });	
+
+
+
+var color_values = [];
+for (var i = 1; i <= 11; i++) {
+    color_values.push({key: '-' + i , name: i });
+}
+color_values.push({key:'-primary',name:'primary'});
+color_values.push({key:'-secondary',name:'secondary'});
+color_values.push({key:'-success',name:'success'});
+color_values.push({key:'-info',name:'info'});
+color_values.push({key:'-danger',name:'danger'});
+color_values.push({key:'-warning',name:'warning'});
+color_values.push({key:'-black',name:'black'});
+color_values.push({key:'-white',name:'white'});
+color_values.push({key:'-facebook',name:'facebook'});
+color_values.push({key:'-twitter',name:'twitter'});
+color_values.push({key:'-google-plus',name:'google-plus'});
+color_values.push({key:'-instagram',name:'instagram'});
+color_values.push({key:'-pinterest',name:'pinterest'});
+color_values.push({key:'-github',name:'github'});
+
+var bg_values = [];
+for (var i = 1; i <= 11; i++) {
+    bg_values.push({key: '-' + i , name: i });
+}
+bg_values.push({key:'-primary',name:'primary'});
+bg_values.push({key:'-secondary',name:'secondary'});
+bg_values.push({key:'-success',name:'success'});
+bg_values.push({key:'-info',name:'info'});
+bg_values.push({key:'-danger',name:'danger'});
+bg_values.push({key:'-warning',name:'warning'});
+bg_values.push({key:'-black',name:'black'});
+bg_values.push({key:'-white',name:'white'});
+bg_values.push({key:'-facebook',name:'facebook'});
+bg_values.push({key:'-twitter',name:'twitter'});
+bg_values.push({key:'-google-plus',name:'google-plus'});
+bg_values.push({key:'-instagram',name:'instagram'});
+bg_values.push({key:'-pinterest',name:'pinterest'});
+bg_values.push({key:'-github',name:'github'});
+
+var border_values = [];
+for (var i = 1; i <= 11; i++) {
+    border_values.push({key: '-' + i , name: i });
+}
+border_values.push({key:'-primary',name:'primary'});
+border_values.push({key:'-secondary',name:'secondary'});
+border_values.push({key:'-success',name:'success'});
+border_values.push({key:'-info',name:'info'});
+border_values.push({key:'-danger',name:'danger'});
+border_values.push({key:'-warning',name:'warning'});
+border_values.push({key:'-black',name:'black'});
+border_values.push({key:'-white',name:'white'});
+border_values.push({key:'-facebook',name:'facebook'});
+border_values.push({key:'-twitter',name:'twitter'});
+border_values.push({key:'-google-plus',name:'google-plus'});
+border_values.push({key:'-instagram',name:'instagram'});
+border_values.push({key:'-pinterest',name:'pinterest'});
+border_values.push({key:'-github',name:'github'});
+
+
+var line_values = [];
+for (var i = 1; i <= 8; i++) {
+    line_values.push({key: '-' + i, name: i});
+}
+
 var margin_values = [];
 var padding_values = [];
 for (var i = 0; i <= 11; i++) {
@@ -331,15 +418,8 @@ var columns_section_def = {
                 {
                     field_prefix: 'font-weight',
                     class_prefix: 'font-weight',
-                    values: spacing_values,
+                    values: weight_values,
                     name: 'Font Weight'
-				}
-				,
-                {
-                    field_prefix: 'color',
-                    class_prefix: 'color',
-                    values: color_values,
-                    name: 'Color'
 				}
 				,
                 {
@@ -357,16 +437,23 @@ var columns_section_def = {
 				}
 				,
                 {
+                    field_prefix: 'color',
+                    class_prefix: 'color',
+                    values: color_values,
+                    name: 'Color'
+				}
+				,
+                {
                     field_prefix: 'bg',
                     class_prefix: 'bg',
-                    values: color_values,
+                    values: bg_values,
                     name: 'Background Color'
 				}
 				,
                 {
                     field_prefix: 'border',
                     class_prefix: 'border',
-                    values: color_values,
+                    values: border_values,
                     name: 'Border Color'
 				}
             ])
@@ -401,148 +488,148 @@ var columns_section_def = {
 		// 		{ key: 'font-2', name: 'Font 2' }
 		// 	]
 		// },
-		zweight: {
-			'type' : 'select',
-			'name' : 'Font Weight',
-			'action' : 'apply_class',
-			'show_empty': true,
-			'options' : [
-				{ key: 'fw-100', name: '100' },
-				{ key: 'fw-200', name: '200' },
-				{ key: 'fw-300', name: '300' },
-				{ key: 'fw-400', name: '400' },
-				{ key: 'fw-500', name: '500' },
-				{ key: 'fw-600', name: '600' },
-				{ key: 'fw-700', name: '700' },
-				{ key: 'fw-800', name: '800' },
-				{ key: 'fw-900', name: '900' },
-				{ key: 'fw-thin', name: 'Thin' },
-				{ key: 'fw-extra-light', name: 'Extra Light' },
-				{ key: 'fw-light', name: 'Light' },
-				{ key: 'fw-normal', name: 'Normal' },
-				{ key: 'fw-medium', name: 'Medium' },
-				{ key: 'fw-semi-bold', name: 'Semi Bold' },
-				{ key: 'fw-bold', name: 'Bold' },
-				{ key: 'fw-extra-bold', name: 'Extra Bold' },
-				{ key: 'fw-black', name: 'Black' }				
-			]
-		},
-		zlineheight: {
-			'type' : 'select',
-			'name' : 'Line Height',
-			'action' : 'apply_class',
-			'show_empty': true,
-			'options' : [
-				{ key: 'lh-f1', name: 'Font 1' },
-				{ key: 'lh-f2', name: 'Font 2' },
-				{ key: 'lh-0', name: '0' },
-				{ key: 'lh-1', name: '1' },
-				{ key: 'lh-2', name: '2' },
-				{ key: 'lh-3', name: '3' },
-				{ key: 'lh-4', name: '4' },
-				{ key: 'lh-5', name: '5' },
-				{ key: 'lh-6', name: '6' },
-				{ key: 'lh-7', name: '7' },
-				{ key: 'lh-8', name: '8' },
-			]
-		},
-		zbackground: {
-			'type' : 'select',
-			'name' : 'Background',
-			'action' : 'apply_class',
-			'show_empty': true,
-			'options' : [
-				{key:'background-1',name:'1'},
-				{key:'background-2',name:'2'},
-				{key:'background-3',name:'3'},
-				{key:'background-4',name:'4'},
-				{key:'background-5',name:'5'},
-				{key:'background-6',name:'6'},
-				{key:'background-7',name:'7'},
-				{key:'background-8',name:'8'},
-				{key:'background-9',name:'9'},
-				{key:'background-10',name:'10'},
-				{key:'background-11',name:'11'},
-				{key:'background-black',name:'black'},
-				{key:'background-danger',name:'danger'},
-				{key:'background-facebook',name:'facebook'},
-				{key:'background-github',name:'github'},
-				{key:'background-google-plus',name:'google-plus'},
-				{key:'background-info',name:'info'},
-				{key:'background-instagram',name:'instagram'},
-				{key:'background-pinterest',name:'pinterest'},
-				{key:'background-primary',name:'primary'},
-				{key:'background-success',name:'success'},
-				{key:'background-transparent',name:'transparent'},
-				{key:'background-twitter',name:'twitter'},
-				{key:'background-warning',name:'warning'},
-				{key:'background-white',name:'white'}
-			]
-		},
-		zcolor: {
-			'type' : 'select',
-			'name' : 'Color',
-			'action' : 'apply_class',
-			'show_empty': true,
-			'options' : [
-				{key:'color-1',name:'1'},
-				{key:'color-2',name:'2'},
-				{key:'color-3',name:'3'},
-				{key:'color-4',name:'4'},
-				{key:'color-5',name:'5'},
-				{key:'color-6',name:'6'},
-				{key:'color-7',name:'7'},
-				{key:'color-8',name:'8'},
-				{key:'color-9',name:'9'},
-				{key:'color-10',name:'10'},
-				{key:'color-11',name:'11'},
-				{key:'color-black',name:'black'},
-				{key:'color-danger',name:'danger'},
-				{key:'color-facebook',name:'facebook'},
-				{key:'color-github',name:'github'},
-				{key:'color-google-plus',name:'google-plus'},
-				{key:'color-info',name:'info'},
-				{key:'color-instagram',name:'instagram'},
-				{key:'color-pinterest',name:'pinterest'},
-				{key:'color-primary',name:'primary'},
-				{key:'color-success',name:'success'},
-				{key:'color-twitter',name:'twitter'},
-				{key:'color-warning',name:'warning'},
-				{key:'color-white',name:'white'}
-			]
-		},
-		zborder: {
-			'type' : 'select',
-			'name' : 'Border',
-			'action' : 'apply_class',
-			'show_empty': true,
-			'options' : [
-				{key:'border-color-1',name:'1'},
-				{key:'border-color-2',name:'2'},
-				{key:'border-color-3',name:'3'},
-				{key:'border-color-4',name:'4'},
-				{key:'border-color-5',name:'5'},
-				{key:'border-color-6',name:'6'},
-				{key:'border-color-7',name:'7'},
-				{key:'border-color-8',name:'8'},
-				{key:'border-color-9',name:'9'},
-				{key:'border-color-10',name:'10'},
-				{key:'border-color-11',name:'11'},
-				{key:'border-color-black',name:'black'},
-				{key:'border-color-danger',name:'danger'},
-				{key:'border-color-facebook',name:'facebook'},
-				{key:'border-color-github',name:'github'},
-				{key:'border-color-google-plus',name:'google-plus'},
-				{key:'border-color-info',name:'info'},
-				{key:'border-color-instagram',name:'instagram'},
-				{key:'border-color-pinterest',name:'pinterest'},
-				{key:'border-color-primary',name:'primary'},
-				{key:'border-color-success',name:'success'},
-				{key:'border-color-twitter',name:'twitter'},
-				{key:'border-color-warning',name:'warning'},
-				{key:'border-color-white',name:'white'}
-			]
-		},
+		// zweight: {
+		// 	'type' : 'select',
+		// 	'name' : 'Font Weight',
+		// 	'action' : 'apply_class',
+		// 	'show_empty': true,
+		// 	'options' : [
+		// 		{ key: 'fw-100', name: '100' },
+		// 		{ key: 'fw-200', name: '200' },
+		// 		{ key: 'fw-300', name: '300' },
+		// 		{ key: 'fw-400', name: '400' },
+		// 		{ key: 'fw-500', name: '500' },
+		// 		{ key: 'fw-600', name: '600' },
+		// 		{ key: 'fw-700', name: '700' },
+		// 		{ key: 'fw-800', name: '800' },
+		// 		{ key: 'fw-900', name: '900' },
+		// 		{ key: 'fw-thin', name: 'Thin' },
+		// 		{ key: 'fw-extra-light', name: 'Extra Light' },
+		// 		{ key: 'fw-light', name: 'Light' },
+		// 		{ key: 'fw-normal', name: 'Normal' },
+		// 		{ key: 'fw-medium', name: 'Medium' },
+		// 		{ key: 'fw-semi-bold', name: 'Semi Bold' },
+		// 		{ key: 'fw-bold', name: 'Bold' },
+		// 		{ key: 'fw-extra-bold', name: 'Extra Bold' },
+		// 		{ key: 'fw-black', name: 'Black' }				
+		// 	]
+		// },
+		// zlineheight: {
+		// 	'type' : 'select',
+		// 	'name' : 'Line Height',
+		// 	'action' : 'apply_class',
+		// 	'show_empty': true,
+		// 	'options' : [
+		// 		{ key: 'lh-f1', name: 'Font 1' },
+		// 		{ key: 'lh-f2', name: 'Font 2' },
+		// 		{ key: 'lh-0', name: '0' },
+		// 		{ key: 'lh-1', name: '1' },
+		// 		{ key: 'lh-2', name: '2' },
+		// 		{ key: 'lh-3', name: '3' },
+		// 		{ key: 'lh-4', name: '4' },
+		// 		{ key: 'lh-5', name: '5' },
+		// 		{ key: 'lh-6', name: '6' },
+		// 		{ key: 'lh-7', name: '7' },
+		// 		{ key: 'lh-8', name: '8' },
+		// 	]
+		// },
+		// zbackground: {
+		// 	'type' : 'select',
+		// 	'name' : 'Background',
+		// 	'action' : 'apply_class',
+		// 	'show_empty': true,
+		// 	'options' : [
+		// 		{key:'background-1',name:'1'},
+		// 		{key:'background-2',name:'2'},
+		// 		{key:'background-3',name:'3'},
+		// 		{key:'background-4',name:'4'},
+		// 		{key:'background-5',name:'5'},
+		// 		{key:'background-6',name:'6'},
+		// 		{key:'background-7',name:'7'},
+		// 		{key:'background-8',name:'8'},
+		// 		{key:'background-9',name:'9'},
+		// 		{key:'background-10',name:'10'},
+		// 		{key:'background-11',name:'11'},
+		// 		{key:'background-black',name:'black'},
+		// 		{key:'background-danger',name:'danger'},
+		// 		{key:'background-facebook',name:'facebook'},
+		// 		{key:'background-github',name:'github'},
+		// 		{key:'background-google-plus',name:'google-plus'},
+		// 		{key:'background-info',name:'info'},
+		// 		{key:'background-instagram',name:'instagram'},
+		// 		{key:'background-pinterest',name:'pinterest'},
+		// 		{key:'background-primary',name:'primary'},
+		// 		{key:'background-success',name:'success'},
+		// 		{key:'background-transparent',name:'transparent'},
+		// 		{key:'background-twitter',name:'twitter'},
+		// 		{key:'background-warning',name:'warning'},
+		// 		{key:'background-white',name:'white'}
+		// 	]
+		// },
+		// zcolor: {
+		// 	'type' : 'select',
+		// 	'name' : 'Color',
+		// 	'action' : 'apply_class',
+		// 	'show_empty': true,
+		// 	'options' : [
+		// 		{key:'color-1',name:'1'},
+		// 		{key:'color-2',name:'2'},
+		// 		{key:'color-3',name:'3'},
+		// 		{key:'color-4',name:'4'},
+		// 		{key:'color-5',name:'5'},
+		// 		{key:'color-6',name:'6'},
+		// 		{key:'color-7',name:'7'},
+		// 		{key:'color-8',name:'8'},
+		// 		{key:'color-9',name:'9'},
+		// 		{key:'color-10',name:'10'},
+		// 		{key:'color-11',name:'11'},
+		// 		{key:'color-black',name:'black'},
+		// 		{key:'color-danger',name:'danger'},
+		// 		{key:'color-facebook',name:'facebook'},
+		// 		{key:'color-github',name:'github'},
+		// 		{key:'color-google-plus',name:'google-plus'},
+		// 		{key:'color-info',name:'info'},
+		// 		{key:'color-instagram',name:'instagram'},
+		// 		{key:'color-pinterest',name:'pinterest'},
+		// 		{key:'color-primary',name:'primary'},
+		// 		{key:'color-success',name:'success'},
+		// 		{key:'color-twitter',name:'twitter'},
+		// 		{key:'color-warning',name:'warning'},
+		// 		{key:'color-white',name:'white'}
+		// 	]
+		// },
+		// zborder: {
+		// 	'type' : 'select',
+		// 	'name' : 'Border',
+		// 	'action' : 'apply_class',
+		// 	'show_empty': true,
+		// 	'options' : [
+		// 		{key:'border-color-1',name:'1'},
+		// 		{key:'border-color-2',name:'2'},
+		// 		{key:'border-color-3',name:'3'},
+		// 		{key:'border-color-4',name:'4'},
+		// 		{key:'border-color-5',name:'5'},
+		// 		{key:'border-color-6',name:'6'},
+		// 		{key:'border-color-7',name:'7'},
+		// 		{key:'border-color-8',name:'8'},
+		// 		{key:'border-color-9',name:'9'},
+		// 		{key:'border-color-10',name:'10'},
+		// 		{key:'border-color-11',name:'11'},
+		// 		{key:'border-color-black',name:'black'},
+		// 		{key:'border-color-danger',name:'danger'},
+		// 		{key:'border-color-facebook',name:'facebook'},
+		// 		{key:'border-color-github',name:'github'},
+		// 		{key:'border-color-google-plus',name:'google-plus'},
+		// 		{key:'border-color-info',name:'info'},
+		// 		{key:'border-color-instagram',name:'instagram'},
+		// 		{key:'border-color-pinterest',name:'pinterest'},
+		// 		{key:'border-color-primary',name:'primary'},
+		// 		{key:'border-color-success',name:'success'},
+		// 		{key:'border-color-twitter',name:'twitter'},
+		// 		{key:'border-color-warning',name:'warning'},
+		// 		{key:'border-color-white',name:'white'}
+		// 	]
+		// },
 		margins: {
             type: 'custom',
             name: 'margins',
