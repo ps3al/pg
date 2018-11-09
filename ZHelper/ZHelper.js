@@ -203,6 +203,10 @@ var size_values = [];
 for (var i = -1; i <= 8; i++) {
     size_values.push({key: '-' + i, name: i});
 }
+var font_values = [];
+for (var i = 1; i <= 2; i++) {
+    font_values.push({key: '-' + i, name: i});
+}
 var margin_values = [];
 var padding_values = [];
 for (var i = 0; i <= 11; i++) {
@@ -309,12 +313,32 @@ var columns_section_def = {
             type: 'custom',
             name: 'fontsizes',
             action: 'none',
-            control: getGridControlFactory('fs-span', [
+            control: getGridControlFactory('font-size', [
                 {
-                    field_prefix: 'fs',
-                    class_prefix: 'fs',
+                    field_prefix: 'font-size',
+                    class_prefix: 'font-size',
                     values: size_values,
                     name: 'Font Size'
+				}
+				,
+                {
+                    field_prefix: 'font',
+                    class_prefix: 'font',
+                    values: font_values,
+                    name: 'Font Type'
+				}
+            ])
+		},
+		fonttypes: {
+            type: 'custom',
+            name: 'fonttypes',
+            action: 'none',
+            control: getGridControlFactory('font-type', [
+                {
+                    field_prefix: 'font',
+                    class_prefix: 'font',
+                    values: font_values,
+                    name: 'Font Type'
 				}
 				// ,
                 // {
@@ -325,16 +349,16 @@ var columns_section_def = {
 				// }
             ])
 		},
-		zfont: {
-			'type' : 'select',
-			'name' : 'Font Type',
-			'action' : 'apply_class',
-			'show_empty': true,
-			'options' : [
-				{ key: 'font-1', name: 'Font 1' },
-				{ key: 'font-2', name: 'Font 2' }
-			]
-		},
+		// zfont: {
+		// 	'type' : 'select',
+		// 	'name' : 'Font Type',
+		// 	'action' : 'apply_class',
+		// 	'show_empty': true,
+		// 	'options' : [
+		// 		{ key: 'font-1', name: 'Font 1' },
+		// 		{ key: 'font-2', name: 'Font 2' }
+		// 	]
+		// },
 		zweight: {
 			'type' : 'select',
 			'name' : 'Font Weight',
