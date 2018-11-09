@@ -309,11 +309,18 @@ for (var i = 0; i <= 11; i++) {
 var columns_section_def = {
     name : "Z HELPERS",
     fields : {
-		fontsizes: {
+		fontsize: {
             type: 'custom',
-            name: 'fontsizes',
+            name: 'fontsize',
             action: 'none',
             control: getGridControlFactory('font-size', [
+                {
+                    field_prefix: 'font',
+                    class_prefix: 'font',
+                    values: font_values,
+                    name: 'Font Family'
+				}
+				,
                 {
                     field_prefix: 'font-size',
                     class_prefix: 'font-size',
@@ -322,33 +329,68 @@ var columns_section_def = {
 				}
 				,
                 {
-                    field_prefix: 'font',
-                    class_prefix: 'font',
-                    values: font_values,
-                    name: 'Font Type'
+                    field_prefix: 'font-weight',
+                    class_prefix: 'font-weight',
+                    values: spacing_values,
+                    name: 'Font Weight'
 				}
-            ])
-		},
-		fonttypes: {
-            type: 'custom',
-            name: 'fonttypes',
-            action: 'none',
-            control: getGridControlFactory('font-type', [
+				,
                 {
-                    field_prefix: 'font',
-                    class_prefix: 'font',
-                    values: font_values,
-                    name: 'Font Type'
+                    field_prefix: 'color',
+                    class_prefix: 'color',
+                    values: color_values,
+                    name: 'Color'
 				}
-				// ,
-                // {
-                //     field_prefix: 'zmargin',
-                //     class_prefix: 'zmargin',
-                //     values: margin_values,
-                //     name: 'Margins'
-				// }
+				,
+                {
+                    field_prefix: 'line-height',
+                    class_prefix: 'line-height',
+                    values: line_values,
+                    name: 'Line Height'
+				}
+				,
+                {
+                    field_prefix: 'letter-spacing',
+                    class_prefix: 'letter-spacing',
+                    values: spacing_values,
+                    name: 'Letter Spacing'
+				}
+				,
+                {
+                    field_prefix: 'bg',
+                    class_prefix: 'bg',
+                    values: color_values,
+                    name: 'Background Color'
+				}
+				,
+                {
+                    field_prefix: 'border',
+                    class_prefix: 'border',
+                    values: color_values,
+                    name: 'Border Color'
+				}
             ])
 		},
+		// fontfamily: {
+        //     type: 'custom',
+        //     name: 'fontfamily',
+        //     action: 'none',
+        //     control: getGridControlFactory('font-family', [
+        //         {
+        //             field_prefix: 'font',
+        //             class_prefix: 'font',
+        //             values: font_values,
+        //             name: 'Font Family'
+		// 		}
+		// 		// ,
+        //         // {
+        //         //     field_prefix: 'zmargin',
+        //         //     class_prefix: 'zmargin',
+        //         //     values: margin_values,
+        //         //     name: 'Margins'
+		// 		// }
+        //     ])
+		// },
 		// zfont: {
 		// 	'type' : 'select',
 		// 	'name' : 'Font Type',
