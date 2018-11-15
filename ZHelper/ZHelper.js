@@ -147,7 +147,7 @@ $(function () {
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
-var prefix = 'bs4.';
+var prefix = 'zbs4.';
 
 var num_columns = parseInt(pinegrow.getSetting('bootstrap-col-num', '12')) || 12;
 var sizes = ["xs", "sm", "md", "lg", "xl"];
@@ -692,6 +692,12 @@ var getClassNameForMarginAndPadding = function (type, direction, size, num) {
 }
 
 var setAllMarginPaddingValue = function (pgel, type, size, control_id, values, value) {
+
+    var directions = ['', 'x', 'y', 't', 'r', 'b', 'l'];
+    var spacingVal = ['auto', 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+    var spacing = 11;
+    
+
     var elClass;
     var field_key = control_id + '.' + size + '.' + type;
 
@@ -1049,6 +1055,8 @@ ZgetSpacingControl = function() {
                 direction: direction_token
             },
             get_value: function(pgel, fn, values, fv) {
+
+
                 var optionsValue = fv.options;
                 for (var i = 0; i < optionsValue.length; i++) {
                     if (pgel.hasClass(optionsValue[i].key)) return optionsValue[i].key;
@@ -1059,7 +1067,8 @@ ZgetSpacingControl = function() {
                     direction = fv.more_prop.direction;
 
                 if (direction && direction != 'x' && direction != 'y') {
-                    var field_key = options.prefix + 'margin.padding.' + size + '.' + type;
+//                    var field_key = options.prefix + 'margin.padding.' + size + '.' + type;
+                    var field_key = prefix + 'margin.padding.' + size + '.' + type;
                     if (values[field_key]) {
                         var currValue = getNewMarginPaddingValueFor(type, direction, size, field_key, values, '');
                         values[field_key + direction] = currValue;
@@ -6800,12 +6809,12 @@ f.addComponentType(def_all);
 
 		function generalGet(pgel, dataname, attrname, valueisarray, attributeisvalue, opts) {
 
-			console.warn(dataname);
-			console.warn(attrname);
-			console.warn(attributeisvalue);
+			// console.warn(dataname);
+			// console.warn(attrname);
+			// console.warn(attributeisvalue);
 			if (pgel) {
 				var attr = pgel.getAttr(dataname);
-				console.warn(attr);
+				// console.warn(attr);
 				if (attr) {
 					if (attributeisvalue) {
 						return attr;
