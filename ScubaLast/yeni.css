@@ -467,7 +467,7 @@ body {
 }
 
 .mb-4 {
-    margin-bottom: 1.8rem!important;
+    margin-bottom: 1.8rem !important;
 }
 
 .ml-4 {
@@ -2595,7 +2595,7 @@ body {
 }
 
 .p-3 {
-    padding: 1rem!important;
+    padding: 1rem !important;
 }
 
 .pt-3 {
@@ -4988,13 +4988,13 @@ nav {
     width: auto !important;
 }
 
-.card {
+.price-card {
     min-height: 100%;
     background-color: rgba(255, 255, 255, 0.74);
     border-radius: 0;
 }
 
-.card h3 {
+.price-card h3 {
     /* Personal: */
     font-family: Roboto;
     font-weight: 900;
@@ -5005,7 +5005,7 @@ nav {
     line-height: 30px;
 }
 
-.card p {
+.price-card p {
     /* Far far away, behind: */
     opacity: 0.8;
     font-family: Roboto;
@@ -5017,7 +5017,7 @@ nav {
     line-height: 25px;
 }
 
-.card .price {
+.price-card .price {
     /* Free: */
     opacity: 0.8;
     font-family: Roboto;
@@ -5029,7 +5029,7 @@ nav {
     line-height: 25px;
 }
 
-.card .btn {
+.price-card .btn {
     font-family: Roboto;
     font-weight: 500;
     font-size: 16px;
@@ -5041,33 +5041,39 @@ nav {
     border-radius: 0;
 }
 
-.card.active,
-.card:hover {
+.price-card.active,
+.price-card:hover {
     background: #000000;
 }
 
-.card:hover h3,
-.card.active h3 {
+.price-card:hover h3,
+.price-card.active h3 {
     color: #ffffff;
 }
 
-.card:hover p,
-.card.active p {
+.price-card:hover p,
+.price-card.active p {
     color: #ffffff;
 }
 
-.card:hover .price,
-.card.active .price {
+.price-card:hover .price,
+.price-card.active .price {
     color: #ffffff;
 }
 
-.blog:before {
+.blog>div {
+    padding: 2rem;
+    background-color: #f9f9f9;
+    color: #000;
+}
+
+.blog.big:before {
     padding-top: 100%;
     display: block;
     content: '';
 }
 
-.blog>div {
+.blog.big>div {
     position: absolute;
     top: 0;
     left: 0;
@@ -5337,4 +5343,43 @@ nav {
 .blog > div a {
     /*color: #ffffff*/
     text-decoration: none;
+}
+
+.blog-card {
+    border: none;
+
+    /*justify-content: space-between*/
+    height: 100%;
+}
+
+.card-body {
+    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-body:hover {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.big-card {
+    padding-top: 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
+.big-card>div {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.big-card .card-body {
+    flex: none;
 }
