@@ -5079,7 +5079,8 @@ nav {
     left: 0;
     bottom: 0;
     right: 0;
-    padding: 2rem;
+
+    /*padding: 2rem*/
     background-color: #f9f9f9;
     color: #000;
 }
@@ -5382,4 +5383,5 @@ nav {
 
 .big-card .card-body {
     flex: none;
+    margin: 2rem;
 }
