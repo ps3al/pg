@@ -5348,9 +5348,9 @@ nav {
 
 .blog-card {
     border: none;
-
-    /*justify-content: space-between*/
     height: 100%;
+    background-color: #f9f9f9;
+    border-radius: 0;
 }
 
 .card-body {
@@ -5359,8 +5359,13 @@ nav {
     flex-direction: column;
 }
 
-.card-body:hover {
-    background-color: #000000;
+.blog-card:hover .card-body {
+    background-color: rgba(0,0,0,1);
+    color: #ffffff;
+}
+
+.blog-card:hover.big-card .card-body {
+    background-color: rgba(0,0,0,0.75);
     color: #ffffff;
 }
 
@@ -5371,17 +5376,35 @@ nav {
     background-size: cover;
 }
 
+.big-card:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.20);
+    z-index: 0;
+}
+
+.blog-card:hover.big-card:after {
+    background-color: rgba(0,0,0,0);
+}
+
 .big-card>div {
     height: 100%;
     position: absolute;
     top: 0;
-    display: flex;
     justify-content: center;
     display: flex;
     flex-direction: column;
+    width: ;
 }
 
 .big-card .card-body {
+    background-color: rgba(0,0,0,.25);
+    color: #ffffff;
     flex: none;
     margin: 2rem;
+    z-index: 1;
 }

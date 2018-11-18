@@ -2,292 +2,292 @@ body {
     /*overflow-x: hidden*/
 }
 
-.fs--1 {
+.font-size--1 {
     font-size: .75rem;
 }
 
-.fs-0 {
+.font-size-0 {
     font-size: 1rem;
 }
 
-.fs-1 {
+.font-size-1 {
     font-size: 1.333rem;
 }
 
-.fs-2 {
+.font-size-2 {
     font-size: 1.777rem;
 }
 
-.fs-3 {
+.font-size-3 {
     font-size: 2.369rem;
 }
 
-.fs-4 {
+.font-size-4 {
     font-size: 3.157rem;
 }
 
-.fs-5 {
+.font-size-5 {
     font-size: 4.199rem;
 }
 
-.fs-6 {
+.font-size-6 {
     font-size: 5.584rem;
 }
 
-.fs-7 {
+.font-size-7 {
     font-size: 7.427rem;
 }
 
-.fs-8 {
+.font-size-8 {
     font-size: 9.878rem;
 }
 
 @media (min-width: 576px) {
-    .fs-sm--1 {
+    .font-size-sm--1 {
         font-size: .75rem;
     }
 
-    .fs-sm-0 {
+    .font-size-sm-0 {
         font-size: 1rem;
     }
 
-    .fs-sm-1 {
+    .font-size-sm-1 {
         font-size: 1.333rem;
     }
 
-    .fs-sm-2 {
+    .font-size-sm-2 {
         font-size: 1.777rem;
     }
 
-    .fs-sm-3 {
+    .font-size-sm-3 {
         font-size: 2.369rem;
     }
 
-    .fs-sm-4 {
+    .font-size-sm-4 {
         font-size: 3.157rem;
     }
 
-    .fs-sm-5 {
+    .font-size-sm-5 {
         font-size: 4.199rem;
     }
 
-    .fs-sm-6 {
+    .font-size-sm-6 {
         font-size: 5.584rem;
     }
 
-    .fs-sm-7 {
+    .font-size-sm-7 {
         font-size: 7.427rem;
     }
 
-    .fs-sm-8 {
+    .font-size-sm-8 {
         font-size: 9.878rem;
     }
 }
 
 @media (min-width: 768px) {
-    .fs-md--1 {
+    .font-size-md--1 {
         font-size: .75rem;
     }
 
-    .fs-md-0 {
+    .font-size-md-0 {
         font-size: 1rem;
     }
 
-    .fs-md-1 {
+    .font-size-md-1 {
         font-size: 1.333rem;
     }
 
-    .fs-md-2 {
+    .font-size-md-2 {
         font-size: 1.777rem;
     }
 
-    .fs-md-3 {
+    .font-size-md-3 {
         font-size: 2.369rem;
     }
 
-    .fs-md-4 {
+    .font-size-md-4 {
         font-size: 3.157rem;
     }
 
-    .fs-md-5 {
+    .font-size-md-5 {
         font-size: 4.199rem;
     }
 
-    .fs-md-6 {
+    .font-size-md-6 {
         font-size: 5.584rem;
     }
 
-    .fs-md-7 {
+    .font-size-md-7 {
         font-size: 7.427rem;
     }
 
-    .fs-md-8 {
+    .font-size-md-8 {
         font-size: 9.878rem;
     }
 }
 
 @media (min-width: 992px) {
-    .fs-lg--1 {
+    .font-size-lg--1 {
         font-size: .75rem;
     }
 
-    .fs-lg-0 {
+    .font-size-lg-0 {
         font-size: 1rem;
     }
 
-    .fs-lg-1 {
+    .font-size-lg-1 {
         font-size: 1.333rem;
     }
 
-    .fs-lg-2 {
+    .font-size-lg-2 {
         font-size: 1.777rem;
     }
 
-    .fs-lg-3 {
+    .font-size-lg-3 {
         font-size: 2.369rem;
     }
 
-    .fs-lg-4 {
+    .font-size-lg-4 {
         font-size: 3.157rem;
     }
 
-    .fs-lg-5 {
+    .font-size-lg-5 {
         font-size: 4.199rem;
     }
 
-    .fs-lg-6 {
+    .font-size-lg-6 {
         font-size: 5.584rem;
     }
 
-    .fs-lg-7 {
+    .font-size-lg-7 {
         font-size: 7.427rem;
     }
 
-    .fs-lg-8 {
+    .font-size-lg-8 {
         font-size: 9.878rem;
     }
 }
 
 @media (min-width: 1200px) {
-    .fs-xl--1 {
+    .font-size-xl--1 {
         font-size: .75rem;
     }
 
-    .fs-xl-0 {
+    .font-size-xl-0 {
         font-size: 1rem;
     }
 
-    .fs-xl-1 {
+    .font-size-xl-1 {
         font-size: 1.333rem;
     }
 
-    .fs-xl-2 {
+    .font-size-xl-2 {
         font-size: 1.777rem;
     }
 
-    .fs-xl-3 {
+    .font-size-xl-3 {
         font-size: 2.369rem;
     }
 
-    .fs-xl-4 {
+    .font-size-xl-4 {
         font-size: 3.157rem;
     }
 
-    .fs-xl-5 {
+    .font-size-xl-5 {
         font-size: 4.199rem;
     }
 
-    .fs-xl-6 {
+    .font-size-xl-6 {
         font-size: 5.584rem;
     }
 
-    .fs-xl-7 {
+    .font-size-xl-7 {
         font-size: 7.427rem;
     }
 
-    .fs-xl-8 {
+    .font-size-xl-8 {
         font-size: 9.878rem;
     }
 }
 
-.fw-100 {
+.font-weight-100 {
     font-weight: 100!important;
 }
 
-.fw-200 {
+.font-weight-200 {
     font-weight: 200!important;
 }
 
-.fw-300 {
+.font-weight-300 {
     font-weight: 300!important;
 }
 
-.fw-400 {
+.font-weight-400 {
     font-weight: 400!important;
 }
 
-.fw-500 {
+.font-weight-500 {
     font-weight: 500!important;
 }
 
-.fw-600 {
+.font-weight-600 {
     font-weight: 600!important;
 }
 
-.fw-700 {
+.font-weight-700 {
     font-weight: 700!important;
 }
 
-.fw-800 {
+.font-weight-800 {
     font-weight: 800!important;
 }
 
-.fw-900 {
+.font-weight-900 {
     font-weight: 900!important;
 }
 
-.fw-thin {
+.font-weight-thin {
     font-weight: 100 !important;
 }
 
-.fw-extra-light {
+.font-weight-extra-light {
     font-weight: 200 !important;
 }
 
-.fw-light {
+.font-weight-light {
     font-weight: 300 !important;
 }
 
-.fw-normal {
+.font-weight-normal {
     font-weight: 400 !important;
 }
 
-.fw-medium {
+.font-weight-medium {
     font-weight: 500 !important;
 }
 
-.fw-semi-bold {
+.font-weight-semi-bold {
     font-weight: 600 !important;
 }
 
-.fw-bold {
+.font-weight-bold {
     font-weight: 700 !important;
 }
 
-.fw-extra-bold {
+.font-weight-extra-bold {
     font-weight: 800 !important;
 }
 
-.fw-black {
+.font-weight-black {
     font-weight: 900 !important;
 }
 
 .font-1 {
-    font-family: "Source Sans Pro",sans-serif;
+    font-family: "Oswald",sans-serif;
 }
 
 .font-2 {
-    font-family: "Open Sans",sans-serif;
+    font-family: "Roboto",sans-serif;
 }
 
 .lh-0 {
@@ -467,7 +467,7 @@ body {
 }
 
 .mb-4 {
-    margin-bottom: 1.8rem!important;
+    margin-bottom: 1.8rem !important;
 }
 
 .ml-4 {
@@ -2595,7 +2595,7 @@ body {
 }
 
 .p-3 {
-    padding: 1rem!important;
+    padding: 1rem !important;
 }
 
 .pt-3 {
@@ -4943,6 +4943,7 @@ nav {
 .btn-solid.btn-dark:hover {
     color: #000000 !important;
     background-color: #ffffff !important;
+    border-color: #ffffff !important;
     transition: all .3s ease-in;
 }
 
@@ -4987,13 +4988,13 @@ nav {
     width: auto !important;
 }
 
-.card {
+.price-card {
     min-height: 100%;
     background-color: rgba(255, 255, 255, 0.74);
     border-radius: 0;
 }
 
-.card h3 {
+.price-card h3 {
     /* Personal: */
     font-family: Roboto;
     font-weight: 900;
@@ -5004,7 +5005,7 @@ nav {
     line-height: 30px;
 }
 
-.card p {
+.price-card p {
     /* Far far away, behind: */
     opacity: 0.8;
     font-family: Roboto;
@@ -5016,7 +5017,7 @@ nav {
     line-height: 25px;
 }
 
-.card .price {
+.price-card .price {
     /* Free: */
     opacity: 0.8;
     font-family: Roboto;
@@ -5028,7 +5029,7 @@ nav {
     line-height: 25px;
 }
 
-.card .btn {
+.price-card .btn {
     font-family: Roboto;
     font-weight: 500;
     font-size: 16px;
@@ -5040,40 +5041,57 @@ nav {
     border-radius: 0;
 }
 
-.card.active,
-.card:hover {
+.price-card.active,
+.price-card:hover {
     background: #000000;
 }
 
-.card:hover h3,
-.card.active h3 {
+.price-card:hover h3,
+.price-card.active h3 {
     color: #ffffff;
 }
 
-.card:hover p,
-.card.active p {
+.price-card:hover p,
+.price-card.active p {
     color: #ffffff;
 }
 
-.card:hover .price,
-.card.active .price {
+.price-card:hover .price,
+.price-card.active .price {
     color: #ffffff;
 }
 
-.blog:before {
+.blog>div {
+    padding: 2rem;
+    background-color: #f9f9f9;
+    color: #000;
+}
+
+.blog.big:before {
     padding-top: 100%;
     display: block;
     content: '';
 }
 
-.blog>div {
+.blog.big>div {
     position: absolute;
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
+
+    /*padding: 2rem*/
     background-color: #f9f9f9;
-    padding: 2rem;
+    color: #000;
+}
+
+.blog.big>div {
+    color: #fff;
+}
+
+.blog:hover>div {
+    background-color: #25262c;
+    color: #ffffff;
 }
 
 .blog {
@@ -5147,6 +5165,8 @@ nav {
     width: 100%;
     height: 100%;
     z-index: 100000;
+
+    /*display: none*/
 }
 
 #loader {
@@ -5285,10 +5305,14 @@ nav {
     right: 0;
     left: 0;
     top: 0;
-    background-color: rgba(0, 0, 0, 0.19);
+    background-color: rgba(0, 0, 0, 0.20);
     z-index: 1;
     margin-left: .5rem;
     margin-right: .5rem;
+}
+
+.blog:hover.big:after {
+    background-color: rgba(0, 0, 0, 0);
 }
 
 .blog.big>div {
@@ -5300,4 +5324,66 @@ nav {
 .blog h2,
 .blog h3 {
     font-family: Oswald;
+}
+
+.blog.big > div > div {
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.25);
+    padding: 1rem;
+}
+
+.blog:hover.big > div > div {
+    background-color: rgba(0, 0, 0, 0.75);
+}
+
+.blog.big a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.blog > div a {
+    /*color: #ffffff*/
+    text-decoration: none;
+}
+
+.blog-card {
+    border: none;
+
+    /*justify-content: space-between*/
+    height: 100%;
+}
+
+.card-body {
+    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+}
+
+.blog-card:hover .card-body {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.big-card {
+    padding-top: 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
+.big-card>div {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.big-card .card-body {
+    background-color: rgba(0,0,0,.25);
+    color: #ffffff;
+    flex: none;
+    margin: 2rem;
 }
