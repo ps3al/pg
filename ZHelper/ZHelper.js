@@ -204,7 +204,14 @@ for (var i = 1; i <= 2; i++) {
     font_values.push({key: '-' + i, name: i});
 }
 var size_values = [];
-for (var i = -1; i <= 8; i++) {
+size_values.push({ key: '-jumbo', name: 'Jumbo' });
+size_values.push({ key: '-title', name: 'Title' });
+size_values.push({ key: '-subtitle', name: 'Sub Title' });
+size_values.push({ key: '-small', name: 'Small' });
+size_values.push({ key: '-lead', name: 'Lead' });
+size_values.push({ key: '-body', name: 'Body' });
+size_values.push({ key: '-link', name: 'Link' });
+for (var i = -2; i <= 8; i++) {
     size_values.push({key: '-' + i, name: i});
 }
 var spacing_values = [];
@@ -288,7 +295,7 @@ border_values.push({key:'-pinterest',name:'pinterest'});
 border_values.push({key:'-github',name:'github'});
 
 var line_values = [];
-for (var i = 1; i <= 8; i++) {
+for (var i = -2; i <= 8; i++) {
     line_values.push({key: '-' + i, name: i});
 }
 
@@ -9066,6 +9073,7 @@ var ihcdelays = [
 			'css/jquery.smartmenus.bootstrap-4.css',
 			'css/venobox.css',
 			'css/styles.css',
+			'css/styles.scss',
 			'js/jquery.min.js',
 			'js/anijs-min.js',
 			'js/anijs-helper-dom-min.js',
