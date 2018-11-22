@@ -72,7 +72,9 @@
 				</div>
 			</div>			 
 		</nav>
-		<section style="height: 100vh; display: none;" class="p-0" id="home">
+		<section style="height: 100vh;
+
+/* display: none */" class="p-0" id="home">
 			<div class="container-fluid hero p-0 m-0 rellax" data-rellax-speed="-10">
 				<div class="slider-arrows">
 					<i class="fa fa-1x fa-border fa-angle-left" id="xprev" style="left: 1rem; position: absolute;"></i>
@@ -176,7 +178,7 @@
 				</div>
 			</div>
 		</section>
-		<section id="about-me" class="bg-white">
+		<section id="about-me" class="bg-white" style="background-repeat: no-repeat; background-position: center center; background-size: cover;">
 			<div style="position: absolute; bottom: 0; width: 100%;">
 				<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1000 100" preserveaspectratio="none"> 
 					<path d="M473,67.3 C269.1,155.6 209.9,33.3 152.7,67.3 C66,119.1 0,59.7 0,59.7 L0,0 L1000,0 L1000,59.7 C1000,59.7 937.9,85.8 905.1,89 C872.3,92.3 842.3,76.7 829.3,66.9 C806,49.6 745.3,8.7 694.9,4.7 C644.5,0.7 492.4,59 473,67.3 Z" id="Path" transform="translate(500, 50) scale(-1, -1) translate(-500, -50) " style="fill: #f9f9f9;"></path>					 
@@ -199,43 +201,38 @@
 					<div class="col-12 col-lg-8">
 						<div style="background-color: #f0f0f0; position: relative;" class="p-4 mb-4">
 							<h3 style="font-family: Oswald; font-weight:700; color: #25262c; letter-spacing: 0; line-height: 48px;">Hi, I'm Edgar Cross.</h3>
-							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind textsFar far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind
+							<p class="font-2">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind textsFar far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind
                                 textsFar far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts</p>
 							<div style="/* background-color: #fed100 */
 position: absolute; width: 100px; height: 50px; top: 25px; left: -100px; border-bottom: 50px solid #f0f0f0; border-left: 100px solid rgba(255, 255, 255, 0);" class="d-none d-lg-block"></div>
 						</div>
-						<div class="row">
-							<div class="col">
-								<h3 class="text-center titlex" style="font-family: Oswald;">My Diving</h3> 
-							</div>
-						</div>
 						<div class="row mb-4">
-							<div class="col-12">
-								<h3 style="font-family: Oswald;">Skils</h3>
-								<p class="mb-0">
+							<div class="col-12 mb-4">
+								<h3 style="font-family: Oswald;" class="text-center titlex">Skils</h3>
+								<p class="mb-0 font-2">
 								Solo Diving </p>
 								<div data-progressbar-options='{"data":"100","strokeWidth":"1","color":"#25262c","texttop":"-20px","textcolor":"#25262c","trailWidth":"1","trailColor":"#f0f0f0"}' class="progressbar-line" style="position:relative;"></div>
-								<p class="mb-0">
+								<p class="mb-0 font-2">
 								Cave Diving </p>
 								<div data-progressbar-options='{"data":"90","strokeWidth":"1","color":"#25262c","texttop":"-20px","textcolor":"#25262c","trailWidth":"1","trailColor":"#f0f0f0"}' class="progressbar-line" style="position:relative;"></div>
-								<p class="mb-0">
+								<p class="mb-0 font-2">
 								Ice Diving </p>
 								<div data-progressbar-options='{"data":"75","strokeWidth":"1","color":"#25262c","texttop":"-20px","textcolor":"#25262c","trailWidth":"1","trailColor":"#f0f0f0"}' class="progressbar-line" style="position:relative;"></div>
 							</div>
-							<div class="col-12">
-								<h3 style="font-family: Oswald;">Counts</h3>
+							<div class="col-12 mb-4">
+								<h3 style="font-family: Oswald;" class="text-center titlex">Counts</h3>
 								<div class="row">
 									<div class="col-md-4 text-center">
-										<p>Solo Diving</p>
-										<span data-counterup-options='{"delay":20,"time":2000,"beginAt":50}' class="counterup">745</span> 
+										<span data-counterup-options='{"delay":20,"time":2000,"beginAt":50}' class="counterup font-1 font-size-md-2 font-weight-bold">745</span>
+										<p class="font-2">Solo Diving</p> 
 									</div>
 									<div class="col-md-4 text-center">
-										<p>Cave Diving</p>
-										<span data-counterup-options='{"delay":20,"time":2000}' class="counterup">57</span> 
+										<span data-counterup-options='{"delay":20,"time":2000}' class="counterup font-1 font-size-md-2 font-weight-bold">57</span>
+										<p class="font-2">Cave Diving</p> 
 									</div>
 									<div class="col-md-4 text-center">
-										<p>Ice Diving</p>
-										<span data-counterup-options='{"delay":20,"time":2000}' class="counterup">43</span> 
+										<span data-counterup-options='{"delay":20,"time":2000}' class="counterup font-1 font-size-md-2 font-weight-bold">43</span>
+										<p class="font-2">Ice Diving</p> 
 									</div>
 								</div>								 
 							</div>
@@ -349,10 +346,6 @@ font-family: Oswald; font-weight:500; font-size: 36px; color: #000000; letter-sp
 											<button type="button" class="btn btn-light" style="background: #f0f0f0; font-family: Oswald; font-weight:500; font-size: 20px; color: #000000; letter-spacing: 0; text-align: center; line-height: 27px; padding: 8px 20px;">Contact Me</button>
 										</div>
 										<div class="col-12 col-sm-6">
-											<div data-plyr='{}' class='xjp1 js-player' data-type="youtube" data-video-id="TbsvRyYpcOQ" style="width: 200px; height: 200px;"></div>
-											<video data-plyr='{ "autoplay": false, "volume": 1, "hideControls":false }' class="xjp2 js-player">
-												<source src="https://www.youtube.com/embed/wHyr6FdKtzY" type="youtube">
-											</video>
 											<img style="border: 10px solid #FFFFFF; box-shadow: 0 2px 4px 0 rgba(0,0,0,0.50);" src="img/pasted%20image%20500x313.jpg" class="img-fluid">
 										</div>
 									</div>
@@ -560,7 +553,7 @@ font-family: Oswald; font-weight:500; font-size: 36px; color: #000000; letter-sp
 		</section>
 		<!-- END Ecommerces 1 -->
 		<!-- START Testimonials 5 -->
-		<section style="background-color: #f9f9f9;">
+		<section style="background-color: #f9f9f9; background-image: url('img/bg/triangle.svg'); background-repeat: no-repeat; background-position: center center; background-size: cover; background-attachment: fixed;">
 			<div class="container">
 				<div class="row">
 					<div class="col">
@@ -618,7 +611,7 @@ font-family: Oswald; font-weight:500; font-size: 36px; color: #000000; letter-sp
 				</div>
 				<div class="row">
 					<div class="col-12 col-sm-4">
-						<div class="card d-flex flex-column justify-content-between p-3 active">
+						<div class="card d-flex flex-column justify-content-between p-3 active price-card">
 							<div>
 								<h3>Personal</h3>
 								<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts</p>
@@ -630,7 +623,7 @@ font-family: Oswald; font-weight:500; font-size: 36px; color: #000000; letter-sp
 						</div>
 					</div>
 					<div class="col-12 col-sm-4">
-						<div class="card d-flex flex-column justify-content-between p-3">
+						<div class="card d-flex flex-column justify-content-between p-3 price-card">
 							<div>
 								<h3>Agency</h3>
 								<p>Far far away, behind the word mountains, far from the countries</p>
@@ -642,7 +635,7 @@ font-family: Oswald; font-weight:500; font-size: 36px; color: #000000; letter-sp
 						</div>
 					</div>
 					<div class="col-12 col-sm-4">
-						<div class="card d-flex flex-column justify-content-between p-3">
+						<div class="card d-flex flex-column justify-content-between p-3 price-card">
 							<div>
 								<h3>Unlimited</h3>
 								<p>Far far away, behind the word mountains, far from the countries</p>
@@ -668,60 +661,69 @@ font-family: Oswald; font-weight:500; font-size: 36px; color: #000000; letter-sp
 				<div class="row justify-content-center">
 					<div class="col-md-10">
 						<div class="row">
-							<div class="col-12 col-sm-6 mb-4">
-								<div class="blog big">
-									<div class="d-flex mx-2" style="background-image: url('img/Lalati-Dive-Resort-Adventure-Spa-Beqa-Lagoon-Fiji-top-9.jpg');">
-										<div class="align-self-center">
-											<h2>Platforma wireframe kit<small style="display: block;" class="fs-0">10.10.2018</small></h2>
-											<p>Far far away, behind the word mountains, far from the countries Vokalia.</p>
-											<a href="" class="btn btn-light btn-solid">Read more</a>
+							<div class="mb-3 col-md-6">
+								<div class="card blog-card big-card" style="background-image: url('img/Lalati-Dive-Resort-Adventure-Spa-Beqa-Lagoon-Fiji-top-9.jpg');">
+									<div>
+										<div class="card-body">
+											<div>
+												<h5 class="card-title font-1 font-weight-500 font-size-2">Card title</h5>
+												<h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+												<p class="card-text font-2">Some quick example text to build on the asdasd asd mahs djhas jdhajshd jahsd jasjdhas jdajsjasjhajsdhja</p>
+											</div>
+											<a href="" class="btn btn-light btn-solid ml-auto">Read more</a>
 										</div>
 									</div>
-								</div>
+								</div>								 
 							</div>
-							<div class="col-12 col-sm-6 mb-4">
-								<div class="blog big">
-									<div class="mx-2 d-flex" style="background-image: url('img/wreck-daymaniyat-1.jpg');">
-										<div class="align-self-center" style="z-index: 2;">
-											<h2>Wireframe connects the underlying structure<small style="display: block;" class="fs-0">10.10.2018</small></h2>
-											<p>Far far away, behind the word mountains, far from the countries Vokalia.</p>
-											<a href="" class="btn btn-light btn-solid">Read more</a>
+							<div class="mb-3 col-md-6">
+								<div class="card blog-card big-card" style="background-image: url('img/wreck-daymaniyat-1.jpg');">
+									<div>
+										<div class="card-body">
+											<div>
+												<h5 class="card-title font-1 font-weight-500 font-size-2">Card title</h5>
+												<h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+												<p class="card-text font-2">Some quick example text to build on the asdasd asd mahs djhas jdhajshd jahsd jasjdhas jdajsjasjhajsdhja</p>
+											</div>
+											<a href="" class="btn btn-light btn-solid ml-auto">Read more</a>
 										</div>
 									</div>
-								</div>
+								</div>								 
 							</div>
-							<div class="col-12 col-sm-4 mb-4">
-								<div class="blog ratio4_3">
-									<div class="mx-2">
+							<div class="col-md-4 mb-3">
+								<div class="card blog-card">
+									<div class="card-body">
 										<div>
-											<h3>Platforma wireframe kit<small style="display: block;" class="fs-0">10.10.2018</small></h3>
-											<p>Far far away, behind the word mountains, far from the countries Vokalia.</p>
-											<a href="" class="btn btn-dark btn-solid">Read more</a>
+											<h5 class="card-title font-1 font-size-2 font-weight-500">Card title</h5>
+											<h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+											<p class="card-text font-2">Some quick example text to build on the asdasd asd mahs djhas jdhajshd jahsd jasjdhas jdajsjasjhajsdhja</p>
 										</div>
+										<a href="" class="btn btn-light btn-solid ml-auto">Read more</a>
 									</div>
-								</div>
+								</div>								 
 							</div>
-							<div class="col-12 col-sm-4 mb-4">
-								<div class="blog ratio4_3">
-									<div class="mx-2">
+							<div class="col-md-4 mb-3">
+								<div class="card blog-card">
+									<div class="card-body">
 										<div>
-											<h3>Platforma wireframe kit<small style="display: block;" class="fs-0">10.10.2018</small></h3>
-											<p>Far far away,&nbsp;</p>
-											<a href="" style="font-size: 1rem;" class="btn btn-dark btn-solid">Read more</a>
+											<h5 class="card-title font-1 font-size-2 font-weight-500">Card title</h5>
+											<h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+											<p class="card-text font-2">Some quick example text to build on the asdasd asd mahs djhas jdhajshd jahsd jasjdhas jdajsjasjhajsdhja</p>
 										</div>
+										<a href="" class="btn btn-light btn-solid ml-auto">Read more</a>
 									</div>
-								</div>
+								</div>								 
 							</div>
-							<div class="col-12 col-sm-4 mb-4">
-								<div class="blog ratio4_3">
-									<div class="mx-2">
+							<div class="col-md-4 mb-3">
+								<div class="card blog-card">
+									<div class="card-body">
 										<div>
-											<h3>Platforma wireframe kit<small style="display: block;" class="fs-0">10.10.2018</small></h3>
-											<p>Far far away, behind the word mountains, far from the countries Vokalia.</p>
-											<a href="" class="btn btn-dark btn-solid">Read more</a>
+											<h5 class="card-title font-1 font-size-2 font-weight-500">Card title</h5>
+											<h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+											<p class="card-text font-2">Some quick example text to build on the&nbsp;</p>
 										</div>
+										<a href="" class="btn btn-light btn-solid ml-auto">Read more</a>
 									</div>
-								</div>
+								</div>								 
 							</div>
 						</div>
 					</div>
@@ -741,7 +743,7 @@ font-family: Oswald; font-weight:500; font-size: 36px; color: #000000; letter-sp
 					</div>
 				</div>
 				<div class="row justify-content-center my-5">
-					<div class="col-12 col-sm-5" style="background-color: rgba(255, 255, 255, 0.75); padding-top: 15px; padding-bottom: 15px;">
+					<div class="col-12 col-sm-5 p-4" style="background-color: rgba(255, 255, 255, 0.75); padding-top: 15px; padding-bottom: 15px;">
 						<div>
 							<input class="form-control" type="text" placeholder="Name"/>
 						</div>
@@ -753,7 +755,7 @@ font-family: Oswald; font-weight:500; font-size: 36px; color: #000000; letter-sp
 						</div>
 						<button class="btn btn-dark">Send</button>
 					</div>
-					<div class="col-12 col-sm-auto" style="background-color: rgba(255, 255, 255, 0.75); padding-top: 15px; padding-bottom: 15px;">
+					<div class="col-12 col-sm-auto p-4" style="background-color: rgba(255, 255, 255, 0.75); padding-top: 15px; padding-bottom: 15px;">
 						<h5 style="font-family: Oswald; font-weight:500; font-size: 16px; color: #000000; letter-spacing: 0; line-height: 22px;">Platforma wireframe kit</h5>
 						<div>
 							<p style="opacity: 0.8; font-family: Roboto; font-weight:400; font-size: 16px; color: #000000; letter-spacing: 0; line-height: 22px;"><i class="fa fa-globe"></i>+1 222-345-0000</p>
@@ -840,14 +842,14 @@ font-family: Oswald; font-weight:700; font-size: 24px; color: #000000; letter-sp
 								<div class="row align-items-start">
 									<div class="col-sm">
 										<h5>Links</h5>
-										<button type="button" class="btn btn-dark m-1" style="font-family: Oswald; font-weight: 500; font-size: 14px; letter-spacing: 0; text-align: center; line-height: 27px;">Contact Me</button>
-										<button type="button" class="btn btn-dark m-1" style="font-family: Oswald; font-weight: 500; font-size: 14px; letter-spacing: 0; text-align: center; line-height: 27px;">Contact</button>
-										<button type="button" class="btn btn-dark m-1" style="font-family: Oswald; font-weight: 500; font-size: 14px; letter-spacing: 0; text-align: center; line-height: 27px;">World Diving</button>
-										<button type="button" class="btn btn-dark m-1" style="font-family: Oswald; font-weight: 500; font-size: 14px; letter-spacing: 0; text-align: center; line-height: 27px;">Club Marine</button>
-										<button type="button" class="btn btn-dark m-1" style="font-family: Oswald; font-weight: 500; font-size: 14px; letter-spacing: 0; text-align: center; line-height: 27px;">Contact Me</button>
-										<button type="button" class="btn btn-dark m-1" style="font-family: Oswald; font-weight: 500; font-size: 14px; letter-spacing: 0; text-align: center; line-height: 27px;">Contact Me</button>
-										<button type="button" class="btn btn-dark m-1" style="font-family: Oswald; font-weight: 500; font-size: 14px; letter-spacing: 0; text-align: center; line-height: 27px;">Contact Me</button>
-										<button type="button" class="btn btn-dark m-1" style="font-family: Oswald; font-weight: 500; font-size: 14px; letter-spacing: 0; text-align: center; line-height: 27px;">Contact Me</button>
+										<button type="button" class="btn m-1 btn-dark btn-solid" style="font-family: Oswald; font-weight: 500; font-size: 14px; letter-spacing: 0; text-align: center; line-height: 27px;">Contact Me</button>
+										<button type="button" class="btn btn-dark m-1 btn-solid" style="font-family: Oswald; font-weight: 500; font-size: 14px; letter-spacing: 0; text-align: center; line-height: 27px;">Contact</button>
+										<button type="button" class="btn btn-dark m-1 btn-solid" style="font-family: Oswald; font-weight: 500; font-size: 14px; letter-spacing: 0; text-align: center; line-height: 27px;">World Diving</button>
+										<button type="button" class="btn btn-dark m-1 btn-solid" style="font-family: Oswald; font-weight: 500; font-size: 14px; letter-spacing: 0; text-align: center; line-height: 27px;">Club Marine</button>
+										<button type="button" class="btn btn-dark m-1 btn-solid" style="font-family: Oswald; font-weight: 500; font-size: 14px; letter-spacing: 0; text-align: center; line-height: 27px;">Contact Me</button>
+										<button type="button" class="btn btn-dark m-1 btn-solid" style="font-family: Oswald; font-weight: 500; font-size: 14px; letter-spacing: 0; text-align: center; line-height: 27px;">Contact Me</button>
+										<button type="button" class="btn btn-dark m-1 btn-solid" style="font-family: Oswald; font-weight: 500; font-size: 14px; letter-spacing: 0; text-align: center; line-height: 27px;">Contact Me</button>
+										<button type="button" class="btn btn-dark m-1 btn-solid" style="font-family: Oswald; font-weight: 500; font-size: 14px; letter-spacing: 0; text-align: center; line-height: 27px;">Contact Me</button>
 									</div>
 								</div>
 							</div>

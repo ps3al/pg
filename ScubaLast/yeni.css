@@ -5408,3 +5408,13 @@ nav {
     margin: 2rem;
     z-index: 1;
 }
+
+.form-control {
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 0.125rem solid #ffffff;
+    border-radius: 0;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    color: #ffffff;
+    margin-bottom: 5px;
+}
