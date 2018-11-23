@@ -9074,6 +9074,7 @@ var ihcdelays = [
 			'css/venobox.css',
 			'css/styles.css',
 			'css/styles.scss',
+			'css/rhythm.scss',
 			'js/jquery.min.js',
 			'js/anijs-min.js',
 			'js/anijs-helper-dom-min.js',
