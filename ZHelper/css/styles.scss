@@ -7813,7 +7813,7 @@ $lightness : lightness($color);
 ///*****
 $color:#10ae00;
 
-.kirmizi {
+.test {
     color: $color;
     color: complement($color:$color);
     border: triadic;
